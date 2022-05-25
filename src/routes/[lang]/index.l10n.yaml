@@ -42,10 +42,11 @@ index/about:
 
     <p>治理事件也因此经常颠覆当下的区块链。相比之下，Themelio
     从设计上就旨在避免一切改变。透过与造成不稳定的最大根源——应用程序——解耦，我们不仅实现了不可变性，还获得了更好的抽象层。这使得我们的区块链不仅更为安全，还更加灵活、高效。</p>
-index/introducing-melmint:
+
+melmint-title:
   en-US: "Mel: cryptocurrency done&nbsp;right"
   zh-CN: MEL：前所未有的加密货币
-index/melmint-summary:
+melmint-summary:
   en-US: >-
     <p>Mel is Themelio’s native cryptocurrency. Unlike traditional
     cryptocurrencies (such as bitcoin and ether), mel keeps a stable value over
@@ -142,32 +143,50 @@ why-4:
     层机制来进行扩展，因为这样做会进一步鼓励协议与应用程序的紧密耦合，并进而破坏内生信任。因此，Themelio 采用了一个<a
     href="https://docs.themelio.org/basic-concepts/02-state/">优雅、高性能的 UTXO
     数据模型</a>，并结合其独特而强大的契约脚本，为构建可无限扩展的上层协议和应用程序提供了一个最小化但异常灵活的基础。</p>
-index/explore-themelio:
+explore-themelio:
   en-US: Explore Themelio
   zh-CN: 探索 Themelio
-index/participate:
+participate:
   en-US: Participate
   zh-CN: 参与
-index/build:
+build:
   en-US: Build
   zh-CN: 构建
-index/learn:
+learn:
   en-US: Learn
   zh-CN: 了解
-index/participate-build-learn:
+
+participate-desc:
   en-US: |
     <section>
-        <h3>Participate</h3>
-        <p>Though still in alpha, Themelio is <a href="https://scan.themelio.org/">fully running</a> and ready for your participation.</p>
-        <p>Run full-featured thin clients or <a href="https://docs.themelio.org/try-themelio/auditor-node/">nodes</a>, both on Themelio’s testnet and on its prototype mainnet.</p>
-        <p>The <a href="https://docs.themelio.org/try-themelio/melwalletd/">official wallet</a> lets you store and transact in MEL, SYM, and any other Themelio-based token. You can even <a href="https://docs.themelio.org/try-themelio/melminter/">mint your own MEL</a>.</p>
+      <h3>Participate</h3>
+      <p>Though still in alpha, Themelio is <a href="https://scan.themelio.org/">fully running</a> and ready for your participation.</p>
+      <p>Run full-featured thin clients or <a href="https://docs.themelio.org/try-themelio/auditor-node/">nodes</a>, both on Themelio’s testnet and on its prototype mainnet.</p>
+      <p>The <a href="https://docs.themelio.org/try-themelio/melwalletd/">official wallet</a> lets you store and transact in MEL, SYM, and any other Themelio-based token. You can even <a href="https://docs.themelio.org/try-themelio/melminter/">mint your own MEL</a>.</p>
     </section>
+
+build-desc:
+  en-US: |
     <section>
-        <h3>Build</h3>
-        <p>Write expressive covenants on Themelio with <a href="https://github.com/themeliolabs/melodeon">Melodeon</a>, our purely functional covenant language. </p>
-        <p>Make your own token with a single command, and use it seamlessly in our official wallets.</p>
-        <p>Themelio’s paradigm shift spawns a new generation of off-chain apps with on-chain security that you can explore.</p>
+    <h3>Build</h3>
+    <p>Write expressive covenants on Themelio with <a href="https://github.com/themeliolabs/melodeon">Melodeon</a>, our purely functional covenant language. </p>
+    <p>Make your own token with a single command, and use it seamlessly in our official wallets.</p>
+    <p>Themelio’s paradigm shift spawns a new generation of off-chain apps with on-chain security that you can explore.</p>
     </section>
+
+learn-desc:
+  en-US: |
+    <section>
+        <h3>Learn</h3>
+        <p>The <a href="overview.html">Learn</a> page contains everything you need to get started with Themelio.</p>
+
+        <p>We also have <a href="https://docs.themelio.org">comprehensive documentation</a> of Themelio’s technologies, including in-depth whitepapers on consensus, Melmint, and more.</p>
+
+        <p>Follow our latest developments on <a href="https://medium.com/themelio">our blog</a>.</p>
+    </section>
+
+index/participate-build-learn:
+  en-US: |
     <section>
         <h3>Learn</h3>
         <p>The <a href="overview.html">Learn</a> page contains everything you need to get started with Themelio.</p>

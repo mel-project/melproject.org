@@ -32,6 +32,11 @@
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/utilities/api";
 
+body {
+  color: #383c3c;
+  line-height: 1.6;
+}
+
 
 h1,
 h2,
@@ -39,7 +44,7 @@ h3,
 h4,
 h5 {
   font-family: 'Rubik';
-  color: #003d2f;
+  color: var(--dark-color);
   letter-spacing: -0.015em;
 }
 

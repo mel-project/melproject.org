@@ -12,6 +12,8 @@
   import base from "../../l10n/base.yaml";
   import layer from "./index.l10n.yaml";
   $: l10n = l10nLoad({ ...base, ...layer }, lang);
+
+  let carouselPosn = 0;
 </script>
 
 <MainLayout title={l10n("nav/home")} {lang}>
@@ -51,32 +53,140 @@
       </div>
       <div class="row">
         <div class="rethink-point col-lg">
-          <img class="rethink-icon" src="/images/smillust/keyhole.png" />
+          <img
+            class="rethink-icon"
+            src="/images/smillust/keyhole.png"
+            alt="circle with key"
+          />
           <div>{@html l10n("why-1")}</div>
         </div>
         <div class="rethink-point col-lg">
-          <img class="rethink-icon" src="/images/smillust/fork.png" />
+          <img
+            class="rethink-icon"
+            src="/images/smillust/fork.png"
+            alt="circle with fork"
+          />
           <div>{@html l10n("why-2")}</div>
         </div>
       </div>
       <div class="row">
         <div class="rethink-point col-lg">
-          <img class="rethink-icon" src="/images/smillust/mel-small.png" />
+          <img
+            class="rethink-icon"
+            src="/images/smillust/mel-small.png"
+            alt="circle with mel"
+          />
           <div>{@html l10n("why-3")}</div>
         </div>
         <div class="rethink-point col-lg">
-          <img class="rethink-icon" src="/images/smillust/scalability.png" />
+          <img
+            class="rethink-icon"
+            src="/images/smillust/scalability.png"
+            alt="scalable"
+          />
           <div>{@html l10n("why-4")}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--melmint-->
+  <div class="section">
+    <div class="section__inner container">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <img
+            class="img-fluid"
+            src="/images/smillust/mel-big.png"
+            style="mix-blend-mode: darken;"
+            alt="a mel floating on an ocean"
+          />
+        </div>
+        <div class="col-12 col-lg-6">
+          <h2>{@html l10n("melmint-title")}</h2>
+          {@html l10n("melmint-summary")}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--radiobuttons-->
+  <div class="section section--darken">
+    <div class="section__inner container">
+      <div class="row">
+        <div class="col-12 pb-3">
+          <h2>{@html l10n("explore-themelio")}</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md">
+          <div class="tab-set">
+            <div
+              class="tab-button"
+              class:tab-button-active={carouselPosn == 0}
+              on:click={() => (carouselPosn = 0)}
+            >
+              {l10n("participate")}
+            </div>
+            <div
+              class="tab-button"
+              class:tab-button-active={carouselPosn == 1}
+              on:click={() => (carouselPosn = 1)}
+            >
+              {l10n("build")}
+            </div>
+            <div
+              class="tab-button"
+              class:tab-button-active={carouselPosn == 2}
+              on:click={() => (carouselPosn = 2)}
+            >
+              {l10n("learn")}
+            </div>
+          </div>
+
+          {#if carouselPosn == 0}
+            <div>{@html l10n("participate-desc")}</div>
+          {:else if carouselPosn == 1}
+            <div>{@html l10n("build-desc")}</div>
+          {:else}
+            <div>{@html l10n("learn-desc")}</div>
+          {/if}
+        </div>
+        <div class="col-md">
+          <img
+            class="img-fluid"
+            src={carouselPosn == 0
+              ? "/images/homepage-participate.png"
+              : carouselPosn == 1
+              ? "/images/homepage-build.png"
+              : "/images/homepage-learn.png"}
+            style="mix-blend-mode: darken;"
+            alt="carousel"
+          />
         </div>
       </div>
     </div>
   </div>
 </MainLayout>
 
-<style>
-  .section {
-    padding-top: 3em;
-    padding-bottom: 3em;
+<style lang="scss">
+  .tab-set {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: 500;
+    color: var(--dark-color);
+    padding-bottom: 2rem;
+  }
+
+  .tab-button {
+    border-bottom: 2px solid transparentize($primary, 0.5);
+    flex-basis: 100%;
+  }
+
+  .tab-button-active {
+    border-bottom: 2px solid $primary;
   }
 
   .alert-cta {

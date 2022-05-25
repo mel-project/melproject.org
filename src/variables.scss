@@ -7,7 +7,10 @@ $font-family-sans-serif: "Public Sans", sans-serif;
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
 
+$dark-color:  #003d2f;
+
 :root {
     --primary-color: #{$primary};
+    --dark-color: #003d2f;
     --off-white: rgba(255, 255, 255, 0.7);
 }
