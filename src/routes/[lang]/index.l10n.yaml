@@ -73,10 +73,11 @@ index/melmint-summary:
     href='https://docs.themelio.org/basic-concepts/05-tokenomics/'>Themelio
     独立的权益证明代币</a>，它支撑着 Themelio 的共识机制。与 MEL 不同，SYM 有着固定的货币供应，但其价格却随 Themelio
     的网络估值而浮动。SYM 在 Melmint 中还有一个重要角色，那就是作为稳定 MEL 价值的「支撑」资产。</p>
-index/why-title:
+
+why-title:
   en-US: Why Themelio?
   zh-CN: 为什么选择 Themelio?
-index/why-1:
+why-1:
   en-US: >
     <h4>Trust the protocol&mdash;don&rsquo;t trust people</h4>
 
@@ -91,7 +92,7 @@ index/why-1:
     <p>区块链的杀手级功能从来都是<a
     href="https://medium.com/themelio/the-killer-feature-of-blockchains-bf4c3c25b298">内生信任</a>：源于激励机制与密码学原理的安全性。有了内生信任，我们不再需要信任开发者或「用户社区」的任意决定。Themelio
     终于实现了这场期待已久的信任革命。</p>
-index/why-2:
+why-2:
   en-US: >
     <h4>Stop worrying about upgrades and forks</h4>
 
@@ -108,7 +109,7 @@ index/why-2:
     href="https://nullchinchilla.me/posts/against-blockchain-governance.html">将会毁掉内生信任</a>。因此，Themelio
     的设计宗旨即为完全不变。这样做不仅能够使 Themelio
     免受因区块链治理而带来的令人疲惫又有损安全的社区争议，还同时让开发者得以自由自在地开发深层技术堆栈，不必担心基层协议的更改。</p>
-index/why-3:
+why-3:
   en-US: >
     <h4>Revolutionary non-fiat stablecoin</h4>
 
@@ -123,7 +124,7 @@ index/why-3:
     <p class="">Themelio 的基础货币 MEL 是<a
     href="https://docs.themelio.org/whitepapers/melmint-v2/">世上首款真正做到去中心化的稳定币</a>，它完全没有任何受信发行方或预言机。MEL
     打破了过去去信任发行与稳定的币值间「鱼与熊掌不可得兼」的矛盾，必能在去中心化金融 (De-Fi) 应用程序方面取得根本性突破。</p>
-index/why-4:
+why-4:
   en-US: >
     <h4>A paradigm shift in scalability and usability</h4>
 

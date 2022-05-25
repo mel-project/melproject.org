@@ -40,6 +40,37 @@
       </div>
     </div>
   </div>
+
+  <!--why themelio-->
+  <div class="section section--darken">
+    <div class="section__inner container">
+      <div class="row">
+        <div class="col">
+          <h2>{l10n("why-title")}</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="rethink-point col-lg">
+          <img class="rethink-icon" src="/images/smillust/keyhole.png" />
+          <div>{@html l10n("why-1")}</div>
+        </div>
+        <div class="rethink-point col-lg">
+          <img class="rethink-icon" src="/images/smillust/fork.png" />
+          <div>{@html l10n("why-2")}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="rethink-point col-lg">
+          <img class="rethink-icon" src="/images/smillust/mel-small.png" />
+          <div>{@html l10n("why-3")}</div>
+        </div>
+        <div class="rethink-point col-lg">
+          <img class="rethink-icon" src="/images/smillust/scalability.png" />
+          <div>{@html l10n("why-4")}</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </MainLayout>
 
 <style>
@@ -87,5 +118,48 @@
     .text--blead {
       font-size: 150%;
     }
+  }
+
+  .rethink-point {
+    border: 1px solid var(--primary-color);
+    border-radius: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    padding-right: 2rem;
+    margin: 1rem;
+    background-color: var(--off-white);
+  }
+
+  .rethink-point h4 {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 992px) {
+    .rethink-point {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .rethink-point {
+      text-align: center;
+    }
+
+    .rethink-point div {
+      text-align: left;
+    }
+  }
+
+  .rethink-icon {
+    /* border-radius: 100%; */
+    height: 6rem;
+    width: 6rem;
+    /* background-color: #ccc; */
+    mix-blend-mode: multiply;
+    flex-shrink: 0;
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 </style>
