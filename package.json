@@ -1,0 +1,32 @@
+{
+  "name": "next.themelio.org",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "package": "svelte-kit package",
+    "preview": "svelte-kit preview",
+    "prepare": "svelte-kit sync",
+    "lint": "prettier --check --plugin-search-dir=. . && eslint .",
+    "format": "prettier --write --plugin-search-dir=. ."
+  },
+  "devDependencies": {
+    "@modyfi/vite-plugin-yaml": "^1.0.2",
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/kit": "next",
+    "bootstrap": "^5.1.3",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "prettier": "^2.5.1",
+    "prettier-plugin-svelte": "^2.5.0",
+    "sass": "^1.49.11",
+    "svelte": "^3.44.0",
+    "svelte-preprocess": "^4.10.6"
+  },
+  "type": "module",
+  "dependencies": {
+    "@sveltejs/adapter-static": "^1.0.0-next.31",
+    "debounce": "^1.2.1"
+  }
+}
