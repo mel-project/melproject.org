@@ -31,3 +31,30 @@
 @import "bootstrap/scss/helpers";
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/utilities/api";
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Rubik';
+  color: #003d2f;
+  letter-spacing: -0.015em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+}
+
+h5 {
+  font-weight: 500;
+}
+
+.btn {
+  font-family: 'Rubik';
+  border-radius: 1rem;
+}
