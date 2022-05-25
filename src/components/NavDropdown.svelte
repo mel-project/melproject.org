@@ -20,7 +20,7 @@
     setOpen(false);
   }}
 >
-  <a class:active class="dropdown-toggle" {href}>{title}</a>
+  <a class:active class="dropdown-toggle navlink" {href}>{title}</a>
   {#if open}
     <div class="floater" transition:slide>
       <slot />

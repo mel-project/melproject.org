@@ -3,7 +3,7 @@
   export let href = "";
 </script>
 
-<div><a class:active {href}><slot /></a></div>
+<div><a class:active class="navlink" {href}><slot /></a></div>
 
 <style>
   @import "navlink.css";

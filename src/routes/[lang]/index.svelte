@@ -167,6 +167,89 @@
       </div>
     </div>
   </div>
+
+  <!--community-->
+  <div class="section" id="community-sect">
+    <div class="section__inner container">
+      <div class="row">
+        <div class="col-lg-2" />
+        <div class="col text-center">{@html l10n("community")}</div>
+        <div class="col-lg-2" />
+      </div>
+      <div class="row">
+        <div class="col-md">
+          <a class="community-card" href="https://discord.gg/qfg35paESn">
+            <div class="community-icon">
+              <img src="/images/social_media/discord.png" alt="discord" />
+            </div>
+            <div class="community-desc">{@html l10n("community/discord")}</div>
+          </a>
+        </div>
+        <div class="col-md">
+          <a class="community-card" href="https://t.me/themeliolabs">
+            <div class="community-icon">
+              <img src="/images/social_media/telegram.png" alt="telegram" />
+            </div>
+            <div class="community-desc">{@html l10n("community/telegram")}</div>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md">
+          <a class="community-card" href="https://twitter.com/themeliolabs">
+            <div class="community-icon">
+              <img src="/images/social_media/twitter.png" alt="twitter" />
+            </div>
+            <div class="community-desc">{@html l10n("community/twitter")}</div>
+          </a>
+        </div>
+        <div class="col-md">
+          <a class="community-card" href="https://github.com/themeliolabs/">
+            <div class="community-icon">
+              <img src="/images/social_media/github.png" alt="github" />
+            </div>
+            <div class="community-desc">{@html l10n("community/github")}</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--blog-->
+
+  <div class="section section section--darken" id="blog-sect">
+    <div class="section__inner container">
+      <div class="row">
+        <div class="col">
+          <h2>{@html l10n("blog")}</h2>
+          <div class="rss-container">
+            <rssapp-wall id="XBZoy5LUiQA6UTZM" />
+          </div>
+          <script
+            src="https://widget.rss.app/v1/wall.js"
+            type="text/javascript"
+            async></script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--team-->
+
+  <div class="section" id="team-sect">
+    <div class="section__inner container">
+      <div class="row">
+        <div class="col-lg" />
+        <div class="col-lg-8 text-center">
+          <h2>{@html l10n("team")}</h2>
+          <a href="team.html" class="btn btn-outline-primary btn-lg">
+            {@html l10n("view-our-team")}
+          </a>
+        </div>
+        <div class="col-lg" />
+      </div>
+    </div>
+  </div>
 </MainLayout>
 
 <style lang="scss">
@@ -271,5 +354,45 @@
     flex-shrink: 0;
     margin-right: 1rem;
     margin-left: 1rem;
+  }
+
+  .community-card {
+    border: 1px solid var(--primary-color);
+    border-radius: 1rem;
+    margin: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    color: var(--dark);
+    background-color: #f2f7f2;
+    min-height: 13rem;
+  }
+
+  .community-card:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .community-icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    flex-shrink: 0;
+    margin-right: 1rem;
+  }
+
+  .community-icon img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .community-desc {
+    padding-top: 0.5rem;
+  }
+
+  .rss-container {
+    margin-left: -1.8rem;
+    margin-right: -1.8rem;
   }
 </style>

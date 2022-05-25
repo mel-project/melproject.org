@@ -216,7 +216,8 @@ index/participate-build-learn:
 
         <p>您也可以关注我们的<a href="https://medium.com/themelio">博客</a>以便追踪我们最新的研发动向。</p>
     </section>
-index/community:
+
+community:
   en-US: >
     <h2>Join our community</h2>
 
@@ -227,7 +228,7 @@ index/community:
 
     <p class="text--lead">加入我们，成为由全球开发者、创新者以及用户所组成的茁壮成长中的 Themelio
     社区的一分子，从而帮助我们实现 Themelio 的愿景。</p>
-index/community/discord:
+community/discord:
   en-US: >
     <h4>Discord</h4>
 
@@ -236,7 +237,7 @@ index/community/discord:
   zh-CN: |
     <h4>Discord</h4>
     <p>在这里提出问题，与全球社区成员沟通交流，并从开发人员那里获得技术帮助。</p>
-index/community/telegram:
+community/telegram:
   en-US: >
     <h4>Telegram</h4>
 
@@ -245,7 +246,7 @@ index/community/telegram:
   zh-CN: |
     <h4>Telegram</h4>
     <p>这里是畅谈 Themelio 的又一个好去处！其内容与 Discord 同步。</p>
-index/community/twitter:
+community/twitter:
   en-US: >
     <h4>Twitter</h4>
 
@@ -254,7 +255,7 @@ index/community/twitter:
   zh-CN: |
     <h4>Twitter</h4>
     <p>在 Twitter 上关注 @themeliolabs 从而获取 Themelio 团队的最新消息！</p>
-index/community/github:
+community/github:
   en-US: >
     <h4>GitHub</h4>
 
@@ -263,13 +264,14 @@ index/community/github:
   zh-CN: |
     <h4>GitHub</h4>
     <p>对实现 Themelio 感兴趣吗？在 GitHub 上，您可关注我们的研发动向，为我们贡献代码，并参与工程讨论。</p>
-index/blog:
+
+blog:
   en-US: Latest posts from our blog
   zh-CN: 我们博客上的最新文章
-index/team:
+team:
   en-US: "A visionary founder, top engineers, and industry-leading partners."
   zh-CN: "远见卓识的创始人、<wbr>顶尖的工程师、<wbr>行&#8288;业领&#8288;先的合作伙伴。"
-index/view-our-team:
+view-our-team:
   en-US: View our team
   zh-CN: 了解我们的团队
 overview/hero:

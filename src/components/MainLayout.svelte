@@ -148,6 +148,135 @@
 
 <slot />
 
+<footer id="footer">
+  <div class="container">
+    <style>
+      img.social-media-icon {
+        max-width: 4em;
+      }
+    </style>
+    <div class="row">
+      <div class="col-lg-1">
+        <img
+          src="/images/logo-only-bw.png"
+          style="max-width: 48px; mix-blend-mode: lighten; opacity: 0.9"
+        />
+      </div>
+      <div class="col-lg mb-3">
+        <h4>{l10n("footer/updates")}</h4>
+        <p>{@html l10n("footer/updateblurb")}</p>
+        <!-- Begin Mailchimp Signup Form -->
+        <div id="mc_embed_signup">
+          <form
+            action="https://pm.us20.list-manage.com/subscribe/post?u=d1fa068da18aba6d2e0e0dc79&amp;id=61a9213385"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="validate"
+            target="_blank"
+            novalidate
+          >
+            <div id="mc_embed_signup_scroll">
+              <div class="mc-field-group form-group">
+                <input
+                  type="email"
+                  value=""
+                  name="EMAIL"
+                  class="required email form-control"
+                  id="mce-EMAIL"
+                  placeholder="your&#x40;email.com"
+                />
+                <small class="form-text text-muted"
+                  >{l10n("footer/noshare")}</small
+                >
+              </div>
+              <div id="mce-responses" class="clear form-group">
+                <div
+                  class="response"
+                  id="mce-error-response"
+                  style="display:none"
+                />
+                <div
+                  class="response"
+                  id="mce-success-response"
+                  style="display:none"
+                />
+              </div>
+              <!-- real people should not fill this in and expect good things - do not r emove this or risk form bot signups-->
+              <div
+                style="position: absolute; left: -5000px;"
+                aria-hidden="true"
+              >
+                <input
+                  type="text"
+                  name="b_d1fa068da18aba6d2e0e0dc79_61a9213385"
+                  tabindex="-1"
+                  value=""
+                />
+              </div>
+              <div class="clear form-group">
+                <button
+                  type="submit"
+                  name="subscribe"
+                  id="mc-embedded-subscribe"
+                  class="btn btn-lg"
+                >
+                  {l10n("footer/subscribe")}
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg" />
+      <div class="col-lg-5 container-fluid">
+        <div class="row">
+          <div class="col">
+            <h4>Themelio Labs</h4>
+          </div>
+          <div class="col text-muted">
+            8 The Green, Ste A<br />
+            Dover, DE 19901
+          </div>
+        </div>
+        <div class="row text--normweight mt-3">
+          <div class="col">
+            <a
+              href="https://github.com/themeliolabs/"
+              target="_blank"
+              rel="noopener">GitHub</a
+            >
+          </div>
+          <div class="col">
+            <a href="https://medium.com/themelio" target="_blank" rel="noopener"
+              >Medium</a
+            >
+          </div>
+          <div class="col">
+            <a
+              href="https://discord.gg/zJ4mwM5pzD"
+              target="_blank"
+              rel="noopener">Discord</a
+            >
+          </div>
+          <div class="col">
+            <a href="https://t.me/themeliolabs" target="_blank" rel="noopener"
+              >Telegram</a
+            >
+          </div>
+          <div class="col">
+            <a
+              href="https://twitter.com/ThemelioLabs"
+              target="_blank"
+              rel="noopener">Twitter</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 <style lang="scss">
   .navbar-brand {
     max-width: 10rem;
@@ -163,5 +292,39 @@
 
   .lang-selector {
     text-align: right;
+  }
+
+  /* footer */
+
+  footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+
+  footer * {
+    color: var(--white) !important;
+  }
+
+  footer .text-muted {
+    color: var(--white) !important;
+    opacity: 0.8;
+  }
+
+  footer .btn {
+    background-color: #00be92;
+    color: var(--white) !important;
+  }
+
+  footer > div > div > div {
+    padding-bottom: 2rem;
+  }
+
+  .footer__logo {
+    max-height: 24pt;
+    max-width: 100%;
+    height: auto;
+    opacity: 0.7;
   }
 </style>
