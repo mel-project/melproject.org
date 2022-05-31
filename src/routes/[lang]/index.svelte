@@ -1,22 +1,15 @@
-<script context="module">
-  export async function load({ params }) {
-    return { props: { lang: params.lang } };
-  }
-</script>
-
 <script>
   import MainLayout from "../../components/MainLayout.svelte";
-  import { l10nLoad } from "../../l10n/l10n";
-  export let lang;
+  import { l10nLoad, lang } from "../../l10n/l10n";
 
   import base from "../../l10n/base.yaml";
   import layer from "./index.l10n.yaml";
-  $: l10n = l10nLoad({ ...base, ...layer }, lang);
+  $: l10n = l10nLoad({ ...base, ...layer }, $lang);
 
   let carouselPosn = 0;
 </script>
 
-<MainLayout title={l10n("nav/home")} {lang}>
+<MainLayout title={l10n("nav/home")}>
   <!-- main hero -->
   <div class="section section--hero">
     <div class="section__inner container">
@@ -293,10 +286,6 @@
     font-weight: 350;
   }
 
-  .section--hero h1 b {
-    /* font-size: 3rem; */
-    font-weight: 450;
-  }
   @media (min-width: 768px) {
     .section--hero h1 {
       font-size: 5rem;
@@ -321,11 +310,6 @@
     padding-right: 2rem;
     margin: 1rem;
     background-color: var(--off-white);
-  }
-
-  .rethink-point h4 {
-    margin-bottom: 1rem;
-    margin-top: 1rem;
   }
 
   @media (min-width: 992px) {

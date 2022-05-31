@@ -2,4 +2,4 @@
   import Homepage from "./[lang]/index.svelte";
 </script>
 
-<Homepage lang="en" />
+<Homepage />

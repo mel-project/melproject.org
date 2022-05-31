@@ -1,4 +1,5 @@
-import { getContext, setContext } from "svelte";
+import { page } from "$app/stores";
+import { derived } from "svelte/store";
 
 export const l10nLoad = (mapping, lang) => {
   return (name) => {
@@ -13,3 +14,8 @@ export const l10nLoad = (mapping, lang) => {
     return mapping[name][lang];
   };
 };
+
+export const lang = derived(page, (p) => {
+  console.log("page content", p);
+  return p.params.lang || "en-US";
+});

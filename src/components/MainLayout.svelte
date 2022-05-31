@@ -3,15 +3,13 @@
 
   export let currentPath = "";
 
-  export let lang;
-
   import themelioLogo from "../assets/new-logo.png";
   import NavLink from "./NavLink.svelte";
   import base from "../l10n/base.yaml";
-  import { l10nLoad } from "../l10n/l10n";
+  import { lang, l10nLoad } from "../l10n/l10n";
   import NavDropdown from "./NavDropdown.svelte";
 
-  $: l10n = l10nLoad(base, lang);
+  $: l10n = l10nLoad(base, $lang);
 </script>
 
 <svelte:head>
