@@ -11,7 +11,6 @@
   }, 50);
 </script>
 
-<template lang="pug">
 <div
   class="dropdown"
   on:mouseenter={() => {
@@ -28,7 +27,6 @@
     </div>
   {/if}
 </div>
-</template>
 
 <style>
   @import "navlink.css";

@@ -4,6 +4,7 @@
 
   import base from "../../l10n/base.yaml";
   import layer from "./index.l10n.yaml";
+  import TestPug from "../../components/TestPug.svelte";
   $: l10n = l10nLoad({ ...base, ...layer }, $lang);
 
   let carouselPosn = 0;
@@ -11,6 +12,9 @@
 
 <MainLayout title={l10n("nav/home")}>
   <!-- main hero -->
+
+  <TestPug />
+
   <div class="section section--hero">
     <div class="section__inner container">
       <div class="row">
