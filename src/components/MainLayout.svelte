@@ -8,6 +8,7 @@
   import base from "../l10n/base.yaml";
   import { lang, l10nLoad } from "../l10n/l10n";
   import NavDropdown from "./NavDropdown.svelte";
+
   $: l10n = l10nLoad(base, $lang);
 </script>
 
@@ -35,25 +36,25 @@
             a(href!='{`/${$lang}/`}')
               img.navbar-brand.px-2(src!='{themelioLogo}' alt='themelio logo')
           .col-6.top-nav
-            navlink(href!='{`/${$lang}/`}'
+            NavLink(href!='{`/${$lang}/`}'
                     active!='{currentPath = ""}')
               | {l10n("nav/home")}
-            navdropdown(title!='{l10n("nav/learn")}')
-              navlink(href!='{`/${$lang}/overview`}')
+            NavDropdown(title!='{l10n("nav/learn")}')
+              NavLink(href!='{`/${$lang}/overview`}')
                 | {l10n("nav/overview")}
-              navlink(href!='{`/${$lang}/roadmap`}')
+              NavLink(href!='{`/${$lang}/roadmap`}')
                 | {l10n("nav/roadmap")}
-              navlink(href='https://docs.themelio.org/basic-concepts/05-tokenomics/')
+              NavLink(href='https://docs.themelio.org/basic-concepts/05-tokenomics/')
                 | Tokenomics
-            navdropdown(title!='{l10n("nav/developers")}')
-              navlink(href!='{`/${$lang}/`}')
+            NavDropdown(title!='{l10n("nav/developers")}')
+              NavLink(href!='{`/${$lang}/`}')
                 | {l10n("nav/docs")}
-              navlink(href='https://github.com/themeliolabs') GitHub
-              navlink(href='https://scan.themelio.org/') Melscan
-            navlink(href!='{`/${$lang}/team`}'
+              NavLink(href='https://github.com/themeliolabs') GitHub
+              NavLink(href='https://scan.themelio.org/') Melscan
+            NavLink(href!='{`/${$lang}/team`}'
                     active!='{currentPath == "team" }')
               | {l10n("nav/team")}
-            navlink(href!='{`/${$lang}/team`}')
+            NavLink(href!='{`/${$lang}/team`}')
               | {l10n("nav/blog")}
           .col.lang-selector
             a(href!='{`/en/${currentPath}`}') EN
@@ -162,5 +163,11 @@
   }
   img.social-media-icon {
             max-width: 4em;
-            }
+  }
+  @media only screen and (max-width: 600px) {
+    .top-nav{
+      background-color: red;
+    }
+  
+  }
 </style>
