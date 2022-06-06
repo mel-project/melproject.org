@@ -10,12 +10,19 @@ export const l10nLoad = (mapping, lang) => {
     } else if (lang === "zhs") {
       lang = "zh-CN";
     }
-    console.log(lang, name, mapping[name][lang]);
-    return mapping[name][lang];
+
+    // console.log(lang, name, mapping[name][lang]);
+    try{
+      return mapping[name][lang];
+    }
+    catch(e){
+      return "UNDEFINED"
+    }
   };
 };
 
 export const lang = derived(page, (p) => {
-  console.log("page content", p);
+  // console.log("page content", p);
+  console.log("lang", p.params.lang)
   return p.params.lang || "en-US";
 });

@@ -8,7 +8,6 @@
   import base from "../l10n/base.yaml";
   import { lang, l10nLoad } from "../l10n/l10n";
   import NavDropdown from "./NavDropdown.svelte";
-
   $: l10n = l10nLoad(base, $lang);
 </script>
 
@@ -66,14 +65,14 @@
   />
 </svelte:head>
 
-<svelte:body {lang} />
+<svelte:body {$lang} />
 
 <header>
   <nav class="navbar py-md-2 py-1 navbar-expand-md navbar-light">
     <div class="container">
       <div class="row align-items-center" style="width:100%">
         <div class="col">
-          <a href={`/${lang}/`}>
+          <a href={`/${$lang}/`}>
             <img
               class="navbar-brand px-2"
               src={themelioLogo}
@@ -83,16 +82,16 @@
         </div>
 
         <div class="col-6 top-nav">
-          <NavLink href={`/${lang}/`} active={currentPath == ""}>
+          <NavLink href={`/${$lang}/`} active={currentPath == ""}>
             {l10n("nav/home")}
           </NavLink>
 
           <NavDropdown title={l10n("nav/learn")}>
-            <NavLink href={`/${lang}/`}>
+            <NavLink href={`/${$lang}/overview`}>
               {l10n("nav/overview")}
             </NavLink>
 
-            <NavLink href={`/${lang}/`}>
+            <NavLink href={`/${$lang}/`}>
               {l10n("nav/roadmap")}
             </NavLink>
 
@@ -104,7 +103,7 @@
           </NavDropdown>
 
           <NavDropdown title={l10n("nav/developers")}>
-            <NavLink href={`/${lang}/`}>
+            <NavLink href={`/${$lang}/`}>
               {l10n("nav/docs")}
             </NavLink>
 
@@ -113,11 +112,11 @@
             <NavLink href="https://scan.themelio.org/">Melscan</NavLink>
           </NavDropdown>
 
-          <NavLink href={`/${lang}/team`} active={currentPath == "team"}>
+          <NavLink href={`/${$lang}/team`} active={currentPath == "team"}>
             {l10n("nav/team")}
           </NavLink>
 
-          <NavLink href={`/${lang}/team`}>
+          <NavLink href={`/${$lang}/team`}>
             {l10n("nav/blog")}
           </NavLink>
         </div>

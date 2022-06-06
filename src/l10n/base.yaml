@@ -129,6 +129,10 @@ overview/collusion-resistant:
 
     <p>Themelio 新颖的权益证明共识机制 Synkletos 从设计上便保障了<a
     href="https://docs.themelio.org/basic-concepts/03-consensus/">最大化长期安全性，即便是在面临无限串通的前提下也仍可安全无虞</a>。</p>
+overview/hero:
+  en-US: Explore Themelio&rsquo;s new blockchain paradigm&mdash;richly layered applications evolving on a permanent foundation of endogenous trust. 
+  zh-CN: 探索 Themelio 的新型区块链范式&mdash;&mdash;在永久的内生信任基础层上不断发展丰富且层次多样的应用程序。 
+
 overview/non-fiat-stablecoin:
   en-US: >
     <h3>World&rsquo;s first non-fiat stablecoin</h3>
