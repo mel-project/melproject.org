@@ -9,15 +9,7 @@
   $: l10n = l10nLoad({ ...base, ...layer }, $lang);
 </script>
 
-
-
-<template>
-  <MainLayout title="team">
-      <TeamIcon name="test"></TeamIcon>
-  </MainLayout>
-</template>
-
-<!-- <template lang="pug">
+<template lang="pug">
   MainLayout(title="Team")
         .section
           .section__inner.container
@@ -30,7 +22,6 @@
             .row.bio-row
               .col-lg-4
                 .bio-section
-                    TeamIcon(name="testing")
                     TeamIcon(
                         name!='{"Eric Tung"}'
                         aka!='{"aka Yuhao Dong, nullchinchilla"}' 
@@ -79,6 +70,6 @@
             .row.mt-4
               .col.text-center
                 a(href='https://polychain.capital/')
-                  img.partner-icon(src='/images/polychain.gif')
+                  img.partner-icon(src='/images/investors/polychain.gif')
 
-</template> -->
+</template>

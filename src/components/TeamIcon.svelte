@@ -5,15 +5,15 @@
 
 
 
-    let name;
-    let title;
-    let blurb;
-    let aka = "";
-    let website = "";
-    let github = "";
-    let twitter = "";
-    let telegram = "";
-    let linkedin = "";
+    export let name;
+    export let title;
+    export let blurb;
+    export let aka = "";
+    export let website = "";
+    export let github = "";
+    export let twitter = "";
+    export let telegram = "";
+    export let linkedin = "";
 
 
     let links = {
@@ -32,12 +32,12 @@
 <template lang="pug">
 
     h1 {name}
-    small(style="margin-top: -0.5rem; display: block") aka {aka}
+    small(style="margin-top: -0.5rem; display: block") {aka}
     span.bio-title {title}
     hr
     
     p {blurb}
 
     +each('Object.values(links) as link')
-        div {link}
+        svelte:component(this!="{links[1]}")
 </template>

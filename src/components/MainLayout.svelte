@@ -91,7 +91,7 @@
               {l10n("nav/overview")}
             </NavLink>
 
-            <NavLink href={`/${$lang}/`}>
+            <NavLink href={`/${$lang}/roadmap`}>
               {l10n("nav/roadmap")}
             </NavLink>
 
