@@ -11,92 +11,58 @@ $: l10n = l10nLoad({ ...base, ...layer }, $lang);
 
 </script>
 
-<template>
-    <MainLayout>
-        <div class="section">
-            <div class="section__inner container">
-                <div class="row">
-                    <div class="col">
-                        <h1>{@html l10n("nav/overview")}</h1>
-                        <p class="text--lead">{@html l10n("overview/hero")}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg round-card arch-description m-3 p-5">
-                        <img src="/images/smillust/badstack.png" class="img-fluid" style="mix-blend-mode: darken">
-                        {@html l10n("overview/traditional-blockchains")}
-                    </div>
-                    <div class="col-lg round-card arch-description m-3 p-5">
-                        <img src="/images/smillust/goodstack.png" class="img-fluid" style="mix-blend-mode: darken">
-                        {@html l10n("overview/themelio-decoupled")}
-                    </div>
-                </div>
+<template lang="pug">
+MainLayout(title="overview")
+    .section
+      .section__inner.container
+        .row
+          .col
+            h1 {@html l10n("nav/overview")}
+            p.text--lead {@html l10n("overview/hero")}
+        .row
+          .col-lg.round-card.arch-description.m-3.p-5
+            img.img-fluid(src='/images/smillust/badstack.png', style='mix-blend-mode: darken')
+            div {@html l10n("overview/traditional-blockchains")}
+          .col-lg.round-card.arch-description.m-3.p-5
+            img.img-fluid(src='/images/smillust/goodstack.png', style='mix-blend-mode: darken')
+            div {@html l10n("overview/themelio-decoupled")}
+    .section.section--darken
+      .section__inner.container
+        .row
+          .col-lg-4
+            img.img-fluid(src='/images/smillust/endotrust.png', style='mix-blend-mode: darken')
+          .col-lg-8
+            | {@html l10n("overview/robust-endogenous-trust")}
+    .section
+      .section__inner.container
+        .row
+          .col-lg-8
+            | {@html l10n("overview/smart-coins")}
+          .col-lg-4
+            img.img-fluid(src='/images/smillust/utxo.png', style='mix-blend-mode: darken')
+    .section.section--darken
+      .section__inner.container
+        .row
+          .col-lg-4
+            img.img-fluid(src='/images/smillust/consensus.png', style='mix-blend-mode: darken')
+          .col-lg-8
+            | {@html l10n("overview/collusion-resistant")}
+    .section
+      .section__inner.container
+        .row
+          .col-lg-8
+            | {@html l10n("overview/non-fiat-stablecoin")}
+          .col-lg-4
+            img.img-fluid(src='/images/smillust/stablecoin.png', style='mix-blend-mode: darken')
+    .section.section--darken
+      .section__inner.container
+        .row
+          //
+            <div class="col-lg">
+            <h2>Join our testnet</h2>
+            <p class="text--lead">Test out the Themelio network and get mainnet rewards by participating in testnet contests.</p>
+            <a href="" class="btn btn-outline-dark btn-lg">Testnet portal</a>
             </div>
-        </div>
-        <div class="section section--darken">
-            <div class="section__inner container">
-                <div class="row">
-                    <div class="col-lg-4"><img src="/images/smillust/endotrust.png" class="img-fluid" style="mix-blend-mode: darken">
-                    </div>
-                    <div class="col-lg-8">
-                        {@html l10n("overview/robust-endogenous-trust")}
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section__inner container">
-                <div class="row">
-                    <div class="col-lg-8">
-                        {@html l10n("overview/smart-coins")}
-                    </div>
-                    <div class="col-lg-4"> <img src="/images/smillust/utxo.png" class="img-fluid" style="mix-blend-mode: darken">
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section section--darken">
-            <div class="section__inner container">
-                <div class="row">
-                    <div class="col-lg-4"> <img src="/images/smillust/consensus.png" class="img-fluid" style="mix-blend-mode: darken">
-                    </div>
-                    <div class="col-lg-8">
-                        {@html l10n("overview/collusion-resistant")}
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section__inner container">
-                <div class="row">
-                    <div class="col-lg-8">
-                        {@html l10n("overview/non-fiat-stablecoin")}
-                    </div>
-                    <div class="col-lg-4"> <img src="/images/smillust/stablecoin.png" class="img-fluid" style="mix-blend-mode: darken">
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section section--darken">
-            <div class="section__inner container">
-                <div class="row">
-                    <!-- <div class="col-lg">
-                        <h2>Join our testnet</h2>
-                        <p class="text--lead">Test out the Themelio network and get mainnet rewards by participating in testnet contests.</p>
-                        <a href="" class="btn btn-outline-dark btn-lg">Testnet portal</a>
-                    </div> -->
-                    <div class="col-lg">
-                        {@html l10n("overview/knowledge-base")}
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-
-    </MainLayout>
-
+          .col-lg
+            | {@html l10n("overview/knowledge-base")}
 </template>
