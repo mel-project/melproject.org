@@ -73,12 +73,12 @@ MainLayout(title!='{l10n("nav/home")}')
                 .tab-button(class:tab-button-active!="{carouselPosn == 2}" on:click!='{() => (carouselPosn = 2)}')
                   | {l10n("learn")}
 
-                +if('carouselPosn == 0')
-                  div {@html l10n("participate-desc")}
-                  +elseif('carouselPosn == 1')
-                    div {@html l10n("build-desc")}
-                  +else
-                    div {@html l10n("learn-desc")}
+              +if('carouselPosn == 0')
+                div {@html l10n("participate-desc")}
+                +elseif('carouselPosn == 1')
+                  div {@html l10n("build-desc")}
+                +else
+                  div {@html l10n("learn-desc")}
 
             .col-md
               // community
@@ -113,24 +113,24 @@ MainLayout(title!='{l10n("nav/home")}')
                       img(src='/images/social_media/github.png', alt='github')
                     .community-desc {@html l10n("community/github")}
           // blog
-          #blog-sect.section.section.section--darken
-            .section__inner.container
-              .row
-                .col
-                  h2 {@html l10n("blog")}
-                  .rss-container
-                    rssapp-wall#XBZoy5LUiQA6UTZM
-                  script(src='https://widget.rss.app/v1/wall.js', type='text/javascript', async='')
-          // team
-          #team-sect.section
-            .section__inner.container
-              .row
+        #blog-sect.section.section.section--darken
+          .section__inner.container
+            .row
+              .col
+                h2 {@html l10n("blog")}
+                .rss-container
+                  rssapp-wall#XBZoy5LUiQA6UTZM
+                script(src='https://widget.rss.app/v1/wall.js', type='text/javascript', async='')
+        // team
+        #team-sect.section
+          .section__inner.container
+            .row
+              .col-lg
+                .col-lg-8.text-center
+                  h2 {@html l10n("team")}
+                  a.btn.btn-outline-primary.btn-lg(href='team.html')
+                    | {@html l10n("view-our-team")}
                 .col-lg
-                  .col-lg-8.text-center
-                    h2 {@html l10n("team")}
-                    a.btn.btn-outline-primary.btn-lg(href='team.html')
-                      | {@html l10n("view-our-team")}
-                  .col-lg
 </template>
 <style lang="scss">
   .tab-set {
