@@ -9,23 +9,20 @@
   $: l10n = l10nLoad({ ...base, ...layer }, $lang);
 </script>
 
-<template>
-    <div class="section">
-        <div class="section__inner container">
-          <div class="row mb-3">
-            <div class="col"><h1>{l10n("phases-title")}</h1> <p class="text--lead">{l10n("phases")}</p> <p class="text--lead"> 
-                {l10n("phases-body")}
-            </div>
-        </div>
-      </div>
-    </div>
-      <div class="section section--darken">
-        <div class="section__inner container">
-          <div class="row mb-3">
-              {l10n("detail1")}
-              {l10n("detail2")}
-          </div>
-        </div>
-      </div>
+<template lang="pug">
+    MainLayout(title="roadmap")
+      .section
+        .section__inner.container
+          .row.mb-3
+            .col
+              h1 {l10n("phases-title")}
+              p.text--lead {l10n("phases")}  
+              p.text--lead {@html l10n("phases-body")}
+
+      .section.section--darken
+        .section__inner.container
+          .row.mb-3
+            div {@html l10n("detail1")}
+            div {@html l10n("detail2")}
     
 </template>

@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 from collections import namedtuple 
-
+import sys
 
 
 PreTag = namedtuple("PreTag", ["title","content"])
 def str_to_pretag(string):
     (title, content) = string.split(":",1)
-    return PreTag(title.strip(), f'"{content.strip()}"')
+    return PreTag(title.strip(), f'{content.strip()}')
 
 def generate_tag(pretag):
     return f"""{pretag.title.strip()}:
@@ -32,5 +32,13 @@ def input_tag():
     i = input()
     return generate_tag(str_to_pretag(i))
 
-print(input_tag().strip())
-print()
+def read_all():
+    output = ""
+    while True:
+        try:
+            output += input_tag().strip()
+            output+= "\n"
+        except: break
+    return output
+
+print(read_all())
