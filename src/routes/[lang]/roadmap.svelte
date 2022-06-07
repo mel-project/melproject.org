@@ -24,5 +24,5 @@
           .row.mb-3
             div {@html l10n("detail1")}
             div {@html l10n("detail2")}
-    
+
 </template>
