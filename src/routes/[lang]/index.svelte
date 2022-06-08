@@ -7,9 +7,9 @@
   $: l10n = l10nLoad({ ...base, ...layer }, $lang);
 
   let carouselPosn = 0;
-  let carouselimgs = "homepage-participate.png homepage-build.png homepage-learn.png".split(" ")
-  $: carouselimg = carouselimgs[carouselPosn]
-
+  let carouselimgs =
+    "homepage-participate.png homepage-build.png homepage-learn.png".split(" ");
+  $: carouselimg = carouselimgs[carouselPosn];
 </script>
 
 <template lang="pug">
@@ -87,30 +87,30 @@ MainLayout(title!='{l10n("nav/home")}')
     .section__inner.container
       .row
         .col-lg-2
-          .col.text-center {@html l10n("community")}
-          .col-lg-2
-          .row
-            .col-md
-              a.community-card(href='https://discord.gg/qfg35paESn')
-                .community-icon
-                  img(src='/images/social_media/discord.png', alt='discord')
-                .community-desc {@html l10n("community/discord")}
-            .col-md
-              a.community-card(href='https://t.me/themeliolabs')
-                .community-icon
-                  img(src='/images/social_media/telegram.png', alt='telegram')
-                .community-desc {@html l10n("community/telegram")}
-          .row
-            .col-md
-              a.community-card(href='https://twitter.com/themeliolabs')
-                .community-icon
-                  img(src='/images/social_media/twitter.png', alt='twitter')
-                .community-desc {@html l10n("community/twitter")}
-            .col-md
-              a.community-card(href='https://github.com/themeliolabs/')
-                .community-icon
-                  img(src='/images/social_media/github.png', alt='github')
-                .community-desc {@html l10n("community/github")}
+        .col.text-center {@html l10n("community")}
+        .col-lg-2
+        .row
+          .col-md
+            a.community-card(href='https://discord.gg/qfg35paESn')
+              .community-icon
+                img(src='/images/social_media/discord.png', alt='discord')
+              .community-desc {@html l10n("community/discord")}
+          .col-md
+            a.community-card(href='https://t.me/themeliolabs')
+              .community-icon
+                img(src='/images/social_media/telegram.png', alt='telegram')
+              .community-desc {@html l10n("community/telegram")}
+        .row
+          .col-md
+            a.community-card(href='https://twitter.com/themeliolabs')
+              .community-icon
+                img(src='/images/social_media/twitter.png', alt='twitter')
+              .community-desc {@html l10n("community/twitter")}
+          .col-md
+            a.community-card(href='https://github.com/themeliolabs/')
+              .community-icon
+                img(src='/images/social_media/github.png', alt='github')
+              .community-desc {@html l10n("community/github")}
       // blog
     #blog-sect.section.section.section--darken
       .section__inner.container
@@ -131,6 +131,7 @@ MainLayout(title!='{l10n("nav/home")}')
                 | {@html l10n("view-our-team")}
             .col-lg
 </template>
+
 <style lang="scss">
   .tab-set {
     display: flex;
