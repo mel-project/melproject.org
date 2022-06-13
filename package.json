@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@modyfi/vite-plugin-yaml": "^1.0.2",
+    "@originjs/vite-plugin-commonjs": "^1.0.3",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
     "bootstrap": "^5.1.3",

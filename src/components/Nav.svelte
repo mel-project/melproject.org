@@ -1,4 +1,4 @@
-<script lang="typescript">
+<script lang="ts">
     import NavLink from "./NavLink.svelte"
     import NavDropdown from "./NavDropdown.svelte";
     import themelioLogo from "../assets/new-logo.png";
@@ -10,7 +10,7 @@
 
 
     let showPanel = false
-
+ 
     enum NavType{
         Link = "Link",
         DropDown = "DropDown",

@@ -1,16 +1,17 @@
-<script>
+<script lang="ts">
   export let active = false;
   export let href = "";
   export let title;
 
   
   import { slide } from "svelte/transition";
-  import { debounce } from "debounce";
+  import p from "debounce";
+  const {debounce} = p;
   let open = false;
 
   let setOpen = debounce((s) => {
     open = s;
-  }, 50);
+  }, 50, false);
   console.log("setting up")
 </script>
 

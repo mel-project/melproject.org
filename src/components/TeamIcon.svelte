@@ -1,32 +1,30 @@
 <script>
-    import Fa from 'svelte-fa'
-    import { faGlobe } from '@fortawesome/free-solid-svg-icons'
-    import { faGithub, faTwitter, faTelegram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+  import Fa from "svelte-fa";
+  import {
+    faGlobe,
+    faGithub,
+    faTwitter,
+    faTelegram,
+    faLinkedin,
+  } from "@fortawesome/free-brands-svg-icons";
 
+  export let name;
+  export let title;
+  export let blurb;
+  export let aka = "";
+  export let website = "";
+  export let github = "";
+  export let twitter = "";
+  export let telegram = "";
+  export let linkedin = "";
 
-
-    export let name;
-    export let title;
-    export let blurb;
-    export let aka = "";
-    export let website = "";
-    export let github = "";
-    export let twitter = "";
-    export let telegram = "";
-    export let linkedin = "";
-
-
-    let links = {
-        website: [website, faGlobe],
-        github: [github, faGithub],
-        twitter: [twitter, faTwitter],
-        telegram: [telegram, faTelegram],
-        linkedin: [linkedin, faLinkedin]
-    }
-
-
-
-
+  let links = {
+    website: [website, faGlobe],
+    github: [github, faGithub],
+    twitter: [twitter, faTwitter],
+    telegram: [telegram, faTelegram],
+    linkedin: [linkedin, faLinkedin],
+  };
 </script>
 
 <template lang="pug">
