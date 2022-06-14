@@ -73,8 +73,14 @@
               .col
                 h2 Partners
             .row.mt-4
-              .col.text-center
+              .col.text-center.partners
                 a(href='https://polychain.capital/')
                   img.partner-icon(src='/images/investors/polychain.gif')
 
 </template>
+
+<style lang="scss">
+  .partners img{
+    height: 4em;
+  }
+</style>
