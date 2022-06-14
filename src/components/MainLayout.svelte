@@ -27,7 +27,7 @@
   svelte:body({$lang})
   header
   Nav
-  //- slot
+  slot
   footer#footer
     .container
       .row
