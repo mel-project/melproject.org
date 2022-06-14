@@ -5,6 +5,7 @@
     faTwitter,
     faTelegram,
     faLinkedin,
+IconDefinition,
   } from "@fortawesome/free-brands-svg-icons";
   import { 
     faGlobe
@@ -21,12 +22,22 @@
   export let telegram = "";
   export let linkedin = "";
 
+  interface Link {
+    href: string,
+    icon: IconDefinition
+  }
+  function link(href, icon): Link{
+    return {
+      href,
+      icon
+    }
+  }
   let links = [
-    [website, faGlobe],
-    [github, faGithub],
-    [twitter, faTwitter],
-    [telegram, faTelegram],
-    [linkedin, faLinkedin],
+    link(website, faGlobe),
+    link(github, faGithub),
+    link(twitter, faTwitter),
+    link(telegram, faTelegram),
+    link(linkedin, faLinkedin),
     ];
 </script>
 
@@ -41,10 +52,10 @@
       
         p {blurb}
       .links-container
-        +each('links as link')
-          +if('link[0] != ""')
-            a.links(href!="{link[0]}")
-              Fa(icon!="{link[1]}")
+        +each('links as l')
+          +if('l.href != ""')
+            a.links(href!="{l.href}")
+              Fa(icon!="{l.icon}")
 </template>
 
 <style lang="scss">
