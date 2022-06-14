@@ -1,7 +1,6 @@
 <script>
   export let title;
 
-
   import Nav from "./Nav.svelte";
   import base from "../l10n/base.yaml";
   import { lang, l10nLoad } from "../l10n/l10n";
@@ -27,7 +26,7 @@
   svelte:body({$lang})
   header
   Nav
-  //- slot
+  slot
   footer#footer
     .container
       .row
@@ -75,7 +74,6 @@
 </template>
 
 <style lang="scss">
-
   /* footer */
 
   footer {
@@ -109,7 +107,4 @@
     height: auto;
     opacity: 0.7;
   }
-
-  
-  
 </style>
