@@ -78,7 +78,7 @@
           .col
             a(href!='{`/${$lang}/`}')
               img.navbar-brand(src!='{themelioLogo}' alt='themelio logo')
-          .col.top-nav
+          .col.top-nav.center
             NavLink(href!='{`/${$lang}/`}'
                     active!='{currentPath = ""}')
               | {l10n("nav/home")}
@@ -99,14 +99,18 @@
               | {l10n("nav/team")}
             NavLink(href!='{`/${$lang}/team`}')
               | {l10n("nav/blog")}
-          .col.lang-selector
-            a(href!='{`/en/${currentPath}`}') EN
-            | /
-            a(lang='zh-HK' href!='{`/zht/${currentPath}`}') &#x7E41;&#x4E2D;
-            | /
-            a(lang='zh-CN' href!='{`/zhs/${currentPath}`}') &#x7B80;&#x4E2D;
-            button.navbar-toggler.border-0(aria-controls='navigation' aria-expanded='false' aria-label='Toggle navigation')
-              span.navbar-toggler-icon(on:click!="{()=>{showPanel = true}}")
+          .col.center
+            .lang-selector
+              a(href!='{`/en/${currentPath}`}') EN
+              | /
+              a(lang='zh-HK' href!='{`/zht/${currentPath}`}') &#x7E41;&#x4E2D;
+              | /
+              a(lang='zh-CN' href!='{`/zhs/${currentPath}`}') &#x7B80;&#x4E2D;
+              button.navbar-toggler.border-0(
+                type="button" data-toggle="collapse" data-target="#collapse"
+                aria-controls='navigation' aria-expanded='false'
+                aria-label='Toggle navigation')
+                span.navbar-toggler-icon(on:click!="{()=>{showPanel = true}}")
 </template>
 
 <style>
@@ -119,7 +123,15 @@
 .top-nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 1em;
+
+}
+
+.center{
+    text-align: center;
+    margin: auto;
+    line-height: 3.2
 }
 
 .row{
@@ -128,7 +140,7 @@
 }
 
 .lang-selector {
-    text-align: right;
+    /* text-align: right; */
 }
 
 img.social-media-icon {
@@ -136,7 +148,8 @@ img.social-media-icon {
 }
 .navbar-toggler {
 
-    display: none
+    display: none;
+    position: absolute;
 }
 @media only screen and (max-width: 770px) {
     .top-nav{
@@ -144,6 +157,11 @@ img.social-media-icon {
     }
     .navbar-toggler {
         display: inline-block;
+        position: inherit;
+
+    }
+    .lang-selector{
+      text-align: right;
     }   
 }
 </style>

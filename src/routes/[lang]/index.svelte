@@ -38,7 +38,6 @@ MainLayout(title!='{l10n("nav/home")}')
         .col-12.col-lg-9
           h2 Minimal, general, and governance-free
           p.small-lead Like the Internet's foundational protocols, Themelio generalizes to diverse apps while remaining simple, robust, and unchanging. This is through a #[a unique modular architecture] that focuses the blockchain on its core task &mdash; providing a credibly neutral security foundation independent of any protocol-external trust. 
-
           p.small-lead (Themelio's governance-free vision)
 
   // Rock-solid economics
@@ -136,7 +135,7 @@ MainLayout(title!='{l10n("nav/home")}')
           .col-lg
           .col-lg-8.text-center
             h2 {@html l10n("team")}
-            a.btn.btn-outline-primary.btn-lg(href='team.html')
+            a.btn.btn-outline-primary.btn-lg(href='team')
               | {@html l10n("view-our-team")}
           .col-lg
 </template>
