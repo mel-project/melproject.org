@@ -10,6 +10,7 @@ IconDefinition,
   import { 
     faGlobe
   } from "@fortawesome/free-solid-svg-icons";
+import { createEventDispatcher, getContext, onMount } from "svelte";
 
   export let name: string;
   export let title: string;
@@ -22,6 +23,7 @@ IconDefinition,
   export let telegram = "";
   export let linkedin = "";
 
+
   interface Link {
     href: string,
     icon: IconDefinition
@@ -32,6 +34,7 @@ IconDefinition,
       icon
     }
   }
+  let dispatch = createEventDispatcher();
   let links = [
     link(website, faGlobe),
     link(github, faGithub),
@@ -39,6 +42,9 @@ IconDefinition,
     link(telegram, faTelegram),
     link(linkedin, faLinkedin),
     ];
+
+
+  
 </script>
 
 <template lang="pug">
@@ -60,18 +66,20 @@ IconDefinition,
 
 <style lang="scss">
   .team-member{
-    background: white;
+    background: clear;
     border-radius: 1em;
     border: 1px solid var(--primary-color);
-    padding: 2em;
+    padding: 2em 1.5em;
     margin: 1em;
-    height: 34em;
+    height: 95%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    // gap: 1em;
   }
+
   .team-member img{
-    width: 7em;
+    width: 50%;
     border-radius: 100%;
     height: auto;
     margin-bottom: 1rem;
@@ -84,6 +92,8 @@ IconDefinition,
     & :global(svg){
       height: 100% !important;
     }
+
+
     
   }
 </style>

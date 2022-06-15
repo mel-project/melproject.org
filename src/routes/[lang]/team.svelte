@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import MainLayout from "../../components/MainLayout.svelte";
   import TeamIcon from "../../components/TeamIcon.svelte";
   import { l10nLoad, lang } from "../../l10n/l10n";
@@ -7,6 +7,8 @@
   import layer from "../../l10n/team.l10n.yaml";
 
   $: l10n = l10nLoad({ ...base, ...layer }, $lang);
+
+
 </script>
 
 <template lang="pug">
@@ -21,8 +23,7 @@
           .section__inner.container
             .row.bio-row
               .col-lg-4
-                .bio-section
-                    TeamIcon(
+                TeamIcon(
                         name!='{"Eric Tung"}'
                         aka!='{"aka Yuhao Dong, nullchinchilla"}' 
                         title!='{"Founder, CEO"}' 
@@ -34,8 +35,7 @@
                         linkedin!='{"https://www.linkedin.com/in/yuhao-dong2021/"}'
                         img='/images/team/eric.jpg')
               .col-lg-4
-                .bio-section
-                    TeamIcon(
+                TeamIcon(
                         name!='{"Meade Kincke"}'
                         title!='{"Head of DevOps"}'
                         blurb!='{"Strategic, ambitious, and self taught technology executive who has worked on everything from global infrastructure to the Rust compiler. Develops and maintains Themelio\'s core infrastructure, finding show-stopping bugs and optimizing safety and performance."}'
@@ -43,8 +43,7 @@
                         img='/images/team/meade.jpg')
 
               .col-lg-4
-                .bio-section
-                    TeamIcon(
+                TeamIcon(
                         name!='{"Jay Butera"}'
                         title!='{"Compiler Engineer"}'
                         blurb!='{"Contributor to the Ethereum and Polkadot ecosystems, concerning zero-knowledge NFTs and composable graph databases. Develops tools which empower rather than enslave."}'
@@ -53,16 +52,14 @@
 
             .row.bio-row
               .col-lg-4
-                .bio-section
-                    TeamIcon(
+                TeamIcon(
                         name!='{"Shane Mendez"}'
                         title!='{"Software Engineer"}'
                         blurb!='{"Motivated by family, hard work, and loyalty. Crafts not only fast and reliable software, but technologies that uplift people and society."}'
                         github!='{"https://github.com/sshmendez"}'
                         img='/images/team/shane.jpg')
               .col-lg-4
-                .bio-section
-                    TeamIcon(name!='{"Marco Serrano"}'
+                TeamIcon(name!='{"Marco Serrano"}'
                         title!='{"Software Engineer"}'
                         blurb!='{"Hailing from the same alma mater as the Dread Pirate Roberts, but much more scrupulous. Developing software since 2013, obsessed with blockchain since 2017, all-in on defi since 2020. Problem-solver first, focused on security and turning weaknesses into strengths."}'
                         github!='{"https://github.com/sadministrator"}'

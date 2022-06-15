@@ -68,7 +68,6 @@
         navlink(lang_url(),l10n("nav/home"),true )
 
     ]
-    let wtf = "wtf this shit"
 
 </script>
 
@@ -139,7 +138,7 @@ img.social-media-icon {
 
     display: none
 }
-@media only screen and (min-width: 770px) {
+@media only screen and (max-width: 770px) {
     .top-nav{
         display:none;
     }

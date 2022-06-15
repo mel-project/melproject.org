@@ -12,8 +12,7 @@
   let setOpen = debounce((s) => {
     open = s;
   }, 50, false);
-  console.log("setting up")
-</script>
+  </script>
 
 <div
   class="dropdown"
@@ -28,7 +27,7 @@
     setOpen(false);
   }}
 >
-  <button class:active class="dropdown-toggle navlink" on:click={()=>console.log('wrf')} {href}>{title}</button>
+  <a class:active class="dropdown-toggle navlink" {href}>{title}</a>
   {#if open}
     <div class="floater" transition:slide>
       <slot />
