@@ -76,8 +76,8 @@
 <template lang="pug">
     nav.navbar
       .container
-        .row(style='width:100%')
-          .col
+        .row.navigation(style='width:100%')
+          .col.logo
             a(href!='{`/${$lang}/`}')
               img.navbar-brand(src!='{themelioLogo}' alt='themelio logo')
           .col.top-nav.center
@@ -102,7 +102,7 @@
             NavLink(href!='{`/${$lang}/team`}')
               | {l10n("nav/blog")}
           .col.center
-            .lang-selector
+            .lang
               a(href!='{`/en/${currentPath}`}') EN
               | /
               a(lang='zh-HK' href!='{`/zht/${currentPath}`}') &#x7E41;&#x4E2D;
@@ -119,6 +119,22 @@
 </template>
 
 <style lang="scss">
+.navigation{
+  display: grid;
+  grid-auto-flow: column;
+  // grid-template-columns:  repeat(max-content,3);
+  grid-template-areas: "logo nav lang";
+}
+
+.logo{
+  grid-area: logo;
+}
+.top-nav{
+  grid-area: nav;
+}
+.lang{
+  grid-area: lang;
+}
 .navbar-brand {
     max-width: 10rem;
     width: 100%;
@@ -139,14 +155,6 @@
     line-height: 3.2
 }
 
-.row{
-
-    
-}
-
-.lang-selector {
-    /* text-align: right; */
-}
 
 img.social-media-icon {
     max-width: 4em;
@@ -157,9 +165,6 @@ img.social-media-icon {
     position: absolute;
 }
 @media only screen and (max-width: 770px) {
-    .top-nav{
-        display:none;
-    }
     .navbar-toggler {
         display: inline-block;
         position: inherit;
@@ -172,6 +177,9 @@ img.social-media-icon {
         .hamburger{
           line-height: 6;
         }
+    }
+    .navigation{
+      grid-template-areas: "logo lang" "nav nav";
     }
     .lang-selector{
       text-align: right;
