@@ -5,35 +5,11 @@
     import base from "../l10n/base.yaml";
     import { lang, l10nLoad } from "../l10n/l10n";
     import Fa from "svelte-fa";
-    import {faBars as faHamburger} from "@fortawesome/free-solid-svg-icons";
-    import {navlink, Nav, Link} from "../utils/navigation"
     export let currentPath = "";
 
     $: l10n = l10nLoad(base, $lang);
  
 
-    let lang_url: (s?: string|undefined) => string;
-    lang_url =  (url)=>`/${$lang}/` + (url || "");
-    
-    let learn_dropdown_items: Link[];
-
-    $: learn_dropdown_items = [
-        navlink(lang_url("overview"), l10n("nav/overview")),
-        navlink(lang_url("roadmap"), l10n("nav/roadmap")),
-        navlink('https://docs.themelio.org/basic-concepts/05-tokenomics/', "Tokenomics")
-    ]
-    // $: developers_drowdown_items = [
-    //     navlink(lang_url())
-    // ]
-    let navigation: Nav[];
-    $: navigation = [
-        navlink(lang_url(),l10n("nav/home"),true )
-
-    ]
-
-    $: nav_style = `
-      visibility: ${showNav ? "" : "hidden"}; 
-    `
 
 </script>
 
@@ -44,7 +20,7 @@
           .col.logo
             a(href!='{`/${$lang}/`}')
               img.navbar-brand(src!='{themelioLogo}' alt='themelio logo')
-          .col.top-nav.center(style!="{nav_style}")
+          .col.top-nav.center
             NavLink(href!='{`/${$lang}/`}'
                     active!='{currentPath = ""}')
               | {l10n("nav/home")}
