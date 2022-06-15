@@ -10,9 +10,6 @@
     export let currentPath = "";
 
     $: l10n = l10nLoad(base, $lang);
-
-
-    let showNav = true
  
 
     let lang_url: (s?: string|undefined) => string;
@@ -75,14 +72,7 @@
               a(lang='zh-HK' href!='{`/zht/${currentPath}`}') &#x7E41;&#x4E2D;
               | /
               a(lang='zh-CN' href!='{`/zhs/${currentPath}`}') &#x7B80;&#x4E2D;
-              button.hamburger(
-              class="navbar-toggler"
-              type="button"
-              aria-controls="navigation"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-              on:click!="{()=>showNav = !showNav}")
-                Fa(icon!="{faHamburger}")
+
 </template>
 
 <style lang="scss">
@@ -101,6 +91,10 @@
 }
 .lang{
   grid-area: lang;
+  text-align: right;
+  & button{
+    padding-right: 0;
+  }
 }
 .navbar-brand {
     max-width: 10rem;
@@ -152,4 +146,5 @@ img.social-media-icon {
       text-align: right;
     }   
 }
+
 </style>
