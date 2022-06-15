@@ -28,37 +28,46 @@ MainLayout(title!='{l10n("nav/home")}')
         .col-6.col-md-12
           a.btn.btn-outline-primary.btn-lg(href='#community-sect')
             | {l10n("join-the-community")}
-  // why themelio
+
+  // Minimal, general, and governance-free
   .section.section--darken
     .section__inner.container
       .row
-        .col
-          h2 {l10n("why-title")}
-      .row
-        .rethink-point.col-lg
-          img.rethink-icon(src='/images/smillust/keyhole.png', alt='circle with key')
-          div {@html l10n("why-1")}
-        .rethink-point.col-lg
-          img.rethink-icon(src='/images/smillust/fork.png', alt='circle with fork')
-          div {@html l10n("why-2")}
-      .row
-        .rethink-point.col-lg
-          img.rethink-icon(src='/images/smillust/mel-small.png', alt='circle with mel')
-          div {@html l10n("why-3")}
-        .rethink-point.col-lg
-          img.rethink-icon(src='/images/smillust/scalability.png', alt='scalable')
-          div {@html l10n("why-4")}
-  // melmint
-  .section
-    .section__inner.container
-      .row
-        .col-12.col-lg-6
+        .col-12.col-lg-3
           img.img-fluid(src='/images/smillust/mel-big.png', style='mix-blend-mode: darken;', alt='a mel floating on an ocean')
-        .col-12.col-lg-6
-          h2 {@html l10n("melmint-title")}
-          div {@html l10n("melmint-summary")}
-  // radiobuttons
+        .col-12.col-lg-9
+          h2 Minimal, general, and governance-free
+          p.small-lead Like the Internet's foundational protocols, Themelio generalizes to diverse apps while remaining simple, robust, and unchanging. This is through a #[a unique modular architecture] that focuses the blockchain on its core task &mdash; providing a credibly neutral security foundation independent of any protocol-external trust. 
+
+          p.small-lead (Themelio's governance-free vision)
+
+  // Rock-solid economics
+  .section.section
+    .section__inner.container
+      .row
+        .col-12.col-lg-9
+          h2 Sound money and rock-solid economics
+          p.small-lead Themelio's native currency, MEL, is a breakthrough “stablecoin” that finally achieves decentralized, low-volatility sound money independent of any fiat currency. Together with the PoS token SYM, it participates in Synkletos, the mechanism defending Themelio with exceptional economic security with a unique collusion-resistant consensus game. 
+
+          p.small-lead (How Themelio achieves the &ldquo;sound money&rdquo; dream)
+
+        .col-12.col-lg-3
+          img.img-fluid(src='/images/smillust/mel-big.png', style='mix-blend-mode: darken;', alt='a mel floating on an ocean')
+
+  // High-performance systems
   .section.section--darken
+    .section__inner.container
+      .row
+        .col-12.col-lg-3
+          img.img-fluid(src='/images/smillust/mel-big.png', style='mix-blend-mode: darken;', alt='a mel floating on an ocean')
+        .col-12.col-lg-9
+          h2 A root of trust for mass adoption
+          p.small-lead Themelio is suited for mass adoption as a root of trust for off-chain, greenfield applications. Unlike existing L1s with complex interfaces tightly bound to typical financial &ldquo;Web3&rdquo; apps, Themelio's easily embeddable, app-decoupled design makes it perfect for securing critical off-chain systems ranging from end-to-end encrypted communication to uncensorable file publishing.
+
+          p.small-lead (Our vision for a paradigm shift in Web3)
+
+  // radiobuttons
+  .section.section
     .section__inner.container
       .row
         .col-12.pb-3(class!='{carouselPosn}')
@@ -111,7 +120,7 @@ MainLayout(title!='{l10n("nav/home")}')
               .community-icon
                 img(src='/images/social_media/github.png', alt='github')
               .community-desc {@html l10n("community/github")}
-      // blog
+    // TODO: CUSTOM BLOG SECTION BASED ON SVELTE
     #blog-sect.section.section.section--darken
       .section__inner.container
         .row
@@ -125,11 +134,11 @@ MainLayout(title!='{l10n("nav/home")}')
       .section__inner.container
         .row
           .col-lg
-            .col-lg-8.text-center
-              h2 {@html l10n("team")}
-              a.btn.btn-outline-primary.btn-lg(href='team.html')
-                | {@html l10n("view-our-team")}
-            .col-lg
+          .col-lg-8.text-center
+            h2 {@html l10n("team")}
+            a.btn.btn-outline-primary.btn-lg(href='team.html')
+              | {@html l10n("view-our-team")}
+          .col-lg
 </template>
 
 <style lang="scss">
@@ -265,5 +274,10 @@ MainLayout(title!='{l10n("nav/home")}')
   .rss-container {
     margin-left: -1.8rem;
     margin-right: -1.8rem;
+  }
+
+  .small-lead {
+    font-size: 110%;
+    font-weight: 400;
   }
 </style>
