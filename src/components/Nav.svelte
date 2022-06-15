@@ -6,51 +6,14 @@
     import { lang, l10nLoad } from "../l10n/l10n";
     import Fa from "svelte-fa";
     import {faBars as faHamburger} from "@fortawesome/free-solid-svg-icons";
+    import {navlink, Nav, Link} from "../utils/navigation"
     export let currentPath = "";
 
     $: l10n = l10nLoad(base, $lang);
 
 
-    let showNav = false
+    let showNav = true
  
-    enum NavType{
-        Link = "Link",
-        DropDown = "DropDown",
-    }
-    
-    interface Navigation{
-        type: NavType
-    }
-    
-    interface Link extends Navigation {
-        href: string,
-        active: boolean,
-        text: string,
-    }
-
-    interface DropDown extends Navigation {
-            title: string,
-            links: Link[],
-    }
-
-    type Nav = Link | DropDown
-
-    function navlink(href: string, text: string, active?:boolean,): Link {
-        return {
-            type: NavType.Link,
-            href,
-            active: active || false,
-            text
-        }
-    }
-
-    function navdropdown(title: string, links:Link[]): DropDown{
-        return {
-            type: NavType.DropDown,
-            title,
-            links
-        }
-    } 
 
     let lang_url: (s?: string|undefined) => string;
     lang_url =  (url)=>`/${$lang}/` + (url || "");
@@ -71,6 +34,10 @@
 
     ]
 
+    $: nav_style = `
+      visibility: ${showNav ? "" : "hidden"}; 
+    `
+
 </script>
 
 <template lang="pug">
@@ -80,7 +47,7 @@
           .col.logo
             a(href!='{`/${$lang}/`}')
               img.navbar-brand(src!='{themelioLogo}' alt='themelio logo')
-          .col.top-nav.center
+          .col.top-nav.center(style!="{nav_style}")
             NavLink(href!='{`/${$lang}/`}'
                     active!='{currentPath = ""}')
               | {l10n("nav/home")}
