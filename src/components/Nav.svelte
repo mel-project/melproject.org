@@ -4,12 +4,14 @@
     import themelioLogo from "../assets/new-logo.png";
     import base from "../l10n/base.yaml";
     import { lang, l10nLoad } from "../l10n/l10n";
+    import Fa from "svelte-fa";
+    import {faBars as faHamburger} from "@fortawesome/free-solid-svg-icons";
     export let currentPath = "";
 
     $: l10n = l10nLoad(base, $lang);
 
 
-    let showPanel = false
+    let showNav = false
  
     enum NavType{
         Link = "Link",
@@ -106,14 +108,17 @@
               a(lang='zh-HK' href!='{`/zht/${currentPath}`}') &#x7E41;&#x4E2D;
               | /
               a(lang='zh-CN' href!='{`/zhs/${currentPath}`}') &#x7B80;&#x4E2D;
-              button.navbar-toggler.border-0(
-                type="button" data-toggle="collapse" data-target="#collapse"
-                aria-controls='navigation' aria-expanded='false'
-                aria-label='Toggle navigation')
-                span.navbar-toggler-icon(on:click!="{()=>{showPanel = true}}")
+              button.hamburger(
+              class="navbar-toggler"
+              type="button"
+              aria-controls="navigation"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              on:click!="{()=>showNav = !showNav}")
+                Fa(icon!="{faHamburger}")
 </template>
 
-<style>
+<style lang="scss">
 .navbar-brand {
     max-width: 10rem;
     width: 100%;
@@ -158,7 +163,15 @@ img.social-media-icon {
     .navbar-toggler {
         display: inline-block;
         position: inherit;
-
+        color: var(--primary-color);
+        border: none !important;
+        &:focus{
+          outline: none;
+          box-shadow: 0 0 0 0;
+        }
+        .hamburger{
+          line-height: 6;
+        }
     }
     .lang-selector{
       text-align: right;

@@ -16,11 +16,7 @@
 
 <div
   class="dropdown"
-  on:click={()=>{
-    console.log('clicked')
-  }}
   on:mouseenter={() => {
-    console.log("opening")
     setOpen(true);
   }}
   on:mouseleave={() => {
@@ -41,8 +37,10 @@
   .floater {
     position: absolute;
     border: 1px solid var(--primary-color);
+    background: var(--white);
     padding: 1.3rem;
     border-radius: 1rem;
     margin-top: 0.5rem;
+    z-index: 1000;
   }
 </style>
