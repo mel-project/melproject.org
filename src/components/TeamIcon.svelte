@@ -1,15 +1,5 @@
 <script lang="ts">
-  import Fa from "svelte-fa";
-  import {
-    faGithub,
-    faTwitter,
-    faTelegram,
-    faLinkedin,
-IconDefinition,
-  } from "@fortawesome/free-brands-svg-icons";
-  import { 
-    faGlobe
-  } from "@fortawesome/free-solid-svg-icons";
+
 import { createEventDispatcher, getContext, onMount } from "svelte";
 
   export let name: string;
@@ -24,9 +14,15 @@ import { createEventDispatcher, getContext, onMount } from "svelte";
   export let linkedin = "";
 
 
+  let faGlobe = "fa-solid fa-globe"
+  let faGithub = "fa-brands fa-github"
+  let faTwitter = "fa-brands fa-twitter"
+  let faTelegram = "fa-brands fa-telegram"
+  let faLinkedin = "fa-brands fa-linkedin"
+
   interface Link {
     href: string,
-    icon: IconDefinition
+    icon: string
   }
   function link(href, icon): Link{
     return {
@@ -61,7 +57,7 @@ import { createEventDispatcher, getContext, onMount } from "svelte";
         +each('links as l')
           +if('l.href != ""')
             a.links(href!="{l.href}")
-              Fa(icon!="{l.icon}")
+              i(class!='{l.icon}')
 </template>
 
 <style lang="scss">
