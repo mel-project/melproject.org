@@ -3,7 +3,8 @@
   import NavDropdown from "./NavDropdown.svelte";
   import themelioLogo from "../assets/new-logo.png";
   import base from "../l10n/base.yaml";
-  import { lang, l10nLoad } from "../l10n/l10n";
+  import { lang, Language, l10nLoad } from "../l10n/l10n";
+  
   export let currentPath = "";
 
   $: l10n = l10nLoad(base, $lang);
@@ -39,11 +40,11 @@
               | {l10n("nav/blog")}
           .col.center
             .lang
-              a(href!='{`/en/${currentPath}`}') EN
+              a(href!='{`/${Language.EN_US}/${currentPath}`}') EN
               | /
-              a(lang='zh-HK' href!='{`/zht/${currentPath}`}') &#x7E41;&#x4E2D;
+              a(lang='zh-HK' href!='{`/${Language.ZH_TW}/${currentPath}`}') &#x7E41;&#x4E2D;
               | /
-              a(lang='zh-CN' href!='{`/zhs/${currentPath}`}') &#x7B80;&#x4E2D;
+              a(lang='zh-CN' href!='{`/${Language.ZH_CN}/${currentPath}`}') &#x7B80;&#x4E2D;
 
 </template>
 

@@ -17,7 +17,7 @@
       body: JSON.stringify({ link: url }),
       headers: { "content-type": "application/json" },
     });
-    return (await response.json()).image.url;
+    return (await response.json())?.image?.url;
   };
 
   let showAll = false;
