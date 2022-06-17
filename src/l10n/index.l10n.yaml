@@ -12,7 +12,7 @@ join-the-community:
   en-US: Join the community
   zh-CN: 加入社区
 tagline:
-  en-US: The foundation of a <b>trustless</b> Internet
+  en-US: The first <nobr><b>self-securing</b></nobr> blockchain network
   zh-CN: <b>去信任</b>互联网<br />的根基
 subtitle:
   en-US: >-
@@ -178,7 +178,7 @@ learn-desc:
   en-US: |
     <section>
         <h3>Learn</h3>
-        <p>The <a href="overview.html">Learn</a> page contains everything you need to get started with Themelio.</p>
+        <p>The <a href="overview">Learn</a> page contains everything you need to get started with Themelio.</p>
 
         <p>We also have <a href="https://docs.themelio.org">comprehensive documentation</a> of Themelio’s technologies, including in-depth whitepapers on consensus, Melmint, and more.</p>
 
@@ -189,7 +189,7 @@ index/participate-build-learn:
   en-US: |
     <section>
         <h3>Learn</h3>
-        <p>The <a href="overview.html">Learn</a> page contains everything you need to get started with Themelio.</p>
+        <p>The <a href="overview">Learn</a> page contains everything you need to get started with Themelio.</p>
 
         <p>We also have <a href="https://docs.themelio.org">comprehensive documentation</a> of Themelio’s technologies, including in-depth whitepapers on consensus, Melmint, and more.</p>
 
@@ -210,7 +210,7 @@ index/participate-build-learn:
     </section>
     <section>
         <h3>了解</h3>
-        <p>在<a href="overview.html">「了解」页面</a>上有您在上手使用 Themelio 的过程中所需要了解的一切内容。</p>
+        <p>在<a href="overview">「了解」页面</a>上有您在上手使用 Themelio 的过程中所需要了解的一切内容。</p>
 
         <p>同时，我们也提供有关 Themelio 技术的<a href="https://docs.themelio.org">详实的文档说明</a>以及关于共识机制、Melmint 等的内容深奥的白皮书。</p>
 

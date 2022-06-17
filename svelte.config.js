@@ -1,6 +1,7 @@
 import preprocess from "svelte-preprocess";
 import adapter from "@sveltejs/adapter-static";
 import ViteYaml from "@modyfi/vite-plugin-yaml";
+import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,8 +12,12 @@ const config = {
     },
     adapter: adapter(),
     vite: {
+      ssr: {
+        noExternal: ['@fortawesome/free-brands-svg-icons','@fortawesome/free-solid-svg-icons']
+      },
       plugins: [
         ViteYaml(), // you may configure the plugin by passing in an object with the options listed below
+        viteCommonjs(),
       ],
 
       css: {
@@ -29,6 +34,9 @@ const config = {
     preprocess({
       scss: {
         prependData: '@use "src/variables.scss" as *;',
+      },
+      typescript: {
+        esModuleInterop: true,
       },
     }),
   ],

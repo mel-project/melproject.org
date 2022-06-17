@@ -1,15 +1,18 @@
-<script>
+<script lang="ts">
   export let active = false;
   export let href = "";
   export let title;
+
+  
   import { slide } from "svelte/transition";
-  import { debounce } from "debounce";
+  import p from "debounce";
+  const {debounce} = p;
   let open = false;
 
   let setOpen = debounce((s) => {
     open = s;
-  }, 50);
-</script>
+  }, 50, false);
+  </script>
 
 <div
   class="dropdown"
@@ -34,8 +37,10 @@
   .floater {
     position: absolute;
     border: 1px solid var(--primary-color);
+    background: var(--white);
     padding: 1.3rem;
     border-radius: 1rem;
     margin-top: 0.5rem;
+    z-index: 1000;
   }
 </style>

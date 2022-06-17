@@ -1,253 +1,143 @@
 <script>
   import MainLayout from "../../components/MainLayout.svelte";
+  import BlogFeed from "../../components/BlogFeed.svelte";
   import { l10nLoad, lang } from "../../l10n/l10n";
 
   import base from "../../l10n/base.yaml";
-  import layer from "./index.l10n.yaml";
-  import TestPug from "../../components/TestPug.svelte";
+  import layer from "../../l10n/index.l10n.yaml";
   $: l10n = l10nLoad({ ...base, ...layer }, $lang);
 
   let carouselPosn = 0;
+  let carouselimgs =
+    "homepage-participate.png homepage-build.png homepage-learn.png".split(" ");
+  $: carouselimg = carouselimgs[carouselPosn];
 </script>
 
-<MainLayout title={l10n("nav/home")}>
-  <!-- main hero -->
+<template lang="pug">
+MainLayout(title!='{l10n("nav/home")}')
+  .section.section--hero
+    .section__inner.container
+      .row
+        .col
+          .alert.alert-cta
+            .ml-3
+              | {@html l10n("wallet-cta")}
+      .row
+        .col-12.col-lg-9
+          h1 {@html l10n("tagline")}
+          p.text--blead {@html l10n("subtitle")}
+        .col-6.col-md-12
+          a.btn.btn-outline-primary.btn-lg(href='#community-sect')
+            | {l10n("join-the-community")}
 
-  <TestPug />
+  // Minimal, general, and governance-free
+  .section.section--darken
+    .section__inner.container
+      .row
+        .col-12.col-lg-3
+          img.img-fluid(src='/images/smillust/mel-big.png', style='mix-blend-mode: darken;', alt='a mel floating on an ocean')
+        .col-12.col-lg-9
+          h2 Minimal, general, and governance-free
+          p.small-lead Like the Internet's foundational protocols, Themelio generalizes to diverse apps while remaining simple, robust, and unchanging. This is through a #[a unique modular architecture] that focuses the blockchain on its core task &mdash; providing a credibly neutral security foundation independent of any protocol-external trust. 
+          p.small-lead (Themelio's governance-free vision)
 
-  <div class="section section--hero">
-    <div class="section__inner container">
-      <div class="row">
-        <div class="col">
-          <div class="alert alert-cta">
-            <div class="ml-3">
-              {@html l10n("wallet-cta")}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-lg-9">
-          <h1>{@html l10n("tagline")}</h1>
-          <p class="text--blead">{@html l10n("subtitle")}</p>
-        </div>
-        <div class="col-6 col-md-12">
-          <a href="#community-sect" class="btn btn-outline-primary btn-lg">
-            {l10n("join-the-community")}
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  // Rock-solid economics
+  .section.section
+    .section__inner.container
+      .row
+        .col-12.col-lg-9
+          h2 Sound money and rock-solid economics
+          p.small-lead Themelio's native currency, MEL, is a breakthrough “stablecoin” that finally achieves decentralized, low-volatility sound money independent of any fiat currency. Together with the PoS token SYM, it participates in Synkletos, the mechanism defending Themelio with exceptional economic security with a unique collusion-resistant consensus game. 
 
-  <!--why themelio-->
-  <div class="section section--darken">
-    <div class="section__inner container">
-      <div class="row">
-        <div class="col">
-          <h2>{l10n("why-title")}</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="rethink-point col-lg">
-          <img
-            class="rethink-icon"
-            src="/images/smillust/keyhole.png"
-            alt="circle with key"
-          />
-          <div>{@html l10n("why-1")}</div>
-        </div>
-        <div class="rethink-point col-lg">
-          <img
-            class="rethink-icon"
-            src="/images/smillust/fork.png"
-            alt="circle with fork"
-          />
-          <div>{@html l10n("why-2")}</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="rethink-point col-lg">
-          <img
-            class="rethink-icon"
-            src="/images/smillust/mel-small.png"
-            alt="circle with mel"
-          />
-          <div>{@html l10n("why-3")}</div>
-        </div>
-        <div class="rethink-point col-lg">
-          <img
-            class="rethink-icon"
-            src="/images/smillust/scalability.png"
-            alt="scalable"
-          />
-          <div>{@html l10n("why-4")}</div>
-        </div>
-      </div>
-    </div>
-  </div>
+          p.small-lead (How Themelio achieves the &ldquo;sound money&rdquo; dream)
 
-  <!--melmint-->
-  <div class="section">
-    <div class="section__inner container">
-      <div class="row">
-        <div class="col-12 col-lg-6">
-          <img
-            class="img-fluid"
-            src="/images/smillust/mel-big.png"
-            style="mix-blend-mode: darken;"
-            alt="a mel floating on an ocean"
-          />
-        </div>
-        <div class="col-12 col-lg-6">
-          <h2>{@html l10n("melmint-title")}</h2>
-          {@html l10n("melmint-summary")}
-        </div>
-      </div>
-    </div>
-  </div>
+        .col-12.col-lg-3
+          img.img-fluid(src='/images/smillust/mel-big.png', style='mix-blend-mode: darken;', alt='a mel floating on an ocean')
 
-  <!--radiobuttons-->
-  <div class="section section--darken">
-    <div class="section__inner container">
-      <div class="row">
-        <div class="col-12 pb-3">
-          <h2>{@html l10n("explore-themelio")}</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md">
-          <div class="tab-set">
-            <div
-              class="tab-button"
-              class:tab-button-active={carouselPosn == 0}
-              on:click={() => (carouselPosn = 0)}
-            >
-              {l10n("participate")}
-            </div>
-            <div
-              class="tab-button"
-              class:tab-button-active={carouselPosn == 1}
-              on:click={() => (carouselPosn = 1)}
-            >
-              {l10n("build")}
-            </div>
-            <div
-              class="tab-button"
-              class:tab-button-active={carouselPosn == 2}
-              on:click={() => (carouselPosn = 2)}
-            >
-              {l10n("learn")}
-            </div>
-          </div>
+  // High-performance systems
+  .section.section--darken
+    .section__inner.container
+      .row
+        .col-12.col-lg-3
+          img.img-fluid(src='/images/smillust/mel-big.png', style='mix-blend-mode: darken;', alt='a mel floating on an ocean')
+        .col-12.col-lg-9
+          h2 A root of trust for mass adoption
+          p.small-lead Themelio is suited for mass adoption as a root of trust for off-chain, greenfield applications. Unlike existing L1s with complex interfaces tightly bound to typical financial &ldquo;Web3&rdquo; apps, Themelio's easily embeddable, app-decoupled design makes it perfect for securing critical off-chain systems ranging from end-to-end encrypted communication to uncensorable file publishing.
 
-          {#if carouselPosn == 0}
-            <div>{@html l10n("participate-desc")}</div>
-          {:else if carouselPosn == 1}
-            <div>{@html l10n("build-desc")}</div>
-          {:else}
-            <div>{@html l10n("learn-desc")}</div>
-          {/if}
-        </div>
-        <div class="col-md">
-          <img
-            class="img-fluid"
-            src={carouselPosn == 0
-              ? "/images/homepage-participate.png"
-              : carouselPosn == 1
-              ? "/images/homepage-build.png"
-              : "/images/homepage-learn.png"}
-            style="mix-blend-mode: darken;"
-            alt="carousel"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
+          p.small-lead (Our vision for a paradigm shift in Web3)
 
-  <!--community-->
-  <div class="section" id="community-sect">
-    <div class="section__inner container">
-      <div class="row">
-        <div class="col-lg-2" />
-        <div class="col text-center">{@html l10n("community")}</div>
-        <div class="col-lg-2" />
-      </div>
-      <div class="row">
-        <div class="col-md">
-          <a class="community-card" href="https://discord.gg/qfg35paESn">
-            <div class="community-icon">
-              <img src="/images/social_media/discord.png" alt="discord" />
-            </div>
-            <div class="community-desc">{@html l10n("community/discord")}</div>
-          </a>
-        </div>
-        <div class="col-md">
-          <a class="community-card" href="https://t.me/themeliolabs">
-            <div class="community-icon">
-              <img src="/images/social_media/telegram.png" alt="telegram" />
-            </div>
-            <div class="community-desc">{@html l10n("community/telegram")}</div>
-          </a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md">
-          <a class="community-card" href="https://twitter.com/themeliolabs">
-            <div class="community-icon">
-              <img src="/images/social_media/twitter.png" alt="twitter" />
-            </div>
-            <div class="community-desc">{@html l10n("community/twitter")}</div>
-          </a>
-        </div>
-        <div class="col-md">
-          <a class="community-card" href="https://github.com/themeliolabs/">
-            <div class="community-icon">
-              <img src="/images/social_media/github.png" alt="github" />
-            </div>
-            <div class="community-desc">{@html l10n("community/github")}</div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  // radiobuttons
+  .section.section
+    .section__inner.container
+      .row
+        .col-12.pb-3(class!='{carouselPosn}')
+          h2 {@html l10n("explore-themelio")}
+      .row
+        .col-md
+          .tab-set
+            .tab-button(class:tab-button-active!="{carouselPosn == 0}" on:click!='{() => (carouselPosn = 0)}')
+              | {l10n("participate")}
+            .tab-button(class:tab-button-active!="{carouselPosn == 1}" on:click!='{() => (carouselPosn = 1)}')
+              | {l10n("build")}
+            .tab-button(class:tab-button-active!="{carouselPosn == 2}" on:click!='{() => (carouselPosn = 2)}')
+              | {l10n("learn")}
 
-  <!--blog-->
+          +if('carouselPosn == 0')
+            div {@html l10n("participate-desc")}
+            +elseif('carouselPosn == 1')
+              div {@html l10n("build-desc")}
+            +else
+              div {@html l10n("learn-desc")}
 
-  <div class="section section section--darken" id="blog-sect">
-    <div class="section__inner container">
-      <div class="row">
-        <div class="col">
-          <h2>{@html l10n("blog")}</h2>
-          <div class="rss-container">
-            <rssapp-wall id="XBZoy5LUiQA6UTZM" />
-          </div>
-          <script
-            src="https://widget.rss.app/v1/wall.js"
-            type="text/javascript"
-            async></script>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--team-->
-
-  <div class="section" id="team-sect">
-    <div class="section__inner container">
-      <div class="row">
-        <div class="col-lg" />
-        <div class="col-lg-8 text-center">
-          <h2>{@html l10n("team")}</h2>
-          <a href="team.html" class="btn btn-outline-primary btn-lg">
-            {@html l10n("view-our-team")}
-          </a>
-        </div>
-        <div class="col-lg" />
-      </div>
-    </div>
-  </div>
-</MainLayout>
+        .col-md
+          img.img-fluid(src!="/images/{carouselimg}" style="mix-blend-mode: darken;" alt="carousel")
+  // community
+  #community-sect.section.section--darken
+    .section__inner.container
+      .row
+        .col-lg-2
+        .col.text-center {@html l10n("community")}
+        .col-lg-2
+        .row
+          .col-md
+            a.community-card(href='https://discord.com/invite/4mbscXG3')
+              .community-icon
+                img(src='/images/social_media/discord.png', alt='discord')
+              .community-desc {@html l10n("community/discord")}
+          .col-md
+            a.community-card(href='https://t.me/themeliolabs')
+              .community-icon
+                img(src='/images/social_media/telegram.png', alt='telegram')
+              .community-desc {@html l10n("community/telegram")}
+        .row
+          .col-md
+            a.community-card(href='https://twitter.com/themeliolabs')
+              .community-icon
+                img(src='/images/social_media/twitter.png', alt='twitter')
+              .community-desc {@html l10n("community/twitter")}
+          .col-md
+            a.community-card(href='https://github.com/themeliolabs/')
+              .community-icon
+                img(src='/images/social_media/github.png', alt='github')
+              .community-desc {@html l10n("community/github")}
+    // TODO: CUSTOM BLOG SECTION BASED ON SVELTE
+  #blog-sect.section.section
+    .section__inner.container
+      .row
+        .col
+          h2 {@html l10n("blog")}
+          BlogFeed
+  // team
+  #team-sect.section.section--darken
+    .section__inner.container
+      .row
+        .col-lg
+        .col-lg-8.text-center
+          h2 {@html l10n("team")}
+          a.btn.btn-outline-primary.btn-lg(href!="{'/' + $lang + '/team'}")
+            | {@html l10n("view-our-team")}
+        .col-lg
+</template>
 
 <style lang="scss">
   .tab-set {
@@ -382,5 +272,10 @@
   .rss-container {
     margin-left: -1.8rem;
     margin-right: -1.8rem;
+  }
+
+  .small-lead {
+    font-size: 110%;
+    font-weight: 400;
   }
 </style>
