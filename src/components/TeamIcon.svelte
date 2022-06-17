@@ -1,16 +1,16 @@
 <script lang="ts">
   import Fa from "svelte-fa";
-  // import {
-  //   faGithub,
-  //   faTwitter,
-  //   faTelegram,
-  //   faLinkedin,
-  //   IconDefinition,
-  // } from "@fortawesome/free-brands-svg-icons";
-  // import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-  import pkg, { IconDefinition } from "@fortawesome/free-brands-svg-icons";
-  const { faGithub, faTwitter, faTelegram, faLinkedin } = pkg;
-  import { createEventDispatcher, getContext, onMount } from "svelte";
+  import {
+    faGithub,
+    faTwitter,
+    faTelegram,
+    faLinkedin,
+IconDefinition,
+  } from "@fortawesome/free-brands-svg-icons";
+  import { 
+    faGlobe
+  } from "@fortawesome/free-solid-svg-icons";
+import { createEventDispatcher, getContext, onMount } from "svelte";
 
   export let name: string;
   export let title: string;
@@ -23,15 +23,22 @@
   export let telegram = "";
   export let linkedin = "";
 
+
+  let faGlobe = "fa-solid fa-globe"
+  let faGithub = "fa-brands fa-github"
+  let faTwitter = "fa-brands fa-twitter"
+  let faTelegram = "fa-brands fa-telegram"
+  let faLinkedin = "fa-brands fa-linkedin"
+
   interface Link {
-    href: string;
-    icon: IconDefinition;
+    href: string,
+    icon: string
   }
-  function link(href, icon): Link {
+  function link(href, icon): Link{
     return {
       href,
-      icon,
-    };
+      icon
+    }
   }
   let dispatch = createEventDispatcher();
   let links = [
@@ -40,7 +47,10 @@
     link(twitter, faTwitter),
     link(telegram, faTelegram),
     link(linkedin, faLinkedin),
-  ];
+    ];
+
+
+  
 </script>
 
 <template lang="pug">
@@ -57,11 +67,11 @@
         +each('links as l')
           +if('l.href != ""')
             a.links(href!="{l.href}")
-              Fa(icon!="{l.icon}")
+              i(class!='{l.icon}')
 </template>
 
 <style lang="scss">
-  .team-member {
+  .team-member{
     background: clear;
     border-radius: 1em;
     border: 1px solid var(--primary-color);
@@ -74,19 +84,22 @@
     // gap: 1em;
   }
 
-  .team-member img {
+  .team-member img{
     width: 50%;
     border-radius: 100%;
     height: auto;
     margin-bottom: 1rem;
   }
-  .links {
+  .links{
     display: inline-block;
     width: 2.3em;
-    padding-right: 0.5em;
+    padding-right: .5em;
     box-sizing: border-box;
-    & :global(svg) {
+    & :global(svg){
       height: 100% !important;
     }
+
+
+    
   }
 </style>

@@ -23,19 +23,14 @@ export const l10nLoad:  l10nLoader = (mapping, lang) => (name:string) => {
 
 
 export const lang: Readable<Language> = derived(page, (p) => {
-  // console.log("page content", p);
-  console.log("lang", p.params.lang)
   let param: string | undefined = p.params.lang
-  let lang: Language;
   if (param === "en") {
-    lang = Language.EN_US;
+    return Language.EN_US;
   } else if (param === "zht") {
-    lang = Language.ZH_TW;
+    return Language.ZH_TW;
   } else if (param === "zhs") {
-    lang = Language.ZH_CN;
+    return Language.ZH_CN;
   }
-  else {
-    lang = undefined
-  }
-  return lang || Language.EN_US;
+  return Language.EN_US;
+  
 });
