@@ -25,8 +25,8 @@
 
 <div class="container-fluid p-0">
   {#if blogEntries.length > 1}
-    <div class="row">
-      <div class="col-md">
+    <div class="row blog-section">
+      <div class="latest-post">
         <a
           class="first"
           href={blogEntries[0].link}
@@ -44,10 +44,9 @@
           <span class="read-more">Read more</span>
         </a>
       </div>
-      <div class="col-md">
         {#each blogEntries as entry, index}
           {#if index > 0 && (showAll || index < 4)}
-            <a class="inner" href={entry.link} target="_blank" rel="noopener">
+            <a class={"inner other-posts post-"+{index}} href={entry.link} target="_blank" rel="noopener">
               {#await getPreviewImage(entry.link)}
                 <div class="preview-image" />
               {:then url}
@@ -70,7 +69,6 @@
           </div>
         {/if}
       </div>
-    </div>
   {/if}
 </div>
 
@@ -133,5 +131,21 @@
     border-radius: 1rem;
     background-color: #eee;
     margin-bottom: 1rem;
+  }
+  .blog-section{
+    display: grid;
+    grid-template-areas: "L A" "L B" "L C";
+  }
+  .latest-post{
+    grid-area: L
+  }
+  .post-1{
+    grid-area: A
+  }
+  .post-2{
+    grid-area: B;
+  }
+  .post-3{
+    grid-area: C;
   }
 </style>
