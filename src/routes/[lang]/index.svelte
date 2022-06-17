@@ -100,7 +100,7 @@ MainLayout(title!='{l10n("nav/home")}')
         .col-lg-2
         .row
           .col-md
-            a.community-card(href='https://discord.gg/qfg35paESn')
+            a.community-card(href='https://discord.com/invite/4mbscXG3')
               .community-icon
                 img(src='/images/social_media/discord.png', alt='discord')
               .community-desc {@html l10n("community/discord")}
