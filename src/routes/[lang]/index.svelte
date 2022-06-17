@@ -1,5 +1,6 @@
 <script>
   import MainLayout from "../../components/MainLayout.svelte";
+  import BlogFeed from "../../components/BlogFeed.svelte";
   import { l10nLoad, lang } from "../../l10n/l10n";
 
   import base from "../../l10n/base.yaml";
@@ -91,7 +92,7 @@ MainLayout(title!='{l10n("nav/home")}')
         .col-md
           img.img-fluid(src!="/images/{carouselimg}" style="mix-blend-mode: darken;" alt="carousel")
   // community
-  #community-sect.section
+  #community-sect.section.section--darken
     .section__inner.container
       .row
         .col-lg-2
@@ -120,24 +121,22 @@ MainLayout(title!='{l10n("nav/home")}')
                 img(src='/images/social_media/github.png', alt='github')
               .community-desc {@html l10n("community/github")}
     // TODO: CUSTOM BLOG SECTION BASED ON SVELTE
-    #blog-sect.section.section.section--darken
-      .section__inner.container
-        .row
-          .col
-            h2 {@html l10n("blog")}
-            .rss-container
-              rssapp-wall#XBZoy5LUiQA6UTZM
-            script(src='https://widget.rss.app/v1/wall.js', type='text/javascript', async='')
-    // team
-    #team-sect.section
-      .section__inner.container
-        .row
-          .col-lg
-          .col-lg-8.text-center
-            h2 {@html l10n("team")}
-            a.btn.btn-outline-primary.btn-lg(href='team')
-              | {@html l10n("view-our-team")}
-          .col-lg
+  #blog-sect.section.section
+    .section__inner.container
+      .row
+        .col
+          h2 {@html l10n("blog")}
+          BlogFeed
+  // team
+  #team-sect.section.section--darken
+    .section__inner.container
+      .row
+        .col-lg
+        .col-lg-8.text-center
+          h2 {@html l10n("team")}
+          a.btn.btn-outline-primary.btn-lg(href='team')
+            | {@html l10n("view-our-team")}
+        .col-lg
 </template>
 
 <style lang="scss">
