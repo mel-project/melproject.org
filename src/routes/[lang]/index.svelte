@@ -100,7 +100,7 @@ MainLayout(title!='{l10n("nav/home")}')
         .col-lg-2
         .row
           .col-md
-            a.community-card(href='https://discord.gg/qfg35paESn')
+            a.community-card(href='https://discord.com/invite/4mbscXG3')
               .community-icon
                 img(src='/images/social_media/discord.png', alt='discord')
               .community-desc {@html l10n("community/discord")}
@@ -134,7 +134,7 @@ MainLayout(title!='{l10n("nav/home")}')
         .col-lg
         .col-lg-8.text-center
           h2 {@html l10n("team")}
-          a.btn.btn-outline-primary.btn-lg(href='team')
+          a.btn.btn-outline-primary.btn-lg(href!="{'/' + $lang + '/team'}")
             | {@html l10n("view-our-team")}
         .col-lg
 </template>

@@ -3,8 +3,9 @@
   import NavDropdown from "./NavDropdown.svelte";
   import themelioLogo from "../assets/new-logo.png";
   import base from "../l10n/base.yaml";
-  import { lang, l10nLoad } from "../l10n/l10n";
-  export let currentPath = "";
+  import { lang, Language, l10nLoad } from "../l10n/l10n";
+  
+  export let currentPath = ""; // the usage here needs a refactor
 
   $: l10n = l10nLoad(base, $lang);
 </script>
@@ -28,22 +29,22 @@
               NavLink(href='https://docs.themelio.org/basic-concepts/05-tokenomics/')
                 | Tokenomics
             NavDropdown(title!='{l10n("nav/developers")}')
-              NavLink(href!='{`/${$lang}/`}')
+              NavLink(href='https://docs.themelio.org')
                 | {l10n("nav/docs")}
               NavLink(href='https://github.com/themeliolabs') GitHub
               NavLink(href='https://scan.themelio.org/') Melscan
             NavLink(href!='{`/${$lang}/team`}'
                     active!='{currentPath == "team" }')
               | {l10n("nav/team")}
-            NavLink(href!='{`/${$lang}/team`}')
+            NavLink(href='https://medium.com/themelio')
               | {l10n("nav/blog")}
           .col.center
             .lang
-              a(href!='{`/en/${currentPath}`}') EN
+              a(href!='{`/${Language.EN_US}/${currentPath}`}') EN
               | /
-              a(lang='zh-HK' href!='{`/zht/${currentPath}`}') &#x7E41;&#x4E2D;
+              a(lang='zh-HK' href!='{`/${Language.ZH_TW}/${currentPath}`}') &#x7E41;&#x4E2D;
               | /
-              a(lang='zh-CN' href!='{`/zhs/${currentPath}`}') &#x7B80;&#x4E2D;
+              a(lang='zh-CN' href!='{`/${Language.ZH_CN}/${currentPath}`}') &#x7B80;&#x4E2D;
 
 </template>
 

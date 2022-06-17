@@ -1,0 +1,49 @@
+diff --git a/node_modules/feed-reader/src/main.js b/node_modules/feed-reader/src/main.js
+index 595a0e8..70c9adb 100755
+--- a/node_modules/feed-reader/src/main.js
++++ b/node_modules/feed-reader/src/main.js
+@@ -3,10 +3,10 @@
+  * @ndaidong
+  **/
+ 
+-import { info } from './utils/logger.js'
+-
+-import getXML from './utils/retrieve.js'
+-import xml2obj from './utils/xml2obj.js'
++// import { info } from './utils/logger.js' // it's the logger
++let info = console.info // used this to resolve everywhere
++import getXML from './utils/retrieve.js' // issue in here
++import xml2obj from './utils/xml2obj.js' // and here
+ import { parseRSS, parseAtom } from './utils/parser.js'
+ 
+ import {
+diff --git a/node_modules/feed-reader/src/utils/retrieve.js b/node_modules/feed-reader/src/utils/retrieve.js
+index cf4bb0d..8a5e955 100755
+--- a/node_modules/feed-reader/src/utils/retrieve.js
++++ b/node_modules/feed-reader/src/utils/retrieve.js
+@@ -2,8 +2,8 @@
+ 
+ import axios from 'axios'
+ 
+-import logger from './logger.js'
+-
++// import logger from './logger.js'
++const logger = console;
+ import { getRequestOptions } from '../config.js'
+ 
+ export default async (url) => {
+diff --git a/node_modules/feed-reader/src/utils/xml2obj.js b/node_modules/feed-reader/src/utils/xml2obj.js
+index 6ce8112..bee66e0 100755
+--- a/node_modules/feed-reader/src/utils/xml2obj.js
++++ b/node_modules/feed-reader/src/utils/xml2obj.js
+@@ -2,8 +2,8 @@
+ 
+ import { XMLParser } from 'fast-xml-parser/src/fxp.js'
+ 
+-import { info } from './logger.js'
+-
++// import { info } from './logger.js'
++const info = console.info
+ export default (xml = '') => {
+   const options = {
+     ignoreAttributes: false

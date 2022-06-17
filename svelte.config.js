@@ -12,6 +12,9 @@ const config = {
     },
     adapter: adapter(),
     vite: {
+      ssr: {
+        noExternal: ['@fortawesome/free-brands-svg-icons','@fortawesome/free-solid-svg-icons']
+      },
       plugins: [
         ViteYaml(), // you may configure the plugin by passing in an object with the options listed below
         viteCommonjs(),
