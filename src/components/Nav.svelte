@@ -28,14 +28,14 @@
               NavLink(href='https://docs.themelio.org/basic-concepts/05-tokenomics/')
                 | Tokenomics
             NavDropdown(title!='{l10n("nav/developers")}')
-              NavLink(href!='{`/${$lang}/`}')
+              NavLink(href='https://docs.themelio.org')
                 | {l10n("nav/docs")}
               NavLink(href='https://github.com/themeliolabs') GitHub
               NavLink(href='https://scan.themelio.org/') Melscan
             NavLink(href!='{`/${$lang}/team`}'
                     active!='{currentPath == "team" }')
               | {l10n("nav/team")}
-            NavLink(href!='{`/${$lang}/team`}')
+            NavLink(href='https://medium.com/themelio')
               | {l10n("nav/blog")}
           .col.center
             .lang
