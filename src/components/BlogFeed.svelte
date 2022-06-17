@@ -23,7 +23,7 @@
   let showAll = false;
 </script>
 
-<div class="container-fluid p-0">
+<div class="container-fluid p-0 placeholder-glow">
   {#if blogEntries.length > 1}
     <div class="row">
       <div class="col-md">
@@ -34,11 +34,11 @@
           rel="noopener"
         >
           {#await getPreviewImage(blogEntries[0].link)}
-            <div class="preview-image" />
+            <div class="preview-image placeholder" />
           {:then url}
             <img class="preview-image" src={url} />
           {:catch}
-            <div class="preview-image" />
+            <div class="preview-image placeholder" />
           {/await}
           <h3>{blogEntries[0].title}</h3>
           <span class="read-more">Read more</span>
@@ -49,9 +49,11 @@
           {#if index > 0 && (showAll || index < 4)}
             <a class="inner" href={entry.link} target="_blank" rel="noopener">
               {#await getPreviewImage(entry.link)}
-                <div class="preview-image" />
+                <div class="preview-image placeholder" />
               {:then url}
                 <img class="preview-image" src={url} />
+              {:catch}
+                <div class="preview-image placeholder" />
               {/await}
 
               <div class="">
@@ -108,13 +110,12 @@
     max-width: 5rem;
     margin-right: 1rem;
     border-radius: 0.4rem;
-
-    object-fit: cover;
   }
 
   .preview-image {
     border-color: var(--primary-color);
     border: 1px solid;
+    object-fit: cover;
   }
 
   .first {
