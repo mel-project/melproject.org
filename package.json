@@ -10,7 +10,6 @@
     "lint": "prettier --check --plugin-search-dir=. . && eslint .",
     "format": "prettier --write --plugin-search-dir=. .",
     "postinstall": "patch-package"
-      
   },
   "devDependencies": {
     "@modyfi/vite-plugin-yaml": "^1.0.2",
@@ -30,6 +29,8 @@
   },
   "type": "module",
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@sveltejs/adapter-static": "^1.0.0-next.31",
     "debounce": "^1.2.1",
     "feed-reader": "^5.0.1",

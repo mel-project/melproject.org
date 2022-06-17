@@ -5,7 +5,7 @@
   import base from "../l10n/base.yaml";
   import { lang, Language, l10nLoad } from "../l10n/l10n";
   
-  export let currentPath = "";
+  export let currentPath = ""; // the usage here needs a refactor
 
   $: l10n = l10nLoad(base, $lang);
 </script>

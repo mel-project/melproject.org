@@ -134,7 +134,7 @@ MainLayout(title!='{l10n("nav/home")}')
         .col-lg
         .col-lg-8.text-center
           h2 {@html l10n("team")}
-          a.btn.btn-outline-primary.btn-lg(href='team')
+          a.btn.btn-outline-primary.btn-lg(href!="{'/' + $lang + '/team'}")
             | {@html l10n("view-our-team")}
         .col-lg
 </template>
