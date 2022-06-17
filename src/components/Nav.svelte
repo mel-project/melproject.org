@@ -1,16 +1,12 @@
 <script lang="ts">
-    import NavLink from "./NavLink.svelte"
-    import NavDropdown from "./NavDropdown.svelte";
-    import themelioLogo from "../assets/new-logo.png";
-    import base from "../l10n/base.yaml";
-    import { lang, l10nLoad } from "../l10n/l10n";
-    import Fa from "svelte-fa";
-    export let currentPath = "";
+  import NavLink from "./NavLink.svelte";
+  import NavDropdown from "./NavDropdown.svelte";
+  import themelioLogo from "../assets/new-logo.png";
+  import base from "../l10n/base.yaml";
+  import { lang, l10nLoad } from "../l10n/l10n";
+  export let currentPath = "";
 
-    $: l10n = l10nLoad(base, $lang);
- 
-
-
+  $: l10n = l10nLoad(base, $lang);
 </script>
 
 <template lang="pug">
@@ -52,75 +48,71 @@
 </template>
 
 <style lang="scss">
-.navigation{
-  display: grid;
-  grid-auto-flow: column;
-  // grid-template-columns:  repeat(max-content,3);
-  grid-template-areas: "logo nav lang";
-}
-
-.logo{
-  grid-area: logo;
-}
-.top-nav{
-  grid-area: nav;
-}
-.lang{
-  grid-area: lang;
-  text-align: right;
-  & button{
-    padding-right: 0;
+  .navigation {
+    display: grid;
+    grid-auto-flow: column;
+    // grid-template-columns:  repeat(max-content,3);
+    grid-template-areas: "logo nav lang";
   }
-}
-.navbar-brand {
+
+  .logo {
+    grid-area: logo;
+  }
+  .top-nav {
+    grid-area: nav;
+  }
+  .lang {
+    grid-area: lang;
+    text-align: right;
+    & button {
+      padding-right: 0;
+    }
+  }
+  .navbar-brand {
     max-width: 10rem;
     width: 100%;
     display: inline-block;
-}
+  }
 
-.top-nav {
+  .top-nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 1em;
+  }
 
-}
-
-.center{
+  .center {
     text-align: center;
     margin: auto;
-    line-height: 3.2
-}
+    line-height: 3.2;
+  }
 
-
-img.social-media-icon {
+  img.social-media-icon {
     max-width: 4em;
-}
-.navbar-toggler {
-
+  }
+  .navbar-toggler {
     display: none;
     position: absolute;
-}
-@media only screen and (max-width: 770px) {
+  }
+  @media only screen and (max-width: 770px) {
     .navbar-toggler {
-        display: inline-block;
-        position: inherit;
-        color: var(--primary-color);
-        border: none !important;
-        &:focus{
-          outline: none;
-          box-shadow: 0 0 0 0;
-        }
-        .hamburger{
-          line-height: 6;
-        }
+      display: inline-block;
+      position: inherit;
+      color: var(--primary-color);
+      border: none !important;
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0;
+      }
+      .hamburger {
+        line-height: 6;
+      }
     }
-    .navigation{
+    .navigation {
       grid-template-areas: "logo lang" "nav nav";
     }
-    .lang-selector{
+    .lang-selector {
       text-align: right;
-    }   
-}
-
+    }
+  }
 </style>
