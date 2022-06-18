@@ -1,10 +1,10 @@
-<script lang="ts">
+<script>
   import NavLink from "./NavLink.svelte";
   import NavDropdown from "./NavDropdown.svelte";
-  import themelioLogo from "../assets/new-logo.png";
+  // import themelioLogo from "../assets/new-logo.png";
   import base from "../l10n/base.yaml";
   import { lang, Language, l10nLoad } from "../l10n/l10n";
-  
+
   export let currentPath = ""; // the usage here needs a refactor
 
   $: l10n = l10nLoad(base, $lang);
@@ -16,7 +16,7 @@
         .row.navigation(style='width:100%')
           .col.logo
             a(href!='{`/${$lang}/`}')
-              img.navbar-brand(src!='{themelioLogo}' alt='themelio logo')
+              img.navbar-brand(src!='/images/new-logo-new.png' alt='themelio logo')
           .col.top-nav.center
             NavLink(href!='{`/${$lang}/`}'
                     active!='{currentPath = ""}')
@@ -54,6 +54,7 @@
     grid-auto-flow: column;
     // grid-template-columns:  repeat(max-content,3);
     grid-template-areas: "logo nav lang";
+    font-family: var(--display-font);
   }
 
   .logo {

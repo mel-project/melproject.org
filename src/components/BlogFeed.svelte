@@ -17,16 +17,16 @@
       body: JSON.stringify({ link: url }),
       headers: { "content-type": "application/json" },
     });
-    return (await response.json())?.image?.url;
+    return (await response.json()).image.url;
   };
 
   let showAll = false;
 </script>
 
-<div class="container-fluid p-0 placeholder-glow">
+<div class="container-fluid p-0">
   {#if blogEntries.length > 1}
-    <div class="row blog-section">
-      <div class="latest-post">
+    <div class="row">
+      <div class="col-md">
         <a
           class="first"
           href={blogEntries[0].link}
@@ -34,25 +34,24 @@
           rel="noopener"
         >
           {#await getPreviewImage(blogEntries[0].link)}
-            <div class="preview-image placeholder" />
+            <div class="preview-image" />
           {:then url}
             <img class="preview-image" src={url} />
           {:catch}
-            <div class="preview-image placeholder" />
+            <div class="preview-image" />
           {/await}
           <h3>{blogEntries[0].title}</h3>
           <span class="read-more">Read more</span>
         </a>
       </div>
+      <div class="col-md">
         {#each blogEntries as entry, index}
           {#if index > 0 && (showAll || index < 4)}
-            <a class={"inner other-posts post-"+{index}} href={entry.link} target="_blank" rel="noopener">
+            <a class="inner" href={entry.link} target="_blank" rel="noopener">
               {#await getPreviewImage(entry.link)}
-                <div class="preview-image placeholder" />
+                <div class="preview-image" />
               {:then url}
                 <img class="preview-image" src={url} />
-              {:catch}
-                <div class="preview-image placeholder" />
               {/await}
 
               <div class="">
@@ -65,16 +64,20 @@
         {#if !showAll}
           <div class="inner">
             <button
-              class="btn btn-outline-primary px-4"
+              class="btn btn-primary px-4"
               on:click={() => (showAll = true)}>Show all</button
             >
           </div>
         {/if}
       </div>
+    </div>
   {/if}
 </div>
 
 <style>
+  a {
+    text-decoration: none;
+  }
   .inner {
     display: flex;
     flex-direction: row;
@@ -111,8 +114,9 @@
   }
 
   .preview-image {
-    border-color: var(--primary-color);
-    border: 1px solid;
+    /* border-color:  */
+    border: 1px solid var(--primary-color);
+
     object-fit: cover;
   }
 
@@ -132,21 +136,5 @@
     border-radius: 1rem;
     background-color: #eee;
     margin-bottom: 1rem;
-  }
-  .blog-section{
-    display: grid;
-    grid-template-areas: "L A" "L B" "L C";
-  }
-  .latest-post{
-    grid-area: L
-  }
-  .post-1{
-    grid-area: A
-  }
-  .post-2{
-    grid-area: B;
-  }
-  .post-3{
-    grid-area: C;
   }
 </style>

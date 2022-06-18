@@ -1,18 +1,21 @@
-<script lang="ts">
+<script>
   export let active = false;
   export let href = "";
   export let title;
 
-  
   import { slide } from "svelte/transition";
   import p from "debounce";
-  const {debounce} = p;
+  const { debounce } = p;
   let open = false;
 
-  let setOpen = debounce((s) => {
-    open = s;
-  }, 50, false);
-  </script>
+  let setOpen = debounce(
+    (s) => {
+      open = s;
+    },
+    50,
+    false
+  );
+</script>
 
 <div
   class="dropdown"

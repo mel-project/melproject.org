@@ -12,7 +12,7 @@ join-the-community:
   en-US: Join the community
   zh-CN: 加入社区
 tagline:
-  en-US: The first <nobr><b>self-securing</b></nobr> blockchain network
+  en-US: The first <nobr><i class="text-primary flashing-cursor">self-securing</i></nobr> blockchain network
   zh-CN: <b>去信任</b>互联网<br />的根基
 subtitle:
   en-US: >-
@@ -266,7 +266,7 @@ community/github:
     <p>对实现 Themelio 感兴趣吗？在 GitHub 上，您可关注我们的研发动向，为我们贡献代码，并参与工程讨论。</p>
 
 blog:
-  en-US: Latest posts from our blog
+  en-US: Blog
   zh-CN: 我们博客上的最新文章
 team:
   en-US: "A visionary founder, top engineers, and industry-leading partners."

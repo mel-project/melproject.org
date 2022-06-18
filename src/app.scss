@@ -33,42 +33,56 @@
 @import "bootstrap/scss/utilities/api";
 @import "bootstrap/scss/placeholders";
 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
+
 body {
-  color: #383c3c;
+  color: black;
   line-height: 1.6;
+  letter-spacing: -0.01em;
 }
 
 a{
-text-decoration: none;
+text-decoration: underline;
+color: unset;
 }
 
 
 h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: 'Rubik';
+h2{
+  font-family: 'Iosevka Sparkle';
+  letter-spacing: -0.06em;
+}
+
+h1, h2,h3,h4,h5 {
   color: var(--dark-color);
-  letter-spacing: -0.015em;
+  font-weight: 600;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-weight: 400;
-}
+// h1,
+// h2,
+// h3,
+// h4 {
+//   font-weight: 400;
+// }
 
-h5 {
-  font-weight: 500;
-}
+// h5 {
+//   font-weight: 500;
+// }
 
 .btn {
-  font-family: 'Rubik';
-  border-radius: 1rem;
+  font-family: 'Iosevka Sparkle';
+  // border-radius: 1rem;
+  letter-spacing: -0.04em;
 }
 
+.btn-primary, .btn-secondary, .btn-outline-secondary:hover {
+  color: white !important;
+}
+
+.display-font {
+  font-family: 'Iosevka Sparkle';
+}
 
 .section {
     padding-top: 60px;
@@ -83,9 +97,7 @@ h5 {
     margin-bottom: 20px;
   }
   
-  .section--darken {
-    background-color: #f2f7f2;
-  }
+
   
 
   p a {
