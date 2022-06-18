@@ -29,6 +29,9 @@
     link(href='https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700' rel='stylesheet')
 
     link(href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' rel='stylesheet' )
+
+    link(href='/css/fonts.css' rel='stylesheet')
+
   svelte:body({$lang})
   svelte:window(bind:innerWidth)
   +if('debugging == true')

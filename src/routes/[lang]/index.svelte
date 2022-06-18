@@ -229,6 +229,7 @@ MainLayout(title!='{l10n("nav/home")}')
 
   .text--blead {
     font-size: 130%;
+    //- letter-spacing: -0.02em;
   }
   @media (min-width: 992px) {
     .text--blead {

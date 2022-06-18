@@ -39,7 +39,7 @@
 body {
   color: black;
   line-height: 1.6;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 a{
@@ -50,7 +50,7 @@ color: unset;
 
 h1,
 h2{
-  font-family: 'Iosevka Sparkle';
+  font-family: var(--display-font);
   letter-spacing: -0.06em;
 }
 
@@ -71,7 +71,7 @@ h1, h2,h3,h4,h5 {
 // }
 
 .btn {
-  font-family: 'Iosevka Sparkle';
+  font-family: var(--display-font);
   // border-radius: 1rem;
   letter-spacing: -0.04em;
 }
@@ -81,7 +81,7 @@ h1, h2,h3,h4,h5 {
 }
 
 .display-font {
-  font-family: 'Iosevka Sparkle';
+  font-family: var(--display-font);
 }
 
 .section {
