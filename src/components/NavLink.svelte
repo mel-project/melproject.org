@@ -3,7 +3,9 @@
   export let href = "";
 </script>
 
-<div><a class:active class="navlink" {href}><slot /></a></div>
+<div>
+  <a sveltekit:prefetch class:active class="navlink" {href}><slot /></a>
+</div>
 
 <style>
   @import "navlink.css";
