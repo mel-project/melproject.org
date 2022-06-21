@@ -41,141 +41,47 @@ MainLayout(title!='{l10n("nav/home")}')
   .section__inner.container
     .row.py-5.my-5
       .col-md-5
-        <img src="https://dummyimage.com/600x400/eee/111" class="img-fluid"/> 
+        <img src="/images/homepage/utxo.png" class="img-fluid"/> 
       .col-md-7
         h2.py-2 Governance-free modular architecture
-        p.small-lead Themelio unique modular architecture achieves Ethereum-like generality #[b and] better-than-Bitcoin immutability and neutrality. This is done by focusing on blockchains core task: providing a neutral security foundation independent of all protocol-external trust. 
+        p.small-lead Themelio unique modular architecture achieves Ethereum-like generality #[b and] better-than-Bitcoin immutability and neutrality. This is done through a minimally enhanced UTXO model that focuses on blockchains core task: providing a neutral security foundation independent of all protocol-external trust. 
 
-        a.learnmore Our minimal, app-decoupled model <i class="fa-solid fa-chevron-right fa-sm"></i>
+        a.learnmore Our robust, app-decoupled design <i class="fa-solid fa-chevron-right fa-sm"></i>
   .section__inner.container
     .row.py-5.my-5
       .col-md-7
         h2.py-2 Decentralized sound money and resilient #[nobr proof-of-stake] consensus
-        p.small-lead MEL, the native currency, a #[b breakthrough, oracle-free &ldquo;stablecoin&rdquo;] independent of all fiat currency. MEL and SYM, the PoS token, participate in Themelio's uniquely collusion-resistant consensus game Synkletos that greatly improves long-term security over existing mechanisms.
+        p.small-lead MEL, the native currency, is a #[b breakthrough, oracle-free &ldquo;stablecoin&rdquo;] independent of all fiat currency. Along with SYM, a separate PoS token, it participates in Themelio's uniquely collusion-resistant consensus game Synkletos that greatly improves long-term security over existing mechanisms.
 
         a.learnmore Realizing a sound cryptocurrency economy <i class="fa-solid fa-chevron-right fa-sm"></i>
       .col-md-5
-        <img src="https://dummyimage.com/600x400/eee/111" class="img-fluid"/> 
+        <img src="/images/homepage/vault.png" class="img-fluid"/> 
 
   .section__inner.container
     .row.py-5.my-5
       .col-md-5
-        <img src="https://dummyimage.com/600x400/eee/111" class="img-fluid"/> 
+        <img src="/images/homepage/balloons.png" class="img-fluid"/> 
       .col-md-7
         h2.py-2 Endless extensibility #[nobr #[i beyond] &ldquo;Web3&rdquo;]
         p.small-lead Thanks to its zero-governance stability and easily embeddable, app-decoupled design, Themelio is a suitable #[b root of trust] for decentralized apps beyond the current scope of Web3. Unlike existing L1s, Themelio is perfect for securing critical non-blockchain, non-financial protocols ranging from end-to-end encrypted communication to uncensorable file publishing.
 
         a.learnmore Themelio&rsquo;s vision for a Web3 paradigm shift <i class="fa-solid fa-chevron-right fa-sm"></i>
-  
-
-
-  //- // Minimal, general, and governance-free
-  //- .section.section--darken
-  //-   .section__inner.container
-  //-     .row
-  //-       .col-12.col-lg-3
-  //-         img.img-fluid(src='/images/smillust/mel-big.png', style='mix-blend-mode: darken;', alt='a mel floating on an ocean')
-  //-       .col-12.col-lg-9
-  //-         h2 Minimal, general, and governance-free
-  //-         p.small-lead Like the Internet's foundational protocols, Themelio generalizes to diverse apps while remaining simple, robust, and unchanging. This is through a #[a unique modular architecture] that focuses the blockchain on its core task &mdash; providing a credibly neutral security foundation independent of any protocol-external trust. 
-  //-         p.small-lead (Themelio's governance-free vision)
-
-  //- // Rock-solid economics
-  //- .section.section
-  //-   .section__inner.container
-  //-     .row
-  //-       .col-12.col-lg-9Sarasa Gothic
-  //-         h2 Sound money and rock-solid economics
-  //-         p.small-lead Themelio's native currency, MEL, is a breakthrough “stablecoin” that finally achieves decentralized, low-volatility sound money independent of any fiat currency. Together with the PoS token SYM, it participates in Synkletos, the mechanism defending Themelio with exceptional economic security with a unique collusion-resistant consensus game. 
-
-  //-         p.small-lead (How Themelio achieves the &ldquo;sound money&rdquo; dream)
-
-  //-       .col-12.col-lg-3
-  //-         img.img-fluid(src='/images/smillust/mel-big.png', style='mix-blend-mode: darken;', alt='a mel floating on an ocean')
-
-  //- // High-performance systems
-  //- .section.section--darken
-  //-   .section__inner.container
-  //-     .row
-  //-       .col-12.col-lg-3
-  //-         img.img-fluid(src='/images/smillust/mel-big.png', style='mix-blend-mode: darken;', alt='a mel floating on an ocean')
-  //-       .col-12.col-lg-9
-  //-         h2 A root of trust for mass adoption
-  //-         p.small-lead Themelio is suited for mass adoption as a root of trust for off-chain, greenfield applications. Unlike existing L1s with complex interfaces tightly bound to typical financial &ldquo;Web3&rdquo; apps, Themelio's easily embeddable, app-decoupled design makes it perfect for securing critical off-chain systems ranging from end-to-end encrypted communication to uncensorable file publishing.
-
-  //-         p.small-lead (Our vision for a paradigm shift in Web3)
-
-  //- // radiobuttons
-  //- .section.section
-  //-   .section__inner.container
-  //-     .row
-  //-       .col-12.pb-3(class!='{carouselPosn}')
-  //-         h2 {@html l10n("explore-themelio")}
-  //-     .row
-  //-       .col-md
-  //-         .tab-set
-  //-           .tab-button(class:tab-button-active!="{carouselPosn == 0}" on:click!='{() => (carouselPosn = 0)}')
-  //-             | {l10n("participate")}
-  //-           .tab-button(class:tab-button-active!="{carouselPosn == 1}" on:click!='{() => (carouselPosn = 1)}')
-  //-             | {l10n("build")}
-  //-           .tab-button(class:tab-button-active!="{carouselPosn == 2}" on:click!='{() => (carouselPosn = 2)}')
-  //-             | {l10n("learn")}
-
-  //-         +if('carouselPosn == 0')
-  //-           div {@html l10n("participate-desc")}
-  //-           +elseif('carouselPosn == 1')
-  //-             div {@html l10n("build-desc")}
-  //-           +else
-  //-             div {@html l10n("learn-desc")}
-
-  //-       .col-md
-  //-         img.img-fluid(src!="/images/{carouselimg}" style="mix-blend-mode: darken;" alt="carousel")
-  //- // community
-  //- #community-sect.section.section--darken
-  //-   .section__inner.container
-  //-     .row
-  //-       .col-lg-2
-  //-       .col.text-center {@html l10n("community")}
-  //-       .col-lg-2
-  //-       .row
-  //-         .col-md
-  //-           a.community-card(href='https://discord.com/invite/4mbscXG3')
-  //-             .community-icon
-  //-               img(src='/images/social_media/discord.png', alt='discord')
-  //-             .community-desc {@html l10n("community/discord")}
-  //-         .col-md
-  //-           a.community-card(href='https://t.me/themeliolabs')
-  //-             .community-icon
-  //-               img(src='/images/social_media/telegram.png', alt='telegram')
-  //-             .community-desc {@html l10n("community/telegram")}
-  //-       .row
-  //-         .col-md
-  //-           a.community-card(href='https://twitter.com/themeliolabs')
-  //-             .community-icon
-  //-               img(src='/images/social_media/twitter.png', alt='twitter')
-  //-             .community-desc {@html l10n("community/twitter")}
-  //-         .col-md
-  //-           a.community-card(href='https://github.com/themeliolabs/')
-  //-             .community-icon
-  //-               img(src='/images/social_media/github.png', alt='github')
-  //-             .community-desc {@html l10n("community/github")}
-  //-   // TODO: CUSTOM BLOG SECTION BASED ON SVELTE
+        // team
+  #team-sect.section.section--darken
+    .section__inner.container
+      .row
+        .col-lg
+        .col-lg-8.text-center
+          h2 {@html l10n("team")}
+          a.btn.btn-outline-primary.btn-lg(href!="{'/' + $lang + '/team'}")
+            | {@html l10n("view-our-team")}
+        .col-lg
   #blog-sect.section.section
     .section__inner.container
       .row
         .col
           h2 {@html l10n("blog")}
           BlogFeed
-  //- // team
-  //- #team-sect.section.section--darken
-  //-   .section__inner.container
-  //-     .row
-  //-       .col-lg
-  //-       .col-lg-8.text-center
-  //-         h2 {@html l10n("team")}
-  //-         a.btn.btn-outline-primary.btn-lg(href!="{'/' + $lang + '/team'}")
-  //-           | {@html l10n("view-our-team")}
-  //-       .col-lg
 </template>
 
 <style lang="scss">
@@ -327,7 +233,7 @@ MainLayout(title!='{l10n("nav/home")}')
   }
 
   .section--darken {
-    background-color: var(--primary-color);
+    background-color: var(--dark-color);
   }
 
   .section--darken * {

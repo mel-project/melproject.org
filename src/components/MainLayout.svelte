@@ -41,50 +41,30 @@
   
   Nav
   slot
-  //- footer#footer
-  //-   .container
-  //-     .row
-  //-       .col-lg-1
-  //-         img(src='/images/logo-only-bw.png' style='max-width: 48px; mix-blend-mode: lighten; opacity: 0.9')
-  //-       .col-lg.mb-3
-  //-         h4 {l10n("footer/updates")}
-  //-         p {@html l10n("footer/updateblurb")}
-  //-         // Begin Mailchimp Signup Form
-  //-         #mc_embed_signup
-  //-           form#mc-embedded-subscribe-form.validate(action='https://pm.us20.list-manage.com/subscribe/post?u=d1fa068da18aba6d2e0e0dc79&id=61a9213385' method='post' name='mc-embedded-subscribe-form' target='_blank' novalidate='')
-  //-             #mc_embed_signup_scroll
-  //-               .mc-field-group.form-group
-  //-                 input#mce-EMAIL.required.email.form-control(type='email' value='' name='EMAIL' placeholder='your@email.com')
-  //-                 small.form-text.text-muted {l10n("footer/noshare")}
-  //-               #mce-responses.clear.form-group
-  //-                 #mce-error-response.response(style='display:none')
-  //-                   #mce-success-response.response(style='display:none')
-  //-                   // real people should not fill this in and expect good things - do not r emove this or risk form bot signups
-  //-                   div(style='position: absolute; left: -5000px;' aria-hidden='true')
-  //-                     input(type='text' name='b_d1fa068da18aba6d2e0e0dc79_61a9213385' tabindex='-1' value='')
-  //-                   .clear.form-group
-  //-                     button#mc-embedded-subscribe.btn.btn-lg(type='submit' name='subscribe')
-  //-                       | {l10n("footer/subscribe")}
-  //-     .col-lg
-  //-     .col-lg-5.container-fluid
-  //-       .row
-  //-         .col
-  //-           h4 Themelio Labs
-  //-         .col.text-muted
-  //-           | 8 The Green, Ste A
-  //-           br 
-  //-           | Dover, DE 19901
-  //-       .row.text--normweight.mt-3
-  //-         .col
-  //-           a(href='https://github.com/themeliolabs/' target='_blank' rel='noopener') GitHub
-  //-         .col
-  //-           a(href='https://medium.com/themelio' target='_blank' rel='noopener') Medium
-  //-         .col
-  //-           a(href='https://discord.gg/zJ4mwM5pzD' target='_blank' rel='noopener') Discord
-  //-         .col
-  //-           a(href='https://t.me/themeliolabs' target='_blank' rel='noopener') Telegram
-  //-         .col
-  //-           a(href='https://twitter.com/ThemelioLabs' target='_blank' rel='noopener') Twitter
+  footer#footer
+    .container
+      .row
+        .col-lg-4.container-fluid
+          .row
+            .col-auto
+              img(src='/images/logo-only-bw.png' style='max-width: 48px; mix-blend-mode: lighten; opacity: 0.9') 
+            .col.text-muted
+              | 8 The Green, Ste A
+              br 
+              | Dover, DE 19901
+          .row.text--normweight.mt-3
+            .col
+              a(href='https://github.com/themeliolabs/' target='_blank' rel='noopener') GitHub
+            .col
+              a(href='https://medium.com/themelio' target='_blank' rel='noopener') Medium
+            .col
+              a(href='https://discord.gg/zJ4mwM5pzD' target='_blank' rel='noopener') Discord
+            .col
+              a(href='https://t.me/themeliolabs' target='_blank' rel='noopener') Telegram
+            .col
+              a(href='https://twitter.com/ThemelioLabs' target='_blank' rel='noopener') Twitter
+        .col
+
 </template>
 
 <style lang="scss">

@@ -1,56 +1,56 @@
 lang:
-  en-US: en
+  en: en
   zh-CN: zhs
   zh-HK: zht
 name:
-  en-US: English
+  en: English
   zh-CN: 简体中文
   zh-HK: 繁體中文
 nav/home:
-  en-US: Home
+  en: Home
   zh-CN: 首页
 nav/roadmap:
-  en-US: Roadmap
+  en: Roadmap
   zh-CN: 路线图
 nav/learn:
-  en-US: Learn
+  en: Learn
   zh-CN: 了解
 nav/overview:
-  en-US: Overview
+  en: Overview
   zh-CN: 概览
 nav/resources:
-  en-US: Resources
+  en: Resources
   zh-CN: 资源
 nav/developers:
-  en-US: Developers
+  en: Developers
   zh-CN: 开发者
 nav/docs:
-  en-US: Docs
+  en: Docs
   zh-CN: 文档
 nav/team:
-  en-US: Team
+  en: Team
   zh-CN: 团队
 nav/blog:
-  en-US: Blog
+  en: Blog
   zh-CN: 博客
 footer/updates:
-  en-US: Updates
+  en: Updates
   zh-CN: 订阅更新
 footer/updateblurb:
-  en-US: We send out periodic emails with what&rsquo;s new for Themelio.
+  en: We send out periodic emails with what&rsquo;s new for Themelio.
   zh-CN: 我们会定期发送邮件，通知您 Themelio 相关的最新消息。
 footer/noshare:
-  en-US: We never share your email with other people.
+  en: We never share your email with other people.
   zh-CN: 我们从不会将您的邮箱地址泄露给他人。
 footer/subscribe:
-  en-US: Subscribe
+  en: Subscribe
   zh-CN: 订阅
 footer/partners:
-  en-US: Partners
+  en: Partners
   zh-CN: 合作伙伴
 
 overview/themelio-decoupled:
-  en-US: |
+  en: |
     <h3>Themelio&rsquo;s decoupled architecture</h3>
     <ul>
         <li>Separated from applications by flexible mid-level protocols</li>
@@ -67,7 +67,7 @@ overview/themelio-decoupled:
         <li>无需治理，不可变区块链底层无需任何更改</li>
     </ul>
 overview/robust-endogenous-trust:
-  en-US: >
+  en: >
     <h3>Robust endogenous trust</h3>
 
     <p>Blockchains' most distinctive feature is <b>endogenous trust</b>:
@@ -88,7 +88,7 @@ overview/robust-endogenous-trust:
     <p>因此，Themelio 拒绝采用「世界计算机」这种直接与应用对接的范式。我们旨在提供一种<a
     href="https://docs.themelio.org/basic-concepts/01-endogenous-trust/">不可变的信任底层，该底层永远不会需要进行有损信任的协议更改</a>。</p>
 overview/smart-coins:
-  en-US: >
+  en: >
     <h3>Covenant-powered smart coins</h3>
 
     <p>Most general-purpose blockchains use an &ldquo;account-based&rdquo;
@@ -111,7 +111,7 @@ overview/smart-coins:
     href="https://docs.themelio.org/basic-concepts/02-state/">比特币的基于 UTXO
     的模型，并透过富脚本与瘦客户端为其提供功能增强。</a></p>
 overview/collusion-resistant:
-  en-US: >
+  en: >
     <h3>Collusion-resistant consensus game</h3>
 
     <p>Even without protocol changes, endogenous trust in any blockchain relies
@@ -130,11 +130,11 @@ overview/collusion-resistant:
     <p>Themelio 新颖的权益证明共识机制 Synkletos 从设计上便保障了<a
     href="https://docs.themelio.org/basic-concepts/03-consensus/">最大化长期安全性，即便是在面临无限串通的前提下也仍可安全无虞</a>。</p>
 overview/hero:
-  en-US: Explore Themelio&rsquo;s new blockchain paradigm&mdash;richly layered applications evolving on a permanent foundation of endogenous trust. 
-  zh-CN: 探索 Themelio 的新型区块链范式&mdash;&mdash;在永久的内生信任基础层上不断发展丰富且层次多样的应用程序。 
+  en: Explore Themelio&rsquo;s new blockchain paradigm&mdash;richly layered applications evolving on a permanent foundation of endogenous trust.
+  zh-CN: 探索 Themelio 的新型区块链范式&mdash;&mdash;在永久的内生信任基础层上不断发展丰富且层次多样的应用程序。
 
 overview/non-fiat-stablecoin:
-  en-US: >
+  en: >
     <h3>World&rsquo;s first non-fiat stablecoin</h3>
 
     <p>Themelio’s base currency, Mel, is a new asset class that finally delivers
@@ -154,7 +154,7 @@ overview/non-fiat-stablecoin:
 
     <p>MEL 与任何法币都没有丝毫牵扯，但其稳定性却超越既往任何传统的加密货币。它是货币史上的一次根本性突破。</p>
 overview/join-our-testnet:
-  en-US: >
+  en: >
     <h2>Join our testnet</h2>
 
     <p class="text--lead">Test out the Themelio network and get mainnet rewards
@@ -166,7 +166,7 @@ overview/join-our-testnet:
     <p class="text--lead">参与 testnet 比赛，帮助我们测试 Themelio 的网络并获得 mainnet 奖励。</p>
     <a href="" class="btn btn-outline-dark btn-lg">Testnet 门户</a>
 overview/knowledge-base:
-  en-US: >
+  en: >
     <h2>Knowledge base</h2>
 
     <p class="text--lead">All the resources you need to learn more about
@@ -182,7 +182,7 @@ overview/knowledge-base:
     <a href="https://docs.themelio.org/" class="btn btn-outline-dark
     btn-lg">开始阅读</a>
 roadmap/phases:
-  en-US: >-
+  en: >-
     <h1>Phases of development</h1> <p class="text--lead"> Themelio has four
     phases of development. </p> <p class="text--lead"> Our first step was to
     launch a <b>public alphanet</b> by the end of 2020. This gives us a
@@ -223,14 +223,14 @@ roadmap/phases:
     2023-2024 年发布<b>稳定版本</b>。这将永久冻结协议规范，不允许任何关键性的共识更新（除非是为了修复严重的漏洞）。betanet
     将关闭，但其历史将获得完整继承。 </p>
 roadmap/past-and-future:
-  en-US: >-
+  en: >-
     <h2>The past and future of Themelio</h2> <p class="text--lead"> Let's look
     at a timeline of our work related to Themelio. </p>
   zh-CN: >-
     <h2>Themelio 的过去和未来</h2> <p class="text--lead"> 以下为我们团队与 Themelio 项目有关的时间线。
     </p>
 roadmap/timeline:
-  en-US: >-
+  en: >-
     <div class="row mb-3"> <div class="col-3 text-right text-muted">
     <i>circa</i>&nbsp;&nbsp;<b class="font-weight-bold">2014</b> </div> <div
     class="col text-muted"> We begin our long-time obsession over trustless,

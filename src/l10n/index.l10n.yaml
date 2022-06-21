@@ -1,5 +1,5 @@
 wallet-cta:
-  en-US: Check out our <b>
+  en: Check out our <b>
     <a
     href="https://medium.com/themelio/announcement-incentivized-beta-for-mellis-themelios-gui-wallet-9f0a3b067ff2"
     target="_blank"
@@ -9,22 +9,22 @@ wallet-cta:
     </a>
     </b> for our official GUI wallet Mellis!
 join-the-community:
-  en-US: Join the community
+  en: Join the community
   zh-CN: 加入社区
 tagline:
-  en-US: The first <nobr><i class="text-primary flashing-cursor">self-securing</i></nobr> blockchain network
+  en: The first <nobr><i class="text-primary flashing-cursor">self-securing</i></nobr> blockchain network
   zh-CN: <b>去信任</b>互联网<br />的根基
 subtitle:
-  en-US: >-
+  en: >-
     Themelio is a <b>radical rethinking of the public blockchain</b> focused on
     its core purpose: establishing an immutable, permanent root of trust.
   zh-CN: Themelio 是<b>对公共区块链的一次彻底的再思考</b>，其旨在抓住区块链的核心要义：建立不可改变的、永久的信任根。
 
 index/about-title:
-  en-US: A blockchain built to last
+  en: A blockchain built to last
   zh-CN: 永久稳定的区块链
 index/about:
-  en-US: >-
+  en: >-
     <p>Blockchains must be immutable. At least if they want to revolutionize
     trust. Endogenous trust is the whole revolution: in place of the software
     maintainers’ or some third party’s reputation, we can trust mechanisms
@@ -44,10 +44,10 @@ index/about:
     从设计上就旨在避免一切改变。透过与造成不稳定的最大根源——应用程序——解耦，我们不仅实现了不可变性，还获得了更好的抽象层。这使得我们的区块链不仅更为安全，还更加灵活、高效。</p>
 
 melmint-title:
-  en-US: "Mel: cryptocurrency done&nbsp;right"
+  en: "Mel: cryptocurrency done&nbsp;right"
   zh-CN: MEL：前所未有的加密货币
 melmint-summary:
-  en-US: >-
+  en: >-
     <p>Mel is Themelio’s native cryptocurrency. Unlike traditional
     cryptocurrencies (such as bitcoin and ether), mel keeps a stable value over
     time. This makes mel a much more useful currency. Unlike fiat stablecoins,
@@ -76,10 +76,10 @@ melmint-summary:
     的网络估值而浮动。SYM 在 Melmint 中还有一个重要角色，那就是作为稳定 MEL 价值的「支撑」资产。</p>
 
 why-title:
-  en-US: Why Themelio?
+  en: Why Themelio?
   zh-CN: 为什么选择 Themelio?
 why-1:
-  en-US: >
+  en: >
     <h4>Trust the protocol&mdash;don&rsquo;t trust people</h4>
 
     <p>The killer feature of blockchains has always been <a
@@ -94,7 +94,7 @@ why-1:
     href="https://medium.com/themelio/the-killer-feature-of-blockchains-bf4c3c25b298">内生信任</a>：源于激励机制与密码学原理的安全性。有了内生信任，我们不再需要信任开发者或「用户社区」的任意决定。Themelio
     终于实现了这场期待已久的信任革命。</p>
 why-2:
-  en-US: >
+  en: >
     <h4>Stop worrying about upgrades and forks</h4>
 
     <p>Modifying a blockchain's core validation rules <a
@@ -111,7 +111,7 @@ why-2:
     的设计宗旨即为完全不变。这样做不仅能够使 Themelio
     免受因区块链治理而带来的令人疲惫又有损安全的社区争议，还同时让开发者得以自由自在地开发深层技术堆栈，不必担心基层协议的更改。</p>
 why-3:
-  en-US: >
+  en: >
     <h4>Revolutionary non-fiat stablecoin</h4>
 
     <p class="">Themelio’s base currency, mel, is the <a
@@ -126,7 +126,7 @@ why-3:
     href="https://docs.themelio.org/whitepapers/melmint-v2/">世上首款真正做到去中心化的稳定币</a>，它完全没有任何受信发行方或预言机。MEL
     打破了过去去信任发行与稳定的币值间「鱼与熊掌不可得兼」的矛盾，必能在去中心化金融 (De-Fi) 应用程序方面取得根本性突破。</p>
 why-4:
-  en-US: >
+  en: >
     <h4>A paradigm shift in scalability and usability</h4>
 
     <p>Themelio does not try to scale through complex layer-1 mechanisms that
@@ -144,20 +144,20 @@ why-4:
     href="https://docs.themelio.org/basic-concepts/02-state/">优雅、高性能的 UTXO
     数据模型</a>，并结合其独特而强大的契约脚本，为构建可无限扩展的上层协议和应用程序提供了一个最小化但异常灵活的基础。</p>
 explore-themelio:
-  en-US: Explore Themelio
+  en: Explore Themelio
   zh-CN: 探索 Themelio
 participate:
-  en-US: Participate
+  en: Participate
   zh-CN: 参与
 build:
-  en-US: Build
+  en: Build
   zh-CN: 构建
 learn:
-  en-US: Learn
+  en: Learn
   zh-CN: 了解
 
 participate-desc:
-  en-US: |
+  en: |
     <section>
       <h3>Participate</h3>
       <p>Though still in alpha, Themelio is <a href="https://scan.themelio.org/">fully running</a> and ready for your participation.</p>
@@ -166,7 +166,7 @@ participate-desc:
     </section>
 
 build-desc:
-  en-US: |
+  en: |
     <section>
     <h3>Build</h3>
     <p>Write expressive covenants on Themelio with <a href="https://github.com/themeliolabs/melodeon">Melodeon</a>, our purely functional covenant language. </p>
@@ -175,7 +175,7 @@ build-desc:
     </section>
 
 learn-desc:
-  en-US: |
+  en: |
     <section>
         <h3>Learn</h3>
         <p>The <a href="overview">Learn</a> page contains everything you need to get started with Themelio.</p>
@@ -186,7 +186,7 @@ learn-desc:
     </section>
 
 index/participate-build-learn:
-  en-US: |
+  en: |
     <section>
         <h3>Learn</h3>
         <p>The <a href="overview">Learn</a> page contains everything you need to get started with Themelio.</p>
@@ -218,7 +218,7 @@ index/participate-build-learn:
     </section>
 
 community:
-  en-US: >
+  en: >
     <h2>Join our community</h2>
 
     <p class="text--lead">Be part of a growing community of global developers,
@@ -229,7 +229,7 @@ community:
     <p class="text--lead">加入我们，成为由全球开发者、创新者以及用户所组成的茁壮成长中的 Themelio
     社区的一分子，从而帮助我们实现 Themelio 的愿景。</p>
 community/discord:
-  en-US: >
+  en: >
     <h4>Discord</h4>
 
     <p>Ask questions, chat with global community members, and get technical help
@@ -238,7 +238,7 @@ community/discord:
     <h4>Discord</h4>
     <p>在这里提出问题，与全球社区成员沟通交流，并从开发人员那里获得技术帮助。</p>
 community/telegram:
-  en-US: >
+  en: >
     <h4>Telegram</h4>
 
     <p>Another place to talk about Themelio! Content is synchronized with
@@ -247,7 +247,7 @@ community/telegram:
     <h4>Telegram</h4>
     <p>这里是畅谈 Themelio 的又一个好去处！其内容与 Discord 同步。</p>
 community/twitter:
-  en-US: >
+  en: >
     <h4>Twitter</h4>
 
     <p>Follow @themeliolabs on Twitter to get the latest updates from the
@@ -256,7 +256,7 @@ community/twitter:
     <h4>Twitter</h4>
     <p>在 Twitter 上关注 @themeliolabs 从而获取 Themelio 团队的最新消息！</p>
 community/github:
-  en-US: >
+  en: >
     <h4>GitHub</h4>
 
     <p>Interested in Themelio's implementation? Follow development, contribute
@@ -266,21 +266,21 @@ community/github:
     <p>对实现 Themelio 感兴趣吗？在 GitHub 上，您可关注我们的研发动向，为我们贡献代码，并参与工程讨论。</p>
 
 blog:
-  en-US: Blog
+  en: Blog
   zh-CN: 我们博客上的最新文章
 team:
-  en-US: "A visionary founder, top engineers, and industry-leading partners."
+  en: "A visionary founder, top engineers, and industry-leading partners."
   zh-CN: "远见卓识的创始人、<wbr>顶尖的工程师、<wbr>行&#8288;业领&#8288;先的合作伙伴。"
 view-our-team:
-  en-US: View our team
+  en: View our team
   zh-CN: 了解我们的团队
 overview/hero:
-  en-US: >-
+  en: >-
     Explore Themelio&rsquo;s new blockchain paradigm&mdash;richly layered
     applications evolving on a permanent foundation of endogenous trust.
   zh-CN: 探索 Themelio 的新型区块链范式&mdash;&mdash;在永久的内生信任基础层上不断发展丰富且层次多样的应用程序。
 overview/traditional-blockchains:
-  en-US: |
+  en: |
     <h3>Traditional platform &amp;<br>application blockchains</h3>
     <ul>
         <li>Blockchain is tightly coupled to applications</li>
