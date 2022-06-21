@@ -11,6 +11,9 @@ wallet-cta:
 join-the-community:
   en: Join the community
   zh-CN: 加入社区
+learn-more:
+  en: Learn more
+
 tagline:
   en: The first <nobr><i class="text-primary flashing-cursor">self-securing</i></nobr> blockchain network
   zh-CN: <b>去信任</b>互联网<br />的根基
@@ -156,14 +159,9 @@ learn:
   en: Learn
   zh-CN: 了解
 
-participate-desc:
+run-node-desc:
   en: |
-    <section>
-      <h3>Participate</h3>
-      <p>Though still in alpha, Themelio is <a href="https://scan.themelio.org/">fully running</a> and ready for your participation.</p>
-      <p>Run full-featured thin clients or <a href="https://docs.themelio.org/try-themelio/auditor-node/">nodes</a>, both on Themelio’s testnet and on its prototype mainnet.</p>
-      <p>The <a href="https://docs.themelio.org/try-themelio/melwalletd/">official wallet</a> lets you store and transact in MEL, SYM, and any other Themelio-based token. You can even <a href="https://docs.themelio.org/try-themelio/melminter/">mint your own MEL</a>.</p>
-    </section>
+    Though still in alpha, Themelio's mainnet is <a href="https://scan.themelio.org/">fully running</a> and ready for your participation. You can <a href="https://docs.themelio.org/try-themelio/auditor-node/">run production-quality nodes</a>, both on the prototype mainnet and on an ephemeral testnet.
 
 build-desc:
   en: |

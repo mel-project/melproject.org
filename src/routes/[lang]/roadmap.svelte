@@ -10,7 +10,7 @@
 </script>
 
 <template lang="pug">
-    MainLayout(title="roadmap")
+    MainLayout(title!='{l10n("nav/roadmap")}' currentPath="roadmap")
       .section
         .section__inner.container
           .row.mb-3
@@ -21,8 +21,8 @@
 
       .section.section--darken
         .section__inner.container
-          .row.mb-3
-            div {@html l10n("detail1")}
-            div {@html l10n("detail2")}
+          .row
+            | {@html l10n("detail1")}
+            | {@html l10n("detail2")}
 
 </template>

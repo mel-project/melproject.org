@@ -9,6 +9,8 @@
 
   let debugging = false;
   let innerWidth;
+
+  export let currentPath = "";
 </script>
 
 <template lang="pug">
@@ -30,16 +32,17 @@
 
     link(href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' rel='stylesheet' )
 
-    link(href='/css/fonts.css' rel='stylesheet')
+    link(href='/iosevka-aile/iosevka-aile.css' rel='stylesheet')
+    link(href='/iosevka-sparkle/iosevka-sparkle.css' rel='stylesheet')
 
   svelte:body({$lang})
   svelte:window(bind:innerWidth)
   +if('debugging == true')
     div(style="position: sticky; top: 0;") 
       div(style="background-color: grey") {innerWidth}
-  header
+  header 
   
-  Nav
+  Nav(currentPath!='{currentPath}')
   slot
   footer#footer
     .container
@@ -58,7 +61,7 @@
             .col
               a(href='https://medium.com/themelio' target='_blank' rel='noopener') Medium
             .col
-              a(href='https://discord.gg/zJ4mwM5pzD' target='_blank' rel='noopener') Discord
+              a(href='https://discord.gg/themelio' target='_blank' rel='noopener') Discord
             .col
               a(href='https://t.me/themeliolabs' target='_blank' rel='noopener') Telegram
             .col
@@ -73,7 +76,7 @@
   footer {
     padding-top: 60px;
     padding-bottom: 60px;
-    background-color: var(--primary-color);
+    background-color: var(--primary-dark);
     color: var(--white);
   }
 

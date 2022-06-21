@@ -7,12 +7,10 @@
   import layer from "../../l10n/team.l10n.yaml";
 
   $: l10n = l10nLoad({ ...base, ...layer }, $lang);
-
-
 </script>
 
 <template lang="pug">
-  MainLayout(title="Team")
+  MainLayout(title="Team" currentPath="team")
         .section
           .section__inner.container
             .row
@@ -77,7 +75,7 @@
 </template>
 
 <style lang="scss">
-  .partners img{
+  .partners img {
     height: 4em;
   }
 </style>

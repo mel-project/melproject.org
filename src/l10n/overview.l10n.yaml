@@ -1,10 +1,10 @@
 overview/hero:
-  en-US: Explore Themelio&rsquo;s new blockchain paradigm&mdash;richly layered applications evolving on a permanent foundation of endogenous trust. 
-  zh-CN: 探索 Themelio 的新型区块链范式&mdash;&mdash;在永久的内生信任基础层上不断发展丰富且层次多样的应用程序。 
+  en: Explore Themelio&rsquo;s new blockchain paradigm&mdash;richly layered applications evolving on a permanent foundation of endogenous trust.
+  zh-CN: 探索 Themelio 的新型区块链范式&mdash;&mdash;在永久的内生信任基础层上不断发展丰富且层次多样的应用程序。
 
 overview/traditional-blockchains:
-  en-US: |
-    <h3>Traditional platform &amp;<br>application blockchains</h3>
+  en: |
+    <h4>Traditional platform &amp;<br>application blockchains</h4>
     <ul>
         <li>Blockchain is tightly coupled to applications</li>
         <li>Application evolution eventually requires the blockchain to adapt</li>
@@ -19,8 +19,8 @@ overview/traditional-blockchains:
     </ul>
 
 overview/themelio-decoupled:
-  en-US: |
-    <h3>Themelio&rsquo;s decoupled architecture</h3>
+  en: |
+    <h4>Themelio&rsquo;s decoupled architecture</h4>
     <ul>
         <li>Separated from applications by flexible mid-level protocols</li>
         <li>Applications and protocols can evolve without changing layer-1 blockchain</li>
@@ -37,8 +37,8 @@ overview/themelio-decoupled:
     </ul>
 
 overview/robust-endogenous-trust:
-  en-US: |
-    <h3>Robust endogenous trust</h3>
+  en: |
+    <h4>Robust endogenous trust</h4>
     <p>Blockchains' most distinctive feature is <b>endogenous trust</b>: security guaranteed by the protocol, not by its participants. Yet existing blockchains don&rsquo;t ensure endogenous trust. Tightly coupled with applications, they are forced to change with application needs. And we are forced to trust whoever decides the changes.</p>
     <p>So Themelio rejects the &ldquo;world computer&rdquo; paradigm that directly interfaces with apps. We focus on providing an <a href="https://docs.themelio.org/basic-concepts/01-endogenous-trust/">immutable foundation that never needs trust-damaging protocol changes</a>.</p>
   zh-CN: |
@@ -47,8 +47,8 @@ overview/robust-endogenous-trust:
     <p>因此，Themelio 拒绝采用「世界计算机」这种直接与应用对接的范式。我们旨在提供一种<a href="https://docs.themelio.org/basic-concepts/01-endogenous-trust/">不可变的信任底层，该底层永远不会需要进行有损信任的协议更改</a>。</p>
 
 overview/smart-coins:
-  en-US: |
-    <h3>Covenant-powered smart coins</h3>
+  en: |
+    <h4>Covenant-powered smart coins</h4>
     <p>Most general-purpose blockchains use an &ldquo;account-based&rdquo; ledger containing accounts with balances and storage. But this tightly couples apps with the blockchain and introduces opportunities for security-shattering contract bugs, undermining endogenous trust. </p>
     <p>Instead, Themelio uses a more elegant model perfect for a fundamental trust layer &mdash; <a href="https://docs.themelio.org/basic-concepts/02-state/">Bitcoin's &ldquo;coin-based&rdquo; model, augmented with rich scripting and thin clients.</a></p>
   zh-CN: |
@@ -57,18 +57,18 @@ overview/smart-coins:
     <p>正因如此，Themelio 采用了一种对于基础信任层来说更为优雅的模型&mdash;&mdash;<a href="https://docs.themelio.org/basic-concepts/02-state/">比特币的基于 UTXO 的模型，并透过富脚本与瘦客户端为其提供功能增强。</a></p>
 
 overview/collusion-resistant:
-  en-US: |
-    <h3>Collusion-resistant consensus game</h3>
+  en: |
+    <h4>Collusion-resistant consensus game</h4>
     <p>Even without protocol changes, endogenous trust in any blockchain relies on its <b>consensus game</b> that incentivizes correct behavior. But blockchains today often design their consensus games on shaky security assumptions and patch up failures by violating endogenous trust.</p>
-    <p>Themelio's innovative proof-of-stake system, Synkletos, is designed to <a href="https://docs.themelio.org/basic-concepts/03-consensus/">maximize long-term safety even in the presence of unlimited collusion</a>.</p>
+    <p>Thus, Themelio's innovative proof-of-stake system, Synkletos, is designed to <a href="https://docs.themelio.org/basic-concepts/03-consensus/">maximize long-term safety even in the presence of unlimited collusion</a>.</p>
   zh-CN: |
     <h3>防串通的共识博弈</h3>
     <p>即便没有协议上的更改，区块链的内生信任还需要仰赖能够激励正确行为的<b>共识博弈</b>。但是当下的区块链往往会根据不稳健的安全假设来设计共识博弈，并透过违反内生信任的做法在博弈失败时予以修补。</p> 
     <p>Themelio 新颖的权益证明共识机制 Synkletos 从设计上便保障了<a href="https://docs.themelio.org/basic-concepts/03-consensus/">最大化长期安全性，即便是在面临无限串通的前提下也仍可安全无虞</a>。</p>
-  
+
 overview/non-fiat-stablecoin:
-  en-US: |
-    <h3>World&rsquo;s first non-fiat stablecoin</h3>
+  en: |
+    <h4>World&rsquo;s first non-fiat stablecoin</h4>
     <p>Themelio’s base currency, Mel, is a new asset class that finally delivers on crypto&rsquo;s promise of sound decentralized money. <a href="https://docs.themelio.org/basic-concepts/04-melmint/">Melmint, a fully trustless, oracle-free issuance mechanism</a>, stabilizes Mel's value against an index representing the time cost of sequential computation.</p>
     <p>Mel has no ties to any fiat currency and stability beyond any conventional cryptocurrency. It is a fundamental breakthrough in money.</p>
   zh-CN: |
@@ -77,7 +77,7 @@ overview/non-fiat-stablecoin:
     <p>MEL 与任何法币都没有丝毫牵扯，但其稳定性却超越既往任何传统的加密货币。它是货币史上的一次根本性突破。</p>
 
 overview/join-our-testnet:
-  en-US: |
+  en: |
     <h2>Join our testnet</h2>
     <p class="text--lead">Test out the Themelio network and get mainnet rewards by participating in testnet contests.</p>
     <a href="" class="btn btn-outline-dark btn-lg">Testnet portal</a>
@@ -87,7 +87,7 @@ overview/join-our-testnet:
     <a href="" class="btn btn-outline-dark btn-lg">Testnet 门户</a>
 
 overview/knowledge-base:
-  en-US: |
+  en: |
     <h2>Knowledge base</h2>
     <p class="text--lead">All the resources you need to learn more about Themelio.</p>
     <a href="https://docs.themelio.org/" class="btn btn-outline-dark btn-lg">Read now</a>

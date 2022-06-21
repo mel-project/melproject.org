@@ -12,9 +12,9 @@ nav/home:
 nav/roadmap:
   en: Roadmap
   zh-CN: 路线图
-nav/learn:
-  en: Learn
-  zh-CN: 了解
+nav/tech:
+  en: Tech
+  zh-CN: 技术
 nav/overview:
   en: Overview
   zh-CN: 概览

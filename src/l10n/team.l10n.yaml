@@ -1,8 +1,7 @@
 team:
-  en-US: "Team"
+  en: "Team"
   zh-CN: "empty"
 
 mission:
-  en-US: "We are on a mission to build a permanent root of trust for a new paradigm of faster, more usable, and far more secure decentralized apps. We envision a future where the true potential of public blockchains is unlocked and secure online interaction is freed from dependence on unaccountable centralization."
+  en: "We are on a mission to build a permanent root of trust for a new paradigm of faster, more usable, and far more secure decentralized apps. We envision a future where the true potential of public blockchains is unlocked and secure online interaction is freed from dependence on unaccountable centralization."
   zh-CN: "empty"
-
