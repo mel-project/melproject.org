@@ -19,10 +19,10 @@ MainLayout(title="Technology" currentPath="tech")
             p.text--lead {@html l10n("overview/hero")}
         .row
           .col-lg-1
-          .col-lg.round-card.arch-description.m-lg-3.p-5
+          .col-lg.round-card.arch-description.m-lg-4.p-5
             img.img-fluid(src='/images/tech/badstack.png', style='mix-blend-mode: darken')
             div {@html l10n("overview/traditional-blockchains")}
-          .col-lg.round-card.arch-description.m-lg-3.p-5
+          .col-lg.round-card.arch-description.m-lg-4.p-5
             img.img-fluid(src='/images/tech/goodstack.png', style='mix-blend-mode: darken')
             div {@html l10n("overview/themelio-decoupled")}
           .col-lg-1
@@ -41,22 +41,23 @@ MainLayout(title="Technology" currentPath="tech")
       .section__inner.container
         .row
           .col-lg-6
-            .smacard
+            .smacard.m-lg-3.my-lg-4.p-3.p-lg-5
               .smicon 
                 img.img-fluid(src="/images/tech/keyhole.png")
               div {@html l10n("overview/robust-endogenous-trust")}
           .col-lg-6
-            .smacard
+            .smacard.m-lg-3.my-lg-4.p-3.p-lg-5
               .smicon 
                 img.img-fluid(src="/images/tech/utxo.png") 
               div {@html l10n("overview/smart-coins")}
+        .row
           .col-lg-6
-            .smacard
+            .smacard.m-lg-3.my-lg-4.p-3.p-lg-5
               .smicon 
                 img.img-fluid(src="/images/tech/consensus.png")
               div {@html l10n("overview/collusion-resistant")}
           .col-lg-6
-            .smacard
+            .smacard.m-lg-3.my-lg-4.p-3.p-lg-5
               .smicon 
                 img.img-fluid(src="/images/tech/mel.png")
               div {@html l10n("overview/non-fiat-stablecoin")}
@@ -74,9 +75,8 @@ MainLayout(title="Technology" currentPath="tech")
     background-color: white;
     border-radius: 0.3rem;
     border: 1px solid var(--primary-color);
-    margin: 1rem;
-    padding: 2rem;
-    min-height: 30rem;
+
+    min-height: 32rem;
 
     display: flex;
     flex-direction: row;

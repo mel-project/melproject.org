@@ -22,7 +22,7 @@ MainLayout(title!='{l10n("nav/home")}')
       .row
         .col
           //- h1 {@html l10n("tagline")}
-          h1 The first #[br] #[i.text-secondary #[BlinkingTexts(labels!='{["self-securing", "governance-free", "anti-collusion", "truly trustless"]}')]] #[br] blockchain network
+          h1 The first #[br] #[i.text-primary #[BlinkingTexts(labels!='{["self-securing", "governance-free", "anti-collusion", "truly trustless"]}')]] #[br] blockchain network
           p.text--blead Themelio is an #[b immutable root of trust] built to realize the blockchain revolution we all wanted: a world secured by robust mechanisms and decentralized incentives, not untrustworthy and centralized third parties.
       .row
         .col 
