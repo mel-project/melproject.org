@@ -161,7 +161,7 @@ learn:
 
 run-node-desc:
   en: |
-    Though still in alpha, Themelio's mainnet is <a href="https://scan.themelio.org/">fully running</a> and ready for your participation. You can <a href="https://docs.themelio.org/try-themelio/auditor-node/">run production-quality nodes</a>, both on the prototype mainnet and on an ephemeral testnet.
+    Though still in beta, Themelio's mainnet is <a href="https://scan.themelio.org/">fully running</a> and ready for your participation. You can <a href="https://docs.themelio.org/try-themelio/auditor-node/">run production-quality nodes</a>, both on the prototype mainnet and on an ephemeral testnet.
 
 build-desc:
   en: |

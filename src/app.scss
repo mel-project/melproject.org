@@ -84,19 +84,28 @@ h1, h2,h3,h4,h5 {
   font-family: var(--display-font);
 }
 
+
 .section {
     padding-top: 60px;
     padding-bottom: 60px;
   }
-  
-  .section h1 {
-    margin-bottom: 20px;
+
+@media (max-width: 768px) {
+  .section {
+  padding-top: 40px;
+  padding-bottom: 40px;
   }
+}
   
-  .section h2 {
-    margin-bottom: 20px;
-  }
-  
+
+.section h1 {
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+}
+
 
   
 
