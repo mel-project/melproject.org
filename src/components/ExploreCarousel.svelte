@@ -2,16 +2,16 @@
   let selected = 0;
   $: selections = [
     {
+      label: "Make a wallet",
+      icon: "bi-wallet",
+    },
+    {
       label: "Run a node",
       icon: "bi-diagram-3",
     },
     {
       label: "Mint MEL",
       icon: "bi-coin",
-    },
-    {
-      label: "Make a wallet",
-      icon: "bi-wallet",
     },
     {
       label: "Develop covenants",
@@ -27,7 +27,7 @@
 
 <div class="inner">
   <div class="main">
-    {#if selected == 0}
+    {#if selected == 1}
       <div transition:slide>
         <img
           src="/images/homepage/melscan.png"
@@ -36,7 +36,7 @@
         />
         {@html l10n("run-node-desc")}
       </div>
-    {:else if selected == 1}
+    {:else if selected == 2}
       <div transition:slide>
         <img
           alt="melscan"
@@ -48,7 +48,7 @@
         <a href="https://docs.themelio.org/try-themelio/melminter/">Melminter</a
         >. Be one of the first people to own assets on the Themelio mainnet!
       </div>
-    {:else if selected == 2}
+    {:else if selected == 0}
       <div transition:slide>
         <img
           alt="melscan"
