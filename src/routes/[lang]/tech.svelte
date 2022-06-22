@@ -84,12 +84,12 @@ MainLayout(title="Technology" currentPath="tech")
 
   .smicon {
     padding-right: 2rem;
-    min-width: 10rem;
+    min-width: calc(min(10rem, 20vw));
     flex-grow: 1;
   }
 
   .smicon img {
-    width: 8rem;
-    height: 8rem;
+    width: calc(min(10rem, 20vw) - 2rem);
+    height: calc(min(10rem, 20vw) - 2rem);
   }
 </style>
