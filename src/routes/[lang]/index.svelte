@@ -26,16 +26,16 @@ MainLayout(title!='{l10n("nav/home")}')
           p.text--blead Themelio is an #[b immutable root of trust] built to realize the blockchain revolution we all wanted: a world secured by robust mechanisms and decentralized incentives, not untrustworthy and centralized third parties.
       .row
         .col 
-          a.btn.btn-primary.btn-lg(href='#community-sect').mx-3
+          a.btn.btn-primary.btn-lg(href='#community-sect').mx-3.m-1
             | {l10n("join-the-community")}
-          a.btn.btn-outline-secondary.btn-lg(href='/en/tech').mx-3
+          a.btn.btn-outline-secondary.btn-lg(href='/en/tech').mx-3.m-1
             | {l10n("learn-more")}
 
   .section
     .section__inner.container
       .row
         .col-md-5.p-md-3
-          <img src="/images/homepage/utxo.png" class="img-fluid"/> 
+          <img src="/images/homepage/utxo.png" class="img-fluid my-5"/> 
         .col-md-7.p-md-3
           h2.py-2 Governance-free modular architecture
           p.small-lead Themelio's unique modular architecture achieves Ethereum-like generality #[b and] better-than-Bitcoin immutability and neutrality. This is done through a minimally enhanced UTXO model that focuses on blockchains core task: providing a neutral security foundation independent of all protocol-external trust. 
@@ -45,20 +45,20 @@ MainLayout(title!='{l10n("nav/home")}')
     .section__inner.container
       .row
         .col-md-5.d-md-none.p-md-3
-          <img src="/images/homepage/vault.png" class="img-fluid"/> 
+          <img src="/images/homepage/vault.png" class="img-fluid my-5"/> 
         .col-md-7.p-md-3
           h2.py-2 Decentralized sound money and resilient #[nobr proof-of-stake] consensus
           p.small-lead MEL, the native currency, is a #[a(href="https://docs.themelio.org/basic-concepts/04-melmint/") #[b breakthrough, oracle-free &ldquo;stablecoin&rdquo;]] independent of all fiat currency. Along with SYM, a separate PoS token, it participates in Themelio's uniquely collusion-resistant consensus game Synkletos that greatly improves long-term security over existing mechanisms.
 
           a.learnmore(href="https://docs.themelio.org/basic-concepts/03-consensus/") Realizing a sound cryptocurrency economy <i class="fa-solid fa-chevron-right fa-sm"></i>
         .col-md-5.d-none.d-md-block.p-md-3
-          <img src="/images/homepage/vault.png" class="img-fluid"/> 
+          <img src="/images/homepage/vault.png" class="img-fluid  mb-4"/> 
 
   .section
     .section__inner.container
       .row
         .col-md-5.p-md-3
-          <img src="/images/homepage/balloons.png" class="img-fluid"/> 
+          <img src="/images/homepage/balloons.png" class="img-fluid my-5"/> 
         .col-md-7.p-md-3
           h2.py-2 Endless extensibility #[nobr #[i beyond] &ldquo;Web3&rdquo;]
           p.small-lead Thanks to its zero-governance stability and easily embeddable, app-decoupled design, Themelio is a suitable #[b root of trust] for decentralized apps beyond the current scope of Web3. Unlike existing L1s, Themelio is perfect for securing critical non-blockchain, non-financial protocols ranging from end-to-end encrypted communication to uncensorable file publishing.
@@ -98,7 +98,6 @@ MainLayout(title!='{l10n("nav/home")}')
               img(src="/images/social_media/github.png" class="community-icon")
               h5.m-3 GitHub
               a.join <i class="fa-solid fa-plus"></i> Join
-          .row
             a.col.text-center.community-card(href="https://t.me/themeliolabs" target="_blank" rel="noopener")
               img(src="/images/social_media/telegram.png" class="community-icon")
               h5.m-3 Telegram
@@ -116,14 +115,14 @@ MainLayout(title!='{l10n("nav/home")}')
     .section__inner.container
       .row.p-md-3
         .col-md
-          h2.my-3 Team
+          h2.my-4 Team
           p.small-lead Learn about (and perhaps join!) our visionary founder, top protocol engineers, and industry-leading partners. 
           a.btn.btn-primary(href!="{'/' + $lang + '/team'}")
             | View team <i class="fa-solid fa-chevron-right fa-sm"></i>
           a.btn.btn-outline-secondary.mx-2(href="https://angel.co/company/themelio/jobs" target="_blank" rel="noopener")
             | Current openings <i class="fa-solid fa-arrow-up-right-from-square"></i>
         .col-md
-          h2.my-3 Developers
+          h2.my-5 Developers
           p.small-lead Read our comprehensive developer documentation and start experimenting with Themelio now!
           a.btn.btn-outline-primary(href="https://docs.themelio.org" target="_blank" rel="noopener") Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>
 

@@ -114,7 +114,7 @@
   .showcase-img {
     border: solid 1px var(--primary-color);
     border-radius: 0.3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     aspect-ratio: 16/9;
     width: 100%;
     display: block;
