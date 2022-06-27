@@ -122,7 +122,7 @@ MainLayout(title!='{l10n("nav/home")}')
           a.btn.btn-outline-secondary.mx-2(href="https://angel.co/company/themelio/jobs" target="_blank" rel="noopener")
             | Current openings <i class="fa-solid fa-arrow-up-right-from-square"></i>
         .col-md
-          h2.my-5 Developers
+          h2.my-4 Developers
           p.small-lead Read our comprehensive developer documentation and start experimenting with Themelio now!
           a.btn.btn-outline-primary(href="https://docs.themelio.org" target="_blank" rel="noopener") Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
