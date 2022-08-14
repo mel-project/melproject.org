@@ -83,10 +83,12 @@
         </p>
 
         <p>
-          At this moment, Melodeon is not yet fully ready for public use, but
-          you can
-          <a href="https://github.com/themeliolabs/melodeon"
-            >follow its development on GitHub</a
+          We've recently released the <a href="https://melodeonlang.org"
+            >first alpha release of Melodeon</a
+          >! The <a href="https://guide.melodeonlang.org">Melodeon Guide</a>
+          teaches you how to write covenants in Melodeon and deploy them to our
+          <a href="https://guide.melodeonlang.org/9_deploying_covenants.html"
+            >mainnet and testnet</a
           >.
         </p>
       </div>
