@@ -31,6 +31,18 @@ MainLayout(title!='{l10n("nav/home")}')
           a.btn.btn-outline-secondary.btn-lg(href='/en/tech').mx-3.m-1
             | {l10n("learn-more")}
 
+  .section.text-center
+    .section__inner.container
+      .row
+        .col
+          p.text--blead
+            i 🎉 Public alpha of Melodeon: our high-level covenant language 🎉
+      .row
+        .col
+          a.btn.btn-outline-secondary.btn-lg(href='https://melodeonlang.org')
+            | Start coding now!
+
+
   .section
     .section__inner.container
       .row
