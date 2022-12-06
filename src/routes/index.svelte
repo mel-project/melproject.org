@@ -1,5 +1,6 @@
 <script>
-  import Homepage from "./[lang]/index.svelte";
+  // test
+  import Homepage from "./[lang]/index.svelte"; 
 </script>
 
 <Homepage />
