@@ -1,0 +1,97 @@
+overview/hero:
+  en: Explore Themelio&rsquo;s new blockchain paradigm&mdash;richly layered applications evolving on a permanent foundation of endogenous trust.
+  zh-CN: 探索 Themelio 的新型区块链范式&mdash;&mdash;在永久的内生信任基础层上不断发展丰富且层次多样的应用程序。
+
+overview/traditional-blockchains:
+  en: |
+    <h4>Traditional platform &amp;<br>application blockchains</h4>
+    <ul>
+        <li>Blockchain is tightly coupled to applications</li>
+        <li>Application evolution eventually requires the blockchain to adapt</li>
+        <li>Contentious, destabilizing blockchain protocol changes that undermine endogenous trust</li>
+    </ul>
+  zh-CN: |
+    <h3>传统的「平台式」区块链</h3>
+    <ul>
+        <li>区块链与应用程序紧密耦合</li>
+        <li>应用程序的演化最终导致需要区块链去进行适配</li>
+        <li>富有争议且让区块链变得不稳定的协议更改会破坏内生信任</li>
+    </ul>
+
+overview/themelio-decoupled:
+  en: |
+    <h4>Themelio&rsquo;s decoupled architecture</h4>
+    <ul>
+        <li>Separated from applications by flexible mid-level protocols</li>
+        <li>Applications and protocols can evolve without changing layer-1 blockchain</li>
+        <li>Powerful enough to build layer-2 protocols that inherit the blockchain's security</li>
+        <li>Governance-free, immutable blockchain that needs no change</li>
+    </ul>
+  zh-CN: |
+    <h3>Themelio 的解耦架构</h3>
+    <ul>
+        <li>透过插入灵活的中间层协议，让区块链与应用程序分隔开来</li>
+        <Li>应用程序与中间层协议可在不改变第 1 层区块链底层协议的前提下发展演化</li>
+        <Li>足够强大以打造第 2 层协议，同时继承区块链底层的安全性</li>
+        <li>无需治理，不可变区块链底层无需任何更改</li>
+    </ul>
+
+overview/robust-endogenous-trust:
+  en: |
+    <h4>Robust endogenous trust</h4>
+    <p>Blockchains' most distinctive feature is <b>endogenous trust</b>: security guaranteed by the protocol, not by its participants. Yet existing blockchains don&rsquo;t ensure endogenous trust. Tightly coupled with applications, they are forced to change with application needs. And we are forced to trust whoever decides the changes.</p>
+    <p>So Themelio rejects the &ldquo;world computer&rdquo; paradigm that directly interfaces with apps. We focus on providing an <a href="https://docs.themelio.org/basic-concepts/01-endogenous-trust/">immutable foundation that never needs trust-damaging protocol changes</a>.</p>
+  zh-CN: |
+    <h3>坚韧的内生信任</h3>
+    <p>区块链最显著的特性便是<b>内生信任</b>&mdash;&mdash;安全性由协议而非参与方来提供保障。但是现存的区块链并不能确保内生信任。由于与应用程序紧密耦合，当下的区块链不得不跟随应用程序的需求变化而做出更改。而我们则被迫去信任这些能够对更改做决策的人。</p>
+    <p>因此，Themelio 拒绝采用「世界计算机」这种直接与应用对接的范式。我们旨在提供一种<a href="https://docs.themelio.org/basic-concepts/01-endogenous-trust/">不可变的信任底层，该底层永远不会需要进行有损信任的协议更改</a>。</p>
+
+overview/smart-coins:
+  en: |
+    <h4>Covenant-powered smart coins</h4>
+    <p>Most general-purpose blockchains use an &ldquo;account-based&rdquo; ledger containing accounts with balances and storage. But this tightly couples apps with the blockchain and introduces opportunities for security-shattering contract bugs, undermining endogenous trust. </p>
+    <p>Instead, Themelio uses a more elegant model perfect for a fundamental trust layer &mdash; <a href="https://docs.themelio.org/basic-concepts/02-state/">Bitcoin's &ldquo;coin-based&rdquo; model, augmented with rich scripting and thin clients.</a></p>
+  zh-CN: |
+    <h3>由契约驱动的智能 UTXO</h3>
+    <p>大多数通用区块链都采用了一种「基于账户」的模型，这种模型有一个包含所有账户的账户余额和存储的分类账。但这将应用与区块链紧密地耦合在一起，并为有损安全的合约漏洞带来了机会，从而破坏了内生信任。 </p>
+    <p>正因如此，Themelio 采用了一种对于基础信任层来说更为优雅的模型&mdash;&mdash;<a href="https://docs.themelio.org/basic-concepts/02-state/">比特币的基于 UTXO 的模型，并透过富脚本与瘦客户端为其提供功能增强。</a></p>
+
+overview/collusion-resistant:
+  en: |
+    <h4>Collusion-resistant consensus game</h4>
+    <p>Even without protocol changes, endogenous trust in any blockchain relies on its <b>consensus game</b> that incentivizes correct behavior. But blockchains today often design their consensus games on shaky security assumptions and patch up failures by violating endogenous trust.</p>
+    <p>Thus, Themelio's innovative proof-of-stake system, Synkletos, is designed to <a href="https://docs.themelio.org/basic-concepts/03-consensus/">maximize long-term safety even in the presence of unlimited collusion</a>.</p>
+  zh-CN: |
+    <h3>防串通的共识博弈</h3>
+    <p>即便没有协议上的更改，区块链的内生信任还需要仰赖能够激励正确行为的<b>共识博弈</b>。但是当下的区块链往往会根据不稳健的安全假设来设计共识博弈，并透过违反内生信任的做法在博弈失败时予以修补。</p> 
+    <p>Themelio 新颖的权益证明共识机制 Synkletos 从设计上便保障了<a href="https://docs.themelio.org/basic-concepts/03-consensus/">最大化长期安全性，即便是在面临无限串通的前提下也仍可安全无虞</a>。</p>
+
+overview/non-fiat-stablecoin:
+  en: |
+    <h4>World&rsquo;s first non-fiat stablecoin</h4>
+    <p>Themelio’s base currency, Mel, is a new asset class that finally delivers on crypto&rsquo;s promise of sound decentralized money. <a href="https://docs.themelio.org/basic-concepts/04-melmint/">Melmint, a fully trustless, oracle-free issuance mechanism</a>, stabilizes Mel's value against an index representing the time cost of sequential computation.</p>
+    <p>Mel has no ties to any fiat currency and stability beyond any conventional cryptocurrency. It is a fundamental breakthrough in money.</p>
+  zh-CN: |
+    <h3>世上首款不与法币挂钩的稳定币</h3>
+    <p>Themelio 的基础货币 MEL 是一种全新的资产类别，它终于实现了加密货币所作出的「健全的去中心化货币」的承诺。<a href="https://docs.themelio.org/basic-concepts/04-melmint/">Melmint</a> 是一种完全去信任、免预言机的发行机制，它将 MEL 的价值稳定在一个挂钩于顺序计算时间成本的指数上。</p> 
+    <p>MEL 与任何法币都没有丝毫牵扯，但其稳定性却超越既往任何传统的加密货币。它是货币史上的一次根本性突破。</p>
+
+overview/join-our-testnet:
+  en: |
+    <h2>Join our testnet</h2>
+    <p class="text--lead">Test out the Themelio network and get mainnet rewards by participating in testnet contests.</p>
+    <a href="" class="btn btn-outline-dark btn-lg">Testnet portal</a>
+  zh-CN: |
+    <h2>加入我们的 testnet</h2>
+    <p class="text--lead">参与 testnet 比赛，帮助我们测试 Themelio 的网络并获得 mainnet 奖励。</p>
+    <a href="" class="btn btn-outline-dark btn-lg">Testnet 门户</a>
+
+overview/knowledge-base:
+  en: |
+    <h2>Knowledge base</h2>
+    <p class="text--lead">All the resources you need to learn more about Themelio.</p>
+    <a href="https://docs.themelio.org/" class="btn btn-outline-dark btn-lg">Read now</a>
+  zh-CN: |
+    <h2>知识库</h2>
+    <p class="text--lead">您用来了解 Themelio 的全部资源。</p>
+    <a href="https://docs.themelio.org/" class="btn btn-outline-dark btn-lg">开始阅读</a>

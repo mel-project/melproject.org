@@ -31,6 +31,9 @@
 		"vite": "^4.0.3"
 	},
 	"dependencies": {
+		"@fortawesome/free-brands-svg-icons": "^6.2.1",
+		"@fortawesome/free-solid-svg-icons": "^6.2.1",
+		"@modyfi/vite-plugin-yaml": "^1.0.3",
 		"@popperjs/core": "^2.11.6",
 		"@types/debounce": "^1.2.1",
 		"axios": "^1.2.1",
@@ -38,8 +41,13 @@
 		"cryptocurrency-icons": "^0.18.1",
 		"debounce": "^1.2.1",
 		"detect-nearest-browser-locale": "^19.0.0",
+		"free-solid-svg-icons": "link:/@fortawesome/free-solid-svg-icons",
+		"free-solid-svg-icons\n\n": "link:@fortawesome/free-solid-svg-icons\n\n",
+		"node-sass": "^8.0.0",
 		"qrcode": "^1.5.1",
+		"sass": "^1.57.1",
 		"svelte-cryptoicon": "^0.16.1",
+		"svelte-fa": "^3.0.3",
 		"svelte-material-icons": "^2.0.4",
 		"svelte-preprocess": "^5.0.0"
 	}

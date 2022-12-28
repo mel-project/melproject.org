@@ -11,29 +11,7 @@
   $: l10n = l10nLoad(base, $lang);
 </script>
 
-<template lang="pug">
-.container.my-2
-  .row
-    .col-md.logo
-      a(href!='{`/${$lang}/`}')
-        img.navbar-brand(src!='/images/new-logo-new.png' alt='themelio logo')
-    .col-md.top-nav.center
-      NavLink(href!='{`/${$lang}/`}'
-              active!='{currentPath === ""}')
-        | {l10n("nav/home")}
-      NavLink(href!='{`/${$lang}/tech`}'
-              active!='{currentPath === "tech"}')
-        | {l10n("nav/tech")}
-      NavLink(href!='{`/${$lang}/roadmap`}'
-              active!='{currentPath === "roadmap"}')
-          | {l10n("nav/roadmap")}
-      NavLink(href='https://docs.themelio.org')
-          | {l10n("nav/docs")}
-      NavLink(href!='{`/${$lang}/team`}'
-              active!='{currentPath == "team" }')
-        | {l10n("nav/team")}
-      NavLink(href='https://medium.com/themelio')
-        | {l10n("nav/blog")}
+<template>
 </template>
 
 <style lang="scss">

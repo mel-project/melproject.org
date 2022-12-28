@@ -3,7 +3,7 @@
 	import BlogFeed from "../../components/BlogFeed.svelte";
 	import BlinkingTexts from "../../components/BlinkingTexts.svelte";
 	import ExploreCarousel from "../../components/ExploreCarousel.svelte";
-	import { l10nLoad, lang } from "@l10n/index";
+	import { l10nLoad, lang } from "@l10n";
 
 	import base from "@l10n/base.yaml";
 	import layer from "@l10n/index.l10n.yaml";

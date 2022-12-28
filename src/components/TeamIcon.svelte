@@ -6,10 +6,8 @@
     faTelegram,
     faLinkedin,
   } from "@fortawesome/free-brands-svg-icons";
-  import { 
-    faGlobe
-  } from "@fortawesome/free-solid-svg-icons";
-import { createEventDispatcher, getContext, onMount } from "svelte";
+  import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+  import { createEventDispatcher, getContext, onMount } from "svelte";
 
   export let name: string;
   export let title: string;
@@ -22,16 +20,15 @@ import { createEventDispatcher, getContext, onMount } from "svelte";
   export let telegram = "";
   export let linkedin = "";
 
-
   interface Link {
-    href: string,
-    icon: any
+    href: string;
+    icon: any;
   }
-  function link(href, icon): Link{
+  function link(href: string, icon: any): Link {
     return {
       href,
-      icon
-    }
+      icon,
+    };
   }
   let dispatch = createEventDispatcher();
   let links = [
@@ -40,31 +37,13 @@ import { createEventDispatcher, getContext, onMount } from "svelte";
     link(twitter, faTwitter),
     link(telegram, faTelegram),
     link(linkedin, faLinkedin),
-    ];
-
-
-  
+  ];
 </script>
 
-<template lang="pug">
-    .team-member
-      .info
-        img(src!="{img}")
-        h1 {name}
-        small(style="margin-top: -0.5rem; display: block") {aka}
-        span.bio-title {title}
-        hr
-      
-        p {blurb}
-      .links-container
-        +each('links as l')
-          +if('l.href != ""')
-            a.links(href!="{l.href}")
-              Fa(icon!="{l.icon}")
-</template>
+<template />
 
 <style lang="scss">
-  .team-member{
+  .team-member {
     background: clear;
     border-radius: 1em;
     border: 1px solid var(--primary-color);
@@ -77,22 +56,19 @@ import { createEventDispatcher, getContext, onMount } from "svelte";
     // gap: 1em;
   }
 
-  .team-member img{
+  .team-member img {
     width: 50%;
     border-radius: 100%;
     height: auto;
     margin-bottom: 1rem;
   }
-  .links{
+  .links {
     display: inline-block;
     width: 2.3em;
-    padding-right: .5em;
+    padding-right: 0.5em;
     box-sizing: border-box;
-    & :global(svg){
+    & :global(svg) {
       height: 100% !important;
     }
-
-
-    
   }
 </style>
