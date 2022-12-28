@@ -18,7 +18,7 @@
       icon: "bi-braces-asterisk",
     },
   ];
-  import { l10nLoad, lang } from "../l10n/l10n";
+  import { l10nLoad, lang } from "../l10n";
   import { slide } from "svelte/transition";
   import base from "../l10n/base.yaml";
   import layer from "../l10n/index.l10n.yaml";

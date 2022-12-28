@@ -3,7 +3,7 @@
   import NavDropdown from "./NavDropdown.svelte";
   // import themelioLogo from "../assets/new-logo.png";
   import base from "../l10n/base.yaml";
-  import { lang, Language, l10nLoad } from "../l10n/l10n";
+  import { lang, Language, l10nLoad } from "../l10n";
   import { page } from "$app/stores";
 
   export let currentPath = ""; // the usage here needs a refactor

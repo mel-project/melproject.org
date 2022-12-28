@@ -3,7 +3,7 @@
 
   import Nav from "./Nav.svelte";
   import base from "../l10n/base.yaml";
-  import { lang, l10nLoad } from "../l10n/l10n";
+  import { lang, l10nLoad } from "../l10n";
 
   $: l10n = l10nLoad(base, $lang);
 

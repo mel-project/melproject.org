@@ -1,45 +1,30 @@
-import preprocess from "svelte-preprocess";
-import adapter from "@sveltejs/adapter-static";
-import ViteYaml from "@modyfi/vite-plugin-yaml";
-import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
+import adapter from '@sveltejs/adapter-netlify';
+import preprocess from 'svelte-preprocess';
+// import { vitePreprocess } from '@sveltejs/kit/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  kit: {
-    trailingSlash: "always",
-    prerender: {
-      default: true,
-    },
-    adapter: adapter(),
-    vite: {
-      ssr: {
-        noExternal: ['@fortawesome/free-brands-svg-icons','@fortawesome/free-solid-svg-icons']
-      },
-      plugins: [
-        ViteYaml(), // you may configure the plugin by passing in an object with the options listed below
-        viteCommonjs(),
-      ],
+	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
+	// for more information about preprocessors
+	preprocess: preprocess(),
 
-      css: {
-        preprocessorOptions: {
-          scss: {
-            additionalData: '@use "src/variables.scss" as *;',
-          },
-        },
-      },
-    },
-  },
+	kit: {
+		adapter: adapter({
+			// if true, will create a Netlify Edge Function rather
+			// than using standard Node-based functions
+			edge: true,
 
-  preprocess: [
-    preprocess({
-      scss: {
-        prependData: '@use "src/variables.scss" as *;',
-      },
-      typescript: {
-        esModuleInterop: true,
-      },
-    }),
-  ],
+			// if true, will split your app into multiple functions
+			// instead of creating a single one for the entire app.
+			// if `edge` is true, this option cannot be used
+			split: false
+		}),
+		alias: {
+			'@l10n/*': 'src/l10n/*',
+		}
+
+	},
+
 };
 
 export default config;
