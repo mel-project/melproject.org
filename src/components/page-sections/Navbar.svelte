@@ -1,22 +1,18 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from "$app/stores";
+	import { localize, home_page, replace_lang, available_languages as available_languages, Language_Shortname } from "@l10n";
 
-	import { localize_page } from '@l10n';
-
-	const lang = $page.params['lang'];
-
-	const isUserPortal = $page.url.toString().includes('portal');
-	const isPolicies = $page.url.toString().includes('policies');
+	const isUserPortal = $page.url.toString().includes("portal");
+	const isPolicies = $page.url.toString().includes("policies");
 	const isHome = !isUserPortal && !isPolicies;
 
-	$: replaceLanguage = (path: string, toLang: string) => path.replace('/' + lang, '/' + toLang);
 </script>
 
 <nav class="navbar navbar-expand-lg bg-light">
 	<div class="container">
-		<a href={`/${lang}/`} class="navbar-brand">
+		<a href={$home_page} class="navbar-brand">
 			<img src="/gephlogo.png" height="32" alt="Geph logo" class="me-1" />
-			{localize(lang, 'geph')}
+			{localize("geph")}
 		</a>
 		<button
 			class="navbar-toggler"
@@ -29,21 +25,36 @@
 		>
 			<span class="navbar-toggler-icon" />
 		</button>
-		<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+		<div
+			class="collapse navbar-collapse justify-content-end"
+			id="navbarSupportedContent"
+		>
 			<ul class="navbar-nav mb-2 mb-lg-0">
 				<li class="nav-item">
-					<a class="nav-link" class:active={isHome} href={`/${lang}/`}>
-						{localize(lang, 'home')}
+					<a
+						class="nav-link"
+						class:active={isHome}
+						href={$home_page}
+					>
+						{localize("home")}
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" class:active={isUserPortal} href={`/${lang}/portal`}>
-						{localize(lang, 'user-portal')}
+					<a
+						class="nav-link"
+						class:active={isUserPortal}
+						href={`${$home_page}/portal`}
+					>
+						{localize("user-portal")}
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" class:active={isPolicies} href={`/${lang}/policies`}>
-						{localize(lang, 'policies')}
+					<a
+						class="nav-link"
+						class:active={isPolicies}
+						href={`${home_page}/policies`}
+					>
+						{localize("policies")}
 					</a>
 				</li>
 				<li class="nav-item dropdown">
@@ -53,17 +64,17 @@
 						data-bs-toggle="dropdown"
 						aria-expanded="false"
 					>
-						{localize(lang, 'langname')}
+						{localize("langname")}
 					</a>
 					<ul class="dropdown-menu">
-						{#each ['en', 'zhs', 'zht'] as l}
+						{#each available_languages as l}
 							<li>
 								<a
 									data-sveltekit-reload
 									class="dropdown-item"
-									href={replaceLanguage($page.url.toString(), l)}
+									href={$replace_lang(l)}
 								>
-									{localize(l, 'langname')}
+									{localize("langname",Language_Shortname[l])}
 								</a>
 							</li>
 						{/each}

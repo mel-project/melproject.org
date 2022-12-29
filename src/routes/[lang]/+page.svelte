@@ -2,9 +2,8 @@
 	import MainLayout from "../../components/MainLayout.svelte";
 	import BlinkingTexts from "../../components/BlinkingTexts.svelte";
 	import ExploreCarousel from "../../components/ExploreCarousel.svelte";
-	import { localize, Language } from "@l10n";
-
-	$: l10n = localize(Language.EN_US);
+	import { localize, lang } from "@l10n";
+    import Navbar from "@src/components/page-sections/Navbar.svelte";
 
 	let carouselPosn = 0;
 	let carouselimgs =
@@ -14,4 +13,8 @@
 	$: carouselimg = carouselimgs[carouselPosn];
 </script>
 
-<template> hello world </template>
+
+<template> 
+	<Navbar></Navbar>
+	{localize("test")} 
+</template>

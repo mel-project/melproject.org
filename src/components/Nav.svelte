@@ -2,7 +2,7 @@
   import NavLink from "./NavLink.svelte";
   import NavDropdown from "./NavDropdown.svelte";
   // import themelioLogo from "../assets/new-logo.png";
-  import { lang, Language, localize } from "../l10n";
+  import { lang, Language_Shortname, localize } from "../l10n";
   import { page } from "$app/stores";
 
   export let currentPath = ""; // the usage here needs a refactor

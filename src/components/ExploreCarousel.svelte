@@ -18,9 +18,9 @@
       icon: "bi-braces-asterisk",
     },
   ];
-  import { localize, lang } from "../l10n";
+  import { localize } from "../l10n";
   import { slide } from "svelte/transition";
-  $: l10n = localize($lang);
+  
 </script>
 
 <div class="inner">
@@ -32,7 +32,7 @@
           alt="melscan"
           class="showcase-img"
         />
-        {@html l10n("run-node-desc")}
+        {@html localize("run-node-desc")}
       </div>
     {:else if selected == 2}
       <div transition:slide>
