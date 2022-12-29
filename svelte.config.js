@@ -20,7 +20,7 @@ const config = {
       split: false,
     }),
     alias: {
-      "@l10n/*": "src/l10n/*",
+      "@l10n": "src/l10n",
     },
   },
 };

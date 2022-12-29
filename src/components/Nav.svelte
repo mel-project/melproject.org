@@ -2,17 +2,15 @@
   import NavLink from "./NavLink.svelte";
   import NavDropdown from "./NavDropdown.svelte";
   // import themelioLogo from "../assets/new-logo.png";
-  import base from "../l10n/base.yaml";
-  import { lang, Language, l10nLoad } from "../l10n";
+  import { lang, Language, localize } from "../l10n";
   import { page } from "$app/stores";
 
   export let currentPath = ""; // the usage here needs a refactor
 
-  $: l10n = l10nLoad(base, $lang);
+  $: l10n = localize($lang);
 </script>
 
-<template>
-</template>
+<template />
 
 <style lang="scss">
   .navbar-brand {

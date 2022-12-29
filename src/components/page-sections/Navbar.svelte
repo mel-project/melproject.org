@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 
-	import { localize_page } from '../../l10n';
+	import { localize_page } from '@l10n';
 
 	const lang = $page.params['lang'];
 

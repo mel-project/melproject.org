@@ -1,13 +1,10 @@
 <script>
 	import MainLayout from "../../components/MainLayout.svelte";
-	import BlogFeed from "../../components/BlogFeed.svelte";
 	import BlinkingTexts from "../../components/BlinkingTexts.svelte";
 	import ExploreCarousel from "../../components/ExploreCarousel.svelte";
-	import { l10nLoad, lang } from "@l10n";
+	import { localize, Language } from "@l10n";
 
-	import base from "@l10n/base.yaml";
-	import layer from "@l10n/index.l10n.yaml";
-	$: l10n = l10nLoad({ ...base, ...layer }, $lang); 
+	$: l10n = localize(Language.EN_US);
 
 	let carouselPosn = 0;
 	let carouselimgs =
@@ -17,4 +14,4 @@
 	$: carouselimg = carouselimgs[carouselPosn];
 </script>
 
-<template />
+<template> hello world </template>

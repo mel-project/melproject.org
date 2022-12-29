@@ -2,10 +2,9 @@
   export let title;
 
   import Nav from "./Nav.svelte";
-  import base from "../l10n/base.yaml";
-  import { lang, l10nLoad } from "../l10n";
+  import { lang, localize } from "../l10n";
 
-  $: l10n = l10nLoad(base, $lang);
+  $: l10n = localize($lang);
 
   let debugging = false;
   let innerWidth;
