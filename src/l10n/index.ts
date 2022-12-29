@@ -8,8 +8,8 @@ type Languages = typeof available_languages[number];
 
 export const Language_Shortname = {
   EN_US: "en",
-  ZH_TW: "zh-TW",
-  ZH_CN: "zh-CN",
+  ZH_TW: "zht",
+  ZH_CN: "zhs",
 } as const satisfies { [k in Languages]: string };
 
 export type Language_Shortname = typeof Language_Shortname[keyof typeof Language_Shortname];
