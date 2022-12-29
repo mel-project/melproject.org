@@ -89,7 +89,8 @@
 	</div>
 </nav>
 
-<style>
+<style lang="scss">
+	
 	.navbar-brand {
 		font-weight: 500;
 	}
