@@ -59,14 +59,14 @@
 					</a>
 				</li>
 				<li class="nav-item dropdown">
-					<a
+					<div
 						class="nav-link dropdown-toggle"
 						role="button"
 						data-bs-toggle="dropdown"
 						aria-expanded="false"
 					>
 						{$localize("langname")}
-					</a>
+					</div>
 					<ul class="dropdown-menu">
 						{#each available_languages as l}
 							<li>
@@ -90,7 +90,6 @@
 </nav>
 
 <style lang="scss">
-	
 	.navbar-brand {
 		font-weight: 500;
 	}

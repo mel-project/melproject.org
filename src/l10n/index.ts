@@ -47,9 +47,9 @@ export const home_page: Readable<string> = derived(page, ($page) => {
 
 })
 
-export const replace_lang: Readable<(s: string) => string> = derived(page, ($page) => {
+export const replace_lang: Readable<(s: Language_Shortname) => string> = derived(page, ($page) => {
   let lang = $page.params.lang;
   let path = $page.url.toString();
-  return (toLang: string) => path.replace('/' + lang, '/' + toLang);
+  return (toLang: Language_Shortname) => path.replace('/' + lang, '/' + toLang);
 })
 
