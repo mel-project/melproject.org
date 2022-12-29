@@ -3,7 +3,7 @@
 	import BlinkingTexts from "../../components/BlinkingTexts.svelte";
 	import ExploreCarousel from "../../components/ExploreCarousel.svelte";
 	import { localize, lang } from "@l10n";
-    import Navbar from "@src/components/page-sections/Navbar.svelte";
+	import Navbar from "@src/components/page-sections/Navbar.svelte";
 
 	let carouselPosn = 0;
 	let carouselimgs =
@@ -13,8 +13,7 @@
 	$: carouselimg = carouselimgs[carouselPosn];
 </script>
 
-
-<template> 
-	<Navbar></Navbar>
-	{localize("test")} 
+<template>
+	<Navbar />
+	{$localize("test")}
 </template>

@@ -1,6 +1,8 @@
 test:
-  en: "testing"
-  zhs: "testing in chinese"
+  en: "testing in en"
+  zhs: "testing in zhs"
+  zht: "testing in zht"
+
 langname:
   en: English
   zhs: 简体中文

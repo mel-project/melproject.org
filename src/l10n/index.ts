@@ -18,8 +18,8 @@ let _lang: Language_Shortname = Language_Shortname.EN_US;
 
 
 
-export const localize = (name: string, toLang?: Language_Shortname): string => {
-  let lang = toLang || _lang;
+const _localize = ($lang: Language_Shortname) => (name: string, toLang?: Language_Shortname): string => {
+  let lang = toLang ||$lang;
   if (mapping[name]) {
     let value = mapping[name][lang] as string;
     if (value) {
@@ -31,11 +31,16 @@ export const localize = (name: string, toLang?: Language_Shortname): string => {
 
 };
 
+
 export const lang: Readable<Language_Shortname> = derived(page, ($page) => {
   _lang = $page.params.lang;
   return $page.params.lang
 
 })
+
+type Localizer = (name: string, toLang?: Language_Shortname)=>string;
+export const localize: Readable<Localizer> = derived(lang, ($lang)=>_localize($lang))
+
 
 export const home_page: Readable<string> = derived(page, ($page) => {
   return "/" + $page.params.lang

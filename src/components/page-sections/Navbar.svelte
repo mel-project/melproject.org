@@ -1,18 +1,23 @@
 <script lang="ts">
 	import { page } from "$app/stores";
-	import { localize, home_page, replace_lang, available_languages as available_languages, Language_Shortname } from "@l10n";
+	import {
+		localize,
+		home_page,
+		replace_lang,
+		available_languages as available_languages,
+		Language_Shortname,
+	} from "@l10n";
 
 	const isUserPortal = $page.url.toString().includes("portal");
 	const isPolicies = $page.url.toString().includes("policies");
 	const isHome = !isUserPortal && !isPolicies;
-
 </script>
 
 <nav class="navbar navbar-expand-lg bg-light">
 	<div class="container">
 		<a href={$home_page} class="navbar-brand">
 			<img src="/gephlogo.png" height="32" alt="Geph logo" class="me-1" />
-			{localize("geph")}
+			{$localize("geph")}
 		</a>
 		<button
 			class="navbar-toggler"
@@ -31,12 +36,8 @@
 		>
 			<ul class="navbar-nav mb-2 mb-lg-0">
 				<li class="nav-item">
-					<a
-						class="nav-link"
-						class:active={isHome}
-						href={$home_page}
-					>
-						{localize("home")}
+					<a class="nav-link" class:active={isHome} href={$home_page}>
+						{$localize("home")}
 					</a>
 				</li>
 				<li class="nav-item">
@@ -45,7 +46,7 @@
 						class:active={isUserPortal}
 						href={`${$home_page}/portal`}
 					>
-						{localize("user-portal")}
+						{$localize("user-portal")}
 					</a>
 				</li>
 				<li class="nav-item">
@@ -54,7 +55,7 @@
 						class:active={isPolicies}
 						href={`${home_page}/policies`}
 					>
-						{localize("policies")}
+						{$localize("policies")}
 					</a>
 				</li>
 				<li class="nav-item dropdown">
@@ -64,7 +65,7 @@
 						data-bs-toggle="dropdown"
 						aria-expanded="false"
 					>
-						{localize("langname")}
+						{$localize("langname")}
 					</a>
 					<ul class="dropdown-menu">
 						{#each available_languages as l}
@@ -72,9 +73,12 @@
 								<a
 									data-sveltekit-reload
 									class="dropdown-item"
-									href={$replace_lang(l)}
+									href={$replace_lang(Language_Shortname[l])}
 								>
-									{localize("langname",Language_Shortname[l])}
+									{$localize(
+										"langname",
+										Language_Shortname[l]
+									)}
 								</a>
 							</li>
 						{/each}
