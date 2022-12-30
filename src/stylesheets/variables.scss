@@ -11,7 +11,10 @@ $font-family-sans-serif: "Iosevka Aile Web", sans-serif;
 @import "bootstrap/scss/mixins";
 
 $dark-color:  #003e30ff;
-
+$teal: #9AF3D3;
+$purple: #895ABF;
+$green: #21D849;
+$light-blue: #69CFFF;
 :root {
     --primary-color: #{$primary};
     --secondary-color: #{$secondary};
@@ -21,4 +24,8 @@ $dark-color:  #003e30ff;
     --dark-color: #003e30ff;
     --white: #{$body-bg};
     --off-white: rgba(255, 255, 255, 0.8);
+    --teal: #9AF3D3;
+    --purple: #895ABF;
+    --green: #21D849;
+    --light-blue: #69CFFF;
 }

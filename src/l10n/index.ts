@@ -16,8 +16,6 @@ export type Language_Shortname = typeof Language_Shortname[keyof typeof Language
 let _lang: Language_Shortname = Language_Shortname.EN_US;
 
 
-
-
 const _localize = ($lang: Language_Shortname) => (name: string, toLang?: Language_Shortname): string => {
   let lang = toLang ||$lang;
   if (mapping[name]) {
@@ -33,8 +31,8 @@ const _localize = ($lang: Language_Shortname) => (name: string, toLang?: Languag
 
 
 export const lang: Readable<Language_Shortname> = derived(page, ($page) => {
-  _lang = $page.params.lang;
-  return $page.params.lang
+  // _lang = $page.params.lang;
+  return $page.params.lang as Language_Shortname
 
 })
 

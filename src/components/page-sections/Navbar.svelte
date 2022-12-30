@@ -16,7 +16,7 @@
 <nav class="navbar navbar-expand-lg bg-light">
 	<div class="container">
 		<a href={$home_page} class="navbar-brand">
-			<img src="/gephlogo.png" height="32" alt="Geph logo" class="me-1" />
+			<img src="/mellogo.png" height="32" alt="Mel Logo" class="me-1" />
 			{$localize("geph")}
 		</a>
 		<button
