@@ -5,6 +5,10 @@
   import HeroImage from "@src/assets/images/wide-banner.jpg";
   import GradientCard from "@src/components/elements/GradientCard.svelte";
   import Button from "@src/components/Button.svelte";
+
+  import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
+  import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
+  import VaultImage from "@src/assets/images/vault.png";
 </script>
 
 <template>
@@ -23,28 +27,34 @@
       <div class="col-lg mb-4">
         <GradientCard>
           <div class="card-content">
-            <h2>Empowering dapps beyond blockchains</h2>
-            <p>
-              We’re bringing blockchain superpowers out of the “web3” ecosystem.
-              Whether you are writing an on-chain contract or fully off-chain
-              protocol, you’ll have the tools to ensure your app has robust
-              decentralization, censorship resistance, and user-centric
-              incentives.
-            </p>
-            <img />
+            <div>
+              <h2>Empowering dapps beyond blockchains</h2>
+              <p>
+                We’re bringing blockchain superpowers out of the “web3”
+                ecosystem. Whether you are writing an on-chain contract or fully
+                off-chain protocol, you’ll have the tools to ensure your app has
+                robust decentralization, censorship resistance, and user-centric
+                incentives.
+              </p>
+            </div>
+            <Button>Read our whitepaper</Button>
+            <img src={SpaceshipImage} />
           </div>
         </GradientCard>
       </div>
       <div class="col-lg mb-4">
         <GradientCard>
           <div class="card-content">
-            <h2>Neutral, composable, and built for everyone</h2>
-            <p>
-              Decentralized trust should be a no-brainer. Themelio is
-              clean-slate, governance-free, and radically embeddable L1 that
-              makes accessing Web3 superpowers off-chain a breeze.
-            </p>
-            <img />
+            <div>
+              <h2>Neutral, composable, and built for everyone</h2>
+              <p>
+                Decentralized trust should be a no-brainer. Themelio is
+                clean-slate, governance-free, and radically embeddable L1 that
+                makes accessing Web3 superpowers off-chain a breeze.
+              </p>
+            </div>
+            <Button>Build your own off-chain dApp</Button>
+            <img src={ComposableBlocksImage} />
           </div>
         </GradientCard>
       </div>
@@ -53,12 +63,15 @@
       <div class="col-lg mb-4">
         <GradientCard>
           <div class="card-content">
-            <h2>Cross-chain compatibility, built in</h2>
-            <p>
-              Themelio’s new paradigm and the existing DeFi ecosystem don’t have
-              to be at odds. Every Themelio asset can be accessed on
-              EVM-compatible chains through trustless two-way relay contracts.
-            </p>
+            <div>
+              <h2>Cross-chain compatibility, built in</h2>
+              <p>
+                Themelio’s new paradigm and the existing DeFi ecosystem don’t
+                have to be at odds. Every Themelio asset can be accessed on
+                EVM-compatible chains through trustless two-way relay contracts.
+              </p>
+            </div>
+            <Button>Try our testnet relay</Button>
             <img />
           </div>
         </GradientCard>
@@ -66,20 +79,32 @@
       <div class="col-lg mb-4">
         <GradientCard>
           <div class="card-content">
-            <h2>Monetary infrastructure for a better future</h2>
-            <p>
-              The future we are building needs a new kind of money — MEL is the
-              first cryptocurrency that’s both stable and trustless. It’s the
-              first truly decentralized unit of account, changing everything
-              from payments to incentive design.
-            </p>
-            <img />
+            <div>
+              <h2>Monetary infrastructure for a better future</h2>
+              <p>
+                The future we are building needs a new kind of money — MEL is
+                the first cryptocurrency that’s both stable and trustless. It’s
+                the first truly decentralized unit of account, changing
+                everything from payments to incentive design.
+              </p>
+            </div>
+            <Button>Learn about Melmint</Button>
+            <img src={VaultImage} />
           </div>
         </GradientCard>
       </div>
     </div>
 
-    {$localize("test")}
+    <div class="row mt-5">
+      <div class="col-lg-4">
+        <h1>Join our community</h1>
+        <p class="main-lead">
+          Be part of a growing community of global developers, innovators, and
+          users helping us realize Themelio's vision.
+        </p>
+      </div>
+      <div class="col-lg" />
+    </div>
   </div>
 </template>
 
@@ -95,6 +120,17 @@
     font-size: 1.6rem;
   }
 
+  .main-lead {
+    font-size: 1.1rem;
+  }
+
+  .card-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .card-content {
     display: flex;
     flex-direction: column;
@@ -106,6 +142,8 @@
     margin-top: auto;
     width: 300px;
     height: 200px;
+    object-fit: contain;
+    margin-top: 1rem;
   }
 
   .subhero {
