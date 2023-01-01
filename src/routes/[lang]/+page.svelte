@@ -9,6 +9,27 @@
   import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
   import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
   import VaultImage from "@src/assets/images/vault.png";
+
+  const communityIcons = [
+    {
+      name: "Discord",
+    },
+    {
+      name: "Twitter",
+    },
+    {
+      name: "GitHub",
+    },
+    {
+      name: "Forum",
+    },
+    {
+      name: "Medium",
+    },
+    {
+      name: "Telegram",
+    },
+  ];
 </script>
 
 <template>
@@ -103,7 +124,15 @@
           users helping us realize Themelio's vision.
         </p>
       </div>
-      <div class="col-lg" />
+      <div class="col-lg">
+        <div class="container-fluid">
+          <div class="row">
+            {#each communityIcons as icon}
+              <div class="col-lg-4 mb-5">{icon.name}</div>
+            {/each}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
