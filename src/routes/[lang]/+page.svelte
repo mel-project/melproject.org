@@ -1,15 +1,14 @@
 <script>
   import { localize } from "@l10n";
-  import HomeContent from "@src/components/page-sections/HomeContent.svelte";
   import Navbar from "@src/components/page-sections/Navbar.svelte";
   import HeroImage from "@src/assets/images/wide-banner.jpg";
-  import GradientCard from "@src/components/elements/GradientCard.svelte";
+  import Card from "@src/components/elements/Card.svelte";
   import Button from "@src/components/Button.svelte";
 
   import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
   import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
   import VaultImage from "@src/assets/images/vault.png";
-
+  
   const communityIcons = [
     {
       name: "Discord",
@@ -35,7 +34,6 @@
 <template>
   <Navbar />
   <img src={HeroImage} alt="hero" />
-
   <div class="container">
     <div class="row subhero">
       <div class="col text-center">
@@ -46,7 +44,7 @@
 
     <div class="row cards">
       <div class="col-lg mb-4">
-        <GradientCard>
+        <Card variant="gradient1">
           <div class="card-content">
             <div>
               <h2>Empowering dapps beyond blockchains</h2>
@@ -61,10 +59,10 @@
             <Button>Read our whitepaper</Button>
             <img src={SpaceshipImage} />
           </div>
-        </GradientCard>
+        </Card>
       </div>
       <div class="col-lg mb-4">
-        <GradientCard>
+        <Card variant="gradient1">
           <div class="card-content">
             <div>
               <h2>Neutral, composable, and built for everyone</h2>
@@ -77,12 +75,12 @@
             <Button>Build your own off-chain dApp</Button>
             <img src={ComposableBlocksImage} />
           </div>
-        </GradientCard>
+        </Card>
       </div>
     </div>
     <div class="row cards">
       <div class="col-lg mb-4">
-        <GradientCard>
+        <Card variant="gradient1">
           <div class="card-content">
             <div>
               <h2>Cross-chain compatibility, built in</h2>
@@ -95,10 +93,10 @@
             <Button>Try our testnet relay</Button>
             <img />
           </div>
-        </GradientCard>
+        </Card>
       </div>
       <div class="col-lg mb-4">
-        <GradientCard>
+        <Card variant="gradient1">
           <div class="card-content">
             <div>
               <h2>Monetary infrastructure for a better future</h2>
@@ -112,7 +110,7 @@
             <Button>Learn about Melmint</Button>
             <img src={VaultImage} />
           </div>
-        </GradientCard>
+        </Card>
       </div>
     </div>
 
