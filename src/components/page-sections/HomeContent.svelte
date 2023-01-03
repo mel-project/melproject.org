@@ -1,5 +1,10 @@
 <script>
-    import GradientCard from "../elements/Card.svelte";
+    import Button from "../elements/Button.svelte";
+    import Card from "../elements/Card.svelte";
+
+    import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
+    import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
+    import VaultImage from "@src/assets/images/vault.png";
     let _class = "";
     export { _class as class };
 </script>
@@ -7,29 +12,60 @@
 <template>
     <div class={_class + " content-frame"}>
         <div class="content">
-            <GradientCard variant="gradient1">
-                <h2>Privacy first.<br /> Privacy Second.</h2>
-                <p>
-                    Our unique encrypted architectures ensures that Aztec
-                    transactions are always kept from prying eyes, while also
-                    retaining auditably and compliance
-                </p>
-            </GradientCard>
-            <GradientCard variant="gradient1">
-                <h2>Defi. DAOS. NFTs.<br /> The wat it should be</h2>
-                <p>
-                    Aztex connect allows users to confidently access world class
-                    DeFi services on Ethereum up to 100x cost savings
-                </p>
-            </GradientCard>
-            <GradientCard variant="gradient1">
-                <h2>title</h2>
-                <p>content</p>
-            </GradientCard>
-            <GradientCard variant="gradient1">
-                <h2>title</h2>
-                <p>content</p>
-            </GradientCard>
+            <Card variant="gradient1">
+                <div>
+                    <h2>Empowering dapps beyond blockchains</h2>
+                    <p>
+                        We’re bringing blockchain superpowers out of the “web3”
+                        ecosystem. Whether you are writing an on-chain contract
+                        or fully off-chain protocol, you’ll have the tools to
+                        ensure your app has robust decentralization, censorship
+                        resistance, and user-centric incentives.
+                    </p>
+                </div>
+                <Button>Read our whitepaper</Button>
+                <img src={SpaceshipImage} />
+            </Card>
+            <Card variant="gradient2">
+                <div>
+                    <h2>Neutral, composable, and built for everyone</h2>
+                    <p>
+                        Decentralized trust should be a no-brainer. Themelio is
+                        clean-slate, governance-free, and radically embeddable
+                        L1 that makes accessing Web3 superpowers off-chain a
+                        breeze.
+                    </p>
+                </div>
+                <Button>Build your own off-chain dApp</Button>
+                <img src={ComposableBlocksImage} />
+            </Card>
+            <Card variant="gradient1">
+                <div>
+                    <h2>Cross-chain compatibility, built in</h2>
+                    <p>
+                        Themelio’s new paradigm and the existing DeFi ecosystem
+                        don’t have to be at odds. Every Themelio asset can be
+                        accessed on EVM-compatible chains through trustless
+                        two-way relay contracts.
+                    </p>
+                </div>
+                <Button>Try our testnet relay</Button>
+                <img />
+            </Card>
+            <Card variant="gradient1">
+                <div>
+                    <h2>Monetary infrastructure for a better future</h2>
+                    <p>
+                        The future we are building needs a new kind of money —
+                        MEL is the first cryptocurrency that’s both stable and
+                        trustless. It’s the first truly decentralized unit of
+                        account, changing everything from payments to incentive
+                        design.
+                    </p>
+                </div>
+                <Button>Learn about Melmint</Button>
+                <img src={VaultImage} />
+            </Card>
         </div>
     </div>
 </template>
@@ -49,24 +85,33 @@
             grid-template-rows: 1fr 1fr;
             width: clamp(30rem, 100%, 75rem);
             height: min(60rem, 1000rem);
-            & > :global(.card > h2) {
-                padding-bottom: 1rem !important;
+            & > :global(.card) {
+                display: flex;
+                :global(img) {
+                    // position: absolute;
+                    // display: none !important;
+                    // max-height: 100%;
+                    max-width: 100%;
+                }
+                // padding-bottom: 1rem !important;
             }
         }
     }
-    @media screen and (max-width: 800px){
+    @media screen and (max-width: 800px) {
         .content-frame {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        justify-content: center;
-        padding: 1rem;
-        & > .content {
-            display: block;
-            & > :global(.card > h2) {
-                padding-bottom: 1rem !important;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            padding: 1rem;
+            & > .content {
+                display: block;
+                & > :global(.card) {
+                    :global(h2) {
+                        padding-bottom: 1rem !important;
+                    }
+                }
             }
         }
-    }
     }
 </style>

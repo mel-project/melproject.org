@@ -2,7 +2,7 @@
     let _class = "";
     export { _class as class };
 
-    const Variants = ["gradient1", "default"] as const;
+    const Variants = ["gradient2","gradient1", "default"] as const;
     export let variant: typeof Variants[number] = "default";
 </script>
 
@@ -30,7 +30,18 @@
                 400% 400% at 110% 100%,
                 lighten(colors.$teal, 20%) 8%,
                 rgba(137, 90, 191, 0.1) 25%,
-                white 40%
+                white 37%
+            )
+            /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+        mix-blend-mode: normal;
+    }
+    .card.gradient2 {
+        border: none;
+        background: radial-gradient(
+                400% 400% at 110% 100%,
+                lighten(colors.$teal, 20%) 8%,
+                lighten(colors.$purple, 40%) 25%,
+                white 37%
             )
             /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
         mix-blend-mode: normal;

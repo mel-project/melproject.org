@@ -3,12 +3,12 @@
   import Navbar from "@src/components/page-sections/Navbar.svelte";
   import HeroImage from "@src/assets/images/wide-banner.jpg";
   import Card from "@src/components/elements/Card.svelte";
-  import Button from "@src/components/Button.svelte";
-
+  import Button from "@src/components/elements/Button.svelte";
+  import GradientBubble from "@src/components/elements/GradientBubble.svelte";
   import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
   import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
   import VaultImage from "@src/assets/images/vault.png";
-  
+
   const communityIcons = [
     {
       name: "Discord",
@@ -32,6 +32,7 @@
 </script>
 
 <template>
+  <GradientBubble/>
   <Navbar />
   <img src={HeroImage} alt="hero" />
   <div class="container">
@@ -62,7 +63,7 @@
         </Card>
       </div>
       <div class="col-lg mb-4">
-        <Card variant="gradient1">
+        <Card variant="gradient2">
           <div class="card-content">
             <div>
               <h2>Neutral, composable, and built for everyone</h2>
@@ -136,8 +137,8 @@
 </template>
 
 <style>
-  .main-body {
-    width: 100vw;
+  .container {
+    font-family: "Clash Display", sans-serif;
   }
   img {
     max-width: 100%;
