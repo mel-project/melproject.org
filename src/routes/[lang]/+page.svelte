@@ -32,9 +32,9 @@
 </script>
 
 <template>
-  <GradientBubble/>
+  <GradientBubble offset={["10vh", "1px"]}/>
   <Navbar />
-  <img src={HeroImage} alt="hero" />
+  <img class="hero" src={HeroImage} alt="hero" />
   <div class="container">
     <div class="row subhero">
       <div class="col text-center">

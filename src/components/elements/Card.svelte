@@ -13,8 +13,10 @@
 </template>
 
 <style lang="scss">
+    @use "sass:color";
     @use "../../stylesheets/variables.scss" as colors;
     .card {
+        z-index: 1;
         width: clamp(20rem, 100%, 60rem);
         border-radius: 20px;
         padding: 3rem 2rem;
@@ -39,9 +41,9 @@
         border: none;
         background: radial-gradient(
                 400% 400% at 110% 100%,
-                lighten(colors.$teal, 20%) 8%,
-                lighten(colors.$purple, 40%) 25%,
-                white 37%
+                color.scale(colors.$teal, $lightness: 60%) 8%,
+                color.scale(colors.$purple, $lightness: 80%) 25%,
+                color.scale(white, $alpha: 100%) 37%,
             )
             /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
         mix-blend-mode: normal;
