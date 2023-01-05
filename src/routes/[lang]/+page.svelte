@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { localize } from "@l10n";
   import Navbar from "@src/components/page-sections/Navbar.svelte";
   import HeroImage from "@src/assets/images/wide-banner.jpg";
@@ -8,7 +8,19 @@
   import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
   import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
   import VaultImage from "@src/assets/images/vault.png";
-
+  import { Colors } from "@src/utils/colors";
+    import HomeContent from "@src/components/page-sections/HomeContent.svelte";
+  let bubbles = 10;
+  let random_placement: ()=>[string,string] = ()=>{
+    return [Math.random()*200 -100 + "vw", Math.random()*45 + "vh"] as [string,string]
+  }
+  function *range(end: number){
+    let i = 0;
+    while(i < end){
+      yield i;
+      i++
+    }
+  }
   const communityIcons = [
     {
       name: "Discord",
@@ -32,9 +44,11 @@
 </script>
 
 <template>
-  <GradientBubble offset={["10vh", "1px"]}/>
   <Navbar />
-  <img class="hero" src={HeroImage} alt="hero" />
+  <!-- <img class="hero" src={HeroImage} alt="hero" /> -->
+  <div class="hero">
+
+  </div>
   <div class="container">
     <div class="row subhero">
       <div class="col text-center">
@@ -42,78 +56,9 @@
         <Button size="large">A call to action</Button>
       </div>
     </div>
-
-    <div class="row cards">
-      <div class="col-lg mb-4">
-        <Card variant="gradient1">
-          <div class="card-content">
-            <div>
-              <h2>Empowering dapps beyond blockchains</h2>
-              <p>
-                We’re bringing blockchain superpowers out of the “web3”
-                ecosystem. Whether you are writing an on-chain contract or fully
-                off-chain protocol, you’ll have the tools to ensure your app has
-                robust decentralization, censorship resistance, and user-centric
-                incentives.
-              </p>
-            </div>
-            <Button>Read our whitepaper</Button>
-            <img src={SpaceshipImage} />
-          </div>
-        </Card>
-      </div>
-      <div class="col-lg mb-4">
-        <Card variant="gradient2">
-          <div class="card-content">
-            <div>
-              <h2>Neutral, composable, and built for everyone</h2>
-              <p>
-                Decentralized trust should be a no-brainer. Themelio is
-                clean-slate, governance-free, and radically embeddable L1 that
-                makes accessing Web3 superpowers off-chain a breeze.
-              </p>
-            </div>
-            <Button>Build your own off-chain dApp</Button>
-            <img src={ComposableBlocksImage} />
-          </div>
-        </Card>
-      </div>
-    </div>
-    <div class="row cards">
-      <div class="col-lg mb-4">
-        <Card variant="gradient1">
-          <div class="card-content">
-            <div>
-              <h2>Cross-chain compatibility, built in</h2>
-              <p>
-                Themelio’s new paradigm and the existing DeFi ecosystem don’t
-                have to be at odds. Every Themelio asset can be accessed on
-                EVM-compatible chains through trustless two-way relay contracts.
-              </p>
-            </div>
-            <Button>Try our testnet relay</Button>
-            <img />
-          </div>
-        </Card>
-      </div>
-      <div class="col-lg mb-4">
-        <Card variant="gradient1">
-          <div class="card-content">
-            <div>
-              <h2>Monetary infrastructure for a better future</h2>
-              <p>
-                The future we are building needs a new kind of money — MEL is
-                the first cryptocurrency that’s both stable and trustless. It’s
-                the first truly decentralized unit of account, changing
-                everything from payments to incentive design.
-              </p>
-            </div>
-            <Button>Learn about Melmint</Button>
-            <img src={VaultImage} />
-          </div>
-        </Card>
-      </div>
-    </div>
+    <input type="text" bind:value={bubbles}>
+    
+    <HomeContent></HomeContent>
 
     <div class="row mt-5">
       <div class="col-lg-4">
@@ -137,8 +82,9 @@
 </template>
 
 <style>
+
   .container {
-    font-family: "Clash Display", sans-serif;
+    max-width: 100%;
   }
   img {
     max-width: 100%;

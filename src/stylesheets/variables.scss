@@ -10,18 +10,22 @@ $font-family-sans-serif: "Iosevka Aile Web", sans-serif;
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
 
+
 $dark-color:  #003e30ff;
 $teal: #9AF3D3;
 $purple: #895ABF;
 $green: #21D849;
 $light-blue: #69CFFF;
+
+
+
 :root {
-    --primary-color: #{$primary};
-    --secondary-color: #{$secondary};
-    --primary-dark: #{$primary-dark};
-    --primary-light: #{$primary-light};
-    --display-font: "Iosevka Sparkle Web", monospace;
-    --dark-color: #003e30ff;
+    // --primary-color: #{$primary};
+    // --secondary-color: #{$secondary};
+    // --primary-dark: #{$primary-dark};
+    // --primary-light: #{$primary-light};
+    // --display-font: "Iosevka Sparkle Web", monospace;
+    // --dark-color: #003e30ff;
     --white: #{$body-bg};
     --off-white: rgba(255, 255, 255, 0.8);
     --teal: #9AF3D3;

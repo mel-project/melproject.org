@@ -2,7 +2,7 @@
     let _class = "";
     export { _class as class };
 
-    const Variants = ["gradient2","gradient1", "default"] as const;
+    const Variants = ["gradient2","gradient1", "default", "white"] as const;
     export let variant: typeof Variants[number] = "default";
 </script>
 
@@ -45,6 +45,12 @@
                 color.scale(colors.$purple, $lightness: 80%) 25%,
                 color.scale(white, $alpha: 100%) 37%,
             )
+            /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+        mix-blend-mode: normal;
+    }
+    .card.white {
+        border: none;
+        background-color: white;
             /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
         mix-blend-mode: normal;
     }
