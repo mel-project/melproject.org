@@ -39,7 +39,7 @@
                 <Button>Build your own off-chain dApp</Button>
                 <img src={ComposableBlocksImage} />
             </Card>
-            <Card variant="gradient1">
+            <Card variant="gradient3">
                 <div>
                     <h2>Cross-chain compatibility <br /> built in</h2>
                     <p>

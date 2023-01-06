@@ -6,7 +6,7 @@
 </script>
 
 <script lang="ts">
-  import type { HTMLButtonAttributes } from 'svelte/elements';
+  import type { HTMLButtonAttributes } from "svelte/elements";
 
   interface $$Props extends HTMLButtonAttributes {
     class?: string;
@@ -15,12 +15,9 @@
   }
 
   let _class = "";
-  export {_class as class};
+  export { _class as class };
   export let size: Size = "normal";
   export let variant: Variant = "gradient1";
-
-
-
 </script>
 
 <button
@@ -28,10 +25,9 @@
   class="btn btn-primary {variant} {_class}"
   class:btn-lg={size === "large"}
   {...$$restProps}
-  >
-  <slot />
-  </button
 >
+  <slot />
+</button>
 
 <style lang="scss">
   @use "../../stylesheets/variables.scss" as colors;
@@ -39,20 +35,24 @@
   button {
     height: fit-content;
     white-space: nowrap;
-  }
-  .default {
     background-color: colors.$teal;
     border: 0px solid white;
     color: black;
+    transition: .5s background-size ease-in-out;
   }
+
   .gradient1 {
-    border: 1px solid rgba(172, 172, 172, 0.077);
     color: black;
-    background-color: white;
-    background: radial-gradient(
-      200% 200% at 0% 100%,
-      color.scale(white, $lightness: 0%) 10%,
-      color.scale(colors.$teal, $lightness: 0%) 80%
-    );
+    background: linear-gradient(
+        to bottom left,
+        color.scale(colors.$teal, $lightness: 10%) 0%,
+        #ffffff00 85%
+      ),
+      #ffffff;
+    border: 1px solid rgb(218, 218, 218);
+    background-size: 100%;
+    &:hover {
+      background-size: 500%;
+    }
   }
 </style>
