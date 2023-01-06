@@ -46,12 +46,12 @@
         --primary-color: colors.$teal;
         position: absolute;
         z-index: -999;
-        width: 10vw;
-        height: 10vw;
+        width: 1rem;
+        height: 1rem;
         background: radial-gradient(
-            18% 18% at 50% 50%,
-            var(--primary-color) 40%,
-            #ffffff00 80%
+           circle at center,
+            var(--primary-color) 30%,
+            #ffffff00 70%
         );
 
         opacity: 40%;

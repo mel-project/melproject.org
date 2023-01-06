@@ -6,16 +6,28 @@
 </script>
 
 <script lang="ts">
+  import type { HTMLButtonAttributes } from 'svelte/elements';
+
+  interface $$Props extends HTMLButtonAttributes {
+    class?: string;
+    size?: Size;
+    variant?: Variant;
+  }
+
   let _class = "";
-  export { _class as class };
+  export {_class as class};
   export let size: Size = "normal";
   export let variant: Variant = "gradient1";
+
+
+
 </script>
 
 <button
+  on:click
   class="btn btn-primary {variant} {_class}"
   class:btn-lg={size === "large"}
-  {...$$props}
+  {...$$restProps}
   >
   <slot />
   </button
