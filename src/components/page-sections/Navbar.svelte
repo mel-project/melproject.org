@@ -1,13 +1,20 @@
 <script lang="ts">
 	import { page } from "$app/stores";
+	import {fade} from 'svelte/transition';
 	import {
 		localize,
 		home_page,
 		replace_lang,
-		available_languages as available_languages,
-		Language_Shortname,
+		Language,
 	} from "@l10n";
-
+	let lang_offset = 0;
+	$: display_language = Language[lang_offset];
+	let change_language = ()=>{
+		lang_offset = (lang_offset + 1) % Language.length;
+		
+		setTimeout(change_language, 2500);
+	}
+	change_language();
 	const isUserPortal = $page.url.toString().includes("portal");
 	const isPolicies = $page.url.toString().includes("policies");
 	const isHome = !isUserPortal && !isPolicies;
@@ -64,20 +71,21 @@
 						role="button"
 						data-bs-toggle="dropdown"
 						aria-expanded="false"
+						in:fade out:fade
 					>
-						{$localize("langname")}
+						{$localize("langname", display_language)}
 					</div>
 					<ul class="dropdown-menu">
-						{#each available_languages as l}
+						{#each Language as l}
 							<li>
 								<a
 									data-sveltekit-reload
 									class="dropdown-item"
-									href={$replace_lang(Language_Shortname[l])}
+									href={$replace_lang(l)}
 								>
 									{$localize(
 										"langname",
-										Language_Shortname[l]
+										l
 									)}
 								</a>
 							</li>
@@ -96,5 +104,8 @@
 
 	.active {
 		font-weight: 500;
+	}
+	nav.navbar{
+		background-color: white !important;
 	}
 </style>

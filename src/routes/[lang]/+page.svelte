@@ -9,18 +9,8 @@
   import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
   import VaultImage from "@src/assets/images/vault.png";
   import { Colors } from "@src/utils/colors";
-    import HomeContent from "@src/components/page-sections/HomeContent.svelte";
-  let bubbles = 10;
-  let random_placement: ()=>[string,string] = ()=>{
-    return [Math.random()*200 -100 + "vw", Math.random()*45 + "vh"] as [string,string]
-  }
-  function *range(end: number){
-    let i = 0;
-    while(i < end){
-      yield i;
-      i++
-    }
-  }
+  import HomeContent from "@src/components/page-sections/HomeContent.svelte";
+
   const communityIcons = [
     {
       name: "Discord",
@@ -43,88 +33,59 @@
   ];
 </script>
 
-<template>
+<div class="home">
   <Navbar />
-  <!-- <img class="hero" src={HeroImage} alt="hero" /> -->
-  <div class="hero">
+  <div class="top">
+      <img class="hero" src={HeroImage} alt="hero" />
 
   </div>
-  <div class="container">
-    <div class="row subhero">
-      <div class="col text-center">
-        <h1>A nice tagline for the project.</h1>
-        <Button size="large">A call to action</Button>
-      </div>
-    </div>
-    <input type="text" bind:value={bubbles}>
-    
-    <HomeContent></HomeContent>
+  <div class="spacer"></div>
+  <div class="subhero">
+    <h1>A nice tagline for the project.</h1>
+    <Button size="large">A call to action</Button>
+  </div>
+  <div class="spacer"></div>
+  <HomeContent />
 
-    <div class="row mt-5">
-      <div class="col-lg-4">
-        <h1>Join our community</h1>
-        <p class="main-lead">
-          Be part of a growing community of global developers, innovators, and
-          users helping us realize Themelio's vision.
-        </p>
-      </div>
-      <div class="col-lg">
-        <div class="container-fluid">
-          <div class="row">
-            {#each communityIcons as icon}
-              <div class="col-lg-4 mb-5">{icon.name}</div>
-            {/each}
-          </div>
-        </div>
+  <div class="join">
+    <h1>Join our community</h1>
+    <p class="main-lead">
+      Be part of a growing community of global developers, innovators, and users
+      helping us realize Themelio's vision.
+    </p>
+  </div>
+  <div class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        {#each communityIcons as icon}
+          <div class="col-lg-4 mb-5">{icon.name}</div>
+        {/each}
       </div>
     </div>
   </div>
-</template>
+</div>
 
-<style>
-
-  .container {
-    max-width: 100%;
+<style lang="scss">
+  .home{
+    display: grid;
+    grid-template-rows: 5rem auto 10vh auto 35vh;
+    grid-template-columns: 100vw;
   }
-  img {
-    max-width: 100%;
-  }
-
-  .cards h2 {
-    font-size: 1.6rem;
-  }
-
-  .main-lead {
-    font-size: 1.1rem;
-  }
-
-  .card-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .card-content {
-    display: flex;
+  .top{
+    display:flex;
     flex-direction: column;
-    align-items: center;
-    height: 100%;
+    img{
+      max-width: 100%;
+      border-radius: 1rem;
+      margin: .5rem;
+    }
   }
 
-  .card-content img {
-    margin-top: auto;
-    width: 300px;
-    height: 200px;
-    object-fit: contain;
-    margin-top: 1rem;
-  }
 
-  .subhero {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-  }
-  .subhero h1 {
-    margin-bottom: 1rem;
+  
+  .subhero{
+    display: flex;
+    justify-content: center;;
+    margin: 5rem 0;
   }
 </style>

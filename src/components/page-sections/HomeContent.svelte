@@ -14,7 +14,7 @@
         <div class="content">
             <Card variant="gradient1">
                 <div>
-                    <h2>Empowering dapps beyond blockchains</h2>
+                    <h2>Empowering dapps <br />beyond blockchains</h2>
                     <p>
                         We’re bringing blockchain superpowers out of the “web3”
                         ecosystem. Whether you are writing an on-chain contract
@@ -28,7 +28,7 @@
             </Card>
             <Card variant="gradient2">
                 <div>
-                    <h2>Neutral, composable, and built for everyone</h2>
+                    <h2>Neutral, composable,<br /> and built for everyone</h2>
                     <p>
                         Decentralized trust should be a no-brainer. Themelio is
                         clean-slate, governance-free, and radically embeddable
@@ -41,7 +41,7 @@
             </Card>
             <Card variant="gradient1">
                 <div>
-                    <h2>Cross-chain compatibility, built in</h2>
+                    <h2>Cross-chain compatibility <br /> built in</h2>
                     <p>
                         Themelio’s new paradigm and the existing DeFi ecosystem
                         don’t have to be at odds. Every Themelio asset can be
@@ -54,7 +54,7 @@
             </Card>
             <Card variant="gradient1">
                 <div>
-                    <h2>Monetary infrastructure for a better future</h2>
+                    <h2>Monetary infrastructure <br />for a better future</h2>
                     <p>
                         The future we are building needs a new kind of money —
                         MEL is the first cryptocurrency that’s both stable and
@@ -74,43 +74,33 @@
     .content-frame {
         display: flex;
         justify-content: center;
-        padding: 0 clamp(0px, 10%, 100rem);
+        padding: 0 clamp(2rem, 3%, 100rem);
         width: 100%;
-
-        & > .content {
-            display: grid;
-            gap: clamp(0.5rem, 3%, 3rem);
-
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            width: clamp(30rem, 100%, 75rem);
-            height: min(60rem, 1000rem);
-            & > :global(.card) {
-                display: flex;
-                :global(img) {
-                    // position: absolute;
-                    // display: none !important;
-                    // max-height: 100%;
-                    max-width: 100%;
-                }
-                // padding-bottom: 1rem !important;
-            }
-        }
     }
-    @media screen and (max-width: 800px) {
+    .content {
+        // container-type: inline-size;
+        display: grid;
+        gap: clamp(2rem, 3%, 3rem);
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: clamp(30rem, 100%, 75rem);
+        // height: min(60rem, 1000rem);
+    }
+   
+    @media screen and (max-width: 50rem) {
         .content-frame {
+            justify-content: center;
+            padding: 1rem;
+        }
+        .content {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            justify-content: center;
-            padding: 1rem;
-            & > .content {
-                display: block;
-                & > :global(.card) {
-                    :global(h2) {
-                        padding-bottom: 1rem !important;
-                    }
-                }
+        }
+        :global(.card) {
+            :global(h2) {
+                padding-bottom: 1rem !important;
             }
         }
     }

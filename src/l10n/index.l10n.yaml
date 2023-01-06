@@ -54,7 +54,6 @@ geph:
   zhs: 迷雾通
   zht: 迷霧通
 
-
 hero:
   en: Blast through censorship.
   zhs: 冲破网络封锁
@@ -124,7 +123,6 @@ forum:
   en: Discourse forum
   zhs: Discourse 论坛
   zht: Discourse 論壇
-
 
 incorrect-login:
   en: Incorrect username or password
@@ -276,12 +274,12 @@ custom:
   zhs: 自定义（天）
   zht: 自定義（天）
 
-crypto: 
+crypto:
   en: Cryptocurrency
   zhs: 加密货币
   zht: 加密貨幣
 
-crypto-payment: 
+crypto-payment:
   en: Cryptocurrency payment
   zhs: 加密货币支付
   zht: 加密貨幣支付
@@ -328,8 +326,8 @@ usdc:
 
 usdcsol:
   en: USDC
-  zhs: USDC 
-  zht: USDC 
+  zhs: USDC
+  zht: USDC
 
 usdctrc20:
   en: USDC
