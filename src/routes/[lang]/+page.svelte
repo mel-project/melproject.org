@@ -1,15 +1,12 @@
 <script lang="ts">
   import { localize } from "@l10n";
   import Navbar from "@src/components/page-sections/Navbar.svelte";
-  import HeroImage from "@src/assets/images/wide-banner.jpg";
-  import Card from "@src/components/elements/Card.svelte";
+  import HeroImage from "@src/assets/images/banner.png";
   import Button from "@src/components/elements/Button.svelte";
-  import GradientBubble from "@src/components/elements/GradientBubble.svelte";
-  import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
-  import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
-  import VaultImage from "@src/assets/images/vault.png";
-  import { Colors } from "@src/utils/colors";
   import HomeContent from "@src/components/page-sections/HomeContent.svelte";
+  import GradientBubble from "@src/components/elements/GradientBubble.svelte";
+  import Range from "@src/components/Range.svelte";
+    import { Colors } from "@src/utils/colors";
 
   const communityIcons = [
     {
@@ -36,15 +33,17 @@
 <div class="home">
   <Navbar />
   <div class="top">
-      <img class="hero" src={HeroImage} alt="hero" />
-
+    <img class="hero" src={HeroImage} alt="hero" />
   </div>
-  <div class="spacer"></div>
+  <Range to={10}>
+    <GradientBubble color={Colors.teal} scale={20} opacity={20} offset="random"/>
+  </Range>
+  <div class="spacer" />
   <div class="subhero">
     <h1>A nice tagline for the project.</h1>
     <Button size="large">A call to action</Button>
   </div>
-  <div class="spacer"></div>
+  <div class="spacer" />
   <HomeContent />
 
   <div class="join">
@@ -66,26 +65,24 @@
 </div>
 
 <style lang="scss">
-  .home{
+  .home {
     display: grid;
     grid-template-rows: 5rem auto 10vh auto 35vh;
     grid-template-columns: 100vw;
   }
-  .top{
-    display:flex;
+  .top {
+    display: flex;
     flex-direction: column;
-    img{
+    img {
       max-width: 100%;
       border-radius: 1rem;
-      margin: .5rem;
+      margin: 0.5rem;
     }
   }
 
-
-  
-  .subhero{
+  .subhero {
     display: flex;
-    justify-content: center;;
+    justify-content: center;
     margin: 5rem 0;
   }
 </style>

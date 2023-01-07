@@ -26,7 +26,7 @@
                 <Button>Read our whitepaper</Button>
                 <img src={SpaceshipImage} />
             </Card>
-            <Card variant="gradient2">
+            <Card variant="gradient2" filter="noise">
                 <div>
                     <h2>Neutral, composable,<br /> and built for everyone</h2>
                     <p>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from "$app/stores";
 	import {fade} from 'svelte/transition';
+	import Logo from '@src/assets/images/logo.png';
 	import {
 		localize,
 		home_page,
@@ -23,8 +24,8 @@
 <nav class="navbar navbar-expand-lg bg-light">
 	<div class="container">
 		<a href={$home_page} class="navbar-brand">
-			<img src="/mellogo.png" height="32" alt="Mel Logo" class="me-1" />
-			{$localize("geph")}
+			<img src={Logo} height="40rem" alt="Mel Logo" class="me-1" />
+			<!-- {$localize("geph")} -->
 		</a>
 		<button
 			class="navbar-toggler"

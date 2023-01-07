@@ -1,12 +1,11 @@
 <script context="module" lang="ts">
     let random_placement: () => [string, string] = () => {
-        console.log('called random')
-        return [
-            Math.random() * 100 + "%",
-            Math.random() * 100 + "%",
-        ] as [string, string];
+        console.log("called random");
+        return [Math.random() * 100 + "%", Math.random() * 100 + "%"] as [
+            string,
+            string
+        ];
     };
-
 </script>
 
 <script lang="ts">
@@ -18,18 +17,20 @@
     export let color: Colors = Colors.teal;
     export let opacity: number = 40;
     export let scale: number = 10;
-    export let offset: [string, string] | "random" = ["0px", "0px"];
-    if(offset == "random"){
+    export let offset: [string, string] | [number, number] | "random" = [0, 0];
+    if (offset == "random") {
         offset = random_placement();
     }
+    let bubble: HTMLElement;
 </script>
 
 <template>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div
         class={"gradient-bubble " + _class}
         style="
-    left: {offset[0]};
-    top: {offset[1]};
+    left: calc({offset[0]};
+    top: calc({offset[1]};
     transform: scale({scale});
     --primary-color: {color};
     opacity: {opacity}%;
@@ -49,11 +50,10 @@
         width: 1rem;
         height: 1rem;
         background: radial-gradient(
-           circle at center,
+            circle at center,
             var(--primary-color) 30%,
             #ffffff00 70%
         );
-
-        opacity: 40%;
+        opacity: 10%;
     }
 </style>
