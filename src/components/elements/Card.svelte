@@ -32,9 +32,12 @@
 </script>
 
 <template>
-    <div class={[_class, variant, "card"].join(" ")}>
+    <div class={[_class, "card"].join(" ")}>
+        <div class="colors">
+            <div class="filter" />
+            <div class="gradient {variant}" />
+        </div>
         <slot />
-
         {#if variant == "bubbly"}
             {#key reload}
                 <div>
@@ -68,10 +71,42 @@
 <style lang="scss">
     @use "sass:color";
     @use "../../stylesheets/variables.scss" as colors;
+    .colors {
+        isolation: isolated;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -999;
+    }
+    .filter {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url(https://grainy-gradients.vercel.app/noise.svg);
+        background-size: cover;
+        z-index: -998;
+        opacity: 100%;
+        mix-blend-mode: multiply;
+
+        filter: greyscale(100%) contrast(170%) brightness(00%);
+    }
+    .gradient:is(.gradient1, .gradient2, .gradient3) {
+        position: absolute;
+        background-position: 0px 0px;
+        background-size: 100% 100%;
+        transition: 400ms all, 1s background-size;
+        &:hover {
+            background-size: 300% 300%;
+            cursor: pointer;
+        }
+        z-index: -999;
+        opacity: 100%;
+        width: 100%;
+        height: 100%;
+    }
     .card {
         z-index: 1;
         overflow: hidden;
-        width: clamp(20rem, 100%, 60rem);
         border-radius: 20px;
         padding: 3rem 2rem;
         transition: 400ms transform;
@@ -98,18 +133,8 @@
             max-height: 15rem;
         }
     }
-    div.card:is(.gradient1, .gradient2, .gradient3){
-        background-position: 0px 0px;
-        background-size: 100% 100%;
-        transition: 400ms all,
-        1s background-size;
-        &:hover{
-            background-size: 300%  300%;
-            cursor: pointer;
 
-        }
-    }
-    .card.gradient1 {
+    .gradient1 {
         border: none;
 
         background: radial-gradient(
@@ -118,9 +143,9 @@
             rgba(137, 90, 191, 0.1) 25%,
             white 37%
         );
-
     }
-    .card.gradient3 {
+
+    .gradient3 {
         $LS: 45;
         border: none;
         background: radial-gradient(
@@ -129,14 +154,13 @@
             color.scale(colors.$teal, $lightness: $LS * 1.05%) 10%,
             color.scale(colors.$purple, $lightness: $LS * 2%) 25%,
             white 37%,
-            color.scale(colors.$teal) 37%,
-
+            color.scale(colors.$teal) 37%
         );
         // scale: 10;
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
         mix-blend-mode: normal;
     }
-    .card.gradient2 {
+    .gradient2 {
         border: none;
         background: radial-gradient(
                 400% 400% at 0% 0%,
@@ -147,7 +171,7 @@
             /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
         mix-blend-mode: normal;
     }
-    .card.white {
+    .white {
         border: none;
         background-color: white;
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
