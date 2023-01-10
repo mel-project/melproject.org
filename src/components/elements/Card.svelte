@@ -25,19 +25,23 @@
     export { _class as class };
 
     export let variant: typeof Variant[number] = "default";
+    export let noisy = true;
     let scale = 30;
     let opacity: number = 10;
     let reload = 0;
     let bubbles = 28;
+
+    let hovered = true;
 </script>
 
 <template>
-    <div class={[_class, "card"].join(" ")}>
-        <div class="colors">
-            <div class="filter" />
-            <div class="gradient {variant}" />
-        </div>
-        <slot />
+    <div class="card gradient {variant} {_class}"
+     on:mouseenter={()=>hovered=true}
+     on:mouseleave={()=>hovered=false}
+     >
+        <div class="filter" class:hovered={hovered} class:noise={noisy} />
+        <slot/>
+        <!--the architecture would likely change if we wanted to keep a similar idea -->
         {#if variant == "bubbly"}
             {#key reload}
                 <div>
@@ -46,9 +50,11 @@
                             reload += 1;
                         }}>Reload Bubbles</Button
                     >
-                    scale<input type="text" bind:value={scale} />
-                    opacity %<input type="text" bind:value={opacity} />
-                    num bubbles<input type="text" bind:value={bubbles} />
+                    <div class="bubble-options">
+                        <label for="scale">scale</label><input name="scale" type="text" bind:value={scale} />
+                        <label for="opacity">opacity</label><input name="opacity" type="text" bind:value={opacity} />
+                        <label for="bubbes">Num Bubbles</label><input name="bubbles" type="text" bind:value={bubbles} />
+                    </div>
                 </div>
 
                 {#each [...range(bubbles)] as _}
@@ -71,27 +77,34 @@
 <style lang="scss">
     @use "sass:color";
     @use "../../stylesheets/variables.scss" as colors;
-    .colors {
-        isolation: isolated;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: -999;
+    .bubble-options{
+        display: flex;
+        flex-direction: column;
     }
-    .filter {
+    .filter:not(.noise){
+        display: none;
+        position: absolute;
+    }
+    .noise {
         position: absolute;
         width: 100%;
         height: 100%;
-        background-image: url(https://grainy-gradients.vercel.app/noise.svg);
+        background-image: url(https://images.unsplash.com/photo-1580243117731-a108c2953e2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80);
         background-size: cover;
+        background-repeat: repeat;
         z-index: -998;
-        opacity: 100%;
+        opacity: 10%;
+        filter: brightness(100%) contrast(80%) saturate(0%) invert(100%);
         mix-blend-mode: multiply;
+        transition: 1s all;
+        &.hovered{
+            opacity: 0%;
+            filter: brightness(60%) contrast(5%) saturate(0%) invert(100%);
 
-        filter: greyscale(100%) contrast(170%) brightness(00%);
+        }
     }
     .gradient:is(.gradient1, .gradient2, .gradient3) {
-        position: absolute;
+        // position: absolute;
         background-position: 0px 0px;
         background-size: 100% 100%;
         transition: 400ms all, 1s background-size;
@@ -99,7 +112,6 @@
             background-size: 300% 300%;
             cursor: pointer;
         }
-        z-index: -999;
         opacity: 100%;
         width: 100%;
         height: 100%;
@@ -134,7 +146,7 @@
         }
     }
 
-    .gradient1 {
+    .default,.gradient1 {
         border: none;
 
         background: radial-gradient(
@@ -174,6 +186,7 @@
     .white {
         border: none;
         background-color: white;
+        background-image: none;
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
         mix-blend-mode: normal;
     }
