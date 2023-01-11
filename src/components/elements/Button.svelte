@@ -39,6 +39,7 @@
     border: 0px solid white;
     color: black;
     transition: .5s background-size ease-in-out;
+    max-width: fit-content;
   }
 
   .gradient1 {
