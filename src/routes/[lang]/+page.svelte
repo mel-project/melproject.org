@@ -6,8 +6,8 @@
   import HomeContent from "@src/components/page-sections/HomeContent.svelte";
   import GradientBubble from "@src/components/elements/GradientBubble.svelte";
   import Range from "@src/components/Range.svelte";
-    import { Colors } from "@src/utils/colors";
-    import Card from "@src/components/elements/Card.svelte";
+  import { Colors } from "@src/utils/colors";
+  import Card from "@src/components/elements/Card.svelte";
 
   const communityIcons = [
     {
@@ -39,7 +39,12 @@
   </div>
 
   <Range to={10}>
-    <GradientBubble color={Colors.teal} scale={20} opacity={20} offset="random"/>
+    <GradientBubble
+      color={Colors.teal}
+      scale={20}
+      opacity={20}
+      offset="random"
+    />
   </Range>
 
   <div class="spacer" />
@@ -51,15 +56,14 @@
 
   <div class="spacer" />
 
-
   <HomeContent />
 
   <Card>
     <div class="join">
       <h1>Join our community</h1>
       <p class="main-lead">
-        Be part of a growing community of global developers, innovators, and users
-        helping us realize Themelio's vision.
+        Be part of a growing community of global developers, innovators, and
+        users helping us realize Themelio's vision.
       </p>
     </div>
   </Card>

@@ -23,6 +23,7 @@
 
 <nav class="navbar navbar-expand-lg bg-light">
 	<div class="container">
+
 		<a href={$home_page} class="navbar-brand">
 			<img src={Logo} height="40rem" alt="Mel Logo" class="me-1" />
 			<!-- {$localize("geph")} -->
@@ -47,6 +48,9 @@
 					<a class="nav-link" class:active={isHome} href={$home_page}>
 						{$localize("home")}
 					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/en/components">Components</a>
 				</li>
 				<li class="nav-item">
 					<a
