@@ -53,21 +53,32 @@
         #ffffff00 85%
       ),
       #ffffff;
-    border: 1px solid rgb(218, 218, 218);
+    // border: 1px solid rgb(218, 218, 218);
+    box-shadow: 0px 2px 1px 1px color.scale(white, $lightness: 0%);
+
     background-size: 100%;
     &:hover {
       background-size: 500%;
     }
   }
   .white {
-    $grey: 252;
-    background-color: rgb($grey, $grey, $grey);
+    $color: 250;
+    background-color: rgb($color, $color, $color);
     box-shadow: 0px 2px 1px 1px rgba(40, 40, 40, 0.092);
-    transition: 1s all;
+    transition: 100ms all ease-in-out;
     &:hover {
-      $grey: 255;
-      background-color: rgb($grey, $grey, $grey);
-      box-shadow: 0px 2px 1px 1px rgba(40, 40, 40, 0.092);
+      $factor: 1.02;
+      background-color: rgb($color / $factor, $color / $factor, $color / $factor);
+      box-shadow: 0px 3px 1px 1px rgba(30, 30, 30, 0.092);
     }
+     &:active{
+      $factor: 1.1;
+      background-color: rgb($color / $factor, $color / $factor, $color / $factor);
+      box-shadow: 0px 0px 0px 0px rgba(40, 40, 40, 0.092);
+      // background-image: url("../../assets/images/noise.png");
+      // background-blend-mode: color-burn;
+      // filter: invert(10%);
+    }
+  
   }
 </style>

@@ -29,6 +29,11 @@
     let _class = "";
     export { _class as class };
 
+    let _id: string = "";
+    export { _id as id } ;
+    let id = _id;
+
+
     export let _variant: typeof Variant[number] = "default";
     export { _variant as variant };
     let variant: string = variant_map[_variant] ;
@@ -56,6 +61,7 @@
 
 <template>
     <div
+        {id}
         class="{_class} card {variant} "
         class:unpadded
         class:interactive

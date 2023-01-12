@@ -16,6 +16,10 @@
     let _class: string = "";
     export { _class as class } ;
 
+    let _id: string = "";
+    export { _id as id } ;
+    let id = _id;
+
     let _variant_name: Variant = "plain";
     export { _variant_name as variant };
 
@@ -25,7 +29,7 @@
 </script>
 
 <template>
-    <Card class="banner {_class} content-container" {noise} variant="clear" unpadded>
+    <Card {id} class="banner {_class} content-container" {noise} variant="clear" unpadded>
         <div class="background {variant}" />
         <div class="content {variant}">
             <slot />
