@@ -3,10 +3,18 @@
     import GradientBubble from "./elements/GradientBubble.svelte";
     import Range from "./Range.svelte";
     import { Colors } from "@src/utils/colors";
-    let scale = 30;
-    let opacity: number = 10;
+    let scale = 20;
+    let opacity: number = 20;
     let reload = 0;
-    let bubbles = 28;
+    let bubbles = 1000;
+
+    let available_colors = [Colors.teal, Colors.purple];
+
+
+
+    function pick_random_item<T>(items: Array<T>): T {
+        return items[Math.floor(Math.random() * items.length)];
+    }
 </script>
 
 <div class="bubble-background">
@@ -37,22 +45,14 @@
         </div>
 
         <Range to={bubbles}>
-            <GradientBubble
-                {scale}
-                color={Object.values(Colors)[
-                    Math.floor(Math.random() * Object.values(Colors).length)
-                ]}
-                offset="random"
-                {opacity}
-            />
+            <GradientBubble {scale} color={pick_random_item(available_colors)} offset="random" {opacity} />
         </Range>
     {/key}
 </div>
 
 <style>
-    .bubble-background{
+    .bubble-background {
         height: 100%;
         width: 100%;
-    
     }
 </style>

@@ -7,7 +7,6 @@
         "gradient4",
         "grey-gradient",
         "default",
-        "bubbly",
         "square",
         "clear",
     ] as const;
@@ -20,14 +19,12 @@
         gradient4: "gradient4 transformations",
         "grey-gradient": "grey-gradient transformations",
         default: "default transformations",
-        bubbly: "bubbly transformations",
         square: "v-square transformations",
         clear: "clear transformations",
     } as const;
 </script>
 
 <script lang="ts">
-    import BubbleBackground from "../BubbleBackground.svelte";
 
     let _class = "";
     export { _class as class };
@@ -69,9 +66,6 @@
     >
         <div class="filter" class:hover class:noise />
         <slot {hover} {noise} />
-        {#if variant == "bubbly"}
-            <BubbleBackground />
-        {/if}
     </div>
 </template>
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import BubbleBackground from "@src/components/BubbleBackground.svelte";
     import Banner, {
         Variant as BannerVariant,
     } from "@src/components/elements/Banner.svelte";
@@ -138,9 +139,7 @@
         </div>
         <h2>Bubbles</h2>
         <div class="bubbles">
-            <Range to={10}>
-                <GradientBubble offset="random"></GradientBubble>
-            </Range>
+            <BubbleBackground></BubbleBackground>
         </div>
     </div>
 </template>
@@ -208,5 +207,6 @@
     }
     .bubbles {
         height: 100vh;
+        position: relative;
     }
 </style>
