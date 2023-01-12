@@ -33,7 +33,7 @@
     let CardOptions = {
         hovered_card: false,
         noise: true,
-        interactive: false,
+        interactive: true,
         square: true,
     };
 </script>
