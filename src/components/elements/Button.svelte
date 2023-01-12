@@ -72,7 +72,7 @@
       box-shadow: 0px 3px 1px 1px rgba(30, 30, 30, 0.092);
     }
      &:active{
-      $factor: 1.1;
+      $factor: 1.07;
       background-color: rgb($color / $factor, $color / $factor, $color / $factor);
       box-shadow: 0px 0px 0px 0px rgba(40, 40, 40, 0.092);
       // background-image: url("../../assets/images/noise.png");

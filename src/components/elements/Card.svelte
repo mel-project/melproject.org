@@ -113,6 +113,7 @@
         display: grid;
         box-sizing: border-box;
         grid-template-rows: auto;
+        
         // VARIANTS //////////////////////////////////
         &.v-square,
         &.square {

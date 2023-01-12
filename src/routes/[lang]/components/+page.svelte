@@ -21,14 +21,16 @@
     let card_variant_descriptions: { [key in CardVariant]: string } = {
         gradient1: "A very light radial gradient: teal, purple, white",
         gradient2: "A stronger gradient: teal, purple, white",
-        gradient3: "same rotations as 1, strength as 2, with an additional color: light-blue",
+        gradient3:
+            "same rotations as 1, strength as 2, with an additional color: light-blue",
 
         default: "gradient1",
         white: "By default white is not interactive and will not perform any animations when hovered",
-        gradient4: "Used on page 2, it's 2 raidal gradients starting from light-blue (bottom left) and teal and transitioning into translucent",
+        gradient4:
+            "Used on page 2, it's 2 raidal gradients starting from light-blue (bottom left) and teal and transitioning into translucent",
         "grey-gradient": "",
         square: "A responsive square!! until...",
-        clear: ""
+        clear: "",
     };
 
     let CardOptions = {
@@ -206,18 +208,30 @@
             align-self: center;
             margin: 0;
         }
+        :global(.banner#banner0){
+            border: 1px solid green;
+
+
+        }
+
+
         & > :global(.banner#banner2) {
+
             border: 1px solid red;
             :global(.content) {
                 border: 1px solid blue;
                 display: flex;
                 flex-direction: row;
                 gap: 1rem;
-                :global(p){
+                :global(p) {
                     flex-grow: 2;
+                }
+                :global(button) {
+                    flex: 0 0 55rem;
                 }
             }
         }
+
         // margin: 0.5rem 0.5rem;
     }
     .button-grid {

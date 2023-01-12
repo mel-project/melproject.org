@@ -9,7 +9,6 @@
 </script>
 
 <div class="home">
-  <Navbar />
 
   <div class="top">
     <img class="hero" src={HeroImage} alt="hero" />
@@ -36,15 +35,7 @@
     </div>
   </Banner>
 
-  <div class="footer">
-    <div class="container-fluid">
-      <div class="row">
-        {#each communityIcons as icon}
-          <div class="col-lg-4 mb-5">{icon.name}</div>
-        {/each}
-      </div>
-    </div>
-  </div>
+
 </div>
 
 <style lang="scss">
