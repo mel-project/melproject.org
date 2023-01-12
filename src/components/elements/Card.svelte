@@ -107,6 +107,9 @@
         border-radius: 20px;
         padding: 3rem 2rem;
         max-height: 100%;
+        display: grid;
+        box-sizing: border-box;
+        grid-template-rows: auto;
         // VARIANTS //////////////////////////////////
         &.v-square,
         .square {
