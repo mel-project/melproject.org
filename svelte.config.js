@@ -21,7 +21,7 @@ const config = {
     }),
     alias: {
       "@l10n": "src/l10n",
-      "@src": "src"
+      "@src": "src",
     },
   },
 };

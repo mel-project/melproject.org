@@ -1,7 +1,7 @@
 <script lang="ts">
-    import Button from "./elements/Button.svelte";
-    import GradientBubble from "./elements/GradientBubble.svelte";
-    import Range from "./Range.svelte";
+    import Button from "./Button.svelte";
+    import GradientBubble from "./GradientBubble.svelte";
+    import Range from "../Range.svelte";
     import { Colors } from "@src/utils/colors";
     let scale = 20;
     let opacity: number = 20;

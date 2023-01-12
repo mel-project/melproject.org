@@ -1,37 +1,51 @@
 <script lang="ts" context="module">
     import Card from "./Card.svelte";
 
-    export const Variant = ["plain", "gradient1", "clear"] as const;
+    export const Size = ["normal", "wide"] as const;
+    export type Size = typeof Size[number];
+
+    export const Variant = ["plain", "gradient1", "clear", "white"] as const;
     export type Variant = typeof Variant[number];
 
     const variant_map: { [key in Variant]: string } = {
         plain: "plain",
         gradient1: "gradient1 wide",
-        clear: "clear"
+        clear: "clear",
+        white: "white"
     } as const;
 </script>
 
 <script lang="ts">
-
     let _class: string = "";
-    export { _class as class } ;
+    export { _class as class };
 
     let _id: string = "";
-    export { _id as id } ;
+    export { _id as id };
     let id = _id;
+
+    export let size = "normal";
 
     let _variant_name: Variant = "plain";
     export { _variant_name as variant };
 
     let variant: string = variant_map[_variant_name];
 
+    export let column = false;
     export let noise = false;
 </script>
 
 <template>
-    <Card {id} class="banner {_class} content-container" {noise} variant="clear" unpadded>
+    <Card
+        {id}
+        class="banner {_class} content-container {size}"
+
+        {noise}
+        variant="clear"
+        unpadded
+    >
         <div class="background {variant}" />
-        <div class="content {variant}">
+        <div class="content {variant}"
+        class:column>
             <slot />
         </div>
     </Card>
@@ -41,7 +55,11 @@
     @use "../../stylesheets/spacing.scss" as spacing;
     @use "../../stylesheets/variables.scss" as colors;
     @use "sass:color" as color;
+    :global(.banner.wide){
+            height: 30rem;
+    }
     :global(.banner) > .background {
+
         &.plain {
             position: absolute;
             width: 100%;
@@ -61,11 +79,17 @@
                 white
             );
         }
+        &.white {
+            display: none;
+        }
         &.clear {
             background-color: transparent;
         }
     }
-
+    .content.column{
+        display: flex;
+        flex-direction: column;
+    }
     :global(.card.content-container.banner) {
         display: flex;
         flex-direction: row;
@@ -81,6 +105,5 @@
         display: flex;
         justify-content: space-around;
         width: 100%;
-
     }
 </style>

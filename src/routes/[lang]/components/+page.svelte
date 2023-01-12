@@ -1,5 +1,5 @@
 <script lang="ts">
-    import BubbleBackground from "@src/components/BubbleBackground.svelte";
+    import BubbleBackground from "@src/components/elements/BubbleBackground.svelte";
     import Banner, {
         Variant as BannerVariant,
     } from "@src/components/elements/Banner.svelte";
