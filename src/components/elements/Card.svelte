@@ -9,6 +9,7 @@
         "default",
         "bubbly",
         "square",
+        "clear",
     ] as const;
     export type Variant = typeof Variant[number];
     const variant_map: { [key in Variant]: string } = {
@@ -21,6 +22,7 @@
         default: "default transformations",
         bubbly: "bubbly transformations",
         square: "v-square transformations",
+        clear: "clear transformations",
     } as const;
 </script>
 
@@ -32,7 +34,7 @@
 
     export let _variant: typeof Variant[number] = "default";
     export { _variant as variant };
-    let variant: string = variant_map[_variant];
+    let variant: string = variant_map[_variant] ;
     //[free memory](https://stackoverflow.com/questions/8467350/how-to-free-up-the-memory-in-javascript)
     _variant = null as any; // override typechecker
 
@@ -107,13 +109,14 @@
         border-radius: 20px;
         padding: 3rem 2rem;
         max-height: 100%;
+        max-width: 100%;
         display: grid;
         box-sizing: border-box;
         grid-template-rows: auto;
         // VARIANTS //////////////////////////////////
         &.v-square,
         &.square {
-            width: clamp(15rem, 50vw, 50vw);
+            // width: clamp(15rem, 50vw, 50vw);
             height: clamp(15rem, 50vw, 50vw);
         }
         .unpadded {
@@ -208,6 +211,10 @@
             border: none;
             background-color: white;
             background-image: none;
+        }
+        &.clear {
+            background-color: transparent;
+            border: none;
         }
 
         :global(img) {
