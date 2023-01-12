@@ -33,9 +33,10 @@
     let CardOptions = {
         hovered_card: false,
         noise: true,
-        interactive: false,
+        interactive: true,
         square: true,
     };
+    setTimeout(() => CardOptions.hovered_card = true, 700);
 </script>
 
 <template>
