@@ -36,7 +36,11 @@
         interactive: true,
         square: true,
     };
-    setTimeout(() => CardOptions.hovered_card = true, 700);
+    let toggleHover = () =>{
+        CardOptions.hovered_card = !CardOptions.hovered_card
+        setTimeout(toggleHover, 1100);
+    }
+    toggleHover()
 </script>
 
 <template>
