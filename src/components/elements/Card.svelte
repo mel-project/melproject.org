@@ -8,7 +8,7 @@
         "grey-gradient",
         "default",
         "bubbly",
-        "square",
+        "square"
     ] as const;
     export type Variant = typeof Variant[number];
     const variant_map: { [key in Variant]: string } = {
@@ -20,7 +20,7 @@
         "grey-gradient": "grey-gradient transformations",
         default: "default transformations",
         bubbly: "bubbly transformations",
-        square: "v-square transformations",
+        square: "square transformations"
     } as const;
 </script>
 
@@ -33,11 +33,26 @@
     export let _variant: typeof Variant[number] = "default";
     export { _variant as variant };
     let variant: string = variant_map[_variant];
-    export let noise = false;
+    //[free memory](stackoverflow.com/questions/8467350/how-to-free-up-the-memory-in-javascript)
+    https: _variant = null as any; // override typechecker
+
+    let _noise = false;
+    export { _noise as noise };
+    let noise = _noise ? "noise filter" : ""; // used as a class (could use a variant map here)
+
+    // Interactive controls whether the :hover animations are played
     export let interactive = false;
-    export let hovered = false;
+    // disable the default :: padding: 3rem;
     export let unpadded = false;
+
+    // keep the card square relative to it's container
+    // haven't worked out how to prevent it from growing wider than tall
+    // help please
     export let square = false;
+
+    // put here for testing, but shouldn't be used in production
+    // unless you want to use it. idk you do you.
+    export let hovered = false;
 </script>
 
 <template>

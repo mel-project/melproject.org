@@ -4,14 +4,8 @@
   import HeroImage from "@src/assets/images/banner.png";
   import Button from "@src/components/elements/Button.svelte";
   import HomeContent from "@src/components/page-sections/HomeContent.svelte";
-  import GradientBubble from "@src/components/elements/GradientBubble.svelte";
-  import Range from "@src/components/Range.svelte";
-  import { Colors } from "@src/utils/colors";
-  import Card from "@src/components/elements/Card.svelte";
-    import Banner from "@src/components/elements/Banner.svelte";
-    import { communityIcons } from "@src/utils/navigation";
-
- 
+  import Banner from "@src/components/elements/Banner.svelte";
+  import { communityIcons } from "@src/utils/navigation";
 </script>
 
 <div class="home">

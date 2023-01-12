@@ -38,7 +38,7 @@
     };
     let toggleHover = () =>{
         CardOptions.hovered_card = !CardOptions.hovered_card
-        setTimeout(toggleHover, 1100);
+        setTimeout(toggleHover, 2000);
     }
     toggleHover()
 </script>
