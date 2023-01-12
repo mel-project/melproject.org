@@ -8,7 +8,7 @@
         "grey-gradient",
         "default",
         "bubbly",
-        "square"
+        "square",
     ] as const;
     export type Variant = typeof Variant[number];
     const variant_map: { [key in Variant]: string } = {
@@ -20,7 +20,7 @@
         "grey-gradient": "grey-gradient transformations",
         default: "default transformations",
         bubbly: "bubbly transformations",
-        square: "square transformations"
+        square: "v-square transformations",
     } as const;
 </script>
 
@@ -33,8 +33,8 @@
     export let _variant: typeof Variant[number] = "default";
     export { _variant as variant };
     let variant: string = variant_map[_variant];
-    //[free memory](stackoverflow.com/questions/8467350/how-to-free-up-the-memory-in-javascript)
-    https: _variant = null as any; // override typechecker
+    //[free memory](https://stackoverflow.com/questions/8467350/how-to-free-up-the-memory-in-javascript)
+    _variant = null as any; // override typechecker
 
     let _noise = false;
     export { _noise as noise };
@@ -52,7 +52,7 @@
 
     // put here for testing, but shouldn't be used in production
     // unless you want to use it. idk you do you.
-    export let hovered = false;
+    export let hover = false;
 </script>
 
 <template>
@@ -60,13 +60,13 @@
         class="{_class} card {variant} "
         class:unpadded
         class:interactive
-        class:hovered
+        class:hover
         class:square
-        on:mouseenter={() => (hovered = true && interactive)}
-        on:mouseleave={() => (hovered = false && interactive)}
+        on:mouseenter={() => (hover = true && interactive)}
+        on:mouseleave={() => (hover = false && interactive)}
     >
-        <div class="filter" class:hovered class:noise />
-        <slot {hovered} {noise} />
+        <div class="filter" class:hover class:noise />
+        <slot {hover} {noise} />
         {#if variant == "bubbly"}
             <BubbleBackground />
         {/if}
@@ -95,7 +95,7 @@
         filter: brightness(100%) contrast(80%) saturate(0%) invert(100%);
         mix-blend-mode: multiply;
         transition: 1000ms all;
-        &.hovered {
+        &.hover {
             opacity: 0%;
             filter: brightness(60%) contrast(5%) saturate(0%) invert(100%);
         }
@@ -112,7 +112,7 @@
         grid-template-rows: auto;
         // VARIANTS //////////////////////////////////
         &.v-square,
-        .square {
+        &.square {
             width: clamp(15rem, 50vw, 50vw);
             height: clamp(15rem, 50vw, 50vw);
         }
@@ -158,7 +158,7 @@
         //   ACTIONS (?)     //////////////////////////////////
 
         // activated when the mouse enters the card
-        &.hovered {
+        &.hover {
             // box-shadow: 10px 10px 5px rgba(0,0,0,.1);
             transform: translate(0px, -5px);
             // background-size: 300% 300%;
@@ -223,7 +223,7 @@
             // position: absolute;
             transition: 400ms all, 1s background-size;
             background-size: 100% 100%;
-            &.hovered {
+            &.hover {
                 background-size: 300% 300%;
                 &.gradient4 {
                     background-size: 100% 100%;
@@ -232,7 +232,7 @@
         }
     }
 
-    .interactive.hovered {
+    .interactive.hover {
         cursor: pointer;
     }
 </style>
