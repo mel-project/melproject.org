@@ -396,3 +396,15 @@ verifying:
 
 return-to-portal:
   en: Return to user portal
+
+## PAGE 1: HOMEPAGE ##
+page1_monetary_infrastructure:
+  en: '                    <h2>Monetary infrastructure <br />for a better future</h2>
+                      <p>
+                          The future we are building needs a new kind of money —
+                          MEL is the first cryptocurrency that’s both stable and
+                          trustless. It’s the first truly decentralized unit of
+                          account, changing everything from payments to incentive
+                          design.
+                      </p>
+                      '

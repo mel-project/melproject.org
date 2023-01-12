@@ -5,6 +5,7 @@
     import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
     import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
     import VaultImage from "@src/assets/images/vault.png";
+    import { lang, localize } from "@l10n";
     let _class = "";
     export { _class as class };
 </script>
@@ -54,14 +55,7 @@
             </Card>
             <Card variant="gradient1" noise interactive>
                 <div>
-                    <h2>Monetary infrastructure <br />for a better future</h2>
-                    <p>
-                        The future we are building needs a new kind of money —
-                        MEL is the first cryptocurrency that’s both stable and
-                        trustless. It’s the first truly decentralized unit of
-                        account, changing everything from payments to incentive
-                        design.
-                    </p>
+                    {@html $localize('page1_monetary_infrastructure',$lang)}
                 </div>
                 <Button>Learn about Melmint</Button>
                 <img src={VaultImage} />
@@ -78,6 +72,10 @@
         width: 100%;
     }
     .content {
+        & > * {
+            max-width: 100%;
+            color: red
+        }
         // container-type: inline-size;
         display: grid;
         gap: clamp(2rem, 3%, 3rem);

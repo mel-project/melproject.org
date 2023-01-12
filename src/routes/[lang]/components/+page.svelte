@@ -40,6 +40,8 @@
 
 <template>
     <h1>Component Library</h1>
+   
+   
     <h2>Card Grid</h2>
     <p class="center info">
         <Card variant="white">
@@ -50,7 +52,7 @@
             default.
         </Card>
     </p>
-    <Card variant="white">
+    <Banner variant="white">
         <label for="hovered">Hovering Cards</label>
         <input
             type="checkbox"
@@ -63,8 +65,11 @@
         <input name="interactive" type="checkbox" bind:checked={CardOptions.interactive} />
         <label for="square">square</label>
         <input name="square" type="checkbox" bind:checked={CardOptions.square} />
-    </Card>
+    </Banner>
 
+   
+   
+   
     <div class="card-grid">
         {#each CardVariant as variant}
             <Card
@@ -84,6 +89,10 @@
             </Card>
         {/each}
     </div>
+
+
+
+
     <Banner variant="plain">
         <h2>Banners</h2>
         <p>
@@ -100,6 +109,8 @@
             </Banner>
         {/each}
     </div>
+   
+   
     <div class="button-grid">
         {#each ButtonSize as size}
             {#each ButtonVariant as variant}

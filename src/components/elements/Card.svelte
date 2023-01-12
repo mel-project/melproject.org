@@ -28,15 +28,14 @@
     let _class = "";
     export { _class as class };
 
-    
     export let _variant: typeof Variant[number] = "default";
     export { _variant as variant };
     let variant: string = variant_map[_variant];
-    https://stackoverflow.com/questions/8467350/how-to-free-up-the-memory-in-javascript
-    _variant = (null as any); // override typechecker
-    
+    //stackoverflow.com/questions/8467350/how-to-free-up-the-memory-in-javascript
+    https: _variant = null as any; // override typechecker
+
     let _noise = false;
-    export {_noise as noise};
+    export { _noise as noise };
     let noise = _noise ? "noise filter" : ""; // used as a class (could use a variant map here)
 
     // Interactive controls whether the :hover animations are played
@@ -52,12 +51,11 @@
     // put here for testing, but shouldn't be used in production
     // unless you want to use it. idk you do you.
     export let hovered = false;
-
 </script>
 
 <template>
     <div
-        class="{_class} card {variant} "
+        class="card {_class} {variant} "
         class:unpadded
         class:interactive
         class:hovered
@@ -65,8 +63,12 @@
         on:mouseenter={() => (hovered = true && interactive)}
         on:mouseleave={() => (hovered = false && interactive)}
     >
-        <div class:hovered class:noise />
-        <slot {hovered} {noise} />
+        <div class:noise class:hovered  />
+
+        <div class="slot">
+            <slot {hovered} {noise} />
+        </div>
+
         {#if variant == "bubbly"}
             <BubbleBackground />
         {/if}
@@ -88,11 +90,8 @@
         grid-template-rows: auto;
         transition: 400ms all, 1s background-size;
         background-size: 100% 100%;
-        &.hovered {
-            background-size: 300% 300%;
-            &.gradient4 {
-                background-size: 100% 100%;
-            }
+        &.slot {
+            max-width: 10px;
         }
         // VARIANTS //////////////////////////////////
         &.square {
@@ -182,10 +181,14 @@
         &.hovered {
             // box-shadow: 10px 10px 5px rgba(0,0,0,.1);
             transform: translate(0px, -5px);
+            background-size: 300% 300%;
+            &.gradient4 {
+                background-size: 100% 100%;
+            }
         }
     }
 
-    // 
+    //
     .filter:not(.noise) {
         display: none;
         position: absolute;

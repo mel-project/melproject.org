@@ -36,3 +36,24 @@ export function navdropdown(title: string, links: Link[]): DropDown {
     links,
   };
 }
+
+export const communityIcons = [
+  {
+    name: "Discord",
+  },
+  {
+    name: "Twitter",
+  },
+  {
+    name: "GitHub",
+  },
+  {
+    name: "Forum",
+  },
+  {
+    name: "Medium",
+  },
+  {
+    name: "Telegram",
+  },
+];
