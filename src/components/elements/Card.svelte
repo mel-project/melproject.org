@@ -8,6 +8,7 @@
         "grey-gradient",
         "default",
         "bubbly",
+        "square",
     ] as const;
     export type Variant = typeof Variant[number];
     const variant_map: { [key in Variant]: string } = {
@@ -18,7 +19,8 @@
         gradient4: "gradient4 transformations",
         "grey-gradient": "grey-gradient transformations",
         default: "default transformations",
-        bubbly: "bubbly transformations"
+        bubbly: "bubbly transformations",
+        square: "square",
     } as const;
 </script>
 
@@ -29,12 +31,13 @@
     export { _class as class };
 
     export let _variant: typeof Variant[number] = "default";
-    export {_variant as variant};
+    export { _variant as variant };
     let variant: string = variant_map[_variant];
     export let noise = false;
     export let interactive = false;
     export let hovered = false;
     export let unpadded = false;
+    export let square = false;
 </script>
 
 <template>
@@ -46,11 +49,7 @@
         on:mouseenter={() => (hovered = true && interactive)}
         on:mouseleave={() => (hovered = false && interactive)}
     >
-        <div
-            class="filter"
-            class:hovered
-            class:noise
-        />
+        <div class="filter" class:hovered class:noise />
         <slot {hovered} {noise} />
         {#if variant == "bubbly"}
             <BubbleBackground />
@@ -67,6 +66,7 @@
         display: none;
         position: absolute;
     }
+
     .noise {
         position: absolute;
         width: 100%;
@@ -91,6 +91,10 @@
         border-radius: 20px;
         padding: 3rem 2rem;
         max-height: 100%;
+        &.square {
+            width: clamp(15rem, 50vw, 50vw);
+            height: clamp(15rem, 50vw, 50vw);
+        }
         &.hovered {
             // box-shadow: 10px 10px 5px rgba(0,0,0,.1);
             transform: translate(0px, -5px);
@@ -113,7 +117,7 @@
             max-height: 15rem;
         }
     }
-    .card.unpadded{
+    .card.unpadded {
         padding: 0;
         border-radius: 0;
     }
@@ -197,7 +201,6 @@
                 rgba(255, 255, 255, 0) 100%
             );
     }
-
 
     .white {
         border: none;

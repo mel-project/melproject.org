@@ -78,13 +78,13 @@
             </Card>
         {/each}
     </div>
-    <Card variant="white">
+    <Banner variant="plain">
         <h2>Banners</h2>
         <p>
             Banners are just cards, but since cards fill their space, they can
             be sized arbitrarily
         </p>
-    </Card>
+    </Banner>
     <div class="banner-grid">
         {#each BannerVariant as variant}
             <Banner {variant}>
@@ -128,8 +128,9 @@
         grid-auto-flow: row;
     }
     .banner-grid {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
         gap: 0.5rem;
         margin: 0.5rem 0.5rem;
     }
