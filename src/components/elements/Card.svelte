@@ -8,6 +8,7 @@
         "grey-gradient",
         "default",
         "bubbly",
+        "square"
     ] as const;
     export type Variant = typeof Variant[number];
     const variant_map: { [key in Variant]: string } = {
@@ -19,6 +20,7 @@
         "grey-gradient": "grey-gradient transformations",
         default: "default transformations",
         bubbly: "bubbly transformations",
+        square: "v-square transformations"
     } as const;
 </script>
 
@@ -94,7 +96,7 @@
             max-width: 10px;
         }
         // VARIANTS //////////////////////////////////
-        &.square {
+        &.v-square,.square {
             width: clamp(15rem, 50vw, 50vw);
             height: clamp(15rem, 50vw, 50vw);
         }
@@ -215,5 +217,21 @@
             opacity: 0%;
             filter: brightness(60%) contrast(5%) saturate(0%) invert(100%);
         }
+        
+    .interactive.hovered {
+        cursor: pointer;
+    }
+
+    .card.transformations {
+        // position: absolute;
+        transition: 400ms all, 1s background-size;
+        background-size: 100% 100%;
+        &.hovered {
+            background-size: 300% 300%;
+            &.gradient4 {
+                background-size: 100% 100%;
+            }
+        }
+    }
     }
 </style>

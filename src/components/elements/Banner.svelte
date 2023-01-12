@@ -28,7 +28,8 @@
     @use "../../stylesheets/spacing.scss" as spacing;
     @use "../../stylesheets/variables.scss" as colors;
     @use "sass:color" as color;
-    :global(.banner) > .background {
+    :global(.banner) .background {
+        border: 1px solid red;
         &.plain {
             position: absolute;
             width: 100%;

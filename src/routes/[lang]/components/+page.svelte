@@ -73,6 +73,7 @@
                 bind:hovered={CardOptions.hovered_card}
                 bind:noise={CardOptions.noise}
                 bind:interactive={CardOptions.interactive}
+                bind:square={CardOptions.square}
             >
                 <div>
                     <h2>
@@ -125,7 +126,7 @@
         // container-type: inline-size;
         display: grid;
         gap: 2rem;
-
+        
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 30rem;
         grid-auto-rows: 30rem;
