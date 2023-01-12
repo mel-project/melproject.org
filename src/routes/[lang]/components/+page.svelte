@@ -29,9 +29,13 @@
             "Used on page 2, it's 2 raidal gradients starting from light-blue (bottom left) and teal and transitioning into translucent",
         "grey-gradient": "",
     };
-    let hovered_card = false;
-    let noise = true;
-    let interactive = false;
+
+    let CardOptions = {
+        hovered_card: false,
+        noise: true,
+        interactive: false,
+        square: true,
+    };
 </script>
 
 <template>
@@ -51,21 +55,23 @@
         <input
             type="checkbox"
             data-toggle="toggle"
-            bind:checked={hovered_card}
+            bind:checked={CardOptions.hovered_card}
         />
         <label for="noisy">Image Noise</label>
-        <input name="noisy" type="checkbox" bind:checked={noise} />
+        <input name="noisy" type="checkbox" bind:checked={CardOptions.noise} />
         <label for="interactive">Interactive</label>
-        <input name="interactive" type="checkbox" bind:checked={interactive} />
+        <input name="interactive" type="checkbox" bind:checked={CardOptions.interactive} />
+        <label for="square">square</label>
+        <input name="square" type="checkbox" bind:checked={CardOptions.square} />
     </Card>
 
     <div class="card-grid">
         {#each CardVariant as variant}
             <Card
                 {variant}
-                bind:hovered={hovered_card}
-                bind:noise
-                {interactive}
+                bind:hovered={CardOptions.hovered_card}
+                bind:noise={CardOptions.noise}
+                bind:interactive={CardOptions.interactive}
             >
                 <div>
                     <h2>
