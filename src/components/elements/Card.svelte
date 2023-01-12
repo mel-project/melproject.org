@@ -63,7 +63,7 @@
         on:mouseenter={() => (hovered = true && interactive)}
         on:mouseleave={() => (hovered = false && interactive)}
     >
-        <div class:noise class:hovered  />
+        <div class:noise class:hovered />
 
         <div class="slot">
             <slot {hovered} {noise} />
@@ -134,7 +134,25 @@
                 white 37%,
                 color.scale(colors.$teal) 37%
             );
-        } // STILL VARIANTS //////////////////////////////////
+        }
+
+        //  NOT VARIANTS     //////////////////////////////////!
+        //   ACTIONS (?)     //////////////////////////////////
+
+        // activated when the mouse enters the card
+        &.hovered {
+            // box-shadow: 10px 10px 5px rgba(0,0,0,.1);
+            transform: translate(0px, -5px);
+            // background-size: 300% 300%;
+            transition: 1s background-size, 1s translate;
+            &.gradient4 {
+                background-size: 100% 100%;
+            }
+        }
+
+      //\\  VARIANTS  //\\//\\//\\//\\//\\//\\//\\//\\//\\
+      //\\    AGAIN   //\\//\\//\\//\\//\\//\\//\\//\\//\\
+
         &.gradient4 {
             $LS: 35; // a lightness scale factor for each gradient
             $size: 75%;
@@ -172,19 +190,6 @@
             border: none;
             background-color: white;
             background-image: none;
-        }
-
-        //  NOT VARIANTS     //////////////////////////////////!
-        //   ACTIONS (?)     //////////////////////////////////
-
-        // activated when the mouse enters the card
-        &.hovered {
-            // box-shadow: 10px 10px 5px rgba(0,0,0,.1);
-            transform: translate(0px, -5px);
-            background-size: 300% 300%;
-            &.gradient4 {
-                background-size: 100% 100%;
-            }
         }
     }
 

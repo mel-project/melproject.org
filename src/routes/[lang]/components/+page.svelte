@@ -40,9 +40,8 @@
 
 <template>
     <h1>Component Library</h1>
-   
-   
     <h2>Card Grid</h2>
+   
     <p class="center info">
         <Card variant="white">
             Except for white, When hovered cards shift up by 1rem, increase the
@@ -52,7 +51,7 @@
             default.
         </Card>
     </p>
-    <Banner variant="white">
+    <Card variant="white">
         <label for="hovered">Hovering Cards</label>
         <input
             type="checkbox"
@@ -65,11 +64,8 @@
         <input name="interactive" type="checkbox" bind:checked={CardOptions.interactive} />
         <label for="square">square</label>
         <input name="square" type="checkbox" bind:checked={CardOptions.square} />
-    </Banner>
+    </Card>
 
-   
-   
-   
     <div class="card-grid">
         {#each CardVariant as variant}
             <Card
@@ -109,8 +105,6 @@
             </Banner>
         {/each}
     </div>
-   
-   
     <div class="button-grid">
         {#each ButtonSize as size}
             {#each ButtonVariant as variant}

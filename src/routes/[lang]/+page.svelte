@@ -8,27 +8,10 @@
   import Range from "@src/components/Range.svelte";
   import { Colors } from "@src/utils/colors";
   import Card from "@src/components/elements/Card.svelte";
+    import Banner from "@src/components/elements/Banner.svelte";
+    import { communityIcons } from "@src/utils/navigation";
 
-  const communityIcons = [
-    {
-      name: "Discord",
-    },
-    {
-      name: "Twitter",
-    },
-    {
-      name: "GitHub",
-    },
-    {
-      name: "Forum",
-    },
-    {
-      name: "Medium",
-    },
-    {
-      name: "Telegram",
-    },
-  ];
+ 
 </script>
 
 <div class="home">
@@ -38,27 +21,18 @@
     <img class="hero" src={HeroImage} alt="hero" />
   </div>
 
-  <Range to={10}>
-    <GradientBubble
-      color={Colors.teal}
-      scale={20}
-      opacity={20}
-      offset="random"
-    />
-  </Range>
-
-  <div class="spacer" />
+  <div class="SPACER" />
 
   <div class="subhero">
     <h1>A nice tagline for the project.</h1>
     <Button size="large">A call to action</Button>
   </div>
 
-  <div class="spacer" />
+  <div class="SPACER" />
 
   <HomeContent />
 
-  <Card>
+  <Banner>
     <div class="join">
       <h1>Join our community</h1>
       <p class="main-lead">
@@ -66,7 +40,7 @@
         users helping us realize Themelio's vision.
       </p>
     </div>
-  </Card>
+  </Banner>
 
   <div class="footer">
     <div class="container-fluid">
