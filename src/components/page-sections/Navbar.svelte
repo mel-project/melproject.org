@@ -53,22 +53,7 @@
 					<a class="nav-link" href="/en/components">Components</a>
 				</li>
 				<li class="nav-item">
-					<a
-						class="nav-link"
-						class:active={isUserPortal}
-						href={`${$home_page}/portal`}
-					>
-						{$localize("user-portal")}
-					</a>
-				</li>
-				<li class="nav-item">
-					<a
-						class="nav-link"
-						class:active={isPolicies}
-						href={`${home_page}/policies`}
-					>
-						{$localize("policies")}
-					</a>
+					<a class="nav-link" href="/en/technology">Technology</a>
 				</li>
 				<li class="nav-item dropdown">
 					<div

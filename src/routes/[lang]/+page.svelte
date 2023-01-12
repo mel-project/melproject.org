@@ -22,7 +22,7 @@
   </div>
 
   <div class="SPACER" />
-
+x
   <HomeContent />
 
   <Banner>
@@ -41,7 +41,7 @@
 <style lang="scss">
   .home {
     display: grid;
-    grid-template-rows: 5rem auto 10vh auto 35vh;
+    grid-template-rows: auto 10vh auto 35vh;
     grid-template-columns: 100vw;
   }
   .top {
