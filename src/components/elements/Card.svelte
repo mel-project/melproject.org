@@ -20,7 +20,7 @@
         "grey-gradient": "grey-gradient transformations",
         default: "default transformations",
         bubbly: "bubbly transformations",
-        square: "v-square",
+        square: "v-square transformations",
     } as const;
 </script>
 
@@ -46,6 +46,7 @@
         class:unpadded
         class:interactive
         class:hovered
+        class:square
         on:mouseenter={() => (hovered = true && interactive)}
         on:mouseleave={() => (hovered = false && interactive)}
     >
@@ -85,13 +86,22 @@
         }
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
     .card {
         z-index: 1;
         overflow: hidden;
         border-radius: 20px;
         padding: 3rem 2rem;
         max-height: 100%;
-        &.square {
+        &.square.v-square {
             width: clamp(15rem, 50vw, 50vw);
             height: clamp(15rem, 50vw, 50vw);
         }
