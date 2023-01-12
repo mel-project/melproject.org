@@ -12,7 +12,7 @@
 <template>
     <div class={_class + " content-frame"}>
         <div class="content">
-            <Card variant="gradient1">
+            <Card variant="gradient1" noise interactive>
                 <div>
                     <h2>Empowering dapps <br />beyond blockchains</h2>
                     <p>
@@ -26,7 +26,7 @@
                 <Button>Read our whitepaper</Button>
                 <img src={SpaceshipImage} />
             </Card>
-            <Card variant="gradient2" filter="noise">
+            <Card variant="gradient2" noise interactive>
                 <div>
                     <h2>Neutral, composable,<br /> and built for everyone</h2>
                     <p>
@@ -39,7 +39,7 @@
                 <Button>Build your own off-chain dApp</Button>
                 <img src={ComposableBlocksImage} />
             </Card>
-            <Card variant="gradient3">
+            <Card variant="gradient3" noise interactive>
                 <div>
                     <h2>Cross-chain compatibility <br /> built in</h2>
                     <p>
@@ -52,7 +52,7 @@
                 <Button>Try our testnet relay</Button>
                 <img />
             </Card>
-            <Card variant="gradient1">
+            <Card variant="gradient1" noise interactive>
                 <div>
                     <h2>Monetary infrastructure <br />for a better future</h2>
                     <p>

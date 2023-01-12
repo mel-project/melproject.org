@@ -31,7 +31,7 @@
     export let _variant: typeof Variant[number] = "default";
     export {_variant as variant};
     let variant: string = variant_map[_variant];
-    export let noisy = false;
+    export let noise = false;
     export let interactive = false;
     export let hovered = false;
     export let unpadded = false;
@@ -43,16 +43,15 @@
         class:unpadded
         class:interactive
         class:hovered
-        class:noisy
         on:mouseenter={() => (hovered = true && interactive)}
         on:mouseleave={() => (hovered = false && interactive)}
     >
         <div
             class="filter"
             class:hovered
-            class:noisy
+            class:noise
         />
-        <slot {hovered} {noisy} />
+        <slot {hovered} {noise} />
         {#if variant == "bubbly"}
             <BubbleBackground />
         {/if}
@@ -68,7 +67,7 @@
         display: none;
         position: absolute;
     }
-    .noisey {
+    .noise {
         position: absolute;
         width: 100%;
         height: 100%;

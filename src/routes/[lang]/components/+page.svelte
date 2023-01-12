@@ -1,5 +1,7 @@
 <script lang="ts">
-    import Banner, {Variant as BannerVariant} from "@src/components/elements/Banner.svelte";
+    import Banner, {
+        Variant as BannerVariant,
+    } from "@src/components/elements/Banner.svelte";
     import Button, {
         Variant as ButtonVariant,
         Size as ButtonSize,
@@ -8,7 +10,7 @@
     import Card, {
         Variant as CardVariant,
     } from "@src/components/elements/Card.svelte";
-    
+
     // note: 'satisfies' allows us to keep the exact duck type
     // here we've specified a type with all `CardVariants` followed by a string
     // a simple example is something like:
@@ -28,7 +30,7 @@
         "grey-gradient": "",
     };
     let hovered_card = false;
-    let noisy = true;
+    let noise = true;
     let interactive = false;
 </script>
 
@@ -52,7 +54,7 @@
             bind:checked={hovered_card}
         />
         <label for="noisy">Image Noise</label>
-        <input name="noisy" type="checkbox" bind:checked={noisy} />
+        <input name="noisy" type="checkbox" bind:checked={noise} />
         <label for="interactive">Interactive</label>
         <input name="interactive" type="checkbox" bind:checked={interactive} />
     </Card>
@@ -62,7 +64,7 @@
             <Card
                 {variant}
                 bind:hovered={hovered_card}
-                bind:noisy
+                bind:noise
                 {interactive}
             >
                 <div>
@@ -79,18 +81,18 @@
     <Card variant="white">
         <h2>Banners</h2>
         <p>
-            Banners are just cards, but since cards fill their space, they can be
-            sized arbitrarily
+            Banners are just cards, but since cards fill their space, they can
+            be sized arbitrarily
         </p>
     </Card>
     <div class="banner-grid">
-            {#each BannerVariant as variant}
-                <Banner {variant}>
-                    <h2>Here is a heading</h2>
-                    <p> and then we are going to do something about it</p>
-                    <Button>prove it</Button>
-                </Banner>
-            {/each}
+        {#each BannerVariant as variant}
+            <Banner {variant}>
+                <h2>variant: "{variant}"</h2>
+                <p>and then we are going to do something about it</p>
+                <Button>prove it</Button>
+            </Banner>
+        {/each}
     </div>
     <div class="button-grid">
         {#each ButtonSize as size}
@@ -106,7 +108,6 @@
 
 <style lang="scss">
     @use "../../../stylesheets/variables.scss";
-
 
     .card-grid {
         background-color: white;
@@ -129,7 +130,7 @@
     .banner-grid {
         display: flex;
         flex-direction: column;
-        gap: .5rem;
-        margin: .5rem .5rem;
+        gap: 0.5rem;
+        margin: 0.5rem 0.5rem;
     }
 </style>
