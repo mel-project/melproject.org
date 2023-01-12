@@ -1,7 +1,8 @@
 <script context="module" lang="ts">
   export const Size = ["normal", "large"] as const;
   export type Size = typeof Size[number];
-  export const Variant = ["default", "gradient1"] as const;
+
+  export const Variant = ["default", "gradient1", "white"] as const;
   export type Variant = typeof Variant[number];
 </script>
 
@@ -17,12 +18,12 @@
   let _class = "";
   export { _class as class };
   export let size: Size = "normal";
-  export let variant: Variant = "gradient1";
+  export let variant: Variant = "white";
 </script>
 
 <button
   on:click
-  class="btn btn-primary {variant} {_class}"
+  class="{variant} {_class}"
   class:btn-lg={size === "large"}
   {...$$restProps}
 >
@@ -38,8 +39,10 @@
     background-color: colors.$teal;
     border: 0px solid white;
     color: black;
-    transition: .5s background-size ease-in-out;
+    transition: 0.5s background-size ease-in-out;
     max-width: fit-content;
+    padding: 1rem 2rem;
+    border-radius: 0.7rem;
   }
 
   .gradient1 {
@@ -54,6 +57,17 @@
     background-size: 100%;
     &:hover {
       background-size: 500%;
+    }
+  }
+  .white {
+    $grey: 252;
+    background-color: rgb($grey, $grey, $grey);
+    box-shadow: 0px 2px 1px 1px rgba(40, 40, 40, 0.092);
+    transition: 1s all;
+    &:hover {
+      $grey: 255;
+      background-color: rgb($grey, $grey, $grey);
+      box-shadow: 0px 2px 1px 1px rgba(40, 40, 40, 0.092);
     }
   }
 </style>

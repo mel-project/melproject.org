@@ -6,7 +6,7 @@
     let scale = 20;
     let opacity: number = 20;
     let reload = 0;
-    let bubbles = 1000;
+    let bubbles = 10;
 
     let available_colors = [Colors.teal, Colors.purple];
 

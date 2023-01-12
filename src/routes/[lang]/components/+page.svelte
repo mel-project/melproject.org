@@ -43,21 +43,21 @@
         CardOptions.hovered_card = !CardOptions.hovered_card;
         setTimeout(toggleHover, 2000);
     };
-    toggleHover();
+    // toggleHover();
 </script>
 
 <template>
     <div class="container">
         <h1>Component Library</h1>
         <h2>Card Grid</h2>
-    
+
         <p class="center info">
             <Card variant="white">
-                Except for white, When hover cards shift up by 1rem, increase the
-                gradient size, and remove the noise. The transition takes 1s These
-                cards are placed within a grid, filling 100% of a cell's available
-                width and height. They also have 1rem of padding all around by
-                default.
+                Except for white, When hover cards shift up by 1rem, increase
+                the gradient size, and remove the noise. The transition takes 1s
+                These cards are placed within a grid, filling 100% of a cell's
+                available width and height. They also have 1rem of padding all
+                around by default.
             </Card>
         </p>
         <Card variant="white">
@@ -68,7 +68,11 @@
                 bind:checked={CardOptions.hovered_card}
             />
             <label for="noisy">Image Noise</label>
-            <input name="noisy" type="checkbox" bind:checked={CardOptions.noise} />
+            <input
+                name="noisy"
+                type="checkbox"
+                bind:checked={CardOptions.noise}
+            />
             <label for="interactive">Interactive</label>
             <input
                 name="interactive"
@@ -82,7 +86,7 @@
                 bind:checked={CardOptions.square}
             />
         </Card>
-    
+
         <div class="card-grid">
             {#each CardVariant as variant}
                 <Card
@@ -103,19 +107,17 @@
                 </Card>
             {/each}
         </div>
-    
+
         <Banner variant="gradient1">
             <div class="banner-intro">
                 <h1>The past and future of Themelio</h1>
                 <p>
-                    Banners are just cards, but since cards fill their space, they
-                    can be sized arbitrarily
+                    Banners are just cards, but since cards fill their space,
+                    they can be sized arbitrarily
                 </p>
                 <div class="bottom-section">
                     <h2>A thing</h2>
-                    <p>
-                        Banners create a sense of separation between items. 
-                    </p>
+                    <p>Banners create a sense of separation between items.</p>
                 </div>
             </div>
         </Banner>
@@ -128,18 +130,22 @@
                 </Banner>
             {/each}
         </div>
-        <div class="button-grid">
-            {#each ButtonSize as size}
-                {#each ButtonVariant as variant}
-                    <Button {variant} {size}>
-                        variant: "{variant}"
-                    </Button>
-                {/each}
-            {/each}
-        </div>
         <h2>Bubbles</h2>
         <div class="bubbles">
-            <BubbleBackground></BubbleBackground>
+            <BubbleBackground />
+        </div>
+        <div class="button-grid">
+        {#each ButtonVariant as variant}
+    
+                <div class="row">
+                    {#each ButtonSize as size}
+
+                        <Button {variant} {size}>
+                            variant: "{variant}"
+                        </Button>
+                    {/each}
+                </div>
+            {/each}
         </div>
     </div>
 </template>
@@ -147,9 +153,8 @@
 <style lang="scss">
     @use "../../../stylesheets/variables.scss";
     @use "../../../stylesheets/spacing.scss" as spacing;
-    .container{
-        margin: 0 .5rem;
-        max-width: 100%;;
+    .container {
+        max-width: 100vw;
     }
     .card-grid {
         background-color: white;
@@ -164,10 +169,21 @@
         // height: min(60rem, 1000rem);
     }
     .button-grid {
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: repeat(6, 1fr);
-        grid-auto-flow: row;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        height: 100%;
+        
+        .row{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        
+            // justify-content: center;
+        }
     }
     .banner-intro {
         margin: spacing.$thin-margin;
