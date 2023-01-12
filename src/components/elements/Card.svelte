@@ -20,7 +20,7 @@
         "grey-gradient": "grey-gradient transformations",
         default: "default transformations",
         bubbly: "bubbly transformations",
-        square: "square",
+        square: "v-square",
     } as const;
 </script>
 
@@ -116,16 +116,11 @@
             max-width: auto;
             max-height: 15rem;
         }
-    }
-    .card.unpadded {
-        padding: 0;
-        border-radius: 0;
-    }
-    .interactive.hovered {
-        cursor: pointer;
-    }
-
-    .card.transformations {
+        &.unpadded {
+            padding: 0;
+            border-radius: 0;
+        }
+        &.transformations {
         // position: absolute;
         transition: 400ms all, 1s background-size;
         background-size: 100% 100%;
@@ -136,6 +131,13 @@
             }
         }
     }
+    }
+
+    .interactive.hovered {
+        cursor: pointer;
+    }
+
+
 
     .default,
     .gradient1 {
