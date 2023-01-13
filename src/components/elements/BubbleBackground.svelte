@@ -3,17 +3,35 @@
     import GradientBubble from "./GradientBubble.svelte";
     import Range from "../Range.svelte";
     import { Colors } from "@src/utils/colors";
-    let scale = 20;
-    let opacity: number = 20;
+    let scale = 50;
+    const init_scale = scale;
+    let opacity: number = 40;
     let reload = 0;
-    let bubbles = 10;
+    let bubbles = 400;
 
     let available_colors = [Colors.teal, Colors.purple];
 
-
-
     function pick_random_item<T>(items: Array<T>): T {
         return items[Math.floor(Math.random() * items.length)];
+    }
+    let start = false;
+    let scale_down = ()=>{
+        let temp  = scale - (Math.log(scale+1) / 10)
+        temp = Math.round(temp * 1000)
+        scale = temp / 1000;
+        if(scale < .01){
+            scale = 0;
+            start = false;
+        }
+        if(start)
+        setTimeout(scale_down, 1);
+    }
+    start = true;
+    $: {
+
+        if (start) {
+            scale_down();
+        }
     }
 </script>
 
@@ -28,9 +46,13 @@
             <div class="bubble-options">
                 <label for="scale">scale</label><input
                     name="scale"
-                    type="text"
+                    type=""
                     bind:value={scale}
                 />
+                <button on:click={()=>{
+                    start = !start
+                    scale = init_scale
+                }}>{start ? "stop" : "start"}</button>
                 <label for="opacity">opacity</label><input
                     name="opacity"
                     type="text"
@@ -45,7 +67,12 @@
         </div>
 
         <Range to={bubbles}>
-            <GradientBubble {scale} color={pick_random_item(available_colors)} offset="random" {opacity} />
+            <GradientBubble
+                {scale}
+                color={pick_random_item(available_colors)}
+                offset="random"
+                {opacity}
+            />
         </Range>
     {/key}
 </div>

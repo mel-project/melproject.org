@@ -45,7 +45,7 @@
     // Interactive controls whether the :hover animations are played
     export let interactive = false;
     // disable the default :: padding: 3rem;
-    export let unpadded = false;
+    export let fill = false;
 
     // keep the card square relative to it's container
     // haven't worked out how to prevent it from growing wider than tall
@@ -61,7 +61,7 @@
     <div
         {id}
         class="{_class} card {variant} "
-        class:unpadded
+        class:fill
         class:interactive
         class:hover
         class:square
@@ -120,9 +120,12 @@
             // width: clamp(15rem, 50vw, 50vw);
             height: clamp(15rem, 50vw, 50vw);
         }
-        .unpadded {
+        &.fill {
             padding: 0;
             border-radius: 0;
+            width: 100%;
+            height:100%;
+            margin: 0 !important;
         }
 
         &.default,

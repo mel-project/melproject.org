@@ -36,12 +36,10 @@
 
 <template>
     <div {id} class="banner {_class} content-container {size}">
-        <Card {noise} variant="clear" unpadded>
-            <div class="background {variant}" />
-            <div class="content {variant}" class:column>
-                <slot />
-            </div>
-        </Card>
+        <div class="background {variant}" />
+        <div class="content {variant}" class:column>
+            <slot />
+        </div>
     </div>
 </template>
 
@@ -49,19 +47,23 @@
     @use "../../stylesheets/spacing.scss" as spacing;
     @use "../../stylesheets/variables.scss" as colors;
     @use "sass:color" as color;
-    :global(.banner.wide) {
+
+    .banner{
+        position: relative;
+
+    }
+    .banner.wide{
         height: 30rem;
     }
-    :global(.banner) > .background {
+    .background {
+        position: absolute;
         &.plain {
-            position: absolute;
             width: 100%;
             height: 100%;
             background-color: var(--light-teal);
             z-index: -999;
         }
         &.gradient1 {
-            position: absolute;
             width: 100%;
             height: 100%;
             z-index: -999;
@@ -83,7 +85,7 @@
         display: flex;
         flex-direction: column;
     }
-    :global(.card.content-container.banner) {
+    .banner {
         display: flex;
         flex-direction: row;
         margin: spacing.$thin-margin 0s;
@@ -98,5 +100,22 @@
         display: flex;
         justify-content: space-around;
         width: 100%;
+    }
+    .noise {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url("../../assets/images/noise.png");
+        background-size: cover;
+        background-repeat: repeat;
+        z-index: -998;
+        opacity: 50%;
+        filter: brightness(100%) contrast(80%) saturate(0%) invert(100%);
+        mix-blend-mode: multiply;
+        transition: 1000ms all;
+        &.hover {
+            opacity: 0%;
+            filter: brightness(60%) contrast(5%) saturate(0%) invert(100%);
+        }
     }
 </style>
