@@ -36,9 +36,7 @@
 
     export let _variant: typeof Variant[number] = "default";
     export { _variant as variant };
-    let variant: string = variant_map[_variant] ;
-    //[free memory](https://stackoverflow.com/questions/8467350/how-to-free-up-the-memory-in-javascript)
-    _variant = null as any; // override typechecker
+    let variant: string = variant_map[_variant];
 
     let _noise = false;
     export { _noise as noise };
@@ -73,6 +71,7 @@
         <div class="filter" class:hover class:noise />
         <slot {hover} {noise} />
     </div>
+
 </template>
 
 <style lang="scss">
@@ -109,11 +108,12 @@
         border-radius: 20px;
         padding: 3rem 2rem;
         max-height: 100%;
+        height: 100%;
         max-width: 100%;
         display: grid;
         box-sizing: border-box;
         grid-template-rows: auto;
-        
+
         // VARIANTS //////////////////////////////////
         &.v-square,
         &.square {

@@ -11,7 +11,7 @@
         plain: "plain",
         gradient1: "gradient1 wide",
         clear: "clear",
-        white: "white"
+        white: "white",
     } as const;
 </script>
 
@@ -31,35 +31,28 @@
     let variant: string = variant_map[_variant_name];
 
     export let column = false;
-    export let noise = false;
+    export let noise = true;
 </script>
 
 <template>
-    <Card
-        {id}
-        class="banner {_class} content-container {size}"
-
-        {noise}
-        variant="clear"
-        unpadded
-    >
-        <div class="background {variant}" />
-        <div class="content {variant}"
-        class:column>
-            <slot />
-        </div>
-    </Card>
+    <div {id} class="banner {_class} content-container {size}">
+        <Card {noise} variant="clear" unpadded>
+            <div class="background {variant}" />
+            <div class="content {variant}" class:column>
+                <slot />
+            </div>
+        </Card>
+    </div>
 </template>
 
 <style lang="scss">
     @use "../../stylesheets/spacing.scss" as spacing;
     @use "../../stylesheets/variables.scss" as colors;
     @use "sass:color" as color;
-    :global(.banner.wide){
-            height: 30rem;
+    :global(.banner.wide) {
+        height: 30rem;
     }
     :global(.banner) > .background {
-
         &.plain {
             position: absolute;
             width: 100%;
@@ -86,7 +79,7 @@
             background-color: transparent;
         }
     }
-    .content.column{
+    .content.column {
         display: flex;
         flex-direction: column;
     }

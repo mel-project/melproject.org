@@ -2,7 +2,6 @@
     import {Banner, Button, Card} from "@src/components";
     import RockyMoon from "@src/assets/images/vault.png";
     import LayeredPlanet from "@src/assets/images/vault.png";
-    import type { ComponentType } from "svelte/types/runtime/internal/dev";
 
     type Component = typeof LayeredPlanet;
     type InfoCard = {image?: Component, title: string, message: string}
@@ -24,7 +23,7 @@
         <p>Explore THemelio's new blockchain paradign -- rich layered applications evolving on a permanent foundation of endogenous trust</p>
     </Banner>
     <div class="top-cards">
-        <Card  variant="grey-gradient" square>
+        <Card variant="grey-gradient" noise square>
             <img src={RockyMoon} alt="">
             <h2>Traditional platforms & application blockchains</h2>
             <ul>
@@ -39,7 +38,7 @@
                 </li>
             </ul>
         </Card>
-        <Card variant="gradient4" square>
+        <Card variant="gradient4" noise square>
             <img src={LayeredPlanet} alt="">
 
             <h2>Mel's decoupled architecture</h2>
@@ -126,9 +125,7 @@
             display: grid;
             grid-auto-rows: max-content ;
             grid-template-rows: max-content max-content auto;
-
         }
-
     }
     .bottom-cards{
         margin-top: 10rem;
