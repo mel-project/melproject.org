@@ -71,7 +71,11 @@
     box-shadow: 0px 2px 1px 1px transparent;
     background-size: 100%;
     &:hover {
+      background-color: color.scale($base-color, $lightness: -10%);
       background-size: 500%;
+    }
+    &:active {
+      background-color: color.scale($base-color, $lightness: -20%);
     }
   }
   .white {
