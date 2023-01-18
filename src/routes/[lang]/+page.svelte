@@ -22,7 +22,7 @@
   </div>
 
   <div class="SPACER" />
-x
+
   <HomeContent />
 
   <Banner>

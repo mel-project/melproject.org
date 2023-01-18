@@ -64,13 +64,10 @@
 
   .gradient1 {
     color: black;
-    background: linear-gradient(
-        to bottom left,
-        color.scale(colors.$teal, $lightness: 10%) 0%,
-        #ffffff00 85%
-      ),
+    $base-color: color.scale(colors.$light-blue, $lightness: 60%);
+    background: linear-gradient(to bottom left, $base-color 0%, #ffffff00 95%),
       #ffffff;
-    // border: 1px solid rgb(218, 218, 218);
+    border: 1px solid rgb(217, 217, 217);
     box-shadow: 0px 2px 1px 1px transparent;
     background-size: 100%;
     &:hover {
@@ -82,9 +79,8 @@
     $grey: rgb($color, $color, $color);
     background-color: $grey;
     box-shadow: 0px 2px 1px 1px rgba(40, 40, 40, 0.092);
-    transition: 100ms all ease-in-out,
-    100ms background-color ease-in-out,
-    10ms box-shadow ease-out;
+    transition: 100ms all ease-in-out, 100ms background-color ease-in-out,
+      10ms box-shadow ease-out;
     &:hover {
       background-color: color.scale($grey, $lightness: -5%);
       box-shadow: 0px 3px 1px 1px rgba(30, 30, 30, 0.092);
