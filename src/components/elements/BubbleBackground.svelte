@@ -3,14 +3,14 @@
     import GradientBubble from "./GradientBubble.svelte";
     import Range from "../Range.svelte";
     import { Colors } from "@src/utils/colors";
+
+    
     let scale = 50;
     const init_scale = scale;
     let opacity: number = 40;
     let reload = 0;
     let bubbles = 400;
-
-    let available_colors = [Colors.teal, Colors.purple];
-
+    let available_colors = Object.values(Colors);
     function pick_random_item<T>(items: Array<T>): T {
         return items[Math.floor(Math.random() * items.length)];
     }
@@ -26,7 +26,6 @@
         if(start)
         setTimeout(scale_down, 1);
     }
-    start = true;
     $: {
 
         if (start) {

@@ -9,6 +9,6 @@ export { default as Card } from './elements/Card.svelte';
 // @ts-ignore
 export { default as GradientBubble } from './elements/GradientBubble.svelte';
 // @ts-ignore
-export { default as TimeLine } from './elements/Timeline.svelte';
+export { default as TimeLine } from './elements/ButtonGroup.svelte';
 // @ts-ignore
 export { default as BubbleBackground } from './elements/BubbleBackground.svelte';

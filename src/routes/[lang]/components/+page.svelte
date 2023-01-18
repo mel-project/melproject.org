@@ -13,6 +13,7 @@
     } from "@src/components/elements/Card.svelte";
     import GradientBubble from "@src/components/elements/GradientBubble.svelte";
     import Range from "@src/components/Range.svelte";
+    import ButtonGroup from "@src/components/elements/ButtonGroup.svelte";
     // note: 'satisfies' allows us to keep the exact duck type
     // here we've specified a type with all `CardVariants` followed by a string
     // a simple example is something like:
@@ -137,6 +138,9 @@
         <div class="bubbles">
             <BubbleBackground />
         </div>
+        <Banner variant="clear">
+            <h1>Buttons</h1>
+        </Banner>
         <div class="button-grid">
             {#each ButtonVariant as variant}
                 <div class="row">
@@ -148,6 +152,22 @@
                 </div>
             {/each}
         </div>
+        <Banner variant="clear">
+            <h1>Button Group</h1>
+        </Banner>
+        <div class="button-grid">
+            {#each ButtonVariant as variant}
+                <ButtonGroup>
+                    {#each ButtonSize as size}
+                        <Button {variant} {size}>
+                            variant: "{variant}"
+                        </Button>
+                    {/each}
+                    <Button {variant}>Last</Button>
+                    <Button {variant}>Laast</Button>
+                </ButtonGroup>
+            {/each}
+        </div>
     </div>
 </template>
 
@@ -156,7 +176,6 @@
     @use "../../../stylesheets/spacing.scss" as spacing;
     .container {
         max-width: 100vw;
-        overflow-x: hidden;
     }
     .card-grid {
         background-color: white;
@@ -208,15 +227,11 @@
             align-self: center;
             margin: 0;
         }
-        :global(.banner#banner0){
+        :global(.banner#banner0) {
             border: 1px solid green;
-
-
         }
 
-
         & > :global(.banner#banner2) {
-
             border: 1px solid red;
             :global(.content) {
                 border: 1px solid blue;

@@ -50,10 +50,10 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/en/components">Components</a>
+					<a class="nav-link" href="{$home_page}/components">Components</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/en/technology">Technology</a>
+					<a class="nav-link" href="{$home_page}/technology">Technology</a>
 				</li>
 				<li class="nav-item dropdown">
 					<div

@@ -57,6 +57,8 @@
     }
     .background {
         position: absolute;
+        border-radius: inherit;
+
         &.plain {
             width: 100%;
             height: 100%;
