@@ -19,6 +19,7 @@
     variant?: Variant;
     arrow?: boolean;
     circle?: boolean;
+    border_only?: boolean;
   }
 
   let _class = "";

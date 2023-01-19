@@ -2,14 +2,14 @@
     import {Banner, Button, Card} from "@src/components";
     import RockyMoon from "@src/assets/images/moon.png";
     import LayeredPlanet from "@src/assets/images/richplanet.png";
-    import 
+    import IconSheet from "@src/assets/images/mini_icons.png";
     type Component = typeof LayeredPlanet;
     type InfoCard = {image?: Component, title: string, message: string}
     let info_cards: InfoCard[] = [
-        {image: RockyMoon, title: "Robust endogenous trust", message: "lorem.com"},
-        {image: RockyMoon, title: "Covenant-powered smart coins", message: "lorem.com"},
-        {image: RockyMoon, title: "Collusion-resistant consensus game", message: "lorem.com"},
-        {image: RockyMoon, title: "World’s first non-fiat stablecoin", message: "lorem.com"},
+        {image: IconSheet, title: "Robust endogenous trust", message: "lorem.com"},
+        {image: IconSheet, title: "Covenant-powered smart coins", message: "lorem.com"},
+        {image: IconSheet, title: "Collusion-resistant consensus game", message: "lorem.com"},
+        {image: IconSheet, title: "World’s first non-fiat stablecoin", message: "lorem.com"},
     ]
     let bottom_cards: Record<'dev' | 'team' ,InfoCard> = {
         dev: {title: "Developers", message: "lorem.com"},
@@ -68,9 +68,10 @@
         <Button>Read Now</Button>
     </Banner>
     <div class="middle-cards">
-        {#each info_cards as card}
+        {#each info_cards as card,i}
             <Card variant="white" square>
-                <img src={card.image} alt="">
+                <div id="info-card-image-{i}"/>
+
                 <h3>{card.title}</h3>
                 <p>{card.message}</p>
             </Card>
@@ -126,6 +127,9 @@
             grid-auto-rows: max-content ;
             grid-template-rows: max-content max-content auto;
         }
+            #info-card-image-0{
+                width: 1rem;
+            }
     }
     .bottom-cards{
         margin-top: 10rem;
