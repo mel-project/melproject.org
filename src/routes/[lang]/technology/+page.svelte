@@ -1,8 +1,8 @@
 <script lang="ts">
     import {Banner, Button, Card} from "@src/components";
-    import RockyMoon from "@src/assets/images/vault.png";
-    import LayeredPlanet from "@src/assets/images/vault.png";
-
+    import RockyMoon from "@src/assets/images/moon.png";
+    import LayeredPlanet from "@src/assets/images/richplanet.png";
+    import 
     type Component = typeof LayeredPlanet;
     type InfoCard = {image?: Component, title: string, message: string}
     let info_cards: InfoCard[] = [
