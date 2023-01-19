@@ -69,14 +69,19 @@
         on:mouseleave={() => (hover = false && interactive)}
     >
         <div class="filter" class:hover class:noise />
-        <slot {hover} {noise} />
+        <div class="content">
+            <slot {hover} {noise} />
+
+        </div>
     </div>
 </template>
 
 <style lang="scss">
     @use "sass:color";
     @use "../../stylesheets/variables.scss" as colors;
-
+    .content{
+        z-index: 2;
+    }
     // hide the filter element if it's unused
     .filter:not(.noise) {
         display: none;
@@ -90,7 +95,7 @@
         background-image: url("../../assets/images/noise.png");
         background-size: cover;
         background-repeat: repeat;
-        z-index: -998;
+        z-index: 0;
         opacity: 50%;
         filter: brightness(100%) contrast(80%) saturate(0%) invert(100%);
         mix-blend-mode: multiply;

@@ -1,5 +1,5 @@
 <script>
-  import { home_page } from "@src/utils/l10n";
+  import { home_page } from "@l10n";
   import { Banner, BubbleBackground, GradientBubble } from "@src/components";
   import Navbar from "@src/components/page-sections/Navbar.svelte";
   import { Colors } from "@src/utils/colors";
@@ -89,7 +89,7 @@
       color: black;
       width: max-content;
       padding: .5rem;
-      padding-left: 0;
+      pa
       // border: 1px solid green;
       &:hover{
         color: colors.$green;

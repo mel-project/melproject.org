@@ -18,6 +18,7 @@
     export let opacity: number = 40;
     export let scale: number = 10;
     export let offset: [string, string] | [number, number] | "random" = [0, 0];
+    export let z_index: number = -2;
     if (offset == "random") {
         offset = random_placement();
     }
@@ -34,6 +35,7 @@
     transform: scale({scale});
     --primary-color: {color};
     opacity: {opacity}%;
+    z-index: {z_index};
     "
     />
 </template>

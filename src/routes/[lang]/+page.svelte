@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { localize } from "@src/utils/l10n";
+  import { localize } from "@l10n";
   import Navbar from "@src/components/page-sections/Navbar.svelte";
   import HeroImage from "@src/assets/images/short-banner.png";
   import Button from "@src/components/elements/Button.svelte";

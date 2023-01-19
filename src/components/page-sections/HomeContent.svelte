@@ -5,7 +5,7 @@
     import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
     import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
     import VaultImage from "@src/assets/images/vault.png";
-    import { lang, localize } from "@src/utils/l10n";
+    import { lang, localize } from "@l10n";
     let _class = "";
     export { _class as class };
 </script>

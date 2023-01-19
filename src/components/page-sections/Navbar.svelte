@@ -2,7 +2,7 @@
 	import { page } from "$app/stores";
 	import { fade } from "svelte/transition";
 	import Logo from "@src/assets/images/logo.png";
-	import { localize, home_page, replace_lang, Language, lang } from "@src/utils/l10n";
+	import { localize, home_page, replace_lang, Language, lang } from "@l10n";
 	let lang_offset = 0;
 	$: display_language = Language[lang_offset];
 	let change_language = () => {

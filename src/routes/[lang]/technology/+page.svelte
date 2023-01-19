@@ -1,28 +1,33 @@
 <script lang="ts">
-    import { Banner, Button, Card } from "@src/components";
+    import { Banner, Button, Card, GradientBubble } from "@src/components";
     import RockyMoon from "@src/assets/images/moon.png";
     import LayeredPlanet from "@src/assets/images/richplanet.png";
-    import IconSheet from "@src/assets/images/mini_icons.png";
+    import ForkImage from "@src/assets/images/tech/fork.png";
+    import CoinImage from "@src/assets/images/tech/coin.png";
+    import KeyImage from "@src/assets/images/tech/key.png";
+    import HexImage from "@src/assets/images/tech/hex.png";
+    import { Colors } from "@src/utils/colors";
+
     type Component = typeof LayeredPlanet;
     type InfoCard = { image?: Component; title: string; message: string };
     let info_cards: InfoCard[] = [
         {
-            image: IconSheet,
+            image: KeyImage,
             title: "Robust endogenous trust",
             message: "lorem.com",
         },
         {
-            image: IconSheet,
+            image: ForkImage,
             title: "Covenant-powered smart coins",
             message: "lorem.com",
         },
         {
-            image: IconSheet,
+            image: HexImage,
             title: "Collusion-resistant consensus game",
             message: "lorem.com",
         },
         {
-            image: IconSheet,
+            image: CoinImage,
             title: "World’s first non-fiat stablecoin",
             message: "lorem.com",
         },
@@ -39,12 +44,13 @@
             <h1>Technology</h1>
             <p>
                 Explore Themelio's new blockchain paradign -- rich layered
-                applications evolving on a permanent foundation of endogenous trust
+                applications evolving on a permanent foundation of endogenous
+                trust
             </p>
         </Banner>
     </div>
     <div class="top-cards">
-        <Card variant="grey-gradient" noise >
+        <Card variant="grey-gradient" noise>
             <img class="moon" src={RockyMoon} alt="" />
             <h2>Traditional platforms & application blockchains</h2>
             <ul>
@@ -91,7 +97,12 @@
     <div class="middle-cards">
         {#each info_cards as card, i}
             <Card variant="white" square>
-                <div class="info-card-image" id="info-card-image-{i}" />
+                <img
+                    class="info-card-image"
+                    id="info-card-image-{i}"
+                    src={card.image}
+                    alt=""
+                />
 
                 <h3>{card.title}</h3>
                 <p>{card.message}</p>
@@ -99,14 +110,26 @@
         {/each}
     </div>
     <div class="bottom-cards">
-        <Card variant="gradient1">
-            <img src={bottom_cards.dev.image} alt="" />
-            <h3>{bottom_cards.dev.title}</h3>
-            <p>{bottom_cards.dev.message}</p>
-            <Button variant="gradient1">Documentation</Button>
+        <Card variant="white" noise>
+            <div class="bottom-card-1">
+                <GradientBubble
+                    scale={30}
+                    color={Colors.teal}
+                    opacity={30}
+                    offset={["0%", "100%"]}
+                />
+                <h3>{bottom_cards.dev.title}</h3>
+                <p>{bottom_cards.dev.message}</p>
+                <Button variant="gradient1">Documentation</Button>
+            </div>
         </Card>
-        <Card variant="gradient2">
-            <img src={bottom_cards.team.image} alt="" />
+        <Card variant="white" noise>
+            <GradientBubble
+                scale={50}
+                color={Colors.light_blue}
+                opacity={15}
+                offset={["100%", "-50%"]}
+            />
             <h3>{bottom_cards.team.title}</h3>
             <p>{bottom_cards.team.message}</p>
             <Button variant="gradient1">Documentation</Button>
@@ -115,11 +138,12 @@
 </div>
 
 <style lang="scss">
-    .top-banner{
+    @use "../../../stylesheets/spacing.scss";
+    .top-banner {
         margin-bottom: 5rem;
-        p{
+        p {
             // margin-left: 5rem;
-            width:100%;
+            width: 100%;
             text-align: center;
         }
     }
@@ -140,19 +164,19 @@
         // margin-bottom: 10rem;
         display: flex;
         justify-content: space-between;
-        width:100%;
+        width: 100%;
         gap: 2rem;
         * {
             margin: auto 0;
         }
-        h2{
+        h2 {
             flex-shrink: 0;
             flex-grow: 0;
         }
-        p{
+        p {
             // flex-basis: 20rem;
             // flex-grow: 1;
-            flex-shrink:1;
+            flex-shrink: 1;
         }
     }
     .middle-cards {
@@ -160,10 +184,6 @@
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
 
-        img {
-            max-height: 5rem;
-            max-width: auto;
-        }
         h3 {
             height: max-content;
         }
@@ -172,12 +192,11 @@
             display: grid;
             grid-auto-rows: max-content;
             grid-template-rows: max-content max-content auto;
+            overflow: scroll;
         }
         .info-card-image {
-            width: 10rem;
-            height: 10rem;
-            border: 1px solid red;
-            background-image: url("../assets/images/noise.png");
+            height: 4rem;
+            margin-bottom: 1.5rem;
         }
     }
     .bottom-cards {
@@ -185,8 +204,14 @@
         display: flex;
         justify-content: space-between;
         gap: 1rem;
+        margin: spacing.$default-margin;
+        margin-bottom: 10rem;
+
         :global(.card) {
             width: 100%;
+        }
+        .bottom-card-1 {
+            position: relative;
         }
     }
 </style>
