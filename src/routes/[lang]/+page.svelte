@@ -1,11 +1,13 @@
 <script lang="ts">
-  import { localize } from "@l10n";
+  import { localize } from "@src/utils/l10n";
   import Navbar from "@src/components/page-sections/Navbar.svelte";
-  import HeroImage from "@src/assets/images/banner.png";
+  import HeroImage from "@src/assets/images/short-banner.png";
   import Button from "@src/components/elements/Button.svelte";
   import HomeContent from "@src/components/page-sections/HomeContent.svelte";
   import Banner from "@src/components/elements/Banner.svelte";
   import { communityIcons } from "@src/utils/navigation";
+    import { GradientBubble } from "@src/components";
+    import { Colors } from "@src/utils/colors";
 </script>
 
 <div class="home">
@@ -17,7 +19,10 @@
   <div class="SPACER" />
 
   <div class="subhero">
-    <h1>A nice tagline for the project.</h1>
+    <GradientBubble scale={30} offset={['0%', '400%']}></GradientBubble>
+    <GradientBubble scale={30} offset={['75%', '-150%']}></GradientBubble>
+    <GradientBubble scale={20} color={Colors.light_blue} offset={['100%', '600%']}></GradientBubble>
+    <h1>dApps beyond blockchains.</h1>
     <Button size="large">A call to action</Button>
   </div>
 
@@ -39,9 +44,10 @@
 </div>
 
 <style lang="scss">
+  @use '../../stylesheets/spacing';
   .home {
     display: grid;
-    grid-template-rows: auto 10vh auto 35vh;
+    grid-template-rows: auto 15vh auto 15vh;
     grid-template-columns: 100vw;
   }
   .top {
@@ -50,13 +56,18 @@
     img {
       max-width: 100%;
       border-radius: 1rem;
-      margin: 0.5rem;
+      margin: spacing.$default-margin
     }
   }
 
   .subhero {
+    position: relative;
     display: flex;
+    justify-content: space-around;
     justify-content: center;
     margin: 5rem 0;
+    h1{
+      margin-right: 2* spacing.$default-margin;
+    }
   }
 </style>

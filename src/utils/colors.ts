@@ -7,6 +7,7 @@ export const Colors = {
   purple: "#895ABF",
   green: "#21D849",
   light_blue: "#69CFFF",
+  blue_green: "E87D92"
 } as const;
 
 export type Colors = typeof Colors[keyof typeof Colors];

@@ -5,7 +5,7 @@
     import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
     import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
     import VaultImage from "@src/assets/images/vault.png";
-    import { lang, localize } from "@l10n";
+    import { lang, localize } from "@src/utils/l10n";
     let _class = "";
     export { _class as class };
 </script>
@@ -65,10 +65,11 @@
 </template>
 
 <style lang="scss">
+    @use '../../stylesheets/spacing.scss';
     .content-frame {
         display: flex;
         justify-content: center;
-        padding: 0 clamp(2rem, 3%, 100rem);
+        padding: 0 clamp(1rem, spacing.$default-margin, 100rem);
         width: 100%;
     }
     .content {
@@ -89,7 +90,7 @@
     @media screen and (max-width: 50rem) {
         .content-frame {
             justify-content: center;
-            padding: 1rem;
+            padding:  spacing.$default-margin;
         }
         .content {
             display: flex;

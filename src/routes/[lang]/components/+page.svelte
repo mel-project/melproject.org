@@ -30,7 +30,7 @@
         gradient4:
             "Used on page 2, it's 2 raidal gradients starting from light-blue (bottom left) and teal and transitioning into translucent",
         "grey-gradient": "",
-        square: "A responsive square!! until...",
+        square: "WARNING: incomplete variant.",
         clear: "",
     };
 
@@ -80,12 +80,12 @@
                 type="checkbox"
                 bind:checked={CardOptions.interactive}
             />
-            <label for="square">square</label>
+            <!-- <label for="square">square</label>
             <input
                 name="square"
                 type="checkbox"
                 bind:checked={CardOptions.square}
-            />
+            /> -->
         </Card>
 
         <div class="card-grid">
@@ -116,8 +116,8 @@
                     Banners fill their space and come in a thin and wide height
                 </p>
                 <div class="bottom-section">
-                    <h2>Meaning</h2>
-                    <p>Banners create a sense of separation between items.</p>
+                    <h2>Grid</h2>
+                    <p>The grid below is defined by the max height of the banner. Only the "gradient1" banner has a custom height</p>
                 </div>
             </div>
         </Banner>
@@ -157,15 +157,17 @@
         </Banner>
         <div class="button-grid">
             {#each ButtonVariant as variant}
-                <ButtonGroup>
-                    {#each ButtonSize as size}
-                        <Button {variant} {size}>
-                            variant: "{variant}"
-                        </Button>
-                    {/each}
-                    <Button {variant}>Last</Button>
-                    <Button {variant}>Laast</Button>
-                </ButtonGroup>
+                <div class="row">
+                    <ButtonGroup>
+                        {#each ButtonSize as size}
+                            <Button {variant} {size}>
+                                variant: "{variant}"
+                            </Button>
+                        {/each}
+                        <Button {variant}>Last</Button>
+                        <Button {variant}>Laast</Button>
+                    </ButtonGroup>
+                </div>
             {/each}
         </div>
     </div>
@@ -182,8 +184,11 @@
         // container-type: inline-size;
         display: grid;
         gap: 2rem;
+        grid-template-columns: repeat(3, 30rem);
+        grid-auto-columns: 30rem;
+        grid-auto-rows: 30rem;
+        overflow: scroll;
 
-        grid-template-columns: 1fr 1fr;
         // width: clamp(30rem, 100%, 75rem);
         // height: min(60rem, 1000rem);
     }
@@ -218,9 +223,10 @@
         }
     }
     .banner-grid {
+        margin-top: 2rem;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2fr;
+        grid-auto-rows: max-content;
         margin-top: 2rem;
         gap: 0.5rem;
         * {
@@ -228,13 +234,13 @@
             margin: 0;
         }
         :global(.banner#banner0) {
-            border: 1px solid green;
+            // border: 1px solid green;
         }
 
         & > :global(.banner#banner2) {
-            border: 1px solid red;
+            // border: 1px solid red;
             :global(.content) {
-                border: 1px solid blue;
+                // border: 1px solid blue;
                 display: flex;
                 flex-direction: row;
                 gap: 1rem;
@@ -258,7 +264,7 @@
 
         margin: 1rem;
         .row {
-            width: 100%;
+            // width: 100%; 
             height: 100%;
             display: flex;
             flex-direction: row;

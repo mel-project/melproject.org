@@ -36,14 +36,9 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
 
 body {
-  color: black;
+  color: red;
   line-height: 1.6;
   letter-spacing: -0.02em;
-}
-
-a {
-  text-decoration: underline;
-  color: unset;
 }
 
 h1,
@@ -58,7 +53,8 @@ h3,
 h4,
 h5 {
   color: var(--dark-color);
-  font-weight: 600;
+  font-weight: 900;
+  font-size: 10rem
 }
 
 // h1,

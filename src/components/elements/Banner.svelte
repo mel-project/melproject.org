@@ -1,5 +1,4 @@
 <script lang="ts" context="module">
-    import Card from "./Card.svelte";
 
     export const Size = ["normal", "wide"] as const;
     export type Size = typeof Size[number];
@@ -35,7 +34,7 @@
 </script>
 
 <template>
-    <div {id} class="banner {_class} content-container {size}">
+    <div {id} class="banner {_class} {variant} content-container {size}">
         <div class="background {variant}" />
         <div class="content {variant}" class:column>
             <slot />
@@ -90,7 +89,7 @@
     .banner {
         display: flex;
         flex-direction: row;
-        margin: spacing.$thin-margin 0s;
+        margin: spacing.$default-margin;
         padding: spacing.$wide-padding;
         border-radius: 0.7rem;
         align-items: center;
@@ -119,5 +118,8 @@
             opacity: 0%;
             filter: brightness(60%) contrast(5%) saturate(0%) invert(100%);
         }
+    }
+    .white{
+        background: white;
     }
 </style>

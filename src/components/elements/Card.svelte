@@ -25,14 +25,12 @@
 </script>
 
 <script lang="ts">
-
     let _class = "";
     export { _class as class };
 
     let _id: string = "";
-    export { _id as id } ;
+    export { _id as id };
     let id = _id;
-
 
     export let _variant: typeof Variant[number] = "default";
     export { _variant as variant };
@@ -40,7 +38,7 @@
 
     let _noise = false;
     export { _noise as noise };
-    let noise = _noise ? "noise filter" : ""; // used as a class (could use a variant map here)
+    $: noise = _noise ? "noise filter" : ""; // used as a class (could use a variant map here)
 
     // Interactive controls whether the :hover animations are played
     export let interactive = false;
@@ -55,6 +53,7 @@
     // put here for testing, but shouldn't be used in production
     // unless you want to use it. idk you do you.
     export let hover = false;
+    export let clear = false;
 </script>
 
 <template>
@@ -65,13 +64,13 @@
         class:interactive
         class:hover
         class:square
+        class:opaque={!clear}
         on:mouseenter={() => (hover = true && interactive)}
         on:mouseleave={() => (hover = false && interactive)}
     >
         <div class="filter" class:hover class:noise />
         <slot {hover} {noise} />
     </div>
-
 </template>
 
 <style lang="scss">
@@ -103,7 +102,9 @@
     }
 
     .card {
-        z-index: 1;
+        &.opaque {
+            background-color: white !important;
+        }
         overflow: hidden;
         border-radius: 20px;
         padding: 3rem 2rem;
@@ -117,14 +118,15 @@
         // VARIANTS //////////////////////////////////
         &.v-square,
         &.square {
-            // width: clamp(15rem, 50vw, 50vw);
-            height: clamp(15rem, 50vw, 50vw);
+            aspect-ratio: 1/1;
+            width: clamp(15rem, 50vw, 50vw);
+            // height: clamp(15rem, 50vw, 50vw);
         }
         &.fill {
             padding: 0;
             border-radius: 0;
             width: 100%;
-            height:100%;
+            height: 100%;
             margin: 0 !important;
         }
 
