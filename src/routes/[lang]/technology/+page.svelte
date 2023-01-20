@@ -91,7 +91,7 @@
         <div id="banner1">
             <h2>Knowledge base</h2>
             <p>All the resources you need to learn more about Themelio.</p>
-            <Button>Read Now</Button>
+            <Button arrow>Read Now</Button>
         </div>
     </Banner>
     <div class="middle-cards">
@@ -120,7 +120,7 @@
                 />
                 <h3>{bottom_cards.dev.title}</h3>
                 <p>{bottom_cards.dev.message}</p>
-                <Button variant="gradient1">Documentation</Button>
+                <Button variant="gradient1" arrow>Documentation</Button>
             </div>
         </Card>
         <Card variant="white" noise>
@@ -132,7 +132,7 @@
             />
             <h3>{bottom_cards.team.title}</h3>
             <p>{bottom_cards.team.message}</p>
-            <Button variant="gradient1">Documentation</Button>
+            <Button variant="gradient1" arrow>Team</Button>
         </Card>
     </div>
 </div>
@@ -142,7 +142,7 @@
     .top-banner {
         margin-bottom: 5rem;
         p {
-            // margin-left: 5rem;
+            margin-left: -5rem;
             width: 100%;
             text-align: center;
         }

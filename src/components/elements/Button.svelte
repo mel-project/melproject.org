@@ -65,7 +65,7 @@
     border-radius: 0.7rem;
     border: 0px solid white;
     font-family: 'Clash Display';
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: -.5px;
     color: black;
 

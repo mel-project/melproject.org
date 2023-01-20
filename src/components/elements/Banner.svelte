@@ -31,6 +31,7 @@
     export let column = false;
     export let noise = true;
     export let fill = false;
+    export let header = false;
 </script>
 
 <template>
@@ -38,6 +39,7 @@
         {id}
         class="banner {_class} {variant} content-container {size}"
         class:fill
+        class:header
     >
         <div class="background {variant}" />
         <div class="content {variant}" class:column>
@@ -56,6 +58,18 @@
     }
     .banner {
         position: relative;
+        display: flex;
+        flex-direction: row;
+        margin: spacing.$default-margin;
+        padding: spacing.$wide-padding;
+        border-radius: 0.7rem;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+    .banner.header{
+        display: flex;
+        align-items: baseline;
     }
     .banner.wide {
         height: 30rem;
@@ -73,7 +87,6 @@
         &.gradient1 {
             width: 100%;
             height: 100%;
-            z-index: -999;
             $side: 150%;
             background-image: radial-gradient(
                 $side $side at 150% 0%,
@@ -92,20 +105,12 @@
         display: flex;
         flex-direction: column;
     }
-    .banner {
-        display: flex;
-        flex-direction: row;
-        margin: spacing.$default-margin;
-        padding: spacing.$wide-padding;
-        border-radius: 0.7rem;
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
-    }
+
 
     .content {
         display: flex;
         justify-content: space-around;
+        z-index: 999;
         width: 100%;
     }
     .noise {

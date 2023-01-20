@@ -27,7 +27,7 @@
 
 <div class="timeline">
     <div class="top-banner">
-        <Banner size="wide" variant="white" header column>
+        <Banner size="" variant="white" header column>
             <h1>Phases of development</h1>
             <p class="bold">Themelio has 4 phases of development</p>
             <p>
@@ -71,10 +71,11 @@
     @use "../../../stylesheets/spacing.scss";
 
     .timeline{
-        border: 1px solid red;
+        // border: 1px solid red;
+        margin-bottom: 4rem;
     }
     .top-banner{
-        border: 1px solid black;
+        // border: 1px solid black;
     }
     .full-container {
         width: 100%;
@@ -120,10 +121,10 @@
         display: grid;
         grid-auto-flow: row;
         grid-template-columns: 1fr;
-        border: 1px solid black;
+        // border: 1px solid black;
         justify-items: center;
         & > *{
-            border: 1px solid red;
+            // border: 1px solid red;
         }
     }
     .button-group-section{
