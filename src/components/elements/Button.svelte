@@ -31,7 +31,7 @@
   export let arrow: boolean = false;
   export let circle: boolean = false;
   export let border_only = false;
-  export let bold = true;
+  export let bold = false;
   export let hover = false;
 </script>
 
@@ -40,12 +40,12 @@
   on:mouseenter={()=>hover=true}
   on:mouseleave={()=>hover=false}
   class="{variant} {_class}"
-  class:btn-lg={size === "large"}
   {...$$restProps}
   class:arrow
   class:circle
   class:border_only
   class:bold
+  class:large={size=='large'}
 >
   <slot {hover}/>
   {#if arrow}
@@ -61,14 +61,16 @@
     white-space: nowrap;
     height: fit-content;
     max-width: fit-content;
-    padding: 1rem 2rem;
+    padding: .75rem 2rem;
     border-radius: 0.7rem;
     border: 0px solid white;
-    font-family: 'Supreme';
+    font-family: 'Clash Display';
     font-weight: 500;
     letter-spacing: -.5px;
+    color: black;
 
   }
+  
   .bold{
     font-weight: 600;
   }
@@ -95,6 +97,9 @@
     &:active{
       background-color: inherit;
     }
+  }
+  button.large{
+    padding: 1rem 2rem;
   }
   button.default {
     white-space: nowrap;

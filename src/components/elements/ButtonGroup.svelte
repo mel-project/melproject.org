@@ -13,7 +13,7 @@
 
 <style lang="scss">
     .button-group {
-        max-width: 100%;
+        max-width: max-content;
         width: auto;
         .container {
             border: .9px rgb(189, 189, 189);
@@ -21,7 +21,7 @@
             display: flex;
             box-shadow: 0px 2px 1px 1px rgba(40, 40, 40, 0.092);
             width:fit-content;
-            max-width: 100%;
+            max-width: max-content;
             margin: 0;
             padding: 0;
             border-radius: 1rem;
@@ -40,6 +40,10 @@
             margin: 0;
             box-shadow: none;
             border: none;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            // font-family: 'Supreme';
+            font-weight: 600;
         }
         .container :global(:first-child) {
             // background: red;

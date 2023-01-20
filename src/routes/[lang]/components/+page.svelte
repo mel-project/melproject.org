@@ -117,7 +117,10 @@
                 </p>
                 <div class="bottom-section">
                     <h2>Grid</h2>
-                    <p>The grid below is defined by the max height of the banner. Only the "gradient1" banner has a custom height</p>
+                    <p>
+                        The grid below is defined by the max height of the
+                        banner. Only the "gradient1" banner has a custom height
+                    </p>
                 </div>
             </div>
         </Banner>
@@ -156,18 +159,18 @@
             <h1>Button Group</h1>
         </Banner>
         <div class="button-grid">
-            {#each ButtonVariant as variant}
-                <div class="row">
-                    <ButtonGroup>
-                        {#each ButtonSize as size}
+            {#each ButtonSize as size}
+                {#each ButtonVariant as variant}
+                    <div class="row">
+                        <ButtonGroup>
                             <Button {variant} {size}>
                                 variant: "{variant}"
                             </Button>
-                        {/each}
-                        <Button {variant}>Last</Button>
-                        <Button {variant}>Laast</Button>
-                    </ButtonGroup>
-                </div>
+                            <Button {variant} {size}>Second to last</Button>
+                            <Button {variant} {size} arrow>Laast</Button>
+                        </ButtonGroup>
+                    </div>
+                {/each}
             {/each}
         </div>
     </div>
@@ -264,7 +267,7 @@
 
         margin: 1rem;
         .row {
-            // width: 100%; 
+            // width: 100%;
             height: 100%;
             display: flex;
             flex-direction: row;

@@ -137,7 +137,7 @@
     gap: 2 * spacing.$default-margin;
 
     h1 {
-      margin: auto;
+      margin: auto 0 ;
     }
   }
   .header-arrow {
