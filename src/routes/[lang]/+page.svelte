@@ -36,10 +36,12 @@
 
   <div class="content-frame">
     <div class="content">
-      <Card variant="gradient1" interactive>
+      <Card variant="gradient1" interactive let:hover>
         <div>
           <div class="header-arrow">
-            <Button arrow circle />
+            <span class="button" class:hover>
+              <Button arrow circle />
+            </span>
             <h2>Empowering dapps <br />beyond blockchains</h2>
           </div>
           <p>
@@ -55,7 +57,8 @@
       <Card variant="gradient2" interactive>
         <div>
           <div class="header-arrow">
-            <Button arrow circle />
+            <div />
+            <!-- <Button arrow circle /> -->
             <h2>Neutral, composable,<br /> and built for everyone</h2>
           </div>
           <p>
@@ -70,7 +73,7 @@
       <Card variant="gradient3" interactive>
         <div>
           <div class="header-arrow">
-            <Button circle arrow></Button>
+            <Button circle arrow />
             <h2>Cross-chain compatibility <br /> built in</h2>
           </div>
           <p>
@@ -105,6 +108,10 @@
 
 <style lang="scss">
   @use "../../stylesheets/spacing";
+  span.button.hover {
+    filter: invert(40%);
+    
+  }
   .home {
     display: grid;
     grid-template-rows: auto 15vh auto 15vh;

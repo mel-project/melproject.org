@@ -21,6 +21,7 @@
     circle?: boolean;
     border_only?: boolean;
     bold?: boolean;
+    hover?: boolean;
   }
 
   let _class = "";
@@ -31,10 +32,13 @@
   export let circle: boolean = false;
   export let border_only = false;
   export let bold = true;
+  export let hover = false;
 </script>
 
 <button
   on:click
+  on:mouseenter={()=>hover=true}
+  on:mouseleave={()=>hover=false}
   class="{variant} {_class}"
   class:btn-lg={size === "large"}
   {...$$restProps}
@@ -43,7 +47,7 @@
   class:border_only
   class:bold
 >
-  <slot />
+  <slot {hover}/>
   {#if arrow}
     <img id="arrow" src={arrowImage} alt="" />
   {/if}
@@ -85,7 +89,7 @@
     & > * {
       padding: 0 !important;
     }
-    &:hover{
+    &:hover,&.hover{
       background-color: inherit;
     }
     &:active{
@@ -99,7 +103,7 @@
     transition: 0.5s background-size ease-in-out,
       0.1s background-color ease-in-out;
 
-    &:hover {
+    &:hover,&.hover {
       background-color: color.scale(colors.$teal, $lightness: -10%);
       
     }
@@ -119,7 +123,7 @@
     max-width: fit-content;
     padding: 1rem 2rem;
     border-radius: 0.7rem;
-    &:hover {
+    &:hover,&.hover {
       background-color: color.scale($base_color, $lightness: -10%);
     }
     &:active {
@@ -134,7 +138,7 @@
     border: 1px solid rgb(217, 217, 217);
     box-shadow: 0px 2px 1px 1px transparent;
     background-size: 100%;
-    &:hover {
+    &:hover,&.hover {
       background-color: color.scale($base-color, $lightness: -10%);
       background-size: 100%;
     }
@@ -149,7 +153,7 @@
     box-shadow: 0px 2px 1px 1px rgba(40, 40, 40, 0.092);
     transition: 100ms all ease-in-out, 100ms background-color ease-in-out,
       10ms box-shadow ease-out;
-    &:hover {
+    &:hover,&.hover {
       background-color: color.scale($grey, $lightness: -5%);
       box-shadow: 0px 3px 1px 1px rgba(30, 30, 30, 0.092);
     }
