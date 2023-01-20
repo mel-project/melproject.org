@@ -8,9 +8,9 @@
             letter that's shaped like a man wearing a hat`;
     type Epoch = { title: string; content: string };
     let timeline: Epoch[] = [
-        { title: "Circa 2014", content: lorem },
-        { title: "Circa 2015", content: lorem },
-        { title: "Circa 2015", content: lorem },
+        { title: "CIRCA 2014", content: lorem },
+        { title: "CIRCA 2015", content: lorem },
+        { title: "CIRCA 2015", content: lorem },
         { title: "2016", content: lorem },
         { title: "2017", content: lorem },
         { title: "2019", content: lorem },
@@ -43,7 +43,7 @@
             <p>Banners fill their space and come in a thin and wide height</p>
             <ButtonGroup>
                 {#each timeline as epoch}
-                    <Button>{epoch.title}</Button>
+                    <Button class="epoch-button">{epoch.title}</Button>
                 {/each}
             </ButtonGroup>
             <div class="bottom-section">
@@ -59,6 +59,9 @@
 
 <style lang="scss">
     @use "../../../stylesheets/spacing.scss";
+    .banner-intro :global(button){
+        font-family: 'Clash Display';
+    }
     .banner-intro {
         margin: spacing.$thin-margin;
         display: flex;

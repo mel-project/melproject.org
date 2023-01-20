@@ -20,6 +20,7 @@
     arrow?: boolean;
     circle?: boolean;
     border_only?: boolean;
+    bold?: boolean;
   }
 
   let _class = "";
@@ -29,6 +30,7 @@
   export let arrow: boolean = false;
   export let circle: boolean = false;
   export let border_only = false;
+  export let bold = true;
 </script>
 
 <button
@@ -38,6 +40,8 @@
   {...$$restProps}
   class:arrow
   class:circle
+  class:border_only
+  class:bold
 >
   <slot />
   {#if arrow}
@@ -56,9 +60,14 @@
     padding: 1rem 2rem;
     border-radius: 0.7rem;
     border: 0px solid white;
+    font-family: 'Supreme';
+    font-weight: 500;
+    letter-spacing: -.5px;
 
   }
-  
+  .bold{
+    font-weight: 600;
+  }
   #arrow {
     height: 0.7rem;
     padding-left: 1rem;
