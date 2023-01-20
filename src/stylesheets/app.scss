@@ -44,7 +44,12 @@
     font-family: "Clash Display", sans-serif;
     --bs-body-font-family: "Rubik";
   }
-
+  :global(html){
+    overflow: hidden visible;
+  }
+  :global(body){
+    overflow: hidden;
+  }
   /* @supports (font-variation-settings: normal) {
     :root {
       font-family: 'Inter var', sans-serif;

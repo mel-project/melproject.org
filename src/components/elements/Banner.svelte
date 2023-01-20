@@ -1,5 +1,4 @@
 <script lang="ts" context="module">
-
     export const Size = ["normal", "wide"] as const;
     export type Size = typeof Size[number];
 
@@ -31,10 +30,15 @@
 
     export let column = false;
     export let noise = true;
+    export let fill = false;
 </script>
 
 <template>
-    <div {id} class="banner {_class} {variant} content-container {size}">
+    <div
+        {id}
+        class="banner {_class} {variant} content-container {size}"
+        class:fill
+    >
         <div class="background {variant}" />
         <div class="content {variant}" class:column>
             <slot />
@@ -47,11 +51,13 @@
     @use "../../stylesheets/variables.scss" as colors;
     @use "sass:color" as color;
 
-    .banner{
-        position: relative;
-
+    .banner.fill{
+        margin: 0;
     }
-    .banner.wide{
+    .banner {
+        position: relative;
+    }
+    .banner.wide {
         height: 30rem;
     }
     .background {
@@ -119,7 +125,7 @@
             filter: brightness(60%) contrast(5%) saturate(0%) invert(100%);
         }
     }
-    .white{
+    .white {
         background: white;
     }
 </style>

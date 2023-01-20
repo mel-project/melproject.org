@@ -93,17 +93,18 @@
         <img src={VaultImage} />
       </Card>
     </div>
+    <Banner fill>
+      <div class="join">
+        <h1>Join our community</h1>
+        <p class="main-lead">
+          Be part of a growing community of global developers, innovators, and
+          users helping us realize Themelio's vision.
+        </p>
+      </div>
+    </Banner>
   </div>
 
-  <Banner>
-    <div class="join">
-      <h1>Join our community</h1>
-      <p class="main-lead">
-        Be part of a growing community of global developers, innovators, and
-        users helping us realize Themelio's vision.
-      </p>
-    </div>
-  </Banner>
+ 
 </div>
 
 <style lang="scss">
@@ -115,7 +116,7 @@
   .home {
     display: grid;
     grid-template-rows: auto 15vh auto 15vh;
-    grid-template-columns: 100vw;
+    grid-template-columns: 100%;
   }
   .top {
     display: flex;
@@ -130,11 +131,13 @@
   .subhero {
     position: relative;
     display: flex;
-    justify-content: space-around;
     justify-content: center;
     margin: 5rem 0;
+    flex-wrap: wrap;
+    gap: 2 * spacing.$default-margin;
+
     h1 {
-      margin-right: 2 * spacing.$default-margin;
+      margin: auto;
     }
   }
   .header-arrow {
@@ -143,23 +146,25 @@
     justify-content: space-between;
   }
   .content-frame {
+    gap: spacing.$default-margin;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     padding: 0 clamp(1rem, spacing.$default-margin, 100rem);
-    width: 100%;
+    max-width: 100%;
+    // border: 1px solid red;
   }
   .content {
     & > * {
       max-width: 100%;
-      color: red;
     }
     // container-type: inline-size;
     display: grid;
     gap: clamp(2rem, 3%, 3rem);
-
+    margin: auto;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    width: clamp(30rem, 100%, 75rem);
+    width: clamp(25rem, 100%, 75rem);
     // height: min(60rem, 1000rem);
   }
 

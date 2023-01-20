@@ -9,59 +9,68 @@
   import Homepage from "./[lang]/+page.svelte";
 </script>
 
-<div class="layout">
-  <!-- these are the footer bubbles  -->
-  <!-- positioned this way to hide overflow only on the bottom edge of the page -->
-  <!-- otherwise the top cuts off too -->
-  <GradientBubble offset={["100%", "100%"]} scale={70} />
-  <GradientBubble
-    offset={["0%", "calc(100% - 20rem)"]}
-    scale={30}
-    color={Colors.light_blue}
-    opacity={20}
-  />
+<div class="layout-container">
+  <div class="layout">
+    <!-- these are the footer bubbles  -->
+    <!-- positioned this way to hide overflow only on the bottom edge of the page -->
+    <!-- otherwise the top cuts off too -->
+    <GradientBubble offset={["100%", "100%"]} scale={70} />
+    <GradientBubble
+      offset={["0%", "calc(100% - 20rem)"]}
+      scale={30}
+      color={Colors.light_blue}
+      opacity={20}
+    />
 
-  <Navbar />
+    <Navbar />
 
-  <slot />
+    <slot />
 
-  <Banner variant="clear">
-    <div class="footer">
-      <div class="col company-info">
-        <div class="content">
-          <div class="logo">logo</div>
-          <div class="addr">8 The Green, Ste A Dover, <br /> DE 19901</div>
+    <Banner variant="clear">
+      <div class="footer">
+        <div class="col company-info">
+          <div class="content">
+            <div class="logo">logo</div>
+            <div class="addr">8 The Green, Ste A Dover, <br /> DE 19901</div>
+          </div>
+        </div>
+        <div class="col socials">
+          <div class="title">Socials</div>
+          {#each communityIcons as icon}
+            <a href="">{icon.name}</a>
+          {/each}
+        </div>
+        <div class="col sitemap">
+          <div class="title">Sitemap</div>
+          <a href={$home_page}> Home</a>
+          <a href="{$home_page}/components"> Components</a>
+          <a href="{$home_page}/technology"> Technology</a>
+        </div>
+        <div class="col melodeon">
+          <div class="title">Melodeon</div>
+          <a href="">Get started</a>
+          <a href="">Guide</a>
+          <a href="">Readme</a>
         </div>
       </div>
-      <div class="col socials">
-        <div class="title">Socials</div>
-        {#each communityIcons as icon}
-          <a href="">{icon.name}</a>
-        {/each}
-      </div>
-      <div class="col sitemap">
-        <div class="title">Sitemap</div>
-        <a href={$home_page}> Home</a>
-        <a href="{$home_page}/components"> Components</a>
-        <a href="{$home_page}/technology"> Technology</a>
-      </div>
-      <div class="col melodeon">
-        <div class="title">Melodeon</div>
-        <a href="">Get started</a>
-        <a href="">Guide</a>
-        <a href="">Readme</a>
-      </div>
-    </div>
-  </Banner>
+    </Banner>
+  </div>
 </div>
 
 <style lang="scss">
   @use "../stylesheets/variables" as colors;
   @import "../stylesheets/app.scss";
 
+.layout-container{
+  max-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
   .layout {
     position: relative;
-    overflow: hidden;
+    max-width: min(100%,90rem);
   }
   .company-info {
     display: flex;
@@ -69,7 +78,6 @@
     justify-content: space-around;
   }
   .footer {
-    overflow: hidden;
     width: 100%;
     font-weight: 400;
     letter-spacing: -0.48px;
