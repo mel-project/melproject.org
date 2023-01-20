@@ -26,17 +26,20 @@
 </script>
 
 <div class="timeline">
-    <Banner size="wide" variant="white" column>
-        <h1>Phases of development</h1>
-        <p class="bold">Themelio has 4 phases of development</p>
-        <p>
-            Bender, being God isn't easy. If you do too much, people get
-            dependent on you, and if you do nothing, they lose hope. You have to
-            use a light touch. Like a safecracker, or a pickpocket. Morbo can't
-            understand his teleprompter because he forgot how you say that
-            letter that's shaped like a man wearing a hat.
-        </p>
-    </Banner>
+    <div class="top-banner">
+        <Banner size="wide" variant="white" header column>
+            <h1>Phases of development</h1>
+            <p class="bold">Themelio has 4 phases of development</p>
+            <p>
+                Bender, being God isn't easy. If you do too much, people get
+                dependent on you, and if you do nothing, they lose hope. You have to
+                use a light touch. Like a safecracker, or a pickpocket. Morbo can't
+                understand his teleprompter because he forgot how you say that
+                letter that's shaped like a man wearing a hat.
+            </p>
+        </Banner>
+    </div>
+
 
     <Banner variant="gradient1">
         <div class="banner-intro">
@@ -66,6 +69,13 @@
 
 <style lang="scss">
     @use "../../../stylesheets/spacing.scss";
+
+    .timeline{
+        border: 1px solid red;
+    }
+    .top-banner{
+        border: 1px solid black;
+    }
     .full-container {
         width: 100%;
         display:flex;
