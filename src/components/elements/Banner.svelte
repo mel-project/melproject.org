@@ -29,7 +29,7 @@
     let variant: string = variant_map[_variant_name];
 
     export let column = false;
-    export let noise = true;
+    export let noise = false;
     export let fill = false;
     export let header = false;
 </script>
@@ -40,7 +40,8 @@
         class="banner {_class} {variant} content-container {size}"
         class:fill
         class:header
-    >
+    >   
+        <div class="filter" class:noise></div>
         <div class="background {variant}" />
         <div class="content {variant}" class:column>
             <slot />
@@ -66,6 +67,7 @@
         align-items: center;
         justify-content: center;
         justify-items: center;
+        overflow: hidden;
     }
     .banner.header{
         display: flex;
@@ -77,12 +79,11 @@
     .background {
         position: absolute;
         border-radius: inherit;
-
+        z-index: 0;
         &.plain {
             width: 100%;
             height: 100%;
             background-color: var(--light-teal);
-            z-index: -999;
         }
         &.gradient1 {
             width: 100%;
@@ -114,15 +115,16 @@
         width: 100%;
     }
     .noise {
+        $noise-size: 70rem;
         position: absolute;
         width: 100%;
-        height: 100%;
+        aspect-ratio: 1/1;
+        background-size: $noise-size $noise-size;
+        object-fit: cover;
         background-image: url("../../assets/images/noise.png");
-        background-size: cover;
         background-repeat: repeat;
-        z-index: -998;
-        opacity: 50%;
-        filter: brightness(100%) contrast(80%) saturate(0%) invert(100%);
+        z-index: 1;
+        opacity: 10%;
         mix-blend-mode: multiply;
         transition: 1000ms all;
         &.hover {

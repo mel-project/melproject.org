@@ -41,7 +41,7 @@
     </div>
 
 
-    <Banner variant="gradient1">
+    <Banner variant="gradient1" noise>
         <div class="banner-intro">
             <h1>The past and future of Themelio</h1>
             <p>Banners fill their space and come in a thin and wide height</p>
