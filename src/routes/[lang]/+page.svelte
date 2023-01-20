@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { localize, lang} from "@l10n";
+  import { localize, lang } from "@l10n";
   import Navbar from "@src/components/page-sections/Navbar.svelte";
   import HeroImage from "@src/assets/images/short-banner.png";
   import Button from "@src/components/elements/Button.svelte";
@@ -31,15 +31,15 @@
     <h1>dApps beyond blockchains.</h1>
     <Button size="large">A call to action</Button>
   </div>
- 
+
   <div class="SPACER" />
- 
+
   <div class="content-frame">
     <div class="content">
       <Card variant="gradient1" interactive>
         <div>
-          <div class="spacer">
-            <Button circle />
+          <div class="header-arrow">
+            <Button arrow circle />
             <h2>Empowering dapps <br />beyond blockchains</h2>
           </div>
           <p>
@@ -54,7 +54,10 @@
       </Card>
       <Card variant="gradient2" interactive>
         <div>
-          <h2>Neutral, composable,<br /> and built for everyone</h2>
+          <div class="header-arrow">
+            <Button arrow circle />
+            <h2>Neutral, composable,<br /> and built for everyone</h2>
+          </div>
           <p>
             Decentralized trust should be a no-brainer. Themelio is clean-slate,
             governance-free, and radically embeddable L1 that makes accessing
@@ -66,21 +69,24 @@
       </Card>
       <Card variant="gradient3" interactive>
         <div>
-          <h2>Cross-chain compatibility <br /> built in</h2>
+          <div class="header-arrow">
+            <Button circle arrow></Button>
+            <h2>Cross-chain compatibility <br /> built in</h2>
+          </div>
           <p>
             Themelio’s new paradigm and the existing DeFi ecosystem don’t have
             to be at odds. Every Themelio asset can be accessed on
             EVM-compatible chains through trustless two-way relay contracts.
           </p>
         </div>
-        <Button>Try our testnet relay</Button>
+        <!-- <Button>Try our testnet relay</Button> -->
         <img />
       </Card>
       <Card variant="gradient1" interactive>
         <div>
           {@html $localize("page1_monetary_infrastructure", $lang)}
         </div>
-        <Button>Learn about Melmint</Button>
+        <!-- <Button>Learn about Melmint</Button> -->
         <img src={VaultImage} />
       </Card>
     </div>
@@ -124,45 +130,46 @@
       margin-right: 2 * spacing.$default-margin;
     }
   }
-    .spacer{
-        display: flex;
-        flex-direction: row-reverse;
+  .header-arrow {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .content-frame {
+    display: flex;
+    justify-content: center;
+    padding: 0 clamp(1rem, spacing.$default-margin, 100rem);
+    width: 100%;
+  }
+  .content {
+    & > * {
+      max-width: 100%;
+      color: red;
     }
+    // container-type: inline-size;
+    display: grid;
+    gap: clamp(2rem, 3%, 3rem);
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: clamp(30rem, 100%, 75rem);
+    // height: min(60rem, 1000rem);
+  }
+
+  @media screen and (max-width: 50rem) {
     .content-frame {
-        display: flex;
-        justify-content: center;
-        padding: 0 clamp(1rem, spacing.$default-margin, 100rem);
-        width: 100%;
+      justify-content: center;
+      padding: spacing.$default-margin;
     }
     .content {
-        & > * {
-            max-width: 100%;
-            color: red
-        }
-        // container-type: inline-size;
-        display: grid;
-        gap: clamp(2rem, 3%, 3rem);
-
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        width: clamp(30rem, 100%, 75rem);
-        // height: min(60rem, 1000rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
-   
-    @media screen and (max-width: 50rem) {
-        .content-frame {
-            justify-content: center;
-            padding:  spacing.$default-margin;
-        }
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        :global(.card) {
-            :global(h2) {
-                padding-bottom: 1rem !important;
-            }
-        }
+    :global(.card) {
+      :global(h2) {
+        padding-bottom: 1rem !important;
+      }
     }
+  }
 </style>
