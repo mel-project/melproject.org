@@ -4,6 +4,9 @@ components:
 technology:
   en: Technology
   
+roadmap:
+  en: Roadmap
+  
 test:
   en: "testing in en"
   zhs: "testing in zhs"

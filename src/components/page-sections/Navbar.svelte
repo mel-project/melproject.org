@@ -15,6 +15,7 @@
 		{ name: "home", href: $home_page },
 		{ name: "components", href: `${$home_page}/components` },
 		{ name: "technology", href: `${$home_page}/technology` },
+		{ name: "roadmap", href: `${$home_page}/roadmap` },
 	];
 	$: pathname = $page.url.pathname;
 </script>
@@ -53,7 +54,6 @@
 					</li>
 				{/each}
 
-			
 				<li class="nav-item dropdown">
 					<div
 						class="nav-link dropdown-toggle"

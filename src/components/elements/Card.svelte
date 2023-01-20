@@ -137,32 +137,34 @@
 
         &.default,
         &.gradient1 {
+            $light-scale: 1.15;
             border: none;
 
             background: radial-gradient(
                 400% 400% at 110% 100%,
-                lighten(colors.$teal, 20%) 8%,
-                rgba(137, 90, 191, 0.1) 25%,
+                color.scale(colors.$teal, $lightness:50% * $light-scale) 8%,
+                color.scale(colors.$purple, $lightness:80% * $light-scale) 25%,
                 white 37%
             );
         }
         &.gradient2 {
+            $light-scale: 1.15;
             border: none;
             background: radial-gradient(
                 400% 400% at 0% 0%,
-                color.scale(colors.$teal, $lightness: 60%) 8%,
-                color.scale(colors.$purple, $lightness: 80%) 25%,
+                color.scale(colors.$teal, $lightness: 60% * $light-scale) 8%,
+                color.scale(colors.$purple, $lightness: 80% * $light-scale) 25%,
                 color.scale(white, $lightness: 100%) 37%
             );
         }
         &.gradient3 {
-            $LS: 45; // a scale factor for each gradient
+            $LS: 65; // a scale factor for each gradient
             border: none;
             background: radial-gradient(
                 400% 400% at 100% 100%,
-                color.scale(colors.$light_blue, $lightness: $LS * 1.5%) 0%,
+                color.scale(colors.$light_blue, $lightness: $LS * 1.1%) 0%,
                 color.scale(colors.$teal, $lightness: $LS * 1.05%) 10%,
-                color.scale(colors.$purple, $lightness: $LS * 2%) 25%,
+                color.scale(colors.$purple, $lightness: $LS * 1.4%) 25%,
                 white 37%,
                 color.scale(colors.$teal) 37%
             );

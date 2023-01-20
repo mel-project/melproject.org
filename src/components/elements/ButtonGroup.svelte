@@ -2,7 +2,7 @@
     let _class = "";
     export { _class as class };
     export let color: string = "";
-    export let border: boolean = true;
+    export let border: boolean = false;
 </script>
 
 <div class="button-group {_class}">
@@ -16,9 +16,15 @@
         max-width: 100%;
         width: auto;
         .container {
+            border: .9px rgb(189, 189, 189);
+            border-style: dotted;
             display: flex;
-            // box-shadow: 0px 2px 1px 1px rgba(40, 40, 40, 0.092);
+            box-shadow: 0px 2px 1px 1px rgba(40, 40, 40, 0.092);
             width:fit-content;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            border-radius: 1rem;
             // border: 1px solid red;
         }
         .container.separated {
@@ -28,12 +34,12 @@
         }
 
         .container > :global(*) {
+            flex-grow: 1;
+            flex-shrink:1;
             border-radius: 0;
             margin: 0;
             box-shadow: none;
-            border-right: none;
-            border-top: none;
-            border-bottom: none;
+            border: none;
         }
         .container :global(:first-child) {
             // background: red;

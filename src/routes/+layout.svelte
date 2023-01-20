@@ -27,7 +27,7 @@
       <div class="col company-info">
         <div class="content">
           <div class="logo">logo</div>
-          <div class="addr">8 The Green, Ste A Dover, <br> DE 19901</div>
+          <div class="addr">8 The Green, Ste A Dover, <br /> DE 19901</div>
         </div>
       </div>
       <div class="col socials">
@@ -52,9 +52,10 @@
   </Banner>
 </div>
 
-
 <style lang="scss">
   @use "../stylesheets/variables" as colors;
+  @import "../stylesheets/app.scss";
+
   .layout {
     position: relative;
     overflow: hidden;
@@ -88,10 +89,11 @@
       text-decoration: none;
       color: black;
       width: max-content;
-      padding: .5rem;
+      padding: 0.5rem;
+      padding-left: 0;
       pa
       // border: 1px solid green;
-      &:hover{
+      &:hover {
         color: colors.$green;
       }
     }

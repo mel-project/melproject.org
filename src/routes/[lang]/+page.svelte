@@ -1,17 +1,19 @@
 <script lang="ts">
-  import { localize } from "@l10n";
+  import { localize, lang} from "@l10n";
   import Navbar from "@src/components/page-sections/Navbar.svelte";
   import HeroImage from "@src/assets/images/short-banner.png";
   import Button from "@src/components/elements/Button.svelte";
-  import HomeContent from "@src/components/page-sections/HomeContent.svelte";
   import Banner from "@src/components/elements/Banner.svelte";
   import { communityIcons } from "@src/utils/navigation";
-    import { GradientBubble } from "@src/components";
-    import { Colors } from "@src/utils/colors";
+  import { Card, GradientBubble } from "@src/components";
+  import { Colors } from "@src/utils/colors";
+
+  import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
+  import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
+  import VaultImage from "@src/assets/images/vault.png";
 </script>
 
 <div class="home">
-
   <div class="top">
     <img class="hero" src={HeroImage} alt="hero" />
   </div>
@@ -19,16 +21,70 @@
   <div class="SPACER" />
 
   <div class="subhero">
-    <GradientBubble scale={30} offset={['0%', '400%']}></GradientBubble>
-    <GradientBubble scale={30} offset={['75%', '-150%']}></GradientBubble>
-    <GradientBubble scale={20} color={Colors.light_blue} offset={['100%', '600%']}></GradientBubble>
+    <GradientBubble scale={30} offset={["0%", "400%"]} />
+    <GradientBubble scale={30} offset={["75%", "-150%"]} />
+    <GradientBubble
+      scale={20}
+      color={Colors.light_blue}
+      offset={["100%", "600%"]}
+    />
     <h1>dApps beyond blockchains.</h1>
     <Button size="large">A call to action</Button>
   </div>
-
+ 
   <div class="SPACER" />
-
-  <HomeContent />
+ 
+  <div class="content-frame">
+    <div class="content">
+      <Card variant="gradient1" interactive>
+        <div>
+          <div class="spacer">
+            <Button circle />
+            <h2>Empowering dapps <br />beyond blockchains</h2>
+          </div>
+          <p>
+            We’re bringing blockchain superpowers out of the “web3” ecosystem.
+            Whether you are writing an on-chain contract or fully off-chain
+            protocol, you’ll have the tools to ensure your app has robust
+            decentralization, censorship resistance, and user-centric
+            incentives.
+          </p>
+        </div>
+        <img src={SpaceshipImage} />
+      </Card>
+      <Card variant="gradient2" interactive>
+        <div>
+          <h2>Neutral, composable,<br /> and built for everyone</h2>
+          <p>
+            Decentralized trust should be a no-brainer. Themelio is clean-slate,
+            governance-free, and radically embeddable L1 that makes accessing
+            Web3 superpowers off-chain a breeze.
+          </p>
+        </div>
+        <Button>Build your own off-chain dApp</Button>
+        <img src={ComposableBlocksImage} />
+      </Card>
+      <Card variant="gradient3" interactive>
+        <div>
+          <h2>Cross-chain compatibility <br /> built in</h2>
+          <p>
+            Themelio’s new paradigm and the existing DeFi ecosystem don’t have
+            to be at odds. Every Themelio asset can be accessed on
+            EVM-compatible chains through trustless two-way relay contracts.
+          </p>
+        </div>
+        <Button>Try our testnet relay</Button>
+        <img />
+      </Card>
+      <Card variant="gradient1" interactive>
+        <div>
+          {@html $localize("page1_monetary_infrastructure", $lang)}
+        </div>
+        <Button>Learn about Melmint</Button>
+        <img src={VaultImage} />
+      </Card>
+    </div>
+  </div>
 
   <Banner>
     <div class="join">
@@ -39,12 +95,10 @@
       </p>
     </div>
   </Banner>
-
-
 </div>
 
 <style lang="scss">
-  @use '../../stylesheets/spacing';
+  @use "../../stylesheets/spacing";
   .home {
     display: grid;
     grid-template-rows: auto 15vh auto 15vh;
@@ -56,7 +110,7 @@
     img {
       max-width: 100%;
       border-radius: 1rem;
-      margin: spacing.$default-margin
+      margin: spacing.$default-margin;
     }
   }
 
@@ -66,8 +120,49 @@
     justify-content: space-around;
     justify-content: center;
     margin: 5rem 0;
-    h1{
-      margin-right: 2* spacing.$default-margin;
+    h1 {
+      margin-right: 2 * spacing.$default-margin;
     }
   }
+    .spacer{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .content-frame {
+        display: flex;
+        justify-content: center;
+        padding: 0 clamp(1rem, spacing.$default-margin, 100rem);
+        width: 100%;
+    }
+    .content {
+        & > * {
+            max-width: 100%;
+            color: red
+        }
+        // container-type: inline-size;
+        display: grid;
+        gap: clamp(2rem, 3%, 3rem);
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: clamp(30rem, 100%, 75rem);
+        // height: min(60rem, 1000rem);
+    }
+   
+    @media screen and (max-width: 50rem) {
+        .content-frame {
+            justify-content: center;
+            padding:  spacing.$default-margin;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        :global(.card) {
+            :global(h2) {
+                padding-bottom: 1rem !important;
+            }
+        }
+    }
 </style>

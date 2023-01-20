@@ -26,7 +26,7 @@
   export { _class as class };
   export let size: Size = "normal";
   export let variant: Variant = "white";
-  export let arrow: boolean = true;
+  export let arrow: boolean = false;
   export let circle: boolean = false;
   export let border_only = false;
 </script>
@@ -92,6 +92,7 @@
 
     &:hover {
       background-color: color.scale(colors.$teal, $lightness: -10%);
+      
     }
     &:active {
       background-color: color.scale(colors.$teal, $lightness: -20%);
