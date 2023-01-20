@@ -30,71 +30,97 @@
 */
 
 @font-face {
-    font-family: 'ClashGrotesk-Variable';
-    src: url('../fonts/ClashGrotesk-Variable.woff2') format('woff2');
-         font-weight: 200 700;
-         font-display: swap;
-         font-style: normal;
-  }
-  
-  
-  @font-face {
-    font-family: 'ClashGrotesk-Extralight';
-    src: url('../fonts/ClashGrotesk-Extralight.woff2') format('woff2');
-         
-         
-         font-weight: 200;
-         font-display: swap;
-         font-style: normal;
-  }
-  
-  
-  @font-face {
-    font-family: 'ClashGrotesk-Light';
-    src: url('../fonts/ClashGrotesk-Light.woff2') format('woff2');
-         font-weight: 300;
-         font-display: swap;
-         font-style: normal;
-  }
-  
-  
-  @font-face {
-    font-family: 'ClashGrotesk-Regular';
-    src: url('../fonts/ClashGrotesk-Regular.woff2') format('woff2');
-         font-weight: 400;
-         font-display: swap;
-         font-style: normal;
-  }
-  
-  
-  @font-face {
-    font-family: 'ClashGrotesk-Medium';
-    src: url('../fonts/ClashGrotesk-Medium.woff2') format('woff2');
-         
-         
-         font-weight: 500;
-         font-display: swap;
-         font-style: normal;
-  }
-  
-  
-  @font-face {
-    font-family: 'ClashGrotesk-Semibold';
-    src: url('../fonts/ClashGrotesk-Semibold.woff2') format('woff2');
-         
-         
-         font-weight: 600;
-         font-display: swap;
-         font-style: normal;
-  }
-  
-  
-  @font-face {
-    font-family: 'ClashGrotesk-Bold';
-    src: url('../fonts/ClashGrotesk-Bold.woff2') format('woff2');
-         font-weight: 700;
-         font-display: swap;
-         font-style: normal;
-  }
-  
-  
+     font-family: 'Clash Grotesk';
+     src: url('../assets/fonts/ClashGrotesk/ClashGrotesk-Variable.woff2') format('woff2');
+     font-weight: 200 700;
+     font-display: swap;
+     font-style: normal;
+}
+
+
+/**
+ * @license
+ *
+ * Font Family: Clash Display
+ * Designed by: Indian Type Foundry
+ * URL: https://www.fontshare.com/fonts/clash-display
+ * © 2022 Indian Type Foundry
+ *
+ * Font Styles:
+ * Clash Display Variable(Variable font)
+ * Clash Display Extralight
+ * Clash Display Light
+ * Clash Display Regular
+ * Clash Display Medium
+ * Clash Display Semibold
+ * Clash Display Bold
+ *
+*/
+
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 700.0;
+*
+* available axes:
+
+* 'wght' (range from 200.0 to 700.0)
+
+*/
+
+@font-face {
+     font-family: 'Clash Display';
+     src: url('../assets/fonts/ClashDisplay/ClashDisplay-Variable.woff2') format('woff2');
+     font-weight: 200 700;
+     font-display: swap;
+     font-style: normal;
+}
+
+/**
+ * @license
+ *
+ * Font Family: Supreme
+ * Designed by: Jérémie Hornus, Ilya Naumoff
+ * URL: https://www.fontshare.com/fonts/supreme
+ * © 2023 Indian Type Foundry
+ *
+ * Font Styles:
+ * Supreme Variable(Variable font)
+ * Supreme Variable Italic(Variable font)
+ * Supreme Thin
+ * Supreme Thin Italic
+ * Supreme Extralight
+ * Supreme Extralight Italic
+ * Supreme Light
+ * Supreme Light Italic
+ * Supreme Regular
+ * Supreme Italic
+ * Supreme Medium
+ * Supreme Medium Italic
+ * Supreme Bold
+ * Supreme Bold Italic
+ * Supreme Extrabold         
+ * Supreme Extrabold Italic
+ *
+*/
+
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 800.0;
+*
+* available axes:
+
+* 'wght' (range from 100.0 to 800.0)
+
+*/
+
+@font-face {
+     font-family: 'Supreme';
+     src: url('../assets/fonts/Supreme/Supreme-Variable.woff2') format('woff2');
+     font-weight: 100 800;
+     font-display: swap;
+     font-style: normal;
+}

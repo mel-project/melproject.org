@@ -10,6 +10,9 @@
 </script>
 
 <div class="layout">
+  <!-- these are the footer bubbles  -->
+  <!-- positioned this way to hide overflow only on the bottom edge of the page -->
+  <!-- otherwise the top cuts off too -->
   <GradientBubble offset={["100%", "100%"]} scale={70} />
   <GradientBubble
     offset={["0%", "calc(100% - 20rem)"]}
