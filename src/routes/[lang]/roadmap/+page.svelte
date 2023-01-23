@@ -19,7 +19,6 @@
         { title: "Q2 2021", content: lorem },
         { title: "Q3-Q4 2022", content: lorem },
         { title: "2023-2024", content: lorem },
-        { title: "2023-2024", content: lorem },
     ];
     let selected_epoch_index = 0
     $: selected_epoch = timeline[selected_epoch_index]

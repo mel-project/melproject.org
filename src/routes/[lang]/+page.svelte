@@ -11,25 +11,91 @@
   import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
   import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
   import VaultImage from "@src/assets/images/vault.png";
+
+  let percentify = ([x, y]: [number, number]): [string, string] => {
+    return [x + "rem", y + "rem"];
+  };
+  let calc_scale = (t: number) => {
+    let scales: number[] = [10, 20, 30];
+    for (let i = 0; i < scales.length; i++) {
+      scales[i] = 30;
+    }
+    return scales;
+  };
+  let calc_offsets = (t: number) => {
+    let _offsets: [number, number][] = [
+      [50, 0],
+      [50, 0],
+      [50, 0],
+    ];
+    let r = 10;
+    for (let i = 0; i < _offsets.length; i++) {
+      let offset = _offsets[i];
+      let deg = (Math.PI / offset.length) * i + t/Math.PI;
+      offset[0] += Math.cos(deg) * r;
+      offset[1] += Math.sin(deg) * r;
+    }
+    return _offsets.map(percentify);
+  };
+
+
+  let t = 0;
+
+  let timing_function = (start_time: number, end_time:number,  iterations:number = 0, )=>{
+    let timeout_interval = 25;
+    t =  start_time + iterations;
+    console.log(end_time,t)
+    if(end_time < t){
+      return
+    }  
+    setTimeout(()=>timing_function(start_time, end_time, iterations + timeout_interval), timeout_interval)
+  }
+  timing_function(0, 1000000)
+
+  let offsets: [string, string][];
+  let scales: number[];
+  $: {
+    console.log('resetting scales')
+    scales = calc_scale(t)
+  }
+  $: {
+    offsets = calc_offsets(t/50);
+    console.log(offsets);
+  }
 </script>
 
 <div class="home">
-  <div class="top">
-    <img class="hero" src={HeroImage} alt="hero" />
+  <div class="subhero">
+    <div class="grid">
+      <div class="message">
+        <h1>dApps beyond blockchains.</h1>
+        <div class="cta">
+          <Button size="large">A call to action</Button>
+        </div>
+      </div>
+
+      <div class="bubbles">
+        <GradientBubble scale={scales[2]} opacity={100} offset={offsets[0]} />
+        <GradientBubble
+          scale={scales[1]}
+          opacity={100}
+          color={Colors.light_blue}
+          offset={offsets[1]}
+        />
+        <GradientBubble
+          color={Colors.purple}
+          opacity={100}
+          scale={scales[0]}
+          offset={offsets[2]}
+        />
+      </div>
+    </div>
   </div>
 
   <div class="SPACER" />
 
-  <div class="subhero">
-    <GradientBubble scale={30} offset={["0%", "400%"]} />
-    <GradientBubble scale={30} offset={["75%", "-150%"]} />
-    <GradientBubble
-      scale={20}
-      color={Colors.light_blue}
-      offset={["100%", "600%"]}
-    />
-    <h1>dApps beyond blockchains.</h1>
-    <Button size="large">A call to action</Button>
+  <div class="top">
+    <img class="hero" src={HeroImage} alt="hero" />
   </div>
 
   <div class="SPACER" />
@@ -103,15 +169,12 @@
       </div>
     </Banner>
   </div>
-
- 
 </div>
 
 <style lang="scss">
   @use "../../stylesheets/spacing";
   span.button.hover {
     filter: invert(40%);
-    
   }
   .home {
     display: grid;
@@ -129,15 +192,32 @@
   }
 
   .subhero {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin: 5rem 0;
-    flex-wrap: wrap;
-    gap: 2 * spacing.$default-margin;
+    height: 50vh;
 
-    h1 {
-      margin: auto 0 ;
+    .grid {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      justify-content: center;
+      align-content: center;
+      margin: 5rem 0;
+      flex-wrap: wrap;
+      gap: 2 * spacing.$default-margin;
+      .message {
+        h1 {
+          margin: auto 0;
+        }
+        .cta {
+          justify-content: center;
+          justify-self: center;
+          margin: auto 0;
+        }
+      }
+      .bubbles {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
   .header-arrow {
