@@ -67,8 +67,8 @@ function compute_rest_props(props, keys) {
 function null_to_empty(value) {
   return value == null ? "" : value;
 }
-function set_current_component(component6) {
-  current_component = component6;
+function set_current_component(component7) {
+  current_component = component7;
 }
 function get_current_component() {
   if (!current_component)
@@ -170,13 +170,13 @@ function each(items, fn) {
   }
   return str;
 }
-function validate_component(component6, name) {
-  if (!component6 || !component6.$$render) {
+function validate_component(component7, name) {
+  if (!component7 || !component7.$$render) {
     if (name === "svelte:component")
       name += " this={...}";
     throw new Error(`<${name}> is not a valid SSR component. You may need to review your build config to ensure that dependencies are compiled, rather than imported as pre-compiled modules. Otherwise you may need to fix a <${name}>.`);
   }
-  return component6;
+  return component7;
 }
 function create_ssr_component(fn) {
   function $$render(result, props, bindings, slots, context) {
@@ -203,7 +203,7 @@ function create_ssr_component(fn) {
       return {
         html,
         css: {
-          code: Array.from(result.css).map((css8) => css8.code).join("\n"),
+          code: Array.from(result.css).map((css11) => css11.code).join("\n"),
           map: null
         },
         head: result.title + result.head
@@ -453,6 +453,7 @@ var init_page_svelte_svelte_type_style_lang = __esm({
     data = {
       components: { en: "Components" },
       technology: { en: "Technology" },
+      roadmap: { en: "Roadmap" },
       test: {
         en: "testing in en",
         zhs: "testing in zhs",
@@ -874,7 +875,7 @@ var init_BubbleBackground_svelte_svelte_type_style_lang = __esm({
   ".svelte-kit/output/server/chunks/BubbleBackground.svelte_svelte_type_style_lang.js"() {
     init_chunks();
     css = {
-      code: ':root{--white:#fafdfc;--teal:#9af3d3;--light-teal:#E5FAF6;--purple:#895abf;--green:#21d849;--light-blue:#69cfff;--blue_green:#7de8d3}.banner.svelte-539y1g{position:relative}.banner.wide.svelte-539y1g{height:30rem}.background.svelte-539y1g{position:absolute;border-radius:inherit}.background.plain.svelte-539y1g{width:100%;height:100%;background-color:var(--light-teal);z-index:-999}.background.gradient1.svelte-539y1g{width:100%;height:100%;z-index:-999;background-image:radial-gradient(150% 150% at 150% 0%, #9af3d2 10%, white)}.background.white.svelte-539y1g{display:none}.background.clear.svelte-539y1g{background-color:transparent}.content.column.svelte-539y1g{display:flex;flex-direction:column}.banner.svelte-539y1g{display:flex;flex-direction:row;margin:1rem;padding:2rem;border-radius:0.7rem;align-items:center;justify-content:center;justify-items:center}.content.svelte-539y1g{display:flex;justify-content:space-around;width:100%}.noise.svelte-539y1g{position:absolute;width:100%;height:100%;background-image:url("../../assets/images/noise.png");background-size:cover;background-repeat:repeat;z-index:-998;opacity:50%;filter:brightness(100%) contrast(80%) saturate(0%) invert(100%);mix-blend-mode:multiply;transition:1000ms all}.noise.hover.svelte-539y1g{opacity:0%;filter:brightness(60%) contrast(5%) saturate(0%) invert(100%)}.white.svelte-539y1g{background:white}',
+      code: ':root{--white:#fafdfc;--teal:#9af3d3;--light-teal:#E5FAF6;--purple:#895abf;--green:#21d849;--light-blue:#69cfff;--blue_green:#7de8d3}.banner.fill.svelte-xyw18m{margin:0}.banner.svelte-xyw18m{position:relative;display:flex;flex-direction:row;margin:1rem;padding:2rem;border-radius:0.7rem;align-items:center;justify-content:center;justify-items:center;overflow:hidden}.banner.header.svelte-xyw18m{display:flex;align-items:baseline}.banner.wide.svelte-xyw18m{height:30rem}.background.svelte-xyw18m{position:absolute;border-radius:inherit;z-index:0}.background.plain.svelte-xyw18m{width:100%;height:100%;background-color:var(--light-teal)}.background.gradient1.svelte-xyw18m{width:100%;height:100%;background-image:radial-gradient(150% 150% at 150% 0%, #9af3d2 10%, white)}.background.white.svelte-xyw18m{display:none}.background.clear.svelte-xyw18m{background-color:transparent}.content.column.svelte-xyw18m{display:flex;flex-direction:column}.content.svelte-xyw18m{display:flex;justify-content:space-around;z-index:999;width:100%}.noise.svelte-xyw18m{position:absolute;width:100%;aspect-ratio:1/1;background-size:70rem 70rem;object-fit:cover;background-image:url("../../assets/images/noise.png");background-repeat:repeat;z-index:1;opacity:10%;mix-blend-mode:multiply;transition:1000ms all}.noise.hover.svelte-xyw18m{opacity:0%;filter:brightness(60%) contrast(5%) saturate(0%) invert(100%)}.white.svelte-xyw18m{background:white}',
       map: null
     };
     Variant = ["plain", "gradient1", "clear", "white"];
@@ -892,7 +893,9 @@ var init_BubbleBackground_svelte_svelte_type_style_lang = __esm({
       let { variant: _variant_name = "plain" } = $$props;
       let variant = variant_map[_variant_name];
       let { column = false } = $$props;
-      let { noise = true } = $$props;
+      let { noise = false } = $$props;
+      let { fill = false } = $$props;
+      let { header = false } = $$props;
       if ($$props.class === void 0 && $$bindings.class && _class !== void 0)
         $$bindings.class(_class);
       if ($$props.id === void 0 && $$bindings.id && _id !== void 0)
@@ -905,9 +908,17 @@ var init_BubbleBackground_svelte_svelte_type_style_lang = __esm({
         $$bindings.column(column);
       if ($$props.noise === void 0 && $$bindings.noise && noise !== void 0)
         $$bindings.noise(noise);
+      if ($$props.fill === void 0 && $$bindings.fill && fill !== void 0)
+        $$bindings.fill(fill);
+      if ($$props.header === void 0 && $$bindings.header && header !== void 0)
+        $$bindings.header(header);
       $$result.css.add(css);
-      return `<div${add_attribute("id", id, 0)} class="${"banner " + escape(_class, true) + " " + escape(variant, true) + " content-container " + escape(size, true) + " svelte-539y1g"}"><div class="${"background " + escape(variant, true) + " svelte-539y1g"}"></div>
-        <div class="${["content " + escape(variant, true) + " svelte-539y1g", column ? "column" : ""].join(" ").trim()}">${slots.default ? slots.default({}) : ``}</div>
+      return `<div${add_attribute("id", id, 0)} class="${[
+        "banner " + escape(_class, true) + " " + escape(variant, true) + " content-container " + escape(size, true) + " svelte-xyw18m",
+        (fill ? "fill" : "") + " " + (header ? "header" : "")
+      ].join(" ").trim()}"><div class="${["filter svelte-xyw18m", noise ? "noise" : ""].join(" ").trim()}"></div>
+        <div class="${"background " + escape(variant, true) + " svelte-xyw18m"}"></div>
+        <div class="${["content " + escape(variant, true) + " svelte-xyw18m", column ? "column" : ""].join(" ").trim()}">${slots.default ? slots.default({}) : ``}</div>
     </div>`;
     });
     color = "/* Variables and mixins declared here will be available in all other SCSS files */\n/* Override Bootstrap's variables here */\n:root {\n  --white: #fafdfc;\n  --teal: #9af3d3;\n  --light-teal: #E5FAF6;\n  --purple: #895abf;\n  --green: #21d849;\n  --light-blue: #69cfff;\n  --blue_green: #7de8d3;\n}";
@@ -934,7 +945,7 @@ var init_GradientBubble = __esm({
     };
     random_placement = () => {
       console.log("called random");
-      return [Math.random() * 100 + "%", Math.random() * 100 + "%"];
+      return [Math.random() * 100, Math.random() * 100];
     };
     GradientBubble = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { class: _class = "" } = $$props;
@@ -942,8 +953,10 @@ var init_GradientBubble = __esm({
       let { opacity = 40 } = $$props;
       let { scale = 10 } = $$props;
       let { offset = [0, 0] } = $$props;
+      let { z_index = -4 } = $$props;
       if (offset == "random") {
-        offset = random_placement();
+        let r = random_placement();
+        offset = [r[0] + "%", r[1] + "%"];
       }
       if ($$props.class === void 0 && $$bindings.class && _class !== void 0)
         $$bindings.class(_class);
@@ -955,9 +968,11 @@ var init_GradientBubble = __esm({
         $$bindings.scale(scale);
       if ($$props.offset === void 0 && $$bindings.offset && offset !== void 0)
         $$bindings.offset(offset);
+      if ($$props.z_index === void 0 && $$bindings.z_index && z_index !== void 0)
+        $$bindings.z_index(z_index);
       $$result.css.add(css2);
       return `
-    <div class="${escape(null_to_empty("gradient-bubble " + _class), true) + " svelte-1tx0jrz"}" style="${"left: calc(" + escape(offset[0], true) + "; top: calc(" + escape(offset[1], true) + "; transform: scale(" + escape(scale, true) + "); --primary-color: " + escape(color2, true) + "; opacity: " + escape(opacity, true) + "%;"}"></div>`;
+    <div class="${escape(null_to_empty("gradient-bubble " + _class), true) + " svelte-1tx0jrz"}" style="${"left: calc(" + escape(offset[0], true) + "; top: calc(" + escape(offset[1], true) + "; transform: scale(" + escape(scale, true) + "); --primary-color: " + escape(color2, true) + "; opacity: " + escape(opacity, true) + "%; z-index: " + escape(z_index, true) + ";"}"></div>`;
     });
   }
 });
@@ -1006,6 +1021,10 @@ var init_layout_svelte = __esm({
         {
           name: "technology",
           href: `${$home_page}/technology`
+        },
+        {
+          name: "roadmap",
+          href: `${$home_page}/roadmap`
         }
       ];
       $$result.css.add(css$1);
@@ -1023,7 +1042,6 @@ var init_layout_svelte = __esm({
 					</li>`;
       })}
 
-			
 				<li class="${"nav-item dropdown"}"><div class="${"nav-link dropdown-toggle"}" role="${"button"}" data-bs-toggle="${"dropdown"}" aria-expanded="${"false"}">${escape($localize("langname", display_language))}</div>
 					<ul class="${"dropdown-menu"}">${each(Language, (l) => {
         return `<li><a data-sveltekit-reload class="${"dropdown-item"}"${add_attribute("href", $replace_lang(l), 0)}>${escape($localize("langname", l))}</a>
@@ -1052,7 +1070,7 @@ var init_layout_svelte = __esm({
       }
     ];
     css3 = {
-      code: ":root{--white:#fafdfc;--teal:#9af3d3;--light-teal:#E5FAF6;--purple:#895abf;--green:#21d849;--light-blue:#69cfff;--blue_green:#7de8d3}.layout.svelte-g4s9tl.svelte-g4s9tl{position:relative;overflow:hidden}.company-info.svelte-g4s9tl.svelte-g4s9tl{display:flex;flex-direction:row;justify-content:space-around}.footer.svelte-g4s9tl.svelte-g4s9tl{overflow:hidden;width:100%;font-weight:400;letter-spacing:-0.48px;display:flex;flex-wrap:wrap;gap:5rem 0}.footer.svelte-g4s9tl .title.svelte-g4s9tl{font-weight:500;font-size:1.2rem;margin-bottom:1.2rem}.footer.svelte-g4s9tl .col.svelte-g4s9tl{display:flex;gap:0.2rem;flex-direction:column;min-width:9rem}.footer.svelte-g4s9tl a.svelte-g4s9tl{text-decoration:none;color:black;width:max-content;padding:0.5rem;padding-left:0}.footer.svelte-g4s9tl a.svelte-g4s9tl:hover{color:#21d849}",
+      code: '@charset "UTF-8";:root{--white:#fafdfc;--teal:#9af3d3;--light-teal:#E5FAF6;--purple:#895abf;--green:#21d849;--light-blue:#69cfff;--blue_green:#7de8d3}@font-face{font-family:"Clash Grotesk";src:url("../assets/fonts/ClashGrotesk/ClashGrotesk-Variable.woff2") format("woff2");font-weight:200 700;font-display:swap;font-style:normal}@font-face{font-family:"Clash Display";src:url("../assets/fonts/ClashDisplay/ClashDisplay-Variable.woff2") format("woff2");font-weight:200 700;font-display:swap;font-style:normal}@font-face{font-family:"Supreme";src:url("../assets/fonts/Supreme/Supreme-Variable.woff2") format("woff2");font-weight:100 800;font-display:swap;font-style:normal}*{scrollbar-width:none;font-size:1rem;font-family:"Clash Display", sans-serif;--bs-body-font-family:"Rubik"}html{overflow:hidden visible}body{overflow:hidden}:lang(zh-CN){font-family:var(--bs-body-font-family), "Noto Sans SC", "Noto Color Emoji", sans-serif}:lang(zh-TW){font-family:var(--bs-body-font-family), "Chiron Hei HK WS", "Noto Color Emoji", sans-serif}h1{letter-spacing:-0.04rem;font-size:3rem;font-weight:600}.layout-container.svelte-h9vx1x.svelte-h9vx1x{max-width:100vw;display:flex;flex-direction:row;justify-content:space-around}.layout.svelte-h9vx1x.svelte-h9vx1x{position:relative;max-width:min(100%, 90rem)}.company-info.svelte-h9vx1x.svelte-h9vx1x{display:flex;flex-direction:row;justify-content:space-around}.footer.svelte-h9vx1x.svelte-h9vx1x{width:100%;font-weight:400;letter-spacing:-0.48px;display:flex;flex-wrap:wrap;gap:5rem 0}.footer.svelte-h9vx1x .title.svelte-h9vx1x{font-weight:500;font-size:1.2rem;margin-bottom:1.2rem}.footer.svelte-h9vx1x .col.svelte-h9vx1x{display:flex;gap:0.2rem;flex-direction:column;min-width:9rem}.footer.svelte-h9vx1x a.svelte-h9vx1x{text-decoration:none;color:black;width:max-content;padding:0.5rem;padding-left:0}pa .footer.svelte-h9vx1x a.svelte-h9vx1x:hover{color:#21d849}',
       map: null
     };
     Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -1060,8 +1078,11 @@ var init_layout_svelte = __esm({
       $$unsubscribe_home_page = subscribe(home_page, (value) => $home_page = value);
       $$result.css.add(css3);
       $$unsubscribe_home_page();
-      return `<div class="${"layout svelte-g4s9tl"}">${validate_component(GradientBubble, "GradientBubble").$$render($$result, { offset: ["100%", "100%"], scale: 70 }, {}, {})}
-  ${validate_component(GradientBubble, "GradientBubble").$$render(
+      return `<div class="${"layout-container svelte-h9vx1x"}"><div class="${"layout svelte-h9vx1x"}">
+    
+    
+    ${validate_component(GradientBubble, "GradientBubble").$$render($$result, { offset: ["100%", "100%"], scale: 70 }, {}, {})}
+    ${validate_component(GradientBubble, "GradientBubble").$$render(
         $$result,
         {
           offset: ["0%", "calc(100% - 20rem)"],
@@ -1073,28 +1094,28 @@ var init_layout_svelte = __esm({
         {}
       )}
 
-  ${validate_component(Navbar, "Navbar").$$render($$result, {}, {}, {})}
+    ${validate_component(Navbar, "Navbar").$$render($$result, {}, {}, {})}
 
-  ${slots.default ? slots.default({}) : ``}
+    ${slots.default ? slots.default({}) : ``}
 
-  ${validate_component(Banner, "Banner").$$render($$result, { variant: "clear" }, {}, {
+    ${validate_component(Banner, "Banner").$$render($$result, { variant: "clear" }, {}, {
         default: () => {
-          return `<div class="${"footer svelte-g4s9tl"}"><div class="${"col company-info svelte-g4s9tl"}"><div class="${"content"}"><div class="${"logo"}">logo</div>
-          <div class="${"addr"}">8 The Green, Ste A Dover, <br> DE 19901</div></div></div>
-      <div class="${"col socials svelte-g4s9tl"}"><div class="${"title svelte-g4s9tl"}">Socials</div>
-        ${each(communityIcons, (icon) => {
-            return `<a href="${""}" class="${"svelte-g4s9tl"}">${escape(icon.name)}</a>`;
+          return `<div class="${"footer svelte-h9vx1x"}"><div class="${"col company-info svelte-h9vx1x"}"><div class="${"content"}"><div class="${"logo"}">logo</div>
+            <div class="${"addr"}">8 The Green, Ste A Dover, <br> DE 19901</div></div></div>
+        <div class="${"col socials svelte-h9vx1x"}"><div class="${"title svelte-h9vx1x"}">Socials</div>
+          ${each(communityIcons, (icon) => {
+            return `<a href="${""}" class="${"svelte-h9vx1x"}">${escape(icon.name)}</a>`;
           })}</div>
-      <div class="${"col sitemap svelte-g4s9tl"}"><div class="${"title svelte-g4s9tl"}">Sitemap</div>
-        <a${add_attribute("href", $home_page, 0)} class="${"svelte-g4s9tl"}">Home</a>
-        <a href="${escape($home_page, true) + "/components"}" class="${"svelte-g4s9tl"}">Components</a>
-        <a href="${escape($home_page, true) + "/technology"}" class="${"svelte-g4s9tl"}">Technology</a></div>
-      <div class="${"col melodeon svelte-g4s9tl"}"><div class="${"title svelte-g4s9tl"}">Melodeon</div>
-        <a href="${""}" class="${"svelte-g4s9tl"}">Get started</a>
-        <a href="${""}" class="${"svelte-g4s9tl"}">Guide</a>
-        <a href="${""}" class="${"svelte-g4s9tl"}">Readme</a></div></div>`;
+        <div class="${"col sitemap svelte-h9vx1x"}"><div class="${"title svelte-h9vx1x"}">Sitemap</div>
+          <a${add_attribute("href", $home_page, 0)} class="${"svelte-h9vx1x"}">Home</a>
+          <a href="${escape($home_page, true) + "/components"}" class="${"svelte-h9vx1x"}">Components</a>
+          <a href="${escape($home_page, true) + "/technology"}" class="${"svelte-h9vx1x"}">Technology</a></div>
+        <div class="${"col melodeon svelte-h9vx1x"}"><div class="${"title svelte-h9vx1x"}">Melodeon</div>
+          <a href="${""}" class="${"svelte-h9vx1x"}">Get started</a>
+          <a href="${""}" class="${"svelte-h9vx1x"}">Guide</a>
+          <a href="${""}" class="${"svelte-h9vx1x"}">Readme</a></div></div>`;
         }
-      })}
+      })}</div>
 </div>`;
     });
   }
@@ -1115,10 +1136,10 @@ var init__ = __esm({
   ".svelte-kit/output/server/nodes/0.js"() {
     index = 0;
     component = async () => (await Promise.resolve().then(() => (init_layout_svelte(), layout_svelte_exports))).default;
-    file = "_app/immutable/components/pages/_layout.svelte-7da9ae12.js";
-    imports = ["_app/immutable/components/pages/_layout.svelte-7da9ae12.js", "_app/immutable/chunks/index-14cd48c3.js", "_app/immutable/chunks/_page.svelte_svelte_type_style_lang-cd2d3823.js", "_app/immutable/chunks/singletons-db95dcfd.js", "_app/immutable/chunks/stores-e709ff06.js", "_app/immutable/chunks/BubbleBackground.svelte_svelte_type_style_lang-57cd0f92.js", "_app/immutable/chunks/GradientBubble-7fd30547.js"];
-    stylesheets = ["_app/immutable/assets/_layout-04a65542.css", "_app/immutable/assets/_page-428ebe44.css", "_app/immutable/assets/BubbleBackground-3e3b405a.css"];
-    fonts = [];
+    file = "_app/immutable/components/pages/_layout.svelte-75f8c455.js";
+    imports = ["_app/immutable/components/pages/_layout.svelte-75f8c455.js", "_app/immutable/chunks/index-14cd48c3.js", "_app/immutable/chunks/_page.svelte_svelte_type_style_lang-0293ffd9.js", "_app/immutable/chunks/singletons-db95dcfd.js", "_app/immutable/chunks/stores-e709ff06.js", "_app/immutable/chunks/BubbleBackground.svelte_svelte_type_style_lang-a7e69a4d.js", "_app/immutable/chunks/GradientBubble-bd8ab125.js"];
+    stylesheets = ["_app/immutable/assets/_layout-263feccf.css", "_app/immutable/assets/_page-7fd2db0e.css", "_app/immutable/assets/BubbleBackground-6370da64.css"];
+    fonts = ["_app/immutable/assets/ClashGrotesk-Variable-3c56fcff.woff2", "_app/immutable/assets/ClashDisplay-Variable-e0ec5644.woff2", "_app/immutable/assets/Supreme-Variable-cc6fdb52.woff2"];
   }
 });
 
@@ -1205,27 +1226,29 @@ var init__3 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/Card.js
-var arrowImage, css$12, Size, Variant$1, Button, css4, Variant2, variant_map2, Card;
-var init_Card = __esm({
-  ".svelte-kit/output/server/chunks/Card.js"() {
+// .svelte-kit/output/server/chunks/Button.js
+var arrowImage, css4, Size, Variant2, Button;
+var init_Button = __esm({
+  ".svelte-kit/output/server/chunks/Button.js"() {
     init_chunks();
     init_BubbleBackground_svelte_svelte_type_style_lang();
     arrowImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABhSURBVHgB7ZJBDYAwEATngQAs4AAJSKgDcIIELNQRFnACd6H9Nmmz/XWSfd1lcpcs1DMjJFhey44Iv+4e0r7SKQ0u2uvwWFZLzEIXbWj6tSDg5H85ImDI6glKmePVOkoLHxDLHL3OnSzxAAAAAElFTkSuQmCC";
-    css$12 = {
-      code: ":root{--white:#fafdfc;--teal:#9af3d3;--light-teal:#E5FAF6;--purple:#895abf;--green:#21d849;--light-blue:#69cfff;--blue_green:#7de8d3}button.svelte-1qtb91j.svelte-1qtb91j{height:fit-content;white-space:nowrap;height:fit-content;max-width:fit-content;padding:1rem 2rem;border-radius:0.7rem;border:0px solid white}#arrow.svelte-1qtb91j.svelte-1qtb91j{height:0.7rem;padding-left:1rem;justify-content:center}button.circle.svelte-1qtb91j.svelte-1qtb91j{--r:0.5rem;aspect-ratio:1/1;border-radius:100%;line-height:0.7rem;background-color:transparent;border:1px solid black;box-shadow:none;padding:calc(var(--r)) var(--r)}button.circle.svelte-1qtb91j>.svelte-1qtb91j{padding:0 !important}button.circle.svelte-1qtb91j.svelte-1qtb91j:hover{background-color:inherit}button.circle.svelte-1qtb91j.svelte-1qtb91j:active{background-color:inherit}button.default.svelte-1qtb91j.svelte-1qtb91j{white-space:nowrap;background-color:#9af3d2;color:black;transition:0.5s background-size ease-in-out, 0.1s background-color ease-in-out}button.default.svelte-1qtb91j.svelte-1qtb91j:hover{background-color:#77efc2}button.default.svelte-1qtb91j.svelte-1qtb91j:active{background-color:#53ebb2}.blue_green.svelte-1qtb91j.svelte-1qtb91j{height:fit-content;white-space:nowrap;background-color:#7de8d3;border:0px solid white;color:black;transition:0.5s background-size ease-in-out, 0.1s background-color ease-in-out;max-width:fit-content;padding:1rem 2rem;border-radius:0.7rem}.blue_green.svelte-1qtb91j.svelte-1qtb91j:hover{background-color:#5fe3c9}.blue_green.svelte-1qtb91j.svelte-1qtb91j:active{background-color:#40ddbe}.gradient1.svelte-1qtb91j.svelte-1qtb91j{color:black;background:linear-gradient(to bottom left, #b8f7e0 0%, rgba(255, 255, 255, 0) 95%), #ffffff;border:1px solid rgb(217, 217, 217);box-shadow:0px 2px 1px 1px transparent;background-size:100%}.gradient1.svelte-1qtb91j.svelte-1qtb91j:hover{background-color:#92f2ce;background-size:100%}.gradient1.svelte-1qtb91j.svelte-1qtb91j:active{background-color:#6bedbd}.white.svelte-1qtb91j.svelte-1qtb91j{background-color:rgb(250, 250, 250);box-shadow:0px 2px 1px 1px rgba(40, 40, 40, 0.092);transition:100ms all ease-in-out, 100ms background-color ease-in-out, 10ms box-shadow ease-out}.white.svelte-1qtb91j.svelte-1qtb91j:hover{background-color:#eeeeee;box-shadow:0px 3px 1px 1px rgba(30, 30, 30, 0.092)}.white.svelte-1qtb91j.svelte-1qtb91j:active{background-color:#e4e4e4}",
+    css4 = {
+      code: ':root{--white:#fafdfc;--teal:#9af3d3;--light-teal:#E5FAF6;--purple:#895abf;--green:#21d849;--light-blue:#69cfff;--blue_green:#7de8d3}button.svelte-rifexe.svelte-rifexe{height:fit-content;white-space:nowrap;height:fit-content;max-width:fit-content;padding:0.75rem 2rem;border-radius:0.7rem;border:0px solid white;font-family:"Clash Display";font-weight:400;letter-spacing:-0.5px;color:black}.bold.svelte-rifexe.svelte-rifexe{font-weight:600}#arrow.svelte-rifexe.svelte-rifexe{height:0.7rem;padding-left:1rem;justify-content:center}button.circle.svelte-rifexe.svelte-rifexe{--r:0.5rem;aspect-ratio:1/1;border-radius:100%;line-height:0.7rem;background-color:transparent;border:1px solid black;box-shadow:none;padding:calc(var(--r)) var(--r)}button.circle.svelte-rifexe>.svelte-rifexe{padding:0 !important}button.circle.svelte-rifexe.svelte-rifexe:hover,button.circle.hover.svelte-rifexe.svelte-rifexe{background-color:inherit}button.circle.svelte-rifexe.svelte-rifexe:active{background-color:inherit}button.large.svelte-rifexe.svelte-rifexe{padding:1rem 2rem}button.default.svelte-rifexe.svelte-rifexe{white-space:nowrap;background-color:#9af3d2;color:black;transition:0.5s background-size ease-in-out, 0.1s background-color ease-in-out}button.default.svelte-rifexe.svelte-rifexe:hover,button.default.hover.svelte-rifexe.svelte-rifexe{background-color:#77efc2}button.default.svelte-rifexe.svelte-rifexe:active{background-color:#53ebb2}.blue_green.svelte-rifexe.svelte-rifexe{height:fit-content;white-space:nowrap;background-color:#7de8d3;border:0px solid white;color:black;transition:0.5s background-size ease-in-out, 0.1s background-color ease-in-out;max-width:fit-content;padding:1rem 2rem;border-radius:0.7rem}.blue_green.svelte-rifexe.svelte-rifexe:hover,.blue_green.hover.svelte-rifexe.svelte-rifexe{background-color:#5fe3c9}.blue_green.svelte-rifexe.svelte-rifexe:active{background-color:#40ddbe}.gradient1.svelte-rifexe.svelte-rifexe{color:black;background:linear-gradient(to bottom left, #b8f7e0 0%, rgba(255, 255, 255, 0) 95%), #ffffff;border:1px solid rgb(217, 217, 217);box-shadow:0px 2px 1px 1px transparent;background-size:100%}.gradient1.svelte-rifexe.svelte-rifexe:hover,.gradient1.hover.svelte-rifexe.svelte-rifexe{background-color:#92f2ce;background-size:100%}.gradient1.svelte-rifexe.svelte-rifexe:active{background-color:#6bedbd}.white.svelte-rifexe.svelte-rifexe{background-color:rgb(250, 250, 250);box-shadow:0px 2px 1px 1px rgba(40, 40, 40, 0.092);transition:100ms all ease-in-out, 100ms background-color ease-in-out, 10ms box-shadow ease-out}.white.svelte-rifexe.svelte-rifexe:hover,.white.hover.svelte-rifexe.svelte-rifexe{background-color:#eeeeee;box-shadow:0px 3px 1px 1px rgba(30, 30, 30, 0.092)}.white.svelte-rifexe.svelte-rifexe:active{background-color:#e4e4e4}',
       map: null
     };
     Size = ["normal", "large"];
-    Variant$1 = ["default", "gradient1", "white"];
+    Variant2 = ["default", "gradient1", "white"];
     Button = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let $$restProps = compute_rest_props($$props, ["class", "size", "variant", "arrow", "circle", "border_only"]);
+      let $$restProps = compute_rest_props($$props, ["class", "size", "variant", "arrow", "circle", "border_only", "bold", "hover"]);
       let { class: _class = "" } = $$props;
       let { size = "normal" } = $$props;
       let { variant = "white" } = $$props;
-      let { arrow = true } = $$props;
+      let { arrow = false } = $$props;
       let { circle = false } = $$props;
       let { border_only = false } = $$props;
+      let { bold = false } = $$props;
+      let { hover = false } = $$props;
       if ($$props.class === void 0 && $$bindings.class && _class !== void 0)
         $$bindings.class(_class);
       if ($$props.size === void 0 && $$bindings.size && size !== void 0)
@@ -1238,7 +1261,11 @@ var init_Card = __esm({
         $$bindings.circle(circle);
       if ($$props.border_only === void 0 && $$bindings.border_only && border_only !== void 0)
         $$bindings.border_only(border_only);
-      $$result.css.add(css$12);
+      if ($$props.bold === void 0 && $$bindings.bold && bold !== void 0)
+        $$bindings.bold(bold);
+      if ($$props.hover === void 0 && $$bindings.hover && hover !== void 0)
+        $$bindings.hover(hover);
+      $$result.css.add(css4);
       return `<button${spread(
         [
           {
@@ -1247,17 +1274,26 @@ var init_Card = __esm({
           escape_object($$restProps)
         ],
         {
-          classes: (size === "large" ? "btn-lg" : "") + " " + (arrow ? "arrow" : "") + " " + (circle ? "circle" : "") + " svelte-1qtb91j"
+          classes: (arrow ? "arrow" : "") + " " + (circle ? "circle" : "") + " " + (border_only ? "border_only" : "") + " " + (bold ? "bold" : "") + " " + (size == "large" ? "large" : "") + " svelte-rifexe"
         }
-      )}>${slots.default ? slots.default({}) : ``}
-  ${arrow ? `<img id="${"arrow"}"${add_attribute("src", arrowImage, 0)} alt="${""}" class="${"svelte-1qtb91j"}">` : ``}
+      )}>${slots.default ? slots.default({ hover }) : ``}
+  ${arrow ? `<img id="${"arrow"}"${add_attribute("src", arrowImage, 0)} alt="${""}" class="${"svelte-rifexe"}">` : ``}
 </button>`;
     });
-    css4 = {
-      code: ':root{--white:#fafdfc;--teal:#9af3d3;--light-teal:#E5FAF6;--purple:#895abf;--green:#21d849;--light-blue:#69cfff;--blue_green:#7de8d3}.filter.svelte-1yv4nn9:not(.noise){display:none;position:absolute}.noise.svelte-1yv4nn9{position:absolute;width:100%;height:100%;background-image:url("../../assets/images/noise.png");background-size:cover;background-repeat:repeat;z-index:-998;opacity:50%;filter:brightness(100%) contrast(80%) saturate(0%) invert(100%);mix-blend-mode:multiply;transition:1000ms all}.noise.hover.svelte-1yv4nn9{opacity:0%;filter:brightness(60%) contrast(5%) saturate(0%) invert(100%)}.card.svelte-1yv4nn9{overflow:hidden;border-radius:20px;padding:3rem 2rem;max-height:100%;height:100%;max-width:100%;display:grid;box-sizing:border-box;grid-template-rows:auto}.card.opaque.svelte-1yv4nn9{background-color:white !important}.card.v-square.svelte-1yv4nn9,.card.square.svelte-1yv4nn9{aspect-ratio:1/1;width:clamp(15rem, 50vw, 50vw)}.card.fill.svelte-1yv4nn9{padding:0;border-radius:0;width:100%;height:100%;margin:0 !important}.card.default.svelte-1yv4nn9,.card.gradient1.svelte-1yv4nn9{border:none;background:radial-gradient(400% 400% at 110% 100%, #f5fefb 8%, rgba(137, 90, 191, 0.1) 25%, white 37%)}.card.gradient2.svelte-1yv4nn9{border:none;background:radial-gradient(400% 400% at 0% 0%, #d7faed 8%, #e7def2 25%, white 37%)}.card.gradient3.svelte-1yv4nn9{border:none;background:radial-gradient(400% 400% at 100% 100%, #ceefff 0%, #caf9e7 10%, #f3eff9 25%, white 37%, #9af3d2 37%)}.card.hover.svelte-1yv4nn9{transform:translate(0px, -5px);transition:1s background-size, 1s translate}.card.hover.gradient4.svelte-1yv4nn9{background-size:100% 100%}.card.gradient4.svelte-1yv4nn9{border:none;background:radial-gradient(70% 70% at bottom left, #b8e8ff, rgba(255, 255, 255, 0) 100%), radial-gradient(75% 75% at top right, #c8f8e6, rgba(255, 255, 255, 0) 100%)}.card.grey-gradient.svelte-1yv4nn9{border:none;background:radial-gradient(85% 85% at bottom left, #d6d6d6, rgba(255, 255, 255, 0) 100%), radial-gradient(55% 55% at top right, #e1e1e1, rgba(255, 255, 255, 0) 100%)}.card.white.svelte-1yv4nn9{border:none;background-color:white;background-image:none}.card.clear.svelte-1yv4nn9{background-color:transparent;border:none}.card.svelte-1yv4nn9 img{justify-content:center;max-width:auto;max-height:15rem}.card.transformations.svelte-1yv4nn9{transition:400ms all, 1s background-size;background-size:100% 100%}.card.transformations.hover.svelte-1yv4nn9{background-size:300% 300%}.card.transformations.hover.gradient4.svelte-1yv4nn9{background-size:100% 100%}.interactive.hover.svelte-1yv4nn9{cursor:pointer}',
+  }
+});
+
+// .svelte-kit/output/server/chunks/Card.js
+var css5, Variant3, variant_map2, Card;
+var init_Card = __esm({
+  ".svelte-kit/output/server/chunks/Card.js"() {
+    init_chunks();
+    init_BubbleBackground_svelte_svelte_type_style_lang();
+    css5 = {
+      code: ':root{--white:#fafdfc;--teal:#9af3d3;--light-teal:#E5FAF6;--purple:#895abf;--green:#21d849;--light-blue:#69cfff;--blue_green:#7de8d3}.content.svelte-1vdlbrq{z-index:2}.filter.svelte-1vdlbrq:not(.noise){display:none;position:absolute}.noise.svelte-1vdlbrq{position:absolute;width:100%;height:100%;background-image:url("../../assets/images/noise.png");background-size:cover;background-repeat:repeat;z-index:0;opacity:50%;filter:brightness(100%) contrast(80%) saturate(0%) invert(100%);mix-blend-mode:multiply;transition:1000ms all}.noise.hover.svelte-1vdlbrq{opacity:0%;filter:brightness(60%) contrast(5%) saturate(0%) invert(100%)}.card.svelte-1vdlbrq{overflow:hidden;border-radius:20px;padding:3rem 2rem;max-height:100%;height:100%;max-width:100%;display:grid;box-sizing:border-box;grid-template-rows:auto}.card.opaque.svelte-1vdlbrq{background-color:white !important}.card.v-square.svelte-1vdlbrq,.card.square.svelte-1vdlbrq{aspect-ratio:1/1;width:clamp(15rem, 50vw, 50vw)}.card.fill.svelte-1vdlbrq{padding:0;border-radius:0;width:100%;height:100%;margin:0 !important}.card.default.svelte-1vdlbrq,.card.gradient1.svelte-1vdlbrq{border:none;background:radial-gradient(400% 400% at 110% 100%, #d4faec 8%, #f6f2fa 25%, white 37%)}.card.gradient2.svelte-1vdlbrq{border:none;background:radial-gradient(400% 400% at 0% 0%, #e0fbf1 8%, #f6f2fa 25%, white 37%)}.card.gradient3.svelte-1vdlbrq{border:none;background:radial-gradient(400% 400% at 100% 100%, #d4f1ff 0%, #dffbf1 10%, #f4f0f9 25%, white 37%, #9af3d2 37%)}.card.hover.svelte-1vdlbrq{transform:translate(0px, -5px);transition:1s background-size, 1s translate}.card.hover.gradient4.svelte-1vdlbrq{background-size:100% 100%}.card.gradient4.svelte-1vdlbrq{border:none;background:radial-gradient(70% 70% at bottom left, #b8e8ff, rgba(255, 255, 255, 0) 100%), radial-gradient(75% 75% at top right, #c8f8e6, rgba(255, 255, 255, 0) 100%)}.card.grey-gradient.svelte-1vdlbrq{border:none;background:radial-gradient(85% 85% at bottom left, #d6d6d6, rgba(255, 255, 255, 0) 100%), radial-gradient(55% 55% at top right, #e1e1e1, rgba(255, 255, 255, 0) 100%)}.card.white.svelte-1vdlbrq{border:none;background-color:white;background-image:none}.card.clear.svelte-1vdlbrq{background-color:transparent;border:none}.card.svelte-1vdlbrq img{justify-content:center;max-width:auto;max-height:15rem}.card.transformations.svelte-1vdlbrq{transition:400ms all, 1s background-size;background-size:100% 100%}.card.transformations.hover.svelte-1vdlbrq{background-size:300% 300%}.card.transformations.hover.gradient4.svelte-1vdlbrq{background-size:100% 100%}.interactive.hover.svelte-1vdlbrq{cursor:pointer}',
       map: null
     };
-    Variant2 = [
+    Variant3 = [
       "white",
       "gradient1",
       "gradient2",
@@ -1310,13 +1346,13 @@ var init_Card = __esm({
         $$bindings.hover(hover);
       if ($$props.clear === void 0 && $$bindings.clear && clear !== void 0)
         $$bindings.clear(clear);
-      $$result.css.add(css4);
+      $$result.css.add(css5);
       noise = _noise ? "noise filter" : "";
       return `<div${add_attribute("id", id, 0)} class="${[
-        escape(_class, true) + " card " + escape(variant, true) + " svelte-1yv4nn9",
+        escape(_class, true) + " card " + escape(variant, true) + " svelte-1vdlbrq",
         (fill ? "fill" : "") + " " + (interactive ? "interactive" : "") + " " + (hover ? "hover" : "") + " " + (square ? "square" : "") + " " + (!clear ? "opaque" : "")
-      ].join(" ").trim()}"><div class="${["filter svelte-1yv4nn9", (hover ? "hover" : "") + " " + (noise ? "noise" : "")].join(" ").trim()}"></div>
-        ${slots.default ? slots.default({ hover, noise }) : ``}
+      ].join(" ").trim()}"><div class="${["filter svelte-1vdlbrq", (hover ? "hover" : "") + " " + (noise ? "noise" : "")].join(" ").trim()}"></div>
+        <div class="${"content svelte-1vdlbrq"}">${slots.default ? slots.default({ hover, noise }) : ``}</div>
     </div>`;
     });
   }
@@ -1327,174 +1363,180 @@ var page_svelte_exports = {};
 __export(page_svelte_exports, {
   default: () => Page
 });
-var HeroImage, SpaceshipImage, ComposableBlocksImage, VaultImage, css$13, HomeContent, css5, Page;
+var HeroImage, SpaceshipImage, ComposableBlocksImage, VaultImage, css6, Page;
 var init_page_svelte = __esm({
   ".svelte-kit/output/server/entries/pages/_lang_/_page.svelte.js"() {
     init_chunks();
     init_page_svelte_svelte_type_style_lang();
-    init_Card();
+    init_Button();
     init_BubbleBackground_svelte_svelte_type_style_lang();
+    init_Card();
     init_GradientBubble();
     HeroImage = "/_app/immutable/assets/short-banner-da1a6981.png";
     SpaceshipImage = "/_app/immutable/assets/spaceship-and-planet-fece520e.png";
     ComposableBlocksImage = "/_app/immutable/assets/composable-blocks-98200a9c.png";
     VaultImage = "/_app/immutable/assets/vault-ca52ed2e.png";
-    css$13 = {
-      code: ".content-frame.svelte-1c109sx.svelte-1c109sx{display:flex;justify-content:center;padding:0 1rem;width:100%}.content.svelte-1c109sx.svelte-1c109sx{display:grid;gap:clamp(2rem, 3%, 3rem);grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;width:clamp(30rem, 100%, 75rem)}.content.svelte-1c109sx>.svelte-1c109sx{max-width:100%;color:red}@media screen and (max-width: 50rem){.content-frame.svelte-1c109sx.svelte-1c109sx{justify-content:center;padding:1rem}.content.svelte-1c109sx.svelte-1c109sx{display:flex;flex-direction:column;gap:1rem}.card h2{padding-bottom:1rem !important}}",
+    css6 = {
+      code: "span.button.hover.svelte-1d86rfb.svelte-1d86rfb{filter:invert(40%)}.home.svelte-1d86rfb.svelte-1d86rfb{display:grid;grid-template-rows:auto 15vh auto 15vh;grid-template-columns:100%}.top.svelte-1d86rfb.svelte-1d86rfb{display:flex;flex-direction:column}.top.svelte-1d86rfb img.svelte-1d86rfb{max-width:100%;border-radius:1rem;margin:1rem}.subhero.svelte-1d86rfb.svelte-1d86rfb{height:50vh}.subhero.svelte-1d86rfb .grid.svelte-1d86rfb{height:100%;display:grid;grid-template-columns:1fr 2fr;justify-content:center;align-content:center;margin:5rem 0;flex-wrap:wrap;gap:2rem}.subhero.svelte-1d86rfb .grid .message h1.svelte-1d86rfb{margin:auto 0}.subhero.svelte-1d86rfb .grid .message .cta.svelte-1d86rfb{justify-content:center;justify-self:center;margin:auto 0}.subhero.svelte-1d86rfb .grid .bubbles.svelte-1d86rfb{position:relative;width:100%;height:100%}.header-arrow.svelte-1d86rfb.svelte-1d86rfb{display:flex;flex-direction:row-reverse;justify-content:space-between}.content-frame.svelte-1d86rfb.svelte-1d86rfb{gap:1rem;display:flex;flex-direction:column;justify-content:space-around;padding:0 1rem;max-width:100%}.content.svelte-1d86rfb.svelte-1d86rfb{display:grid;gap:clamp(2rem, 3%, 3rem);margin:auto;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;width:clamp(25rem, 100%, 75rem)}.content.svelte-1d86rfb>.svelte-1d86rfb{max-width:100%}@media screen and (max-width: 50rem){.content-frame.svelte-1d86rfb.svelte-1d86rfb{justify-content:center;padding:1rem}.content.svelte-1d86rfb.svelte-1d86rfb{display:flex;flex-direction:column;gap:1rem}.card h2{padding-bottom:1rem !important}}",
       map: null
     };
-    HomeContent = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+    Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let $localize, $$unsubscribe_localize;
       let $lang, $$unsubscribe_lang;
       $$unsubscribe_localize = subscribe(localize, (value) => $localize = value);
       $$unsubscribe_lang = subscribe(lang, (value) => $lang = value);
-      let { class: _class = "" } = $$props;
-      if ($$props.class === void 0 && $$bindings.class && _class !== void 0)
-        $$bindings.class(_class);
-      $$result.css.add(css$13);
+      let percentify = ([x, y]) => {
+        return [x + "rem", y + "rem"];
+      };
+      let calc_scale = (t2) => {
+        let scales2 = [10, 20, 30];
+        for (let i = 0; i < scales2.length; i++) {
+          scales2[i] = 30;
+        }
+        return scales2;
+      };
+      let calc_offsets = (t2) => {
+        let _offsets = [[50, 0], [50, 0], [50, 0]];
+        let r = 10;
+        for (let i = 0; i < _offsets.length; i++) {
+          let offset = _offsets[i];
+          let deg = Math.PI / offset.length * i + t2 / Math.PI;
+          offset[0] += Math.cos(deg) * r;
+          offset[1] += Math.sin(deg) * r;
+        }
+        return _offsets.map(percentify);
+      };
+      let t = 0;
+      let timing_function = (start_time, end_time, iterations = 0) => {
+        let timeout_interval = 25;
+        t = start_time + iterations;
+        console.log(end_time, t);
+        if (end_time < t) {
+          return;
+        }
+        setTimeout(() => timing_function(start_time, end_time, iterations + timeout_interval), timeout_interval);
+      };
+      timing_function(0, 1e6);
+      let offsets;
+      let scales;
+      $$result.css.add(css6);
+      {
+        {
+          console.log("resetting scales");
+          scales = calc_scale();
+        }
+      }
+      {
+        {
+          offsets = calc_offsets(t / 50);
+          console.log(offsets);
+        }
+      }
       $$unsubscribe_localize();
       $$unsubscribe_lang();
-      return `<div class="${escape(null_to_empty(_class + " content-frame"), true) + " svelte-1c109sx"}"><div class="${"content svelte-1c109sx"}">${validate_component(Card, "Card").$$render(
-        $$result,
-        {
-          variant: "gradient1",
-          noise: true,
-          interactive: true
-        },
-        {},
-        {
-          default: () => {
-            return `<div class="${"svelte-1c109sx"}"><h2>Empowering dapps <br>beyond blockchains</h2>
-                    <p>We\u2019re bringing blockchain superpowers out of the \u201Cweb3\u201D
-                        ecosystem. Whether you are writing an on-chain contract
-                        or fully off-chain protocol, you\u2019ll have the tools to
-                        ensure your app has robust decentralization, censorship
-                        resistance, and user-centric incentives.
-                    </p></div>
-                ${validate_component(Button, "Button").$$render($$result, {}, {}, {
-              default: () => {
-                return `Read our whitepaper`;
-              }
-            })}
-                <img${add_attribute("src", SpaceshipImage, 0)} class="${"svelte-1c109sx"}">`;
-          }
+      return `<div class="${"home svelte-1d86rfb"}"><div class="${"subhero svelte-1d86rfb"}"><div class="${"grid svelte-1d86rfb"}"><div class="${"message"}"><h1 class="${"svelte-1d86rfb"}">dApps beyond blockchains.</h1>
+        <div class="${"cta svelte-1d86rfb"}">${validate_component(Button, "Button").$$render($$result, { size: "large" }, {}, {
+        default: () => {
+          return `A call to action`;
         }
-      )}
-            ${validate_component(Card, "Card").$$render(
-        $$result,
-        {
-          variant: "gradient2",
-          noise: true,
-          interactive: true
-        },
-        {},
-        {
-          default: () => {
-            return `<div class="${"svelte-1c109sx"}"><h2>Neutral, composable,<br> and built for everyone</h2>
-                    <p>Decentralized trust should be a no-brainer. Themelio is
-                        clean-slate, governance-free, and radically embeddable
-                        L1 that makes accessing Web3 superpowers off-chain a
-                        breeze.
-                    </p></div>
-                ${validate_component(Button, "Button").$$render($$result, {}, {}, {
-              default: () => {
-                return `Build your own off-chain dApp`;
-              }
-            })}
-                <img${add_attribute("src", ComposableBlocksImage, 0)} class="${"svelte-1c109sx"}">`;
-          }
-        }
-      )}
-            ${validate_component(Card, "Card").$$render(
-        $$result,
-        {
-          variant: "gradient3",
-          noise: true,
-          interactive: true
-        },
-        {},
-        {
-          default: () => {
-            return `<div class="${"svelte-1c109sx"}"><h2>Cross-chain compatibility <br> built in</h2>
-                    <p>Themelio\u2019s new paradigm and the existing DeFi ecosystem
-                        don\u2019t have to be at odds. Every Themelio asset can be
-                        accessed on EVM-compatible chains through trustless
-                        two-way relay contracts.
-                    </p></div>
-                ${validate_component(Button, "Button").$$render($$result, {}, {}, {
-              default: () => {
-                return `Try our testnet relay`;
-              }
-            })}
-                <img class="${"svelte-1c109sx"}">`;
-          }
-        }
-      )}
-            ${validate_component(Card, "Card").$$render(
-        $$result,
-        {
-          variant: "gradient1",
-          noise: true,
-          interactive: true
-        },
-        {},
-        {
-          default: () => {
-            return `<div class="${"svelte-1c109sx"}"><!-- HTML_TAG_START -->${$localize("page1_monetary_infrastructure", $lang)}<!-- HTML_TAG_END --></div>
-                ${validate_component(Button, "Button").$$render($$result, {}, {}, {
-              default: () => {
-                return `Learn about Melmint`;
-              }
-            })}
-                <img${add_attribute("src", VaultImage, 0)} class="${"svelte-1c109sx"}">`;
-          }
-        }
-      )}</div>
-    </div>`;
-    });
-    css5 = {
-      code: ".home.svelte-t9q9g1.svelte-t9q9g1{display:grid;grid-template-rows:auto 15vh auto 15vh;grid-template-columns:100vw}.top.svelte-t9q9g1.svelte-t9q9g1{display:flex;flex-direction:column}.top.svelte-t9q9g1 img.svelte-t9q9g1{max-width:100%;border-radius:1rem;margin:1rem}.subhero.svelte-t9q9g1.svelte-t9q9g1{position:relative;display:flex;justify-content:space-around;justify-content:center;margin:5rem 0}.subhero.svelte-t9q9g1 h1.svelte-t9q9g1{margin-right:2rem}",
-      map: null
-    };
-    Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      $$result.css.add(css5);
-      return `<div class="${"home svelte-t9q9g1"}"><div class="${"top svelte-t9q9g1"}"><img class="${"hero svelte-t9q9g1"}"${add_attribute("src", HeroImage, 0)} alt="${"hero"}"></div>
+      })}</div></div>
 
-  <div class="${"SPACER"}"></div>
-
-  <div class="${"subhero svelte-t9q9g1"}">${validate_component(GradientBubble, "GradientBubble").$$render($$result, { scale: 30, offset: ["0%", "400%"] }, {}, {})}
-    ${validate_component(GradientBubble, "GradientBubble").$$render($$result, { scale: 30, offset: ["75%", "-150%"] }, {}, {})}
-    ${validate_component(GradientBubble, "GradientBubble").$$render(
+      <div class="${"bubbles svelte-1d86rfb"}">${validate_component(GradientBubble, "GradientBubble").$$render(
         $$result,
         {
-          scale: 20,
-          color: Colors.light_blue,
-          offset: ["100%", "600%"]
+          scale: scales[2],
+          opacity: 100,
+          offset: offsets[0]
         },
         {},
         {}
       )}
-    <h1 class="${"svelte-t9q9g1"}">dApps beyond blockchains.</h1>
-    ${validate_component(Button, "Button").$$render($$result, { size: "large" }, {}, {
-        default: () => {
-          return `A call to action`;
-        }
-      })}</div>
+        ${validate_component(GradientBubble, "GradientBubble").$$render(
+        $$result,
+        {
+          scale: scales[1],
+          opacity: 100,
+          color: Colors.light_blue,
+          offset: offsets[1]
+        },
+        {},
+        {}
+      )}
+        ${validate_component(GradientBubble, "GradientBubble").$$render(
+        $$result,
+        {
+          color: Colors.purple,
+          opacity: 100,
+          scale: scales[0],
+          offset: offsets[2]
+        },
+        {},
+        {}
+      )}</div></div></div>
 
   <div class="${"SPACER"}"></div>
 
-  ${validate_component(HomeContent, "HomeContent").$$render($$result, {}, {}, {})}
+  <div class="${"top svelte-1d86rfb"}"><img class="${"hero svelte-1d86rfb"}"${add_attribute("src", HeroImage, 0)} alt="${"hero"}"></div>
 
-  ${validate_component(Banner, "Banner").$$render($$result, {}, {}, {
-        default: () => {
-          return `<div class="${"join"}"><h1>Join our community</h1>
-      <p class="${"main-lead"}">Be part of a growing community of global developers, innovators, and
-        users helping us realize Themelio&#39;s vision.
-      </p></div>`;
+  <div class="${"SPACER"}"></div>
+
+  <div class="${"content-frame svelte-1d86rfb"}"><div class="${"content svelte-1d86rfb"}">${validate_component(Card, "Card").$$render($$result, { variant: "gradient1", interactive: true }, {}, {
+        default: ({ hover }) => {
+          return `<div class="${"svelte-1d86rfb"}"><div class="${"header-arrow svelte-1d86rfb"}"><span class="${["button svelte-1d86rfb", hover ? "hover" : ""].join(" ").trim()}">${validate_component(Button, "Button").$$render($$result, { arrow: true, circle: true }, {}, {})}</span>
+            <h2>Empowering dapps <br>beyond blockchains</h2></div>
+          <p>We\u2019re bringing blockchain superpowers out of the \u201Cweb3\u201D ecosystem.
+            Whether you are writing an on-chain contract or fully off-chain
+            protocol, you\u2019ll have the tools to ensure your app has robust
+            decentralization, censorship resistance, and user-centric
+            incentives.
+          </p></div>
+        <img${add_attribute("src", SpaceshipImage, 0)} class="${"svelte-1d86rfb"}">`;
         }
       })}
-
-
+      ${validate_component(Card, "Card").$$render($$result, { variant: "gradient2", interactive: true }, {}, {
+        default: () => {
+          return `<div class="${"svelte-1d86rfb"}"><div class="${"header-arrow svelte-1d86rfb"}"><div></div>
+            
+            <h2>Neutral, composable,<br> and built for everyone</h2></div>
+          <p>Decentralized trust should be a no-brainer. Themelio is clean-slate,
+            governance-free, and radically embeddable L1 that makes accessing
+            Web3 superpowers off-chain a breeze.
+          </p></div>
+        ${validate_component(Button, "Button").$$render($$result, {}, {}, {
+            default: () => {
+              return `Build your own off-chain dApp`;
+            }
+          })}
+        <img${add_attribute("src", ComposableBlocksImage, 0)} class="${"svelte-1d86rfb"}">`;
+        }
+      })}
+      ${validate_component(Card, "Card").$$render($$result, { variant: "gradient3", interactive: true }, {}, {
+        default: () => {
+          return `<div class="${"svelte-1d86rfb"}"><div class="${"header-arrow svelte-1d86rfb"}">${validate_component(Button, "Button").$$render($$result, { circle: true, arrow: true }, {}, {})}
+            <h2>Cross-chain compatibility <br> built in</h2></div>
+          <p>Themelio\u2019s new paradigm and the existing DeFi ecosystem don\u2019t have
+            to be at odds. Every Themelio asset can be accessed on
+            EVM-compatible chains through trustless two-way relay contracts.
+          </p></div>
+        
+        <img class="${"svelte-1d86rfb"}">`;
+        }
+      })}
+      ${validate_component(Card, "Card").$$render($$result, { variant: "gradient1", interactive: true }, {}, {
+        default: () => {
+          return `<div class="${"svelte-1d86rfb"}"><!-- HTML_TAG_START -->${$localize("page1_monetary_infrastructure", $lang)}<!-- HTML_TAG_END --></div>
+        
+        <img${add_attribute("src", VaultImage, 0)} class="${"svelte-1d86rfb"}">`;
+        }
+      })}</div>
+    ${validate_component(Banner, "Banner").$$render($$result, { fill: true }, {}, {
+        default: () => {
+          return `<div class="${"join"}"><h1>Join our community</h1>
+        <p class="${"main-lead"}">Be part of a growing community of global developers, innovators, and
+          users helping us realize Themelio&#39;s vision.
+        </p></div>`;
+        }
+      })}</div>
 </div>`;
     });
   }
@@ -1515,10 +1557,37 @@ var init__4 = __esm({
   ".svelte-kit/output/server/nodes/3.js"() {
     index4 = 3;
     component3 = async () => (await Promise.resolve().then(() => (init_page_svelte(), page_svelte_exports))).default;
-    file3 = "_app/immutable/components/pages/_lang_/_page.svelte-8b0bf669.js";
-    imports4 = ["_app/immutable/components/pages/_lang_/_page.svelte-8b0bf669.js", "_app/immutable/chunks/index-14cd48c3.js", "_app/immutable/chunks/_page.svelte_svelte_type_style_lang-cd2d3823.js", "_app/immutable/chunks/singletons-db95dcfd.js", "_app/immutable/chunks/stores-e709ff06.js", "_app/immutable/chunks/Card-743057c3.js", "_app/immutable/chunks/BubbleBackground.svelte_svelte_type_style_lang-57cd0f92.js", "_app/immutable/chunks/GradientBubble-7fd30547.js"];
-    stylesheets4 = ["_app/immutable/assets/_page-428ebe44.css", "_app/immutable/assets/BubbleBackground-3e3b405a.css"];
+    file3 = "_app/immutable/components/pages/_lang_/_page.svelte-7162dc96.js";
+    imports4 = ["_app/immutable/components/pages/_lang_/_page.svelte-7162dc96.js", "_app/immutable/chunks/index-14cd48c3.js", "_app/immutable/chunks/_page.svelte_svelte_type_style_lang-0293ffd9.js", "_app/immutable/chunks/singletons-db95dcfd.js", "_app/immutable/chunks/stores-e709ff06.js", "_app/immutable/chunks/Button-d6474324.js", "_app/immutable/chunks/BubbleBackground.svelte_svelte_type_style_lang-a7e69a4d.js", "_app/immutable/chunks/Card-884a1dfe.js", "_app/immutable/chunks/GradientBubble-bd8ab125.js"];
+    stylesheets4 = ["_app/immutable/assets/_page-7fd2db0e.css", "_app/immutable/assets/BubbleBackground-6370da64.css"];
     fonts4 = [];
+  }
+});
+
+// .svelte-kit/output/server/chunks/ButtonGroup.js
+var css7, ButtonGroup;
+var init_ButtonGroup = __esm({
+  ".svelte-kit/output/server/chunks/ButtonGroup.js"() {
+    init_chunks();
+    init_BubbleBackground_svelte_svelte_type_style_lang();
+    css7 = {
+      code: ".button-group.svelte-dzgtn4.svelte-dzgtn4{max-width:max-content;width:auto}.button-group.svelte-dzgtn4 .container.svelte-dzgtn4{border:0.9px rgb(189, 189, 189);border-style:dotted;display:flex;box-shadow:0px 2px 1px 1px rgba(40, 40, 40, 0.092);width:fit-content;max-width:max-content;margin:0;padding:0;border-radius:1rem}.button-group.svelte-dzgtn4 .container.separated.svelte-dzgtn4>*{border-left:1px solid var(--border-color)}.button-group.svelte-dzgtn4 .container.svelte-dzgtn4>*{flex-grow:1;flex-shrink:1;border-radius:0;margin:0;box-shadow:none;border:none;padding-left:1rem;padding-right:1rem;font-weight:600}.button-group.svelte-dzgtn4 .container.svelte-dzgtn4 :first-child{border:none;border-radius:1rem 0rem 0rem 1rem}.button-group.svelte-dzgtn4 .container.svelte-dzgtn4 :last-child{border-right:none;border-top:none;border-bottom:none;border-radius:0 1rem 1rem 0}",
+      map: null
+    };
+    ButtonGroup = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { class: _class = "" } = $$props;
+      let { color: color2 = "" } = $$props;
+      let { border = false } = $$props;
+      if ($$props.class === void 0 && $$bindings.class && _class !== void 0)
+        $$bindings.class(_class);
+      if ($$props.color === void 0 && $$bindings.color && color2 !== void 0)
+        $$bindings.color(color2);
+      if ($$props.border === void 0 && $$bindings.border && border !== void 0)
+        $$bindings.border(border);
+      $$result.css.add(css7);
+      return `<div class="${"button-group " + escape(_class, true) + " svelte-dzgtn4"}"><div class="${["container svelte-dzgtn4", border ? "separated" : ""].join(" ").trim()}" style="${"--border-color: " + escape(color2 || "grey", true)}">${slots.default ? slots.default({}) : ``}</div>
+</div>`;
+    });
   }
 });
 
@@ -1537,31 +1606,15 @@ function* range(end) {
 function pick_random_item(items) {
   return items[Math.floor(Math.random() * items.length)];
 }
-var css$2, ButtonGroup, Range, css$14, BubbleBackground, css6, Page2;
+var Range, css$12, BubbleBackground, css8, Page2;
 var init_page_svelte2 = __esm({
   ".svelte-kit/output/server/entries/pages/_lang_/components/_page.svelte.js"() {
     init_chunks();
-    init_Card();
+    init_Button();
     init_GradientBubble();
     init_BubbleBackground_svelte_svelte_type_style_lang();
-    css$2 = {
-      code: ".button-group.svelte-1l75lxz.svelte-1l75lxz{max-width:100%;width:auto}.button-group.svelte-1l75lxz .container.svelte-1l75lxz{display:flex;width:fit-content}.button-group.svelte-1l75lxz .container.separated.svelte-1l75lxz>*{border-left:1px solid var(--border-color)}.button-group.svelte-1l75lxz .container.svelte-1l75lxz>*{border-radius:0;margin:0;box-shadow:none;border-right:none;border-top:none;border-bottom:none}.button-group.svelte-1l75lxz .container.svelte-1l75lxz :first-child{border:none;border-radius:1rem 0rem 0rem 1rem}.button-group.svelte-1l75lxz .container.svelte-1l75lxz :last-child{border-right:none;border-top:none;border-bottom:none;border-radius:0 1rem 1rem 0}",
-      map: null
-    };
-    ButtonGroup = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let { class: _class = "" } = $$props;
-      let { color: color2 = "" } = $$props;
-      let { border = true } = $$props;
-      if ($$props.class === void 0 && $$bindings.class && _class !== void 0)
-        $$bindings.class(_class);
-      if ($$props.color === void 0 && $$bindings.color && color2 !== void 0)
-        $$bindings.color(color2);
-      if ($$props.border === void 0 && $$bindings.border && border !== void 0)
-        $$bindings.border(border);
-      $$result.css.add(css$2);
-      return `<div class="${"button-group " + escape(_class, true) + " svelte-1l75lxz"}"><div class="${["container svelte-1l75lxz", border ? "separated" : ""].join(" ").trim()}" style="${"--border-color: " + escape(color2 || "grey", true)}">${slots.default ? slots.default({}) : ``}</div>
-</div>`;
-    });
+    init_Card();
+    init_ButtonGroup();
     Range = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { from = 0 } = $$props;
       let { to = 1 } = $$props;
@@ -1573,7 +1626,7 @@ var init_page_svelte2 = __esm({
         return `${slots.default ? slots.default({}) : ``}`;
       })}`;
     });
-    css$14 = {
+    css$12 = {
       code: ".bubble-background.svelte-1jyvyud{height:100%;width:100%}",
       map: null
     };
@@ -1582,7 +1635,7 @@ var init_page_svelte2 = __esm({
       let opacity = 40;
       let bubbles = 400;
       let available_colors = Object.values(Colors);
-      $$result.css.add(css$14);
+      $$result.css.add(css$12);
       return `<div class="${"bubble-background svelte-1jyvyud"}"><div>${validate_component(Button, "Button").$$render($$result, {}, {}, {
         default: () => {
           return `Reload Bubbles`;
@@ -1610,7 +1663,7 @@ var init_page_svelte2 = __esm({
       })}
 </div>`;
     });
-    css6 = {
+    css8 = {
       code: ":root{--white:#fafdfc;--teal:#9af3d3;--light-teal:#E5FAF6;--purple:#895abf;--green:#21d849;--light-blue:#69cfff;--blue_green:#7de8d3}.container.svelte-19anlbw.svelte-19anlbw{max-width:100vw}.card-grid.svelte-19anlbw.svelte-19anlbw{background-color:white;display:grid;gap:2rem;grid-template-columns:repeat(3, 30rem);grid-auto-columns:30rem;grid-auto-rows:30rem;overflow:scroll}.banner-intro.svelte-19anlbw.svelte-19anlbw{margin:0.5rem;display:flex;flex-direction:column;align-content:center;width:auto;text-align:center;gap:1rem}.banner-intro.svelte-19anlbw h1.svelte-19anlbw{font-size:3rem;font-weight:500}.banner-intro.svelte-19anlbw .bottom-section.svelte-19anlbw{display:flex;flex-direction:row}.banner-intro.svelte-19anlbw .bottom-section h2.svelte-19anlbw{padding-right:4rem;border-right:1px solid black;align-self:center;flex-basis:1}.banner-intro.svelte-19anlbw .bottom-section p.svelte-19anlbw{padding-left:4rem;flex-basis:1;max-width:60rem;text-align:left}.banner-grid.svelte-19anlbw.svelte-19anlbw{margin-top:2rem;display:grid;grid-template-columns:1fr;grid-auto-rows:max-content;margin-top:2rem;gap:0.5rem}.banner-grid.svelte-19anlbw .svelte-19anlbw{align-self:center;margin:0}.banner-grid.svelte-19anlbw>.banner#banner2 .content{display:flex;flex-direction:row;gap:1rem}.banner-grid.svelte-19anlbw>.banner#banner2 .content p{flex-grow:2}.banner-grid.svelte-19anlbw>.banner#banner2 .content button{flex:0 0 55rem}.button-grid.svelte-19anlbw.svelte-19anlbw{display:flex;flex-direction:column;gap:1rem;width:100%;height:100%;margin:1rem}.button-grid.svelte-19anlbw .row.svelte-19anlbw{height:100%;display:flex;flex-direction:row;gap:1rem;text-align:center}.bubbles.svelte-19anlbw.svelte-19anlbw{height:100vh;position:relative}",
       map: null
     };
@@ -1632,7 +1685,7 @@ var init_page_svelte2 = __esm({
         interactive: true,
         square: true
       };
-      $$result.css.add(css6);
+      $$result.css.add(css8);
       let $$settled;
       let $$rendered;
       do {
@@ -1662,7 +1715,7 @@ var init_page_svelte2 = __esm({
           }
         })}
 
-        <div class="${"card-grid svelte-19anlbw"}">${each(Variant2, (variant) => {
+        <div class="${"card-grid svelte-19anlbw"}">${each(Variant3, (variant) => {
           return `${validate_component(Card, "Card").$$render(
             $$result,
             {
@@ -1708,11 +1761,13 @@ var init_page_svelte2 = __esm({
                 <p class="${"svelte-19anlbw"}">Banners fill their space and come in a thin and wide height
                 </p>
                 <div class="${"bottom-section svelte-19anlbw"}"><h2 class="${"svelte-19anlbw"}">Grid</h2>
-                    <p class="${"svelte-19anlbw"}">The grid below is defined by the max height of the banner. Only the &quot;gradient1&quot; banner has a custom height</p></div></div>`;
+                    <p class="${"svelte-19anlbw"}">The grid below is defined by the max height of the
+                        banner. Only the &quot;gradient1&quot; banner has a custom height
+                    </p></div></div>`;
           }
         })}
-        <div class="${"banner-grid svelte-19anlbw"}">${each(Variant, (variant, index7) => {
-          return `${validate_component(Banner, "Banner").$$render($$result, { id: "banner" + index7, variant }, {}, {
+        <div class="${"banner-grid svelte-19anlbw"}">${each(Variant, (variant, index8) => {
+          return `${validate_component(Banner, "Banner").$$render($$result, { id: "banner" + index8, variant }, {}, {
             default: () => {
               return `<h2 class="${"svelte-19anlbw"}">&quot;${escape(variant)}&quot;</h2>
                     <p class="${"svelte-19anlbw"}">this is lorem ipsum text auto generated by
@@ -1735,7 +1790,7 @@ var init_page_svelte2 = __esm({
             return `<h1>Buttons</h1>`;
           }
         })}
-        <div class="${"button-grid svelte-19anlbw"}">${each(Variant$1, (variant) => {
+        <div class="${"button-grid svelte-19anlbw"}">${each(Variant2, (variant) => {
           return `<div class="${"row svelte-19anlbw"}">${each(Size, (size) => {
             return `${validate_component(Button, "Button").$$render($$result, { variant, size }, {}, {
               default: () => {
@@ -1751,31 +1806,31 @@ var init_page_svelte2 = __esm({
             return `<h1>Button Group</h1>`;
           }
         })}
-        <div class="${"button-grid svelte-19anlbw"}">${each(Variant$1, (variant) => {
-          return `<div class="${"row svelte-19anlbw"}">${validate_component(ButtonGroup, "ButtonGroup").$$render($$result, {}, {}, {
-            default: () => {
-              return `${each(Size, (size) => {
+        <div class="${"button-grid svelte-19anlbw"}">${each(Size, (size) => {
+          return `${each(Variant2, (variant) => {
+            return `<div class="${"row svelte-19anlbw"}">${validate_component(ButtonGroup, "ButtonGroup").$$render($$result, {}, {}, {
+              default: () => {
                 return `${validate_component(Button, "Button").$$render($$result, { variant, size }, {}, {
                   default: () => {
                     return `variant: &quot;${escape(variant)}&quot;
                             `;
                   }
-                })}`;
-              })}
-                        ${validate_component(Button, "Button").$$render($$result, { variant }, {}, {
-                default: () => {
-                  return `Last`;
-                }
-              })}
-                        ${validate_component(Button, "Button").$$render($$result, { variant }, {}, {
-                default: () => {
-                  return `Laast`;
-                }
-              })}
-                    `;
-            }
-          })}
-                </div>`;
+                })}
+                            ${validate_component(Button, "Button").$$render($$result, { variant, size }, {}, {
+                  default: () => {
+                    return `Second to last`;
+                  }
+                })}
+                            ${validate_component(Button, "Button").$$render($$result, { variant, size, arrow: true }, {}, {
+                  default: () => {
+                    return `Laast`;
+                  }
+                })}
+                        `;
+              }
+            })}
+                    </div>`;
+          })}`;
         })}</div>
     </div>`;
       } while (!$$settled);
@@ -1799,170 +1854,96 @@ var init__5 = __esm({
   ".svelte-kit/output/server/nodes/4.js"() {
     index5 = 4;
     component4 = async () => (await Promise.resolve().then(() => (init_page_svelte2(), page_svelte_exports2))).default;
-    file4 = "_app/immutable/components/pages/_lang_/components/_page.svelte-a3810681.js";
-    imports5 = ["_app/immutable/components/pages/_lang_/components/_page.svelte-a3810681.js", "_app/immutable/chunks/index-14cd48c3.js", "_app/immutable/chunks/Card-743057c3.js", "_app/immutable/chunks/BubbleBackground.svelte_svelte_type_style_lang-57cd0f92.js", "_app/immutable/chunks/GradientBubble-7fd30547.js"];
-    stylesheets5 = ["_app/immutable/assets/_page-4ef9a785.css", "_app/immutable/assets/BubbleBackground-3e3b405a.css"];
+    file4 = "_app/immutable/components/pages/_lang_/components/_page.svelte-69a9628b.js";
+    imports5 = ["_app/immutable/components/pages/_lang_/components/_page.svelte-69a9628b.js", "_app/immutable/chunks/index-14cd48c3.js", "_app/immutable/chunks/Button-d6474324.js", "_app/immutable/chunks/BubbleBackground.svelte_svelte_type_style_lang-a7e69a4d.js", "_app/immutable/chunks/GradientBubble-bd8ab125.js", "_app/immutable/chunks/Card-884a1dfe.js", "_app/immutable/chunks/ButtonGroup-fdf211cd.js"];
+    stylesheets5 = ["_app/immutable/assets/_page-4ef9a785.css", "_app/immutable/assets/BubbleBackground-6370da64.css"];
     fonts5 = [];
   }
 });
 
-// .svelte-kit/output/server/entries/pages/_lang_/technology/_page.svelte.js
+// .svelte-kit/output/server/entries/pages/_lang_/roadmap/_page.svelte.js
 var page_svelte_exports3 = {};
 __export(page_svelte_exports3, {
   default: () => Page3
 });
-var RockyMoon, LayeredPlanet, IconSheet, css7, Page3;
+var css9, Page3;
 var init_page_svelte3 = __esm({
-  ".svelte-kit/output/server/entries/pages/_lang_/technology/_page.svelte.js"() {
+  ".svelte-kit/output/server/entries/pages/_lang_/roadmap/_page.svelte.js"() {
     init_chunks();
     init_BubbleBackground_svelte_svelte_type_style_lang();
-    init_Card();
-    RockyMoon = "/_app/immutable/assets/moon-0ae16c2c.png";
-    LayeredPlanet = "/_app/immutable/assets/richplanet-fcecc079.png";
-    IconSheet = "/_app/immutable/assets/mini_icons-bee4855e.png";
-    css7 = {
-      code: ".top-cards.svelte-ob73ro.svelte-ob73ro{display:flex;gap:1rem;margin:1rem}#banner1{margin-bottom:10rem}.middle-cards.svelte-ob73ro.svelte-ob73ro{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.middle-cards.svelte-ob73ro h3.svelte-ob73ro{height:max-content}.middle-cards.svelte-ob73ro .card{display:grid;grid-auto-rows:max-content;grid-template-rows:max-content max-content auto}.middle-cards.svelte-ob73ro #info-card-image-0.svelte-ob73ro{width:1rem}.bottom-cards.svelte-ob73ro.svelte-ob73ro{margin-top:10rem;display:flex;justify-content:space-between;gap:1rem}.bottom-cards.svelte-ob73ro .card{width:100%}",
+    init_Button();
+    init_ButtonGroup();
+    css9 = {
+      code: '.timeline.svelte-19ejr2.svelte-19ejr2{margin-bottom:4rem}.full-container.svelte-19ejr2.svelte-19ejr2{width:100%;display:flex;justify-content:center}.banner-intro.svelte-19ejr2 button{font-family:"Clash Display"}.banner-intro.svelte-19ejr2.svelte-19ejr2{margin:0.5rem;display:flex;flex-direction:column;align-content:center;width:auto;text-align:center;gap:1rem}.banner-intro.svelte-19ejr2 h1.svelte-19ejr2{font-size:3rem;font-weight:500}.banner-intro.svelte-19ejr2 .timeline-description.svelte-19ejr2{display:flex;flex-direction:row}.banner-intro.svelte-19ejr2 .timeline-description h2.svelte-19ejr2{font-size:2.6rem;padding-right:4rem;border-right:1px solid rgb(211, 211, 211);align-self:center;font-weight:600}.banner-intro.svelte-19ejr2 .timeline-description p.svelte-19ejr2{padding-left:4rem;flex-basis:1;max-width:60rem;text-align:left}.bottom-section.svelte-19ejr2.svelte-19ejr2{gap:2rem;display:grid;grid-auto-flow:row;grid-template-columns:1fr;justify-items:center}',
       map: null
     };
     Page3 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let info_cards = [
-        {
-          image: IconSheet,
-          title: "Robust endogenous trust",
-          message: "lorem.com"
-        },
-        {
-          image: IconSheet,
-          title: "Covenant-powered smart coins",
-          message: "lorem.com"
-        },
-        {
-          image: IconSheet,
-          title: "Collusion-resistant consensus game",
-          message: "lorem.com"
-        },
-        {
-          image: IconSheet,
-          title: "World\u2019s first non-fiat stablecoin",
-          message: "lorem.com"
-        }
+      let selected_epoch;
+      let lorem = `Bender, being God isn't easy. If you do too much, people get
+            dependent on you, and if you do nothing, they lose hope. You have to
+            use a light touch. Like a safecracker, or a pickpocket. Morbo can't
+            understand his teleprompter because he forgot how you say that
+            letter that's shaped like a man wearing a hat`;
+      let timeline = [
+        { title: "CIRCA 2014", content: lorem },
+        { title: "CIRCA 2015", content: lorem },
+        { title: "2016", content: lorem },
+        { title: "2017", content: lorem },
+        { title: "2019", content: lorem },
+        { title: "Q1 2019", content: lorem },
+        { title: "Q2 2019", content: lorem },
+        { title: "Q3 2020", content: lorem },
+        { title: "Q2 2021", content: lorem },
+        { title: "Q3-Q4 2022", content: lorem },
+        { title: "2023-2024", content: lorem }
       ];
-      let bottom_cards = {
-        dev: {
-          title: "Developers",
-          message: "lorem.com"
-        },
-        team: { title: "Team", message: "lorem.com" }
-      };
-      $$result.css.add(css7);
-      return `<div class="${"tech-page"}">${validate_component(Banner, "Banner").$$render(
+      let selected_epoch_index = 0;
+      $$result.css.add(css9);
+      selected_epoch = timeline[selected_epoch_index];
+      return `<div class="${"timeline svelte-19ejr2"}"><div class="${"top-banner"}">${validate_component(Banner, "Banner").$$render(
         $$result,
         {
+          size: "",
           variant: "white",
-          size: "wide",
+          header: true,
           column: true
         },
         {},
         {
           default: () => {
-            return `<h1>Technology</h1>
-        <p>Explore THemelio&#39;s new blockchain paradign -- rich layered applications evolving on a permanent foundation of endogenous trust</p>`;
-          }
-        }
-      )}
-    <div class="${"top-cards svelte-ob73ro"}">${validate_component(Card, "Card").$$render(
-        $$result,
-        {
-          variant: "grey-gradient",
-          noise: true,
-          square: true
-        },
-        {},
-        {
-          default: () => {
-            return `<img${add_attribute("src", RockyMoon, 0)} alt="${""}">
-            <h2>Traditional platforms &amp; application blockchains</h2>
-            <ul><li>Blockchains are tightly coupled to applications
-                </li>
-                <li>Application evolution eventually requires the blockchain to adapt 
-                </li>
-                <li>Contentious, destabilizing blockchain protocol changes that undermine endogenous trust
-                </li></ul>`;
-          }
-        }
-      )}
-        ${validate_component(Card, "Card").$$render(
-        $$result,
-        {
-          variant: "gradient4",
-          noise: true,
-          square: true
-        },
-        {},
-        {
-          default: () => {
-            return `<img${add_attribute("src", LayeredPlanet, 0)} alt="${""}">
-
-            <h2>Mel&#39;s decoupled architecture</h2>
-            <ul><li>Separated from applications by flexible mid-level protocols
-                </li>
-                <li>Applications and protocols can evolve without changing layer-1 blockchain
-                </li>
-                <li>Powerful enough to build layer-2 protocols that inherit the blockchain&#39;s security
-                </li>
-                <li>Governance-free, immutable blockchain that needs no change
-                </li></ul>`;
+            return `<h1>Phases of development</h1>
+            <p class="${"bold"}">Themelio has 4 phases of development</p>
+            <p>Bender, being God isn&#39;t easy. If you do too much, people get
+                dependent on you, and if you do nothing, they lose hope. You have to
+                use a light touch. Like a safecracker, or a pickpocket. Morbo can&#39;t
+                understand his teleprompter because he forgot how you say that
+                letter that&#39;s shaped like a man wearing a hat.
+            </p>`;
           }
         }
       )}</div>
-    ${validate_component(Banner, "Banner").$$render($$result, { id: "banner1" }, {}, {
-        default: () => {
-          return `<h2>Knowledge base
-        </h2>
-        <p>All the resources you need to learn more about Themelio.
-        </p>
-        ${validate_component(Button, "Button").$$render($$result, {}, {}, {
-            default: () => {
-              return `Read Now`;
-            }
-          })}`;
-        }
-      })}
-    <div class="${"middle-cards svelte-ob73ro"}">${each(info_cards, (card, i) => {
-        return `${validate_component(Card, "Card").$$render($$result, { variant: "white", square: true }, {}, {
-          default: () => {
-            return `<div id="${"info-card-image-" + escape(i, true)}" class="${"svelte-ob73ro"}"></div>
 
-                <h3 class="${"svelte-ob73ro"}">${escape(card.title)}</h3>
-                <p>${escape(card.message)}</p>
-            `;
-          }
-        })}`;
-      })}</div>
-    <div class="${"bottom-cards svelte-ob73ro"}">${validate_component(Card, "Card").$$render($$result, { variant: "gradient1" }, {}, {
+
+    ${validate_component(Banner, "Banner").$$render($$result, { variant: "gradient1", noise: true }, {}, {
         default: () => {
-          return `<img${add_attribute("src", bottom_cards.dev.image, 0)} alt="${""}">
-            <h3>${escape(bottom_cards.dev.title)}</h3>
-            <p>${escape(bottom_cards.dev.message)}</p>
-            ${validate_component(Button, "Button").$$render($$result, { variant: "gradient1" }, {}, {
+          return `<div class="${"banner-intro svelte-19ejr2"}"><h1 class="${"svelte-19ejr2"}">The past and future of Themelio</h1>
+            <p class="${"svelte-19ejr2"}">Banners fill their space and come in a thin and wide height</p>
+            
+            <div class="${"bottom-section svelte-19ejr2"}">${validate_component(ButtonGroup, "ButtonGroup").$$render($$result, {}, {}, {
             default: () => {
-              return `Documentation`;
+              return `${each(timeline, (epoch, i) => {
+                return `${validate_component(Button, "Button").$$render($$result, { size: "large", class: "epoch-button" }, {}, {
+                  default: () => {
+                    return `${escape(epoch.title)}`;
+                  }
+                })}`;
+              })}`;
             }
-          })}`;
+          })}
+                <div class="${"full-container svelte-19ejr2"}"><div class="${"timeline-description svelte-19ejr2"}"><h2 class="${"svelte-19ejr2"}">${escape(selected_epoch.title)}</h2>
+                        <p class="${"svelte-19ejr2"}">${escape(selected_epoch.content)}</p></div></div></div></div>`;
         }
       })}
-        ${validate_component(Card, "Card").$$render($$result, { variant: "gradient2" }, {}, {
-        default: () => {
-          return `<img${add_attribute("src", bottom_cards.team.image, 0)} alt="${""}">
-            <h3>${escape(bottom_cards.team.title)}</h3>
-            <p>${escape(bottom_cards.team.message)}</p>
-            ${validate_component(Button, "Button").$$render($$result, { variant: "gradient1" }, {}, {
-            default: () => {
-              return `Documentation`;
-            }
-          })}`;
-        }
-      })}</div>
 </div>`;
     });
   }
@@ -1983,10 +1964,196 @@ var init__6 = __esm({
   ".svelte-kit/output/server/nodes/5.js"() {
     index6 = 5;
     component5 = async () => (await Promise.resolve().then(() => (init_page_svelte3(), page_svelte_exports3))).default;
-    file5 = "_app/immutable/components/pages/_lang_/technology/_page.svelte-ae8fd3dd.js";
-    imports6 = ["_app/immutable/components/pages/_lang_/technology/_page.svelte-ae8fd3dd.js", "_app/immutable/chunks/index-14cd48c3.js", "_app/immutable/chunks/BubbleBackground.svelte_svelte_type_style_lang-57cd0f92.js", "_app/immutable/chunks/Card-743057c3.js"];
-    stylesheets6 = ["_app/immutable/assets/_page-5260b5b6.css", "_app/immutable/assets/BubbleBackground-3e3b405a.css"];
+    file5 = "_app/immutable/components/pages/_lang_/roadmap/_page.svelte-13a44728.js";
+    imports6 = ["_app/immutable/components/pages/_lang_/roadmap/_page.svelte-13a44728.js", "_app/immutable/chunks/index-14cd48c3.js", "_app/immutable/chunks/BubbleBackground.svelte_svelte_type_style_lang-a7e69a4d.js", "_app/immutable/chunks/Button-d6474324.js", "_app/immutable/chunks/ButtonGroup-fdf211cd.js"];
+    stylesheets6 = ["_app/immutable/assets/_page-80b0995c.css", "_app/immutable/assets/BubbleBackground-6370da64.css"];
     fonts6 = [];
+  }
+});
+
+// .svelte-kit/output/server/entries/pages/_lang_/technology/_page.svelte.js
+var page_svelte_exports4 = {};
+__export(page_svelte_exports4, {
+  default: () => Page4
+});
+var RockyMoon, LayeredPlanet, ForkImage, CoinImage, KeyImage, HexImage, css10, Page4;
+var init_page_svelte4 = __esm({
+  ".svelte-kit/output/server/entries/pages/_lang_/technology/_page.svelte.js"() {
+    init_chunks();
+    init_BubbleBackground_svelte_svelte_type_style_lang();
+    init_Button();
+    init_Card();
+    init_GradientBubble();
+    RockyMoon = "/_app/immutable/assets/moon-0ae16c2c.png";
+    LayeredPlanet = "/_app/immutable/assets/richplanet-fcecc079.png";
+    ForkImage = "/_app/immutable/assets/fork-7dc6f256.png";
+    CoinImage = "/_app/immutable/assets/coin-63597eb6.png";
+    KeyImage = "/_app/immutable/assets/key-f11c377c.png";
+    HexImage = "/_app/immutable/assets/hex-c6a23d9e.png";
+    css10 = {
+      code: ".top-banner.svelte-rknpid.svelte-rknpid{margin-bottom:5rem}.top-banner.svelte-rknpid p.svelte-rknpid{margin-left:-5rem;width:100%;text-align:center}.moon.svelte-rknpid.svelte-rknpid{height:12rem}.planet.svelte-rknpid.svelte-rknpid{height:12rem}.top-cards.svelte-rknpid.svelte-rknpid{display:grid;grid-auto-flow:column;gap:1rem;margin:1rem}#banner1.svelte-rknpid.svelte-rknpid{display:flex;justify-content:space-between;width:100%;gap:2rem}#banner1.svelte-rknpid .svelte-rknpid{margin:auto 0}#banner1.svelte-rknpid h2.svelte-rknpid{flex-shrink:0;flex-grow:0}#banner1.svelte-rknpid p.svelte-rknpid{flex-shrink:1}.middle-cards.svelte-rknpid.svelte-rknpid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.middle-cards.svelte-rknpid h3.svelte-rknpid{height:max-content}.middle-cards.svelte-rknpid .card{display:grid;grid-auto-rows:max-content;grid-template-rows:max-content max-content auto;overflow:scroll}.middle-cards.svelte-rknpid .info-card-image.svelte-rknpid{height:4rem;margin-bottom:1.5rem}.bottom-cards.svelte-rknpid.svelte-rknpid{margin-top:10rem;display:flex;justify-content:space-between;gap:1rem;margin:1rem;margin-bottom:10rem}.bottom-cards.svelte-rknpid .card{width:100%}.bottom-cards.svelte-rknpid .bottom-card-1.svelte-rknpid{position:relative}",
+      map: null
+    };
+    Page4 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let info_cards = [
+        {
+          image: KeyImage,
+          title: "Robust endogenous trust",
+          message: "lorem.com"
+        },
+        {
+          image: ForkImage,
+          title: "Covenant-powered smart coins",
+          message: "lorem.com"
+        },
+        {
+          image: HexImage,
+          title: "Collusion-resistant consensus game",
+          message: "lorem.com"
+        },
+        {
+          image: CoinImage,
+          title: "World\u2019s first non-fiat stablecoin",
+          message: "lorem.com"
+        }
+      ];
+      let bottom_cards = {
+        dev: {
+          title: "Developers",
+          message: "lorem.com"
+        },
+        team: { title: "Team", message: "lorem.com" }
+      };
+      $$result.css.add(css10);
+      return `<div class="${"tech-page"}"><div class="${"top-banner svelte-rknpid"}">${validate_component(Banner, "Banner").$$render($$result, { variant: "white", column: true }, {}, {
+        default: () => {
+          return `<h1>Technology</h1>
+            <p class="${"svelte-rknpid"}">Explore Themelio&#39;s new blockchain paradign -- rich layered
+                applications evolving on a permanent foundation of endogenous
+                trust
+            </p>`;
+        }
+      })}</div>
+    <div class="${"top-cards svelte-rknpid"}">${validate_component(Card, "Card").$$render($$result, { variant: "grey-gradient", noise: true }, {}, {
+        default: () => {
+          return `<img class="${"moon svelte-rknpid"}"${add_attribute("src", RockyMoon, 0)} alt="${""}">
+            <h2>Traditional platforms &amp; application blockchains</h2>
+            <ul><li>Blockchains are tightly coupled to applications</li>
+                <li>Application evolution eventually requires the blockchain to
+                    adapt
+                </li>
+                <li>Contentious, destabilizing blockchain protocol changes that
+                    undermine endogenous trust
+                </li></ul>`;
+        }
+      })}
+        ${validate_component(Card, "Card").$$render($$result, { variant: "gradient4", noise: true }, {}, {
+        default: () => {
+          return `<img class="${"planet svelte-rknpid"}"${add_attribute("src", LayeredPlanet, 0)} alt="${""}">
+
+            <h2>Mel&#39;s decoupled architecture</h2>
+            <ul><li>Separated from applications by flexible mid-level protocols
+                </li>
+                <li>Applications and protocols can evolve without changing
+                    layer-1 blockchain
+                </li>
+                <li>Powerful enough to build layer-2 protocols that inherit the
+                    blockchain&#39;s security
+                </li>
+                <li>Governance-free, immutable blockchain that needs no change
+                </li></ul>`;
+        }
+      })}</div>
+    ${validate_component(Banner, "Banner").$$render($$result, {}, {}, {
+        default: () => {
+          return `<div id="${"banner1"}" class="${"svelte-rknpid"}"><h2 class="${"svelte-rknpid"}">Knowledge base</h2>
+            <p class="${"svelte-rknpid"}">All the resources you need to learn more about Themelio.</p>
+            ${validate_component(Button, "Button").$$render($$result, { arrow: true }, {}, {
+            default: () => {
+              return `Read Now`;
+            }
+          })}</div>`;
+        }
+      })}
+    <div class="${"middle-cards svelte-rknpid"}">${each(info_cards, (card, i) => {
+        return `${validate_component(Card, "Card").$$render($$result, { variant: "white", square: true }, {}, {
+          default: () => {
+            return `<img class="${"info-card-image svelte-rknpid"}" id="${"info-card-image-" + escape(i, true)}"${add_attribute("src", card.image, 0)} alt="${""}">
+
+                <h3 class="${"svelte-rknpid"}">${escape(card.title)}</h3>
+                <p>${escape(card.message)}</p>
+            `;
+          }
+        })}`;
+      })}</div>
+    <div class="${"bottom-cards svelte-rknpid"}">${validate_component(Card, "Card").$$render($$result, { variant: "white", noise: true }, {}, {
+        default: () => {
+          return `<div class="${"bottom-card-1 svelte-rknpid"}">${validate_component(GradientBubble, "GradientBubble").$$render(
+            $$result,
+            {
+              scale: 30,
+              color: Colors.teal,
+              opacity: 30,
+              offset: ["0%", "100%"]
+            },
+            {},
+            {}
+          )}
+                <h3>${escape(bottom_cards.dev.title)}</h3>
+                <p>${escape(bottom_cards.dev.message)}</p>
+                ${validate_component(Button, "Button").$$render($$result, { variant: "gradient1", arrow: true }, {}, {
+            default: () => {
+              return `Documentation`;
+            }
+          })}</div>`;
+        }
+      })}
+        ${validate_component(Card, "Card").$$render($$result, { variant: "white", noise: true }, {}, {
+        default: () => {
+          return `${validate_component(GradientBubble, "GradientBubble").$$render(
+            $$result,
+            {
+              scale: 50,
+              color: Colors.light_blue,
+              opacity: 15,
+              offset: ["100%", "-50%"]
+            },
+            {},
+            {}
+          )}
+            <h3>${escape(bottom_cards.team.title)}</h3>
+            <p>${escape(bottom_cards.team.message)}</p>
+            ${validate_component(Button, "Button").$$render($$result, { variant: "gradient1", arrow: true }, {}, {
+            default: () => {
+              return `Team`;
+            }
+          })}`;
+        }
+      })}</div>
+</div>`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/nodes/6.js
+var __exports7 = {};
+__export(__exports7, {
+  component: () => component6,
+  file: () => file6,
+  fonts: () => fonts7,
+  imports: () => imports7,
+  index: () => index7,
+  stylesheets: () => stylesheets7
+});
+var index7, component6, file6, imports7, stylesheets7, fonts7;
+var init__7 = __esm({
+  ".svelte-kit/output/server/nodes/6.js"() {
+    index7 = 6;
+    component6 = async () => (await Promise.resolve().then(() => (init_page_svelte4(), page_svelte_exports4))).default;
+    file6 = "_app/immutable/components/pages/_lang_/technology/_page.svelte-f64e8daa.js";
+    imports7 = ["_app/immutable/components/pages/_lang_/technology/_page.svelte-f64e8daa.js", "_app/immutable/chunks/index-14cd48c3.js", "_app/immutable/chunks/BubbleBackground.svelte_svelte_type_style_lang-a7e69a4d.js", "_app/immutable/chunks/Button-d6474324.js", "_app/immutable/chunks/Card-884a1dfe.js", "_app/immutable/chunks/GradientBubble-bd8ab125.js"];
+    stylesheets7 = ["_app/immutable/assets/_page-c841d445.css", "_app/immutable/assets/BubbleBackground-6370da64.css"];
+    fonts7 = [];
   }
 });
 
@@ -2454,9 +2621,9 @@ function stringify(value) {
     stringified[index22] = str;
     return index22;
   }
-  const index7 = flatten(value);
-  if (index7 < 0)
-    return `${index7}`;
+  const index8 = flatten(value);
+  if (index8 < 0)
+    return `${index8}`;
   return `[${stringified.join(",")}]`;
 }
 function stringify_primitive(thing) {
@@ -3438,9 +3605,9 @@ async function render_response({
     }
   }
   const { entry } = options.manifest._;
-  const stylesheets7 = new Set(entry.stylesheets);
+  const stylesheets8 = new Set(entry.stylesheets);
   const modulepreloads = new Set(entry.imports);
-  const fonts7 = new Set(options.manifest._.entry.fonts);
+  const fonts8 = new Set(options.manifest._.entry.fonts);
   const link_header_preloads = /* @__PURE__ */ new Set();
   const inline_styles = /* @__PURE__ */ new Map();
   let rendered;
@@ -3475,10 +3642,10 @@ async function render_response({
         node.imports.forEach((url) => modulepreloads.add(url));
       }
       if (node.stylesheets) {
-        node.stylesheets.forEach((url) => stylesheets7.add(url));
+        node.stylesheets.forEach((url) => stylesheets8.add(url));
       }
       if (node.fonts) {
-        node.fonts.forEach((url) => fonts7.add(url));
+        node.fonts.forEach((url) => fonts8.add(url));
       }
       if (node.inline_styles) {
         Object.entries(await node.inline_styles()).forEach(([k, v]) => inline_styles.set(k, v));
@@ -3544,7 +3711,7 @@ async function render_response({
     head += `
 	<style${attributes.join("")}>${content}</style>`;
   }
-  for (const dep of stylesheets7) {
+  for (const dep of stylesheets8) {
     const path = prefixed(dep);
     if (resolve_opts.preload({ type: "css", path })) {
       const attributes = [];
@@ -3562,7 +3729,7 @@ async function render_response({
 		<link href="${path}" ${attributes.join(" ")}>`;
     }
   }
-  for (const dep of fonts7) {
+  for (const dep of fonts8) {
     const path = prefixed(dep);
     if (resolve_opts.preload({ type: "font", path })) {
       const ext = dep.slice(dep.lastIndexOf(".") + 1);
@@ -3924,8 +4091,8 @@ async function render_page(event, route, page2, options, state, resolve_opts) {
           const error2 = await handle_error_and_jsonify(event, options, err);
           while (i--) {
             if (page2.errors[i]) {
-              const index7 = page2.errors[i];
-              const node2 = await options.manifest._.nodes[index7]();
+              const index8 = page2.errors[i];
+              const node2 = await options.manifest._.nodes[index8]();
               let j = i;
               while (!branch[j])
                 j -= 1;
@@ -4150,20 +4317,20 @@ function parse$1(str, options) {
   var obj = {};
   var opt = options || {};
   var dec = opt.decode || decode;
-  var index7 = 0;
-  while (index7 < str.length) {
-    var eqIdx = str.indexOf("=", index7);
+  var index8 = 0;
+  while (index8 < str.length) {
+    var eqIdx = str.indexOf("=", index8);
     if (eqIdx === -1) {
       break;
     }
-    var endIdx = str.indexOf(";", index7);
+    var endIdx = str.indexOf(";", index8);
     if (endIdx === -1) {
       endIdx = str.length;
     } else if (endIdx < eqIdx) {
-      index7 = str.lastIndexOf(";", eqIdx - 1) + 1;
+      index8 = str.lastIndexOf(";", eqIdx - 1) + 1;
       continue;
     }
-    var key2 = str.slice(index7, eqIdx).trim();
+    var key2 = str.slice(index8, eqIdx).trim();
     if (void 0 === obj[key2]) {
       var val = str.slice(eqIdx + 1, endIdx).trim();
       if (val.charCodeAt(0) === 34) {
@@ -4171,7 +4338,7 @@ function parse$1(str, options) {
       }
       obj[key2] = tryDecode(val, dec);
     }
-    index7 = endIdx + 1;
+    index8 = endIdx + 1;
   }
   return obj;
 }
@@ -4620,10 +4787,10 @@ function create_fetch({ event, options, state, get_cookie_header }) {
         const is_asset = options.manifest.assets.has(filename);
         const is_asset_html = options.manifest.assets.has(filename_html);
         if (is_asset || is_asset_html) {
-          const file6 = is_asset ? filename : filename_html;
+          const file7 = is_asset ? filename : filename_html;
           if (options.read) {
             const type = is_asset ? options.manifest.mimeTypes[filename.slice(filename.lastIndexOf("."))] : "text/html";
-            return new Response(options.read(file6), {
+            return new Response(options.read(file7), {
               headers: type ? { "content-type": type } : {}
             });
           }
@@ -4984,58 +5151,7 @@ function set_paths(paths) {
   base = paths.base;
   assets = paths.assets || base;
 }
-var app_template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset="utf-8" />\n\n  <link rel="icon" href="' + assets2 + '/favicon.png" />\n  <meta name="viewport" content="width=device-width" />\n  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"\n    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />\n  <link rel="preconnect" href="https://rsms.me/" />\n  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />\n\n  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap"\n    rel="stylesheet" />\n  <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet" />\n  <link href="https://cdn.jsdelivr.net/npm/chiron-hei-hk-webfont@2.5.5/css/vf.css" rel="stylesheet" />\n\n  <link\n    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"\n    rel="stylesheet" />\n\n  <link href="https://fonts.cdnfonts.com/css/clash-display" rel="stylesheet" />\n  ' + head + `
-<style lang="scss">
-    * {
-      scrollbar-width: none;
-      font-size: 1rem;
-      font-family: "Clash Display", sans-serif;
-      --bs-body-font-family: "Rubik";
-    }
-
-    html {
-
-      overflow-x: hidden;
-      width: 100vw;
-    }
-
-    :root {
-      font-size: 1wrem;
-      font-family: "Clash Display", sans-serif;
-      --bs-body-font-family: "Rubik";
-
-      /* --bs-body-bg: #fbffff;
-			--bs-light-rgb: 243, 249, 250; */
-    }
-
-    /* @supports (font-variation-settings: normal) {
-			:root {
-				font-family: 'Inter var', sans-serif;
-				--bs-body-font-family: "Inter var";
-			}
-		} */
-
-    :lang(zh-CN) {
-      font-family: var(--bs-body-font-family), "Noto Sans SC",
-        "Noto Color Emoji", sans-serif;
-    }
-
-    :lang(zh-TW) {
-      font-family: var(--bs-body-font-family), "Chiron Hei HK WS",
-        "Noto Color Emoji", sans-serif;
-    }
-
-    h1 {
-			/* font-family: "Iosevka Aile"; */
-			letter-spacing: -0.04rem;
-      font-size: 3rem;
-			font-weight: 600;
-		}
-  </style>
-</head>
-
-<body data-sveltekit-preload-data="hover">
-  <div style="display: contents">` + body + '</div>\n  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"\n    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"\n    crossorigin="anonymous"><\/script>\n</body>\n\n</html>';
+var app_template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset="utf-8" />\n\n  <link rel="icon" href="' + assets2 + '/favicon.png" />\n  <meta name="viewport" content="width=device-width" />\n  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"\n    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />\n  <link rel="preconnect" href="https://rsms.me/" />\n  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />\n\n  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap"\n    rel="stylesheet" />\n  <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet" />\n  <link href="https://cdn.jsdelivr.net/npm/chiron-hei-hk-webfont@2.5.5/css/vf.css" rel="stylesheet" />\n\n  <link\n    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"\n    rel="stylesheet" />\n\n  <!-- <link href="https://fonts.cdnfonts.com/css/clash-display" rel="stylesheet" /> -->\n  ' + head + '\n  <style >\n   \n  </style>\n</head>\n\n<body data-sveltekit-preload-data="hover">\n  <div style="display: contents">' + body + '</div>\n  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"\n    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"\n    crossorigin="anonymous"><\/script>\n</body>\n<style>\n\n\n\n</style>\n</html>';
 var error_template = ({ status, message }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -5108,7 +5224,7 @@ var Server = class {
       app_template,
       app_template_contains_nonce: false,
       error_template,
-      version: "1674152901551"
+      version: "1674603854691"
     };
   }
   async init({ env }) {
@@ -5140,14 +5256,15 @@ var manifest = {
   assets: /* @__PURE__ */ new Set([]),
   mimeTypes: {},
   _: {
-    entry: { "file": "_app/immutable/start-2c51f9ce.js", "imports": ["_app/immutable/start-2c51f9ce.js", "_app/immutable/chunks/index-14cd48c3.js", "_app/immutable/chunks/singletons-db95dcfd.js", "_app/immutable/chunks/control-f5b05b5f.js"], "stylesheets": [], "fonts": [] },
+    entry: { "file": "_app/immutable/start-c9c577fb.js", "imports": ["_app/immutable/start-c9c577fb.js", "_app/immutable/chunks/index-14cd48c3.js", "_app/immutable/chunks/singletons-db95dcfd.js", "_app/immutable/chunks/control-f5b05b5f.js"], "stylesheets": [], "fonts": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),
       () => Promise.resolve().then(() => (init__3(), __exports3)),
       () => Promise.resolve().then(() => (init__4(), __exports4)),
       () => Promise.resolve().then(() => (init__5(), __exports5)),
-      () => Promise.resolve().then(() => (init__6(), __exports6))
+      () => Promise.resolve().then(() => (init__6(), __exports6)),
+      () => Promise.resolve().then(() => (init__7(), __exports7))
     ],
     routes: [
       {
@@ -5172,10 +5289,17 @@ var manifest = {
         endpoint: null
       },
       {
+        id: "/[lang]/roadmap",
+        pattern: /^\/([^/]+?)\/roadmap\/?$/,
+        params: [{ "name": "lang", "optional": false, "rest": false, "chained": false }],
+        page: { layouts: [0], errors: [1], leaf: 5 },
+        endpoint: null
+      },
+      {
         id: "/[lang]/technology",
         pattern: /^\/([^/]+?)\/technology\/?$/,
         params: [{ "name": "lang", "optional": false, "rest": false, "chained": false }],
-        page: { layouts: [0], errors: [1], leaf: 5 },
+        page: { layouts: [0], errors: [1], leaf: 6 },
         endpoint: null
       }
     ],
@@ -5210,12 +5334,12 @@ function is_static_file(request) {
     return true;
   }
   const pathname = url.pathname.replace(/\/$/, "");
-  let file6 = pathname.substring(1);
+  let file7 = pathname.substring(1);
   try {
-    file6 = decodeURIComponent(file6);
+    file7 = decodeURIComponent(file7);
   } catch (err) {
   }
-  return manifest.assets.has(file6) || manifest.assets.has(file6 + "/index.html") || prerendered.has(pathname || "/");
+  return manifest.assets.has(file7) || manifest.assets.has(file7 + "/index.html") || prerendered.has(pathname || "/");
 }
 export {
   handler as default

@@ -1,7 +1,10 @@
 <script context="module" lang="ts">
-    let random_placement: () => [number, number] = () => {
+    let random_placement: () => [string, string] = () => {
         console.log("called random");
-        return [Math.random() * 100 , Math.random() * 100];
+        return [Math.random() * 100 + "%", Math.random() * 100 + "%"] as [
+            string,
+            string
+        ];
     };
 </script>
 
@@ -14,11 +17,10 @@
     export let color: Colors = Colors.teal;
     export let opacity: number = 40;
     export let scale: number = 10;
-    export let offset: [number, number]| [string,string] | "random" = [0, 0];
+    export let offset: [string, string] | [number, number] | "random" = [0, 0];
     export let z_index: number = -4;
     if (offset == "random") {
-        let r = random_placement();
-        offset = [r[0]+'%', r[1]+'%'];
+        offset = random_placement();
     }
     let bubble: HTMLElement;
 </script>
