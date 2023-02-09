@@ -42,8 +42,8 @@
   scrollbar-width: none;
 
   font-family: var(--bs-body-font-family), sans-serif;
-  --bs-body-font-family: "Inter";
-  letter-spacing: -0.013em;
+  --bs-body-font-family: "TeX Gyre Heros";
+  // letter-spacing: -0.013em;
   hanging-punctuation: allow-end;
 }
 :global(html) {
