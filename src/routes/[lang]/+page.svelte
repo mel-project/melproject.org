@@ -58,7 +58,7 @@
             the the first truly decentralized unit of account, changing
             everything from payments to incentive design.
           </p>
-          <img src={VaultImage} />
+          <img />
         </div>
       </Card>
     </div>
@@ -71,7 +71,7 @@
             cross-chain a breeze. And every Mel-based asset can be accessed on
             EVM-compatible chains through trustless two-way relay contracts.
           </p>
-          <img src={InfrastructureImage} />
+          <img />
         </div>
       </Card>
     </div>
