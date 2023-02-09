@@ -38,39 +38,32 @@
 
 @import "./fonts.scss";
 
-  :global(*) {
-    scrollbar-width: none;
-    font-size: 1rem;
-    font-family: "Clash Display", sans-serif;
-    --bs-body-font-family: "Rubik";
-  }
-  :global(html){
-    overflow: hidden visible;
-  }
-  :global(body){
-    overflow: hidden;
-  }
-  /* @supports (font-variation-settings: normal) {
+:global(*) {
+  scrollbar-width: none;
+  font-size: 1rem;
+  font-family: var(--bs-body-font-family), sans-serif;
+  --bs-body-font-family: "Inter";
+  letter-spacing: -0.014em;
+}
+:global(html) {
+  overflow: hidden visible;
+}
+:global(body) {
+  overflow: hidden;
+}
+/* @supports (font-variation-settings: normal) {
     :root {
       font-family: 'Inter var', sans-serif;
       --bs-body-font-family: "Inter var";
     }
   } */
-  
-  :global(:lang(zh-CN)) {
-    font-family: var(--bs-body-font-family), "Noto Sans SC",
-      "Noto Color Emoji", sans-serif;
-  }
-  
-  :global(:lang(zh-TW)) {
-    font-family: var(--bs-body-font-family), "Chiron Hei HK WS",
-      "Noto Color Emoji", sans-serif;
-  }
-  
-  :global(h1) {
-    /* font-family: "Iosevka Aile"; */
-    letter-spacing: -0.04rem;
-    font-size: 3rem;
-    font-weight: 600;
-  
+
+:global(:lang(zh-CN)) {
+  font-family: var(--bs-body-font-family), "Noto Sans SC", "Noto Color Emoji",
+    sans-serif;
+}
+
+:global(:lang(zh-TW)) {
+  font-family: var(--bs-body-font-family), "Chiron Hei HK WS",
+    "Noto Color Emoji", sans-serif;
 }

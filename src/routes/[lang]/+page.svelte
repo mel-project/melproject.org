@@ -1,7 +1,7 @@
 <script lang="ts">
   import { localize, lang } from "@l10n";
   import Navbar from "@src/components/page-sections/Navbar.svelte";
-  import HeroImage from "@src/assets/images/short-banner.png";
+  import HeroImage from "@src/assets/images/wide-banner.jpg";
   import Button from "@src/components/elements/Button.svelte";
   import Banner from "@src/components/elements/Banner.svelte";
   import { communityIcons } from "@src/utils/navigation";
@@ -11,113 +11,84 @@
   import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
   import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
   import VaultImage from "@src/assets/images/vault.png";
+  import InfrastructureImage from "@src/assets/images/infrastructure.png";
 </script>
 
-<div class="home">
-  <div class="top">
-    <img class="hero" src={HeroImage} alt="hero" />
-  </div>
-
-  <div class="SPACER" />
-
-  <div class="subhero">
-    <GradientBubble scale={30} offset={["0%", "400%"]} />
-    <GradientBubble scale={30} offset={["75%", "-150%"]} />
-    <GradientBubble
-      scale={20}
-      color={Colors.light_blue}
-      offset={["100%", "600%"]}
-    />
-    <h1>dApps beyond blockchains.</h1>
-    <Button size="large">A call to action</Button>
-  </div>
-
-  <div class="SPACER" />
-
-  <div class="content-frame">
-    <div class="content">
-      <Card variant="gradient1" interactive let:hover>
-        <div>
-          <div class="header-arrow">
-            <span class="button" class:hover>
-              <Button arrow circle />
-            </span>
-            <h2>Empowering dapps <br />beyond blockchains</h2>
-          </div>
+<div class="top">
+  <img class="hero" src={HeroImage} alt="hero" />
+</div>
+<div class="container main-content">
+  <div class="row talking-point">
+    <div class="col">
+      <Card>
+        <div class="card-inner">
+          <h2>Decentralized protocols beyond blockchains.</h2>
           <p>
-            We’re bringing blockchain superpowers out of the “web3” ecosystem.
-            Whether you are writing an on-chain contract or fully off-chain
-            protocol, you’ll have the tools to ensure your app has robust
-            decentralization, censorship resistance, and user-centric
-            incentives.
+            Mel empowers a vast world of non-blockchain apps with key Web3
+            superpowers &mdash; decentralization, censorship resistance, and
+            user-centric incentives.
+            <a href="#">Our off-chain composable vision</a>
           </p>
+          <img />
         </div>
-        <img src={SpaceshipImage} />
-      </Card>
-      <Card variant="gradient2" interactive>
-        <div>
-          <div class="header-arrow">
-            <div />
-            <!-- <Button arrow circle /> -->
-            <h2>Neutral, composable,<br /> and built for everyone</h2>
-          </div>
-          <p>
-            Decentralized trust should be a no-brainer. Themelio is clean-slate,
-            governance-free, and radically embeddable L1 that makes accessing
-            Web3 superpowers off-chain a breeze.
-          </p>
-        </div>
-        <Button>Build your own off-chain dApp</Button>
-        <img src={ComposableBlocksImage} />
-      </Card>
-      <Card variant="gradient3" interactive>
-        <div>
-          <div class="header-arrow">
-            <Button circle arrow />
-            <h2>Cross-chain compatibility <br /> built in</h2>
-          </div>
-          <p>
-            Themelio’s new paradigm and the existing DeFi ecosystem don’t have
-            to be at odds. Every Themelio asset can be accessed on
-            EVM-compatible chains through trustless two-way relay contracts.
-          </p>
-        </div>
-        <!-- <Button>Try our testnet relay</Button> -->
-        <img />
-      </Card>
-      <Card variant="gradient1" interactive>
-        <div>
-          {@html $localize("page1_monetary_infrastructure", $lang)}
-        </div>
-        <!-- <Button>Learn about Melmint</Button> -->
-        <img src={VaultImage} />
       </Card>
     </div>
-    <Banner fill>
-      <div class="join">
-        <h1>Join our community</h1>
-        <p class="main-lead">
-          Be part of a growing community of global developers, innovators, and
-          users helping us realize Themelio's vision.
-        </p>
-      </div>
-    </Banner>
+    <div class="col">
+      <Card>
+        <div class="card-inner">
+          <h2>Neutral, composable, and works for everything.</h2>
+          <p>
+            Decentralized trust should be a no-brainer. Themelio is a
+            clean-slate, governance-free, and radically embeddable L1 that makes
+            accessing Web3 superpowers off-chain a breeze.
+            <a href="#">Build your first off-chain dapp</a>
+          </p>
+          <img />
+        </div>
+      </Card>
+    </div>
   </div>
-
- 
+  <div class="row talking-point">
+    <div class="col">
+      <Card>
+        <div class="card-inner">
+          <h2>Monetary infrastructure for a better future.</h2>
+          <p>
+            The future we are building needs a new kind of money &mdash; $MEL is
+            the the first truly decentralized unit of account, changing
+            everything from payments to incentive design.
+          </p>
+          <img src={VaultImage} />
+        </div>
+      </Card>
+    </div>
+    <div class="col">
+      <Card>
+        <div class="card-inner">
+          <h2>From off-chain to cross-chain.</h2>
+          <p>
+            Mel’s new paradigm enabling off-chain composability also makes
+            cross-chain a breeze. And every Mel-based asset can be accessed on
+            EVM-compatible chains through trustless two-way relay contracts.
+          </p>
+          <img src={InfrastructureImage} />
+        </div>
+      </Card>
+    </div>
+  </div>
 </div>
 
 <style lang="scss">
   @use "../../stylesheets/spacing";
   span.button.hover {
     filter: invert(40%);
-    
   }
-  .home {
-    display: grid;
-    grid-template-rows: auto 15vh auto 15vh;
-    grid-template-columns: 100%;
+
+  .main-content {
+    margin-top: 5rem;
+    margin-bottom: 15rem;
   }
+
   .top {
     display: flex;
     flex-direction: column;
@@ -128,60 +99,26 @@
     }
   }
 
-  .subhero {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin: 5rem 0;
-    flex-wrap: wrap;
-    gap: 2 * spacing.$default-margin;
-
-    h1 {
-      margin: auto 0 ;
-    }
-  }
-  .header-arrow {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-  .content-frame {
-    gap: spacing.$default-margin;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 0 clamp(1rem, spacing.$default-margin, 100rem);
-    max-width: 100%;
-    // border: 1px solid red;
-  }
-  .content {
-    & > * {
-      max-width: 100%;
-    }
-    // container-type: inline-size;
-    display: grid;
-    gap: clamp(2rem, 3%, 3rem);
-    margin: auto;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    width: clamp(25rem, 100%, 75rem);
-    // height: min(60rem, 1000rem);
+  .talking-point p {
+    font-size: 95%;
   }
 
-  @media screen and (max-width: 50rem) {
-    .content-frame {
-      justify-content: center;
-      padding: spacing.$default-margin;
-    }
-    .content {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    :global(.card) {
-      :global(h2) {
-        padding-bottom: 1rem !important;
-      }
-    }
+  .talking-point h2 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    font-size: 150%;
+  }
+
+  .talking-point img {
+    aspect-ratio: 2;
+    width: 80%;
+    margin-left: 10%;
+
+    border: 1px solid black;
+    margin-bottom: 1rem;
+  }
+
+  .talking-point .card-inner {
+    margin: 3rem;
   }
 </style>
