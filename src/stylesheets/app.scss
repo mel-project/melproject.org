@@ -40,10 +40,11 @@
 
 :global(*) {
   scrollbar-width: none;
-  font-size: 1rem;
+
   font-family: var(--bs-body-font-family), sans-serif;
   --bs-body-font-family: "Inter";
-  letter-spacing: -0.014em;
+  letter-spacing: -0.013em;
+  hanging-punctuation: allow-end;
 }
 :global(html) {
   overflow: hidden visible;
