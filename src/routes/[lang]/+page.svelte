@@ -2,6 +2,9 @@
   import BoxesImage from "@src/assets/images/homeicons/boxes.png";
   import AtmImage from "@src/assets/images/homeicons/atm.png";
   import TalkingPoint from "./TalkingPoint.svelte";
+  import Avatar from "./Avatar.svelte";
+  import PolychainLogo from "@src/assets/images/polychain-logo.png";
+  import Logo from "@src/assets/images/logo-bw.png";
 </script>
 
 <div class="hero">
@@ -29,9 +32,8 @@
   </div>
 </div>
 
-<div class="divider">Why Mel?</div>
-
-<div class="content" id="vision">
+<div class="content">
+  <div class="divider" id="vision">Why Mel?</div>
   <TalkingPoint
     title="Decentralization <b><nobr>beyond blockchains</nobr></b>."
   >
@@ -114,29 +116,131 @@
     <a class="point-link" href="#">Mint your first wMEL</a>
   </TalkingPoint>
 
-  <div class="divider mb-5">Roadmap</div>
+  <!-- <div class="divider mb-5">Roadmap</div>
   <div class="content">
     <div class="row">
       <div class="col text-end">
         <h2>Tentative roadmap</h2>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="divider my-5">Team & partners</div>
+  <div class="divider my-5">Team</div>
+  <div class="content" id="team">
+    <div class="row">
+      <div class="col">
+        <h4>Execs</h4>
+        <ul class="mb-4">
+          <li>
+            <Avatar
+              name="Eric Tung"
+              title="Founder / CEO / CTO"
+              url="https://nullchinchilla.me"
+            />
+          </li>
+        </ul>
+        <h4>Dev and research</h4>
+        <ul>
+          <li>
+            <Avatar
+              name="Gavin Chan"
+              title="Engineer"
+              url="https://github.com/antidmg"
+            />
+          </li>
+          <li>
+            <Avatar
+              name="Marco Serrano"
+              title="Engineer"
+              url="https://github.com/sadministrator/"
+            />
+          </li>
+        </ul>
+        <h4>Community</h4>
+        <ul>
+          <li>
+            <Avatar name="ArtoriaShirou#4266" title="Discord mod" />
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Advisors</h4>
+        <ul class="mb-5">
+          <li>
+            <Avatar
+              name="Raouf Boutaba"
+              title="Prof @ UWaterloo / FRSC"
+              url="https://rboutaba.cs.uwaterloo.ca/"
+            />
+          </li>
+        </ul>
+
+        <h4>Backers</h4>
+        <img src={PolychainLogo} class="backer" />
+      </div>
+    </div>
+  </div>
 
   <div class="divider my-5">Links</div>
   <div class="links content">
     <div class="row">
       <div class="col">
+        <h3>About</h3>
+        <ul>
+          <li>
+            <a>Roadmap</a>
+          </li>
+        </ul>
         <h3>Concepts</h3>
+        <ul>
+          <li>
+            <a>Off-chain composability</a>
+          </li>
+          <li>
+            <a>Governance-free neutrality</a>
+          </li>
+          <li>
+            <a>QuTXO: Mel's unique data model</a>
+          </li>
+          <li>
+            <a>Melmint: stable currency without trust</a>
+          </li>
+        </ul>
       </div>
       <div class="col">
         <h3>Developers</h3>
+        <ul>
+          <li>
+            <a>Developer docs</a>
+          </li>
+          <li><a>Melodeon: our high-level covenant language</a></li>
+          <li><a>Melscan: official block explorer</a></li>
+        </ul>
+        <h3>Community</h3>
+        <ul>
+          <li>
+            <a>Twitter</a>
+          </li>
+          <li>
+            <a>Discord</a>
+          </li>
+          <li>
+            <a>Telegram</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </div>
+
+<footer class="mt-5">
+  <div class="content d-flex align-items-start justify-content-end">
+    <div class="address text-end me-3">
+      <b>Themelio Corporation</b><br />8 The Green, Suite A<br />Dover, DE 19901
+    </div>
+    <img src={Logo} />
+  </div>
+</footer>
 
 <style>
   .hero {
@@ -152,7 +256,7 @@
   .divider {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.2em;
@@ -188,5 +292,56 @@
 
   .point-link {
     color: var(--primary-purple);
+  }
+
+  ul {
+    padding: 0;
+
+    list-style-type: none;
+  }
+
+  #team h4 {
+    font-size: 100%;
+    font-weight: 600;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 0.07em; */
+    opacity: 0.8;
+  }
+
+  #team h4::before {
+    content: "::";
+    display: inline-block;
+    margin-right: 0.2rem;
+    position: relative;
+    top: -0.06rem;
+  }
+
+  .links h3 {
+    font-size: 120%;
+    opacity: 0.8;
+  }
+
+  .links li {
+    font-size: 95%;
+    line-height: 1.7;
+  }
+
+  .backer {
+    width: 6rem;
+  }
+
+  footer {
+    /* background-color: var(--primary-purple); */
+    /* color: white; */
+    padding: 2rem;
+  }
+
+  footer img {
+    width: 1.5rem;
+  }
+
+  .address {
+    font-size: 75%;
+    font-weight: 500;
   }
 </style>

@@ -52,5 +52,6 @@
 
 :global(a) {
   color: unset;
-  text-decoration: underline dotted;
+  text-decoration: underline;
+  text-underline-offset: 0.1em;
 }

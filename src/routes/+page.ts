@@ -18,5 +18,5 @@ export function load() {
     }
   };
 
-  throw redirect(308, `/${getLang()}`);
+  throw redirect(308, `/${getLang()}/`);
 }

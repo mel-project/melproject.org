@@ -1,9 +1,5 @@
 <script>
-  import { home_page } from "@l10n";
-
   import Navbar from "@src/components/page-sections/Navbar.svelte";
-
-  import { communityIcons } from "@src/utils/navigation";
 </script>
 
 <svelte:head>
@@ -19,48 +15,10 @@
   />
 </svelte:head>
 
-<div class="layout-container">
-  <Navbar />
+<Navbar />
 
-  <slot />
-</div>
+<slot />
 
 <style lang="scss">
   @import "../stylesheets/app.scss";
-
-  .layout-container {
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .layout {
-    position: relative;
-    max-width: min(100%, 90rem);
-  }
-  .company-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  .footer {
-    width: 100%;
-    font-weight: 400;
-    letter-spacing: -0.48px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5rem 0;
-    .title {
-      font-weight: 500;
-      font-size: 1.2rem;
-      margin-bottom: 1.2rem;
-    }
-    .col {
-      // border: 1px solid red;
-      display: flex;
-      gap: 0.2rem;
-      flex-direction: column;
-      min-width: 9rem;
-    }
-  }
 </style>
