@@ -19,11 +19,11 @@
   section {
     padding-top: 7rem;
     padding-bottom: 7rem;
-    font-size: 120%;
+    font-size: min(120%, 4.5vw);
     line-height: 1.66;
   }
   h2 {
-    font-size: 250%;
+    font-size: min(250%, 9vw);
     padding-bottom: 1rem;
   }
 

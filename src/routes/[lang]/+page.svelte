@@ -8,7 +8,7 @@
 </script>
 
 <div class="hero">
-  <div class="content">
+  <div class="container content">
     <div class="text-end">
       <h1>A blockchain to <b>free us from blockchains.</b></h1>
     </div>
@@ -32,7 +32,7 @@
   </div>
 </div>
 
-<div class="content">
+<div class="container content">
   <div class="divider" id="vision">Why Mel?</div>
   <TalkingPoint
     title="Decentralization <b><nobr>beyond blockchains</nobr></b>."
@@ -126,9 +126,9 @@
   </div> -->
 
   <div class="divider my-5">Team</div>
-  <div class="content" id="team">
+  <div id="team">
     <div class="row">
-      <div class="col">
+      <div class="col-lg">
         <h4>Execs</h4>
         <ul class="mb-4">
           <li>
@@ -163,7 +163,7 @@
           </li>
         </ul>
       </div>
-      <div class="col">
+      <div class="col-lg">
         <h4>Advisors</h4>
         <ul class="mb-5">
           <li>
@@ -184,7 +184,7 @@
   <div class="divider my-5">Links</div>
   <div class="links content">
     <div class="row">
-      <div class="col">
+      <div class="col-lg">
         <h3>About</h3>
         <ul>
           <li>
@@ -207,7 +207,7 @@
           </li>
         </ul>
       </div>
-      <div class="col">
+      <div class="col-lg">
         <h3>Developers</h3>
         <ul>
           <li>
@@ -282,12 +282,12 @@
   }
 
   .hero h1 {
-    font-size: 4rem;
+    font-size: min(4rem, 13vw);
     font-weight: 500;
   }
 
   .hero-text {
-    font-size: 1.5rem;
+    font-size: min(1.5rem, 6vw);
   }
 
   .point-link {
@@ -302,10 +302,10 @@
 
   #team h4 {
     font-size: 100%;
-    font-weight: 600;
+    font-weight: 500;
     /* text-transform: uppercase; */
     /* letter-spacing: 0.07em; */
-    opacity: 0.8;
+    opacity: 0.6;
   }
 
   #team h4::before {
