@@ -7,7 +7,7 @@
   <h2>{@html title}</h2>
   <div class="body">
     {#if graphic}
-      <div class="left">
+      <div class="left d-none d-lg-block">
         <img src={graphic} />
       </div>
     {/if}
