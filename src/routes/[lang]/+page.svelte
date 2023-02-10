@@ -11,16 +11,35 @@
   import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
   import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
   import BoxesImage from "@src/assets/images/homeicons/boxes.png";
+  import AtmImage from "@src/assets/images/homeicons/atm.png";
   import InfrastructureImage from "@src/assets/images/infrastructure.png";
   import TalkingPoint from "./TalkingPoint.svelte";
+
+  import HeroBackground from "@src/assets/images/homeicons/hero.png";
 </script>
 
 <div class="hero">
-  <h1>A blockchain to<br />free us from blockchains.</h1>
-  <div class="hero-text">Mel is building a clean-slate L1 for a</div>
+  <div class=" main-content">
+    <div class="text-end">
+      <h1>A blockchain to free us from blockchains.</h1>
+    </div>
+
+    <div class="hero-text mt-5">
+      <p>
+        We are building a clean-slate L1 for a decentralized, secure, and
+        private internet beyond blockchains.
+      </p>
+      <p>
+        Learn more about <a href="#vision">our vision</a>, or dive into running
+        nodes and protocol development.
+      </p>
+      <p>And join our growing community:</p>
+      <p>Discord &centerdot; Matrix &centerdot; Telegram</p>
+    </div>
+  </div>
 </div>
 
-<div class="main-content">
+<div class="main-content" id="vision">
   <TalkingPoint
     title="Decentralization <b><nobr>beyond blockchains</nobr></b>."
   >
@@ -31,11 +50,11 @@
       insecurity.
     </p>
     <p>
-      Mel presents a new paradigm. Here, "Web3 protocol" and "dApp" aren't fancy
-      names for smart contracts loosely taped onto a Web2 frontend. Instead,
-      they're next-generation network protocols and apps transformed by a
-      blockchain providing radical decentralization, censorship resistance, and
-      incentive-based security.
+      Mel presents a new paradigm: <b>off-chain composability</b>. Here, "Web3
+      protocol" and "dApp" aren't fancy names for smart contracts loosely taped
+      onto a Web2 frontend. Instead, they're next-generation network protocols
+      and apps transformed by a blockchain providing radical decentralization,
+      censorship resistance, and incentive-based security.
     </p>
     <a href="#">Our off-chain composable vision</a>
   </TalkingPoint>
@@ -66,6 +85,7 @@
 
   <TalkingPoint
     title="The first <b>zero-trust, <nobr>low-volatility</nobr></b> currency."
+    graphic={AtmImage}
   >
     <p>
       The future we are building needs a new kind of money. Neither volatile
@@ -144,27 +164,17 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-top: 40vmin;
-    padding-bottom: 40vmin;
-
-    text-align: center;
-
-    background-color: gray;
-    color: white;
-  }
-
-  .invert {
-    background-color: black;
-    color: white;
+    padding-top: 20vmin;
+    padding-bottom: 20vmin;
   }
 
   .hero h1 {
-    font-size: 6vmin;
+    font-size: 4rem;
     font-weight: 600;
   }
 
   .hero-text {
-    font-size: 2vmin;
+    font-size: 1.5rem;
   }
 
   .talking-point {

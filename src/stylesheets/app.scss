@@ -51,6 +51,8 @@
 }
 :global(body) {
   overflow: hidden;
+
+  background-color: #fdf6e3;
 }
 /* @supports (font-variation-settings: normal) {
     :root {
@@ -67,4 +69,8 @@
 :global(:lang(zh-TW)) {
   font-family: var(--bs-body-font-family), "Chiron Hei HK WS",
     "Noto Color Emoji", sans-serif;
+}
+
+:global(a) {
+  color: unset;
 }
