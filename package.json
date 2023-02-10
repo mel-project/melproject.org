@@ -41,6 +41,7 @@
 		"cryptocurrency-icons": "^0.18.1",
 		"debounce": "^1.2.1",
 		"detect-nearest-browser-locale": "^19.0.0",
+		"feed-reader": "6.1.4-rc1",
 		"free-solid-svg-icons": "link:/@fortawesome/free-solid-svg-icons",
 		"free-solid-svg-icons\n\n": "link:@fortawesome/free-solid-svg-icons\n\n",
 		"qrcode": "^1.5.1",

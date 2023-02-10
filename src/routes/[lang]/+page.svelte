@@ -1,27 +1,13 @@
 <script lang="ts">
-  import { localize, lang } from "@l10n";
-  import Navbar from "@src/components/page-sections/Navbar.svelte";
-  import HeroImage from "@src/assets/images/wide-banner.jpg";
-  import Button from "@src/components/elements/Button.svelte";
-  import Banner from "@src/components/elements/Banner.svelte";
-  import { communityIcons } from "@src/utils/navigation";
-  import { Card, GradientBubble } from "@src/components";
-  import { Colors } from "@src/utils/colors";
-
-  import SpaceshipImage from "@src/assets/images/spaceship-and-planet.png";
-  import ComposableBlocksImage from "@src/assets/images/composable-blocks.png";
   import BoxesImage from "@src/assets/images/homeicons/boxes.png";
   import AtmImage from "@src/assets/images/homeicons/atm.png";
-  import InfrastructureImage from "@src/assets/images/infrastructure.png";
   import TalkingPoint from "./TalkingPoint.svelte";
-
-  import HeroBackground from "@src/assets/images/homeicons/hero.png";
 </script>
 
 <div class="hero">
-  <div class=" main-content">
+  <div class="content">
     <div class="text-end">
-      <h1>A blockchain to free us from blockchains.</h1>
+      <h1>A blockchain to <b>free us from blockchains.</b></h1>
     </div>
 
     <div class="hero-text mt-5">
@@ -34,12 +20,18 @@
         nodes and protocol development.
       </p>
       <p>And join our growing community:</p>
-      <p>Discord &centerdot; Matrix &centerdot; Telegram</p>
+      <p>
+        <a href="https://discord.gg/qfg35paESn">Discord</a> &centerdot;
+        <a href="https://matrix.to/#/#community:matrix.themelio.org">Matrix</a> &centerdot;
+        Telegram
+      </p>
     </div>
   </div>
 </div>
 
-<div class="main-content" id="vision">
+<div class="divider">Why Mel?</div>
+
+<div class="content" id="vision">
   <TalkingPoint
     title="Decentralization <b><nobr>beyond blockchains</nobr></b>."
   >
@@ -56,7 +48,7 @@
       and apps transformed by a blockchain providing radical decentralization,
       censorship resistance, and incentive-based security.
     </p>
-    <a href="#">Our off-chain composable vision</a>
+    <a class="point-link" href="#">Our off-chain composable vision</a>
   </TalkingPoint>
 
   <TalkingPoint
@@ -80,7 +72,9 @@
       trust: an immutable, "code-is-law" system that liberates us from
       contentious human governance.
     </p>
-    <a href="#">How neutrality synergizes with composability</a>
+    <a class="point-link" href="#"
+      >How neutrality synergizes with composability</a
+    >
   </TalkingPoint>
 
   <TalkingPoint
@@ -98,7 +92,7 @@
       without any oracles. A truly decentralized unit of account changes
       everything from payments to incentive design.
     </p>
-    <a href="#">How Melmint stabilizes MEL</a>
+    <a class="point-link" href="#">How Melmint stabilizes MEL</a>
   </TalkingPoint>
 
   <TalkingPoint
@@ -117,47 +111,23 @@
       will be the first low-volatility, truly crypto-native asset in the current
       DeFi ecosystem.
     </p>
-    <a href="#">Mint your first wMEL</a>
+    <a class="point-link" href="#">Mint your first wMEL</a>
   </TalkingPoint>
+
+  <div class="divider">Links</div>
+  <div class="links content">
+    <div class="row">
+      <div class="col">
+        <h3>Concepts</h3>
+      </div>
+      <div class="col">
+        <h3>Developers</h3>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- <div class="row talking-point">
-  <div class="col">
-    <div class="card-inner">
-      <h2>Monetary infrastructure for a better future.</h2>
-      <p>
-        The future we are building needs a new kind of money &mdash; $MEL is the
-        the first truly decentralized unit of account, changing everything from
-        payments to incentive design.
-      </p>
-      <img />
-    </div>
-  </div>
-  <div class="col">
-    <div class="card-inner">
-      <h2>From off-chain to cross-chain.</h2>
-      <p>
-        Mel’s new paradigm enabling off-chain composability also makes
-        cross-chain a breeze. And every Mel-based asset can be accessed on
-        EVM-compatible chains through trustless two-way relay contracts.
-      </p>
-      <img />
-    </div>
-  </div>
-</div> -->
 <style>
-  .main-content {
-    max-width: 720px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  @media (min-width: 1200px) {
-    .main-content {
-      max-width: 850px;
-    }
-  }
-
   .hero {
     width: 100%;
     display: flex;
@@ -165,46 +135,51 @@
     justify-content: center;
     flex-direction: column;
     padding-top: 20vmin;
-    padding-bottom: 20vmin;
+    padding-bottom: 8rem;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    font-style: italic;
+
+    color: var(--primary-purple);
+  }
+
+  .divider::before {
+    content: "";
+    background-color: var(--primary-purple);
+    height: 1px;
+    width: 5rem;
+    margin-right: 1rem;
+  }
+
+  .divider::after {
+    content: "";
+    background-color: var(--primary-purple);
+    height: 1px;
+    width: 5rem;
+    margin-left: 1rem;
   }
 
   .hero h1 {
     font-size: 4rem;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .hero-text {
     font-size: 1.5rem;
   }
 
-  .talking-point {
-    margin-bottom: 8rem;
+  .point-link {
+    color: var(--primary-purple);
   }
 
-  .talking-point p {
-    font-size: 110%;
-  }
-
-  .talking-point h2 {
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    font-size: 250%;
-  }
-
-  .talking-point img {
-    aspect-ratio: 2;
-    width: 80%;
-    margin-left: 10%;
-
-    border: 1px solid black;
-    margin-bottom: 1rem;
-  }
-
-  .talking-point .desc {
-    margin-top: 0.5rem;
-  }
-
-  .talking-point .card-inner {
-    margin: 3rem;
+  .links {
+    padding-top: 8rem;
   }
 </style>

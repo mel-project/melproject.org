@@ -1,12 +1,9 @@
 <script>
   import { home_page } from "@l10n";
-  import { Banner, BubbleBackground, GradientBubble } from "@src/components";
-  import Navbar from "@src/components/page-sections/Navbar.svelte";
-  import { Colors } from "@src/utils/colors";
-  import { communityIcons } from "@src/utils/navigation";
 
-  // test
-  import Homepage from "./[lang]/+page.svelte";
+  import Navbar from "@src/components/page-sections/Navbar.svelte";
+
+  import { communityIcons } from "@src/utils/navigation";
 </script>
 
 <svelte:head>
@@ -26,39 +23,9 @@
   <Navbar />
 
   <slot />
-
-  <Banner variant="clear">
-    <div class="footer">
-      <div class="col company-info">
-        <div class="content">
-          <div class="logo">logo</div>
-          <div class="addr">8 The Green, Ste A Dover, <br /> DE 19901</div>
-        </div>
-      </div>
-      <div class="col socials">
-        <div class="title">Socials</div>
-        {#each communityIcons as icon}
-          <a href="">{icon.name}</a>
-        {/each}
-      </div>
-      <div class="col sitemap">
-        <div class="title">Sitemap</div>
-        <a href={$home_page}> Home</a>
-        <a href="{$home_page}/components"> Components</a>
-        <a href="{$home_page}/technology"> Technology</a>
-      </div>
-      <div class="col melodeon">
-        <div class="title">Melodeon</div>
-        <a href="">Get started</a>
-        <a href="">Guide</a>
-        <a href="">Readme</a>
-      </div>
-    </div>
-  </Banner>
 </div>
 
 <style lang="scss">
-  @use "../stylesheets/variables" as colors;
   @import "../stylesheets/app.scss";
 
   .layout-container {
@@ -94,18 +61,6 @@
       gap: 0.2rem;
       flex-direction: column;
       min-width: 9rem;
-    }
-    a {
-      text-decoration: none;
-      color: black;
-      width: max-content;
-      padding: 0.5rem;
-      padding-left: 0;
-      pa
-      // border: 1px solid green;
-      &:hover {
-        color: colors.$green;
-      }
     }
   }
 </style>

@@ -1,30 +1,22 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { fade } from "svelte/transition";
-  import Logo from "@src/assets/images/logo.png";
-  import { localize, home_page, replace_lang, Language, lang } from "@l10n";
-  let lang_offset = 0;
-  $: display_language = Language[lang_offset];
-  let change_language = () => {
-    lang_offset = (lang_offset + 1) % Language.length;
 
-    setTimeout(change_language, 2500);
-  };
-  change_language();
+  import Logo from "@src/assets/images/logo-bw.png";
+  import { localize, home_page } from "@l10n";
+
   const nav_items = [
     { name: "home", href: $home_page },
-    { name: "components", href: `${$home_page}/components` },
-    { name: "technology", href: `${$home_page}/technology` },
+
     { name: "roadmap", href: `${$home_page}/roadmap` },
   ];
   $: pathname = $page.url.pathname;
 </script>
 
 <nav class="navbar navbar-expand-lg ">
-  <div class="container">
+  <div class="container content">
     <a href={$home_page} class="navbar-brand">
-      <img src={Logo} height="40rem" alt="Mel Logo" class="me-1" />
-      <!-- {$localize("geph")} -->
+      <img src={Logo} height="30rem" alt="Mel Logo" class="me-2" />
+      Mel
     </a>
     <button
       class="navbar-toggler"
@@ -61,6 +53,12 @@
 <style lang="scss">
   .navbar-brand {
     font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .navbar-brand img {
   }
 
   .active {
