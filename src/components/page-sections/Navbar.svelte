@@ -7,7 +7,7 @@
   const nav_items = [
     { name: "home", href: $home_page },
 
-    { name: "roadmap", href: `${$home_page}/roadmap` },
+    { name: "docs", href: `https://docs.melproject.org` },
   ];
   $: pathname = $page.url.pathname;
 </script>
