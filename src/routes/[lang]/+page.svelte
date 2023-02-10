@@ -114,7 +114,18 @@
     <a class="point-link" href="#">Mint your first wMEL</a>
   </TalkingPoint>
 
-  <div class="divider">Links</div>
+  <div class="divider mb-5">Roadmap</div>
+  <div class="content">
+    <div class="row">
+      <div class="col text-end">
+        <h2>Tentative roadmap</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider my-5">Team & partners</div>
+
+  <div class="divider my-5">Links</div>
   <div class="links content">
     <div class="row">
       <div class="col">
@@ -177,9 +188,5 @@
 
   .point-link {
     color: var(--primary-purple);
-  }
-
-  .links {
-    padding-top: 8rem;
   }
 </style>
