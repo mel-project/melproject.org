@@ -5,6 +5,14 @@
   import Avatar from "./Avatar.svelte";
   import PolychainLogo from "@src/assets/images/polychain-logo.png";
   import Logo from "@src/assets/images/logo-bw.png";
+
+  import {
+    twitterUrl,
+    discordUrl,
+    forumUrl,
+    docsUrl,
+    telegramUrl,
+  } from "@src/helpers";
 </script>
 
 <div class="hero">
@@ -24,9 +32,10 @@
       </p>
       <p>And join our growing community:</p>
       <p>
-        <a href="https://discord.gg/qfg35paESn">Discord</a> &centerdot;
-        <a href="https://matrix.to/#/#community:matrix.themelio.org">Matrix</a> &centerdot;
-        Telegram
+        <a href={discordUrl}>Discord</a> &centerdot;
+        <a href={twitterUrl}>Twitter</a> &centerdot;
+        <a href={telegramUrl}>Telegram</a> &centerdot;
+        <a href={forumUrl}>Forum</a>
       </p>
     </div>
   </div>
@@ -185,13 +194,16 @@
   <div class="links content">
     <div class="row">
       <div class="col-lg">
-        <h3>About</h3>
+        <h4>About</h4>
         <ul>
+          <li>
+            <a>Blog</a>
+          </li>
           <li>
             <a>Roadmap</a>
           </li>
         </ul>
-        <h3>Concepts</h3>
+        <h4>Concepts</h4>
         <ul>
           <li>
             <a>Off-chain composability</a>
@@ -208,7 +220,7 @@
         </ul>
       </div>
       <div class="col-lg">
-        <h3>Developers</h3>
+        <h4>Developers</h4>
         <ul>
           <li>
             <a>Developer docs</a>
@@ -216,16 +228,19 @@
           <li><a>Melodeon: our high-level covenant language</a></li>
           <li><a>Melscan: official block explorer</a></li>
         </ul>
-        <h3>Community</h3>
+        <h4>Community</h4>
         <ul>
           <li>
-            <a>Twitter</a>
+            <a href={discordUrl}>Discord</a>
           </li>
           <li>
-            <a>Discord</a>
+            <a href={twitterUrl}>Twitter</a>
           </li>
           <li>
-            <a>Telegram</a>
+            <a href={telegramUrl}>Telegram</a>
+          </li>
+          <li>
+            <a href={forumUrl}>Forum</a>
           </li>
         </ul>
       </div>
@@ -292,6 +307,18 @@
 
   .point-link {
     color: var(--primary-purple);
+    opacity: 0.8;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .point-link:hover {
+    text-decoration: underline;
+    opacity: 1;
+  }
+
+  .point-link::after {
+    content: " > ";
   }
 
   ul {
@@ -300,15 +327,15 @@
     list-style-type: none;
   }
 
-  #team h4 {
+  h4 {
     font-size: 100%;
     font-weight: 500;
     /* text-transform: uppercase; */
-    /* letter-spacing: 0.07em; */
-    opacity: 0.6;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
   }
 
-  #team h4::before {
+  h4::before {
     content: "::";
     display: inline-block;
     margin-right: 0.2rem;

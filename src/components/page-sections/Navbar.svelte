@@ -1,13 +1,14 @@
 <script lang="ts">
   import { page } from "$app/stores";
 
-  import Logo from "@src/assets/images/logo-bw.png";
+  import Logo from "@src/assets/images/logo.png";
   import { localize, home_page } from "@l10n";
+  import { blogUrl, docsUrl } from "@src/helpers";
 
   const nav_items = [
     { name: "home", href: $home_page },
-
-    { name: "docs", href: `https://docs.melproject.org` },
+    { name: "blog", href: blogUrl },
+    { name: "docs", href: docsUrl },
   ];
   $: pathname = $page.url.pathname;
 </script>
@@ -15,7 +16,7 @@
 <nav class="navbar navbar-expand-lg ">
   <div class="container content">
     <a href={$home_page} class="navbar-brand">
-      <img src={Logo} height="30rem" alt="Mel Logo" class="me-2" />
+      <img src={Logo} height="32rem" alt="Mel Logo" class="me-2" />
       Mel
     </a>
     <button
@@ -40,6 +41,8 @@
               class="nav-link"
               class:active={pathname == item.href}
               href={item.href}
+              target="_blank"
+              rel="noopener"
             >
               {$localize(item.name)}
             </a>
