@@ -260,7 +260,8 @@
 <footer class="mt-5">
   <div class="content d-flex align-items-start justify-content-end">
     <div class="address text-end me-3">
-      <b>Themelio Corporation</b><br />8 The Green, Suite A<br />Dover, DE 19901
+      <b>Mel Systems</b> / Themelio Corporation <br />8 The Green, Suite A<br
+      />Dover, DE 19901
     </div>
     <img src={Logo} />
   </div>
