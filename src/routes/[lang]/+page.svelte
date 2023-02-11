@@ -27,10 +27,15 @@
         private internet beyond blockchains.
       </p>
       <p>
-        Learn more about <a href="#vision">our vision</a>, or dive into running
-        nodes and protocol development.
+        Learn more about <a href="#vision">our vision</a> &mdash; a vibrant ecosystem
+        of full-stack decentralized apps freed from the current on-chain smart contract
+        model.
       </p>
-      <p>And join our growing community:</p>
+
+      <p>
+        Our beta mainnet is out, so you can start running nodes and developing
+        protocols. And join our growing community:
+      </p>
       <p>
         <a href={discordUrl}>Discord</a> &centerdot;
         <a href={twitterUrl}>Twitter</a> &centerdot;
@@ -56,8 +61,9 @@
       Mel presents a new paradigm: <b>off-chain composability</b>. Here, "Web3
       protocol" and "dApp" aren't fancy names for smart contracts loosely taped
       onto a Web2 frontend. Instead, they're next-generation network protocols
-      and apps transformed by a blockchain providing radical decentralization,
-      censorship resistance, and incentive-based security.
+      and apps, none of which run on a blockchain, yet interacting with minimal
+      on-chain code to achieve radical decentralization, censorship resistance,
+      and incentive-based security.
     </p>
     <a class="point-link" href="#">Our off-chain composable vision</a>
   </TalkingPoint>
@@ -67,20 +73,20 @@
     graphic={BoxesImage}
   >
     <p>
-      Conventional blockchains are complex machines running an ecosystem of
-      on-chain smart contracts. Complexity leads to messy governance, unwieldy
+      Conventional blockchains designed for smart-contract ecosystems are
+      massively complex machines. Complexity leads to messy governance, unwieldy
       off-chain clients, and cripple growth beyond "crypto" apps like DeFi.
     </p>
     <p>
       Mel's clean-slate L1 turns this model upside-down. Everything is designed
-      for easy and secure access by regular, non-blockchain programs. Trustless
-      clients easily power everything from naming systems to data storage
-      networks.
+      for easy and secure access not by smart contracts, but by regular,
+      non-blockchain programs. Trustless clients easily power everything from
+      naming systems to data storage networks.
     </p>
     <p>
       And rather than adding complexity, we end up with an elegant, minimal
       blockchain that goes back to the very root of blockchains' incentive-based
-      trust: an immutable, "code-is-law" system that liberates us from
+      trust: an immutable, neutral, "code-is-law" system that liberates us from
       contentious human governance.
     </p>
     <a class="point-link" href="#"
@@ -93,15 +99,18 @@
     graphic={AtmImage}
   >
     <p>
-      The future we are building needs a new kind of money. Neither volatile
+      The world we are building needs a new kind of money. Neither volatile
       cryptocurrencies nor fiat-pegged, oracle-trusting stablecoins point to our
       monetary future.
     </p>
     <p>
       MEL is the first ever cryptocurrency that's both stable and trustless.
       Protocol-internal mechanisms dampen its value against computation time
-      without any oracles. A truly decentralized unit of account changes
-      everything from payments to incentive design.
+      without any oracles.
+    </p>
+    <p>
+      A truly decentralized unit of account changes everything from payments to
+      incentive design.
     </p>
     <a class="point-link" href="#">How Melmint stabilizes MEL</a>
   </TalkingPoint>
@@ -110,10 +119,10 @@
     title="Off-chain composability means <b>cross-chain</b> composability."
   >
     <p>
-      Mel's new paradigm and the existing ecosystem aren't inherently at odds.
-      The technology letting non-blockchain logic securely access blockchain
-      data also enables cross-chain apps that are completely decentralized and
-      trustless.
+      Despite their deep differences, Mel's new paradigm and the existing Web3
+      ecosystem can smoothly interoperate. What allows non-blockchain logic to
+      securely access blockchain data also enables cross-chain apps that are
+      completely decentralized and trustless.
     </p>
     <p>
       As an official demo, we are building FancyName, an autonomous relay
