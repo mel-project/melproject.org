@@ -156,12 +156,12 @@
             />
           </li>
         </ul>
-        <h4>Community</h4>
+        <!-- <h4>Community</h4>
         <ul>
           <li>
             <Avatar name="ArtoriaShirou#4266" title="Discord mod" />
           </li>
-        </ul>
+        </ul> -->
       </div>
       <div class="col-lg">
         <h4>Advisors</h4>
