@@ -15,6 +15,16 @@
   } from "@src/helpers";
 </script>
 
+<div class="notice container content">
+  <div class="notice-inner">
+    <b>Heads up!</b> Congrats for finding our new website! This website still
+    under construction as we rebrand Themelio to Mel. <br /><br />
+    Please bear with the occasional broken link. If something seems missing, you
+    might find it at our old website,
+    <a href="https://themelio.org">themelio.org</a>.
+  </div>
+</div>
+
 <div class="hero">
   <div class="container content">
     <div class="text-end">
@@ -268,13 +278,25 @@
 </footer>
 
 <style>
+  .notice {
+    margin-bottom: 5vmin;
+    margin-top: 3vmin;
+  }
+
+  .notice-inner {
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
   .hero {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-top: 20vmin;
+    margin-top: 5vmin;
     padding-bottom: 8rem;
   }
 
