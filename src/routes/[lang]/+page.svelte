@@ -84,8 +84,9 @@
   >
     <p>
       Conventional blockchains designed for smart-contract ecosystems are
-      massively complex machines. Complexity leads to messy governance, unwieldy
-      off-chain clients, and cripple growth beyond "crypto" apps like DeFi.
+      massively complex machines. Complexity leads to messy governance and
+      unwieldy off-chain clients, crippling growth beyond "crypto" apps like
+      DeFi.
     </p>
     <p>
       Mel's clean-slate L1 turns this model upside-down. Everything is designed
