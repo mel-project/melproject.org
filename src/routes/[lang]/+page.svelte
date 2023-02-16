@@ -77,10 +77,13 @@
     <p>
       Mel presents a new paradigm: <b>off-chain composability</b>. Here, "Web3
       protocol" and "dApp" aren't fancy names for smart contracts loosely taped
-      onto a Web2 frontend. Instead, they're next-generation network protocols
-      and apps, none of which run on a blockchain, yet interacting with minimal
-      on-chain code to achieve censorship resistance, radical decentralization,
-      and user-aligned incentives.
+      onto a Web2 frontend.
+    </p>
+    <p>
+      Instead, they're next-generation network protocols and apps, none of which
+      run on a blockchain, yet interacting with minimal on-chain code to achieve
+      censorship resistance, radical decentralization, and user-aligned
+      incentives.
     </p>
     <a class="point-link" href="#">Our off-chain composable vision</a>
   </TalkingPoint>
@@ -96,7 +99,7 @@
     </p>
     <p>
       Mel turns this model upside-down. Everything is designed for easy access
-      not by smart contracts, but regular non-blockchain programs. Trustless
+      not by smart contracts, but by regular non-blockchain programs. Trustless
       light clients easily power everything from naming systems to data storage
       networks.
     </p>
@@ -233,16 +236,28 @@
         <h4>Concepts</h4>
         <ul>
           <li>
-            <a>Off-chain composability</a>
+            <a
+              href="https://docs.melproject.org/concepts/web3-beyond-blockchains"
+              >Web3 beyond blockchains</a
+            >
           </li>
           <li>
-            <a>Governance-free neutrality</a>
+            <a
+              href="https://docs.melproject.org/concepts/data-model-and-neutrality"
+              >Data model and neutrality</a
+            >
           </li>
           <li>
-            <a>QuTXO: Mel's unique data model</a>
+            <a
+              href="https://docs.melproject.org/concepts/secure-verifiable-consensus"
+              >Secure, verifiable consensus</a
+            >
           </li>
           <li>
-            <a>Melmint: stable currency without trust</a>
+            <a
+              href="https://docs.melproject.org/concepts/mel-trustless-sound-money"
+              >MEL: trustless sound money</a
+            >
           </li>
         </ul>
       </div>
