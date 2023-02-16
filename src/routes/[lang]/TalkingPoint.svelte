@@ -17,11 +17,18 @@
 
 <style>
   section {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+    margin-top: 5rem;
+    margin-bottom: 7rem;
     font-size: min(120%, 4.5vw);
     line-height: 1.66;
   }
+
+  @media (min-width: 800px) {
+    section {
+      margin-bottom: 10rem;
+    }
+  }
+
   h2 {
     font-size: min(250%, 9vw);
     padding-bottom: 1rem;

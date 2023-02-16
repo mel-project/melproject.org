@@ -13,11 +13,16 @@
     docsUrl,
     telegramUrl,
   } from "@src/helpers";
+
+  const melnodeUrl =
+    "https://docs.melproject.org/developer-guides/run-a-full-node";
+  const gibbernameUrl =
+    "https://docs.melproject.org/developer-guides/gibbername";
 </script>
 
 <div class="notice container content">
   <div class="notice-inner">
-    <b>Heads up!</b> Congrats for finding our new website! This website still
+    <b>Heads up!</b> You somehow found our new website! This website is still
     under construction as we rebrand Themelio to Mel. <br /><br />
     Please bear with the occasional broken link. If something seems missing, you
     might find it at our old website,
@@ -28,7 +33,7 @@
 <div class="hero">
   <div class="container content">
     <div class="text-end">
-      <h1>A blockchain to <b>free us from blockchains.</b></h1>
+      <h1>A blockchain for Web3 <b>beyond blockchains.</b></h1>
     </div>
 
     <div class="hero-text mt-5">
@@ -43,8 +48,11 @@
       </p>
 
       <p>
-        Our beta mainnet is out, so you can start running nodes and developing
-        protocols. And join our growing community:
+        Our beta mainnet is out, so you can start <a href={melnodeUrl}
+          >running nodes</a
+        >
+        and <a href={gibbernameUrl}>developing protocols</a>. And join our
+        growing community:
       </p>
       <p>
         <a href={discordUrl}>Discord</a> &centerdot;
@@ -62,47 +70,44 @@
     title="Decentralization <b><nobr>beyond blockchains</nobr></b>."
   >
     <p>
-      Today, Web3's decentralization revolution is largely limited to blockchain
-      smart contracts. Real apps running on your device &mdash; even Web3
-      frontends &mdash; still suffer under Web2's regime of centralization and
-      insecurity.
+      Today, Web3's revolution is stuck inside blockchain smart contracts. Real
+      apps running on your device &mdash; even Web3 frontends &mdash; still
+      suffer under Web2's centralization and insecurity.
     </p>
     <p>
       Mel presents a new paradigm: <b>off-chain composability</b>. Here, "Web3
       protocol" and "dApp" aren't fancy names for smart contracts loosely taped
       onto a Web2 frontend. Instead, they're next-generation network protocols
       and apps, none of which run on a blockchain, yet interacting with minimal
-      on-chain code to achieve radical decentralization, censorship resistance,
-      and incentive-based security.
+      on-chain code to achieve censorship resistance, radical decentralization,
+      and user-aligned incentives.
     </p>
     <a class="point-link" href="#">Our off-chain composable vision</a>
   </TalkingPoint>
 
   <TalkingPoint
-    title="Universal, composable, and <nobr><b>fiercely neutral</b></nobr>."
+    title="Universal, composable, and <nobr><b>robustly neutral</b></nobr>."
     graphic={BoxesImage}
   >
     <p>
-      Conventional blockchains designed for smart-contract ecosystems are
-      massively complex machines. Complexity leads to messy governance and
-      unwieldy off-chain clients, crippling growth beyond "crypto" apps like
-      DeFi.
+      Conventional blockchains serve intricate smart contract ecosystems. This
+      means complex protocols, messy governance, and unwieldy clients &mdash;
+      bad news for composability between on-chain and off-chain.
     </p>
     <p>
-      Mel's clean-slate L1 turns this model upside-down. Everything is designed
-      for easy and secure access not by smart contracts, but by regular,
-      non-blockchain programs. Trustless clients easily power everything from
-      naming systems to data storage networks.
+      Mel turns this model upside-down. Everything is designed for easy access
+      not by smart contracts, but regular non-blockchain programs. Trustless
+      light clients easily power everything from naming systems to data storage
+      networks.
     </p>
     <p>
-      And rather than adding complexity, we end up with an elegant, minimal
-      blockchain that goes back to the very root of blockchains' incentive-based
-      trust: an immutable, neutral, "code-is-law" system that liberates us from
-      contentious human governance.
+      And we get an elegant, minimal blockchain that distills blockchains'
+      incentive-based trust: an immutable, credibly neutral, "code-is-law"
+      engine that liberates us from contentious human governance.
     </p>
     <a class="point-link" href="#"
-      >How neutrality synergizes with composability</a
-    >
+      >How composability synergizes with neutrality
+    </a>
   </TalkingPoint>
 
   <TalkingPoint
@@ -111,8 +116,8 @@
   >
     <p>
       The world we are building needs a new kind of money. Neither volatile
-      cryptocurrencies nor fiat-pegged, oracle-trusting stablecoins point to our
-      monetary future.
+      cryptocurrencies nor oracle-backed fiat stablecoins point to our monetary
+      future.
     </p>
     <p>
       MEL is the first ever cryptocurrency that's both stable and trustless.
@@ -123,7 +128,7 @@
       A truly decentralized unit of account changes everything from payments to
       incentive design.
     </p>
-    <a class="point-link" href="#">How Melmint stabilizes MEL</a>
+    <a class="point-link" href="#">How we finally get "sound money"</a>
   </TalkingPoint>
 
   <TalkingPoint
@@ -131,16 +136,18 @@
   >
     <p>
       Despite their deep differences, Mel's new paradigm and the existing Web3
-      ecosystem can smoothly interoperate. What allows non-blockchain logic to
-      securely access blockchain data also enables cross-chain apps that are
-      completely decentralized and trustless.
+      ecosystem can interoperate. Cross-chain is just another kind of off-chain,
+      so Mel light clients easily enable decentralized and trustless cross-chain
+      interop.
     </p>
     <p>
-      As an official demo, we are building FancyName, an autonomous relay
-      protocol with EVM-compatible chains. Every Mel-based asset can be accessed
-      on other chains in a trustlessly wrapped form. This also means that wMEL
-      will be the first low-volatility, truly crypto-native asset in the current
-      DeFi ecosystem.
+      As an official demo, we are building Szaldi, an autonomous relay protocol
+      with EVM-compatible chains. Every Mel-based asset can be accessed on other
+      chains in a trustlessly wrapped form.
+    </p>
+    <p>
+      This also means that wMEL will be the first truly crypto-native
+      low-volatility asset in the current DeFi ecosystem.
     </p>
     <a class="point-link" href="#">Mint your first wMEL</a>
   </TalkingPoint>
