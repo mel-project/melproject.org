@@ -12,12 +12,24 @@
     forumUrl,
     docsUrl,
     telegramUrl,
+    blogUrl,
   } from "@src/helpers";
+
+  const occUrl = "https://docs.melproject.org/concepts/web3-beyond-blockchains";
+  const dataModelUrl =
+    "https://docs.melproject.org/concepts/data-model-and-neutrality";
+  const consensusUrl =
+    "https://docs.melproject.org/concepts/secure-verifiable-consensus";
+  const melmintUrl =
+    "https://docs.melproject.org/concepts/mel-trustless-sound-money";
 
   const melnodeUrl =
     "https://docs.melproject.org/developer-guides/run-a-full-node";
   const gibbernameUrl =
     "https://docs.melproject.org/developer-guides/gibbername";
+
+  const melscanUrl = "https://scan.themelio.org";
+  const melodeonUrl = "https://melodeonlang.org";
 </script>
 
 <svelte:head>
@@ -32,7 +44,8 @@
 <div class="notice container content">
   <div class="notice-inner">
     <b>Heads up!</b> You somehow found our new website! This website is still
-    under construction as we rebrand Themelio to Mel. <br /><br />
+    under construction as we enter a new phase of development and rebrand
+    Themelio to Mel. <br /><br />
     Please bear with the occasional broken link. If something seems missing, you
     might find it at our old website,
     <a href="https://themelio.org">themelio.org</a>.
@@ -94,7 +107,7 @@
       censorship resistance, radical decentralization, and user-aligned
       incentives.
     </p>
-    <a class="point-link" href="#">Our off-chain composable vision</a>
+    <a class="point-link" href={occUrl}>Our off-chain composable vision</a>
   </TalkingPoint>
 
   <TalkingPoint
@@ -117,7 +130,7 @@
       incentive-based trust: an immutable, credibly neutral, "code-is-law"
       engine that liberates us from contentious human governance.
     </p>
-    <a class="point-link" href="#"
+    <a class="point-link" href={dataModelUrl}
       >How composability synergizes with neutrality
     </a>
   </TalkingPoint>
@@ -140,7 +153,7 @@
       A truly decentralized unit of account changes everything from payments to
       incentive design.
     </p>
-    <a class="point-link" href="#">How we finally get "sound money"</a>
+    <a class="point-link" href={melmintUrl}>How we finally get "sound money"</a>
   </TalkingPoint>
 
   <TalkingPoint
@@ -236,35 +249,31 @@
         <h4>About</h4>
         <ul>
           <li>
-            <a>Blog</a>
+            <a href={blogUrl} target="_blank" rel="noreferrer">Blog</a>
           </li>
-          <li>
+          <!-- <li>
             <a>Roadmap</a>
-          </li>
+          </li> -->
         </ul>
         <h4>Concepts</h4>
         <ul>
           <li>
-            <a
-              href="https://docs.melproject.org/concepts/web3-beyond-blockchains"
+            <a href={occUrl} target="_blank" rel="noreferrer"
               >Web3 beyond blockchains</a
             >
           </li>
           <li>
-            <a
-              href="https://docs.melproject.org/concepts/data-model-and-neutrality"
+            <a href={dataModelUrl} target="_blank" rel="noreferrer"
               >Data model and neutrality</a
             >
           </li>
           <li>
-            <a
-              href="https://docs.melproject.org/concepts/secure-verifiable-consensus"
+            <a href={consensusUrl} target="_blank" rel="noreferrer"
               >Secure, verifiable consensus</a
             >
           </li>
           <li>
-            <a
-              href="https://docs.melproject.org/concepts/mel-trustless-sound-money"
+            <a href={melmintUrl} target="_blank" rel="noreferrer"
               >MEL: trustless sound money</a
             >
           </li>
@@ -274,24 +283,33 @@
         <h4>Developers</h4>
         <ul>
           <li>
-            <a>Developer docs</a>
+            <a href={docsUrl} target="_blank" rel="noreferrer">Developer docs</a
+            >
           </li>
-          <li><a>Melodeon: our high-level covenant language</a></li>
-          <li><a>Melscan: official block explorer</a></li>
+          <li>
+            <a href={melodeonUrl} target="_blank" rel="noreferrer"
+              >Melodeon: our high-level covenant language</a
+            >
+          </li>
+          <li>
+            <a href={melscanUrl} target="_blank" rel="noreferrer"
+              >Melscan: official block explorer</a
+            >
+          </li>
         </ul>
         <h4>Community</h4>
         <ul>
           <li>
-            <a href={discordUrl}>Discord</a>
+            <a href={discordUrl} target="_blank" rel="noreferrer">Discord</a>
           </li>
           <li>
-            <a href={twitterUrl}>Twitter</a>
+            <a href={twitterUrl} target="_blank" rel="noreferrer">Twitter</a>
           </li>
           <li>
-            <a href={telegramUrl}>Telegram</a>
+            <a href={telegramUrl} target="_blank" rel="noreferrer">Telegram</a>
           </li>
           <li>
-            <a href={forumUrl}>Forum</a>
+            <a href={forumUrl} target="_blank" rel="noreferrer">Forum</a>
           </li>
         </ul>
       </div>
@@ -305,7 +323,7 @@
       <b>Mel Systems</b> / Themelio Corporation <br />8 The Green, Suite A<br
       />Dover, DE 19901
     </div>
-    <img src={Logo} />
+    <img src={Logo} alt="Mel Systems logo" />
   </div>
 </footer>
 
