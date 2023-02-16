@@ -20,6 +20,15 @@
     "https://docs.melproject.org/developer-guides/gibbername";
 </script>
 
+<svelte:head>
+  <title>Mel</title>
+  <meta
+    name="description"
+    content="Mel is a clean-slate L1 for a decentralized, secure, and
+    private internet beyond blockchains."
+  />
+</svelte:head>
+
 <div class="notice container content">
   <div class="notice-inner">
     <b>Heads up!</b> You somehow found our new website! This website is still
