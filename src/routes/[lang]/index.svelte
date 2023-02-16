@@ -98,7 +98,7 @@ MainLayout(title!='{l10n("nav/home")}')
       .row
         .col-md-6.container-fluid
           .row
-            a.col.text-center.community-card(href="https://discord.gg/themelio" target="_blank" rel="noopener")
+            a.col.text-center.community-card(href="https://discord.gg/qfg35paESn" target="_blank" rel="noopener")
               img(src="/images/social_media/discord.png" class="community-icon")
               h5.m-3 Discord
               a.join <i class="fa-solid fa-plus"></i> Join

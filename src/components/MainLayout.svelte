@@ -61,7 +61,7 @@
             .col
               a(href='https://medium.com/themelio' target='_blank' rel='noopener') Medium
             .col
-              a(href='https://discord.gg/themelio' target='_blank' rel='noopener') Discord
+              a(href='https://discord.gg/qfg35paESn' target='_blank' rel='noopener') Discord
             .col
               a(href='https://t.me/themeliolabs' target='_blank' rel='noopener') Telegram
             .col
