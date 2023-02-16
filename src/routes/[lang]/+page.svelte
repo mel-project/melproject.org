@@ -30,6 +30,7 @@
 
   const melscanUrl = "https://scan.themelio.org";
   const melodeonUrl = "https://melodeonlang.org";
+  const bridgeUrl = "https://docs.melproject.org/fancyname-guide";
 </script>
 
 <svelte:head>
@@ -174,7 +175,7 @@
       This also means that wMEL will be the first truly crypto-native
       low-volatility asset in the current DeFi ecosystem.
     </p>
-    <a class="point-link" href="#">Mint your first wMEL</a>
+    <a class="point-link" href={bridgeUrl}>Mint your first wMEL</a>
   </TalkingPoint>
 
   <!-- <div class="divider mb-5">Roadmap</div>
