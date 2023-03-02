@@ -28,9 +28,9 @@
   const gibbernameUrl =
     "https://docs.melproject.org/developer-guides/gibbername";
 
-  const melscanUrl = "https://scan.themelio.org";
+  const melscanUrl = "https://melscan.io";
   const melodeonUrl = "https://melodeonlang.org";
-  const bridgeUrl = "https://docs.melproject.org/fancyname-guide";
+  const bridgeUrl = "https://docs.melproject.org/szaldi-guide";
 </script>
 
 <svelte:head>
@@ -44,12 +44,12 @@
 
 <div class="notice container content">
   <div class="notice-inner">
-    <b>Heads up!</b> You somehow found our new website! This website is still
-    under construction as we enter a new phase of development and rebrand
-    Themelio to Mel. <br /><br />
-    Please bear with the occasional broken link. If something seems missing, you
-    might find it at our old website,
-    <a href="https://themelio.org">themelio.org</a>.
+    <b>Heads up!</b> We've just renamed from Themelio to Mel, and this website
+    is very new<br /><br />
+    All the relevant content <i>should</i> be moved, but if something seems
+    missing, please let us know on <a href={discordUrl}>Discord</a>! In the
+    meanwhile, you might find it at our old documentation website,
+    <a href="https://docs.themelio.org">docs.themelio.org</a>.
   </div>
 </div>
 
