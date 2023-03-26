@@ -212,6 +212,13 @@
           </li>
           <li>
             <Avatar
+              name="Lisa Wei"
+              title="Researcher"
+              url="https://github.com/thisbefruit/"
+            />
+          </li>
+          <li>
+            <Avatar
               name="Marco Serrano"
               title="Engineer"
               url="https://github.com/sadministrator/"
