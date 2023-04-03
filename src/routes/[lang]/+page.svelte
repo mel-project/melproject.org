@@ -187,7 +187,7 @@
     </div>
   </div> -->
 
-  <div class="divider my-5">Team</div>
+  <!-- <div class="divider my-5">Team</div>
   <div id="team">
     <div class="row">
       <div class="col-lg">
@@ -225,12 +225,6 @@
             />
           </li>
         </ul>
-        <!-- <h4>Community</h4>
-        <ul>
-          <li>
-            <Avatar name="ArtoriaShirou#4266" title="Discord mod" />
-          </li>
-        </ul> -->
       </div>
       <div class="col-lg">
         <h4>Advisors</h4>
@@ -248,7 +242,7 @@
         <img src={PolychainLogo} class="backer" />
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="divider my-5">Links</div>
   <div class="links content">
