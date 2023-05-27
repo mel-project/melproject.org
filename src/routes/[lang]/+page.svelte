@@ -45,9 +45,11 @@
 
 <div class="notice container content">
   <div class="notice-inner">
-    Our betanet's first <a
-      href="https://medium.com/themelio/mel-geph-securing-a-production-vpn-app-with-mel-light-clients-9e910d83507?source=collection_home---------0----------------------------"
-      >production off-chain integration</a
+    Our betanet's <b
+      ><a
+        href="https://medium.com/themelio/mel-geph-securing-a-production-vpn-app-with-mel-light-clients-9e910d83507?source=collection_home---------0----------------------------"
+        >first production off-chain integration</a
+      ></b
     >: public key infrastructure for <a href="https://geph.io">Geph</a>, an
     open-source censorship-resistant VPN.
   </div>
