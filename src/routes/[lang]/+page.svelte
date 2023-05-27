@@ -13,6 +13,7 @@
     docsUrl,
     telegramUrl,
     blogUrl,
+    githubUrl,
   } from "@src/helpers";
 
   const occUrl = "https://docs.melproject.org/concepts/web3-beyond-blockchains";
@@ -44,12 +45,11 @@
 
 <div class="notice container content">
   <div class="notice-inner">
-    <b>Heads up!</b> We've just renamed from Themelio to Mel, and this website
-    is very new!<br /><br />
-    All the relevant content <i>should</i> be moved, but if something seems
-    missing, please let us know on <a href={discordUrl}>Discord</a>. In the
-    meanwhile, you might find missing info at our old documentation website,
-    <a href="https://docs.themelio.org">docs.themelio.org</a>.
+    Our betanet's first <a
+      href="https://medium.com/themelio/mel-geph-securing-a-production-vpn-app-with-mel-light-clients-9e910d83507?source=collection_home---------0----------------------------"
+      >production off-chain integration</a
+    >: public key infrastructure for <a href="https://geph.io">Geph</a>, an
+    open-source censorship-resistant VPN.
   </div>
 </div>
 
@@ -81,7 +81,8 @@
         <a href={discordUrl}>Discord</a> &centerdot;
         <a href={twitterUrl}>Twitter</a> &centerdot;
         <a href={telegramUrl}>Telegram</a> &centerdot;
-        <a href={forumUrl}>Forum</a>
+        <a href={forumUrl}>Forum</a> &centerdot;
+        <a href={githubUrl}>GitHub</a>
       </p>
     </div>
   </div>
@@ -312,6 +313,9 @@
           </li>
           <li>
             <a href={forumUrl} target="_blank" rel="noreferrer">Forum</a>
+          </li>
+          <li>
+            <a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>
           </li>
         </ul>
       </div>
