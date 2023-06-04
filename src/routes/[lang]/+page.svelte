@@ -82,7 +82,6 @@
       <p>
         <a href={discordUrl}>Discord</a> &centerdot;
         <a href={twitterUrl}>Twitter</a> &centerdot;
-        <a href={telegramUrl}>Telegram</a> &centerdot;
         <a href={forumUrl}>Forum</a> &centerdot;
         <a href={githubUrl}>GitHub</a>
       </p>
@@ -310,9 +309,7 @@
           <li>
             <a href={twitterUrl} target="_blank" rel="noreferrer">Twitter</a>
           </li>
-          <li>
-            <a href={telegramUrl} target="_blank" rel="noreferrer">Telegram</a>
-          </li>
+
           <li>
             <a href={forumUrl} target="_blank" rel="noreferrer">Forum</a>
           </li>
