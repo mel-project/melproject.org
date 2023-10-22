@@ -3,11 +3,11 @@
 
   import Logo from "@src/assets/images/logo.png";
   import { localize, home_page } from "@l10n";
-  import { blogUrl, docsUrl } from "@src/helpers";
+  import { blogUrl, docsUrl, forumUrl } from "@src/helpers";
 
   const nav_items = [
     { name: "home", href: $home_page },
-    { name: "blog", href: blogUrl },
+    { name: "forum", href: forumUrl },
     { name: "docs", href: docsUrl },
   ];
   $: pathname = $page.url.pathname;

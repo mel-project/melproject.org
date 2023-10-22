@@ -32,6 +32,7 @@
   const melscanUrl = "https://melscan.io";
   const melodeonUrl = "https://melodeonlang.org";
   const bridgeUrl = "https://docs.melproject.org/szaldi-guide";
+  const earendilUrl = "https://github.com/mel-project/earendil";
 </script>
 
 <svelte:head>
@@ -43,7 +44,7 @@
   />
 </svelte:head>
 
-<div class="notice container content">
+<!-- <div class="notice container content">
   <div class="notice-inner">
     Our betanet's <b
       ><a
@@ -53,12 +54,12 @@
     >: public key infrastructure for <a href="https://geph.io">Geph</a>, an
     open-source censorship-resistant VPN.
   </div>
-</div>
+</div> -->
 
 <div class="hero">
   <div class="container content">
     <div class="text-end">
-      <h1>A blockchain for Web3 <b>beyond blockchains.</b></h1>
+      <h1>A blockchain for dApps <b>beyond blockchains.</b></h1>
     </div>
 
     <div class="hero-text mt-5">
@@ -73,7 +74,7 @@
       </p>
 
       <p>
-        Our beta mainnet is out, so you can start <a href={melnodeUrl}
+        Our betanet is out, so you can start <a href={melnodeUrl}
           >running nodes</a
         >
         and <a href={gibbernameUrl}>developing protocols</a>. And join our
@@ -92,15 +93,15 @@
 <div class="container content">
   <div class="divider" id="vision">Why Mel?</div>
   <TalkingPoint
-    title="Decentralization <b><nobr>beyond blockchains</nobr></b>."
+    title="Powering <b><nobr>post-blockchain</nobr></b> decentralization."
   >
     <p>
-      Today, Web3's revolution is stuck inside blockchain smart contracts. Real
-      apps running on your device &mdash; even Web3 frontends &mdash; still
+      Today, the ``decentralized web'' is limited to blockchain smart contracts.
+      Real apps running on your device &mdash; even Web3 frontends &mdash; still
       suffer under Web2's centralization and insecurity.
     </p>
     <p>
-      Mel presents a new paradigm: <b>off-chain composability</b>. Here, "Web3
+      Mel enables a new paradigm: <b>off-chain composability</b>. Here, "Web3
       protocol" and "dApp" aren't fancy names for smart contracts loosely taped
       onto a Web2 frontend.
     </p>
@@ -160,24 +161,23 @@
   </TalkingPoint>
 
   <TalkingPoint
-    title="Off-chain composability means <b>cross-chain</b> composability."
+    title="A <b>new frontier</b> of <nobr>unstoppable protocols</nobr>"
   >
     <p>
-      Despite their deep differences, Mel's new paradigm and the existing Web3
-      ecosystem can interoperate. Cross-chain is just another kind of off-chain,
-      so Mel light clients easily enable decentralized and trustless cross-chain
-      interop.
+      We are building an ecosystem of basic off-chain decentralized protocols
+      with security and resilience backed by the Mel betanet.
     </p>
     <p>
-      As an official demo, we are building Szaldi, an autonomous relay protocol
-      with EVM-compatible chains. Every Mel-based asset can be accessed on other
-      chains in a trustlessly wrapped form.
+      The most important piece of the stack &mdash; Earendil, the world's first
+      decentralized anonymous communication and payment network designed to
+      resist ISP-level censorship and metadata collection.
     </p>
     <p>
-      This also means that wMEL will be the first truly crypto-native
-      low-volatility asset in the current DeFi ecosystem.
+      Earendil will power a new generation of autonomous applications and
+      peer-to-peer protocols, providing them with unstoppable data transport and
+      programmable off-chain micropayments.
     </p>
-    <a class="point-link" href={bridgeUrl}>Mint your first wMEL</a>
+    <a class="point-link" href={earendilUrl}>Star Earendil on GitHub</a>
   </TalkingPoint>
 
   <!-- <div class="divider mb-5">Roadmap</div>
@@ -250,15 +250,6 @@
   <div class="links content">
     <div class="row">
       <div class="col-lg">
-        <h4>About</h4>
-        <ul>
-          <li>
-            <a href={blogUrl} target="_blank" rel="noreferrer">Blog</a>
-          </li>
-          <!-- <li>
-            <a>Roadmap</a>
-          </li> -->
-        </ul>
         <h4>Concepts</h4>
         <ul>
           <li>
@@ -291,8 +282,8 @@
             >
           </li>
           <li>
-            <a href={melodeonUrl} target="_blank" rel="noreferrer"
-              >Melodeon: our high-level covenant language</a
+            <a href={earendilUrl} target="_blank" rel="noreferrer"
+              >Earendil: an uncensorable transport network</a
             >
           </li>
           <li>
