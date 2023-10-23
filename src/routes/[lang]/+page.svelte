@@ -96,7 +96,7 @@
     title="Powering <b><nobr>post-blockchain</nobr></b> decentralization."
   >
     <p>
-      Today, the ``decentralized web'' is limited to blockchain smart contracts.
+      Today, the "decentralized web" is limited to blockchain smart contracts.
       Real apps running on your device &mdash; even Web3 frontends &mdash; still
       suffer under Web2's centralization and insecurity.
     </p>
