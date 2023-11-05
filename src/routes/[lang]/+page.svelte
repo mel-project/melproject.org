@@ -32,7 +32,7 @@
   const melscanUrl = "https://melscan.io";
   const melodeonUrl = "https://melodeonlang.org";
   const bridgeUrl = "https://docs.melproject.org/szaldi-guide";
-  const earendilUrl = "https://github.com/mel-project/earendil";
+  const earendilUrl = "https://earendil.network";
 </script>
 
 <svelte:head>
@@ -177,7 +177,7 @@
       peer-to-peer protocols, providing them with unstoppable data transport and
       programmable off-chain micropayments.
     </p>
-    <a class="point-link" href={earendilUrl}>Star Earendil on GitHub</a>
+    <a class="point-link" href={earendilUrl}>Learn more about Earendil</a>
   </TalkingPoint>
 
   <!-- <div class="divider mb-5">Roadmap</div>
