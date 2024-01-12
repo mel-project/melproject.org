@@ -77,9 +77,15 @@
         Our betanet is out, so you can start <a href={melnodeUrl}
           >running nodes</a
         >
-        and <a href={gibbernameUrl}>developing protocols</a>. And join our
-        growing community:
+        and <a href={gibbernameUrl}>developing protocols</a>.
       </p>
+      <p>
+        Also check out the <a href="https://earendil.network"
+          >pre-alpha of Earendil</a
+        >, a Mel-secured anonymous communication network and
+        <b>first of its kind to resist ISP-level censorship</b>.
+      </p>
+      <p>And join our growing community:</p>
       <p>
         <a href={discordUrl}>Discord</a> &centerdot;
         <a href={twitterUrl}>Twitter</a> &centerdot;
