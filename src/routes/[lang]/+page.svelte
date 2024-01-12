@@ -59,18 +59,18 @@
 <div class="hero">
   <div class="container content">
     <div class="text-end">
-      <h1>A blockchain for dApps <b>beyond blockchains.</b></h1>
+      <h1>A blockchain for <b>post-blockchain</b> decentralized apps</h1>
     </div>
 
     <div class="hero-text mt-5">
       <p>
-        We are building a clean-slate L1 for a decentralized, secure, and
-        private internet beyond blockchains.
+        We are building a clean-slate L1 to expand the Web3 vision of a
+        decentralized, secure, and private internet beyond blockchains.
       </p>
       <p>
         Learn more about <a href="#vision">our vision</a> &mdash; a vibrant ecosystem
         of full-stack decentralized apps freed from the current on-chain smart contract
-        model.
+        model, yet still ultimately secured by blockchain consensus.
       </p>
 
       <p>
