@@ -59,7 +59,7 @@
 <div class="hero">
   <div class="container content">
     <div class="text-end">
-      <h1>A blockchain for <b>post-blockchain</b> decentralized apps</h1>
+      <h1>A blockchain for decentralized apps <b>beyond blockchains</b></h1>
     </div>
 
     <div class="hero-text mt-5">
