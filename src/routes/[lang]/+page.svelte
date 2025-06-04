@@ -29,7 +29,7 @@
   const gibbernameUrl =
     "https://docs.melproject.org/developer-guides/gibbername";
 
-  const melscanUrl = "https://melscan.io";
+  const melscanUrl = "https://scan.melproject.org";
   const melodeonUrl = "https://melodeonlang.org";
   const bridgeUrl = "https://docs.melproject.org/szaldi-guide";
   const earendilUrl = "https://earendil.network";
