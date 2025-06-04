@@ -195,7 +195,7 @@
     </div>
   </div> -->
 
-  <div class="divider my-5">Team</div>
+  <!-- <div class="divider my-5">Team</div>
   <div id="team">
     <div class="row">
       <div class="col-lg">
@@ -250,7 +250,7 @@
         <img src={PolychainLogo} class="backer" />
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="divider my-5">Links</div>
   <div class="links content">
