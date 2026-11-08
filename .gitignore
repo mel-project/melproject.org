@@ -3,6 +3,8 @@ node_modules
 /build
 /.svelte-kit
 /package
+/.netlify
+/.wrangler
 .env
 .env.*
 !.env.example

@@ -1,1 +1,25 @@
-SvelteKit website for https://geph.io
+SvelteKit website for https://melproject.org.
+
+Install dependencies with `pnpm install --frozen-lockfile` using pnpm 8.6.6,
+then run `pnpm run build`. The static output is written to `build/`.
+
+Cloudflare Pages build settings:
+
+- Production branch: `mel`
+- Build command: `pnpm run build`
+- Build output directory: `build`
+- Node.js version: `22`
+
+The build includes `/en/`, `/zhs/`, and `/zht/`. Cloudflare's
+`static/_redirects` rule redirects `/` to `/en/` with status 308.
+`static/404.html` provides a 404 response for unknown paths.
+
+For deployment from a local build, authenticate Wrangler with a Cloudflare
+API token and account ID, then run:
+
+```sh
+npx wrangler pages deploy build --project-name <project-name> --branch mel
+```
+
+Add custom domains through the Pages project before updating DNS to the
+project's `pages.dev` hostname.
