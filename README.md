@@ -6,6 +6,7 @@ then run `pnpm run build`. The static output is written to `build/`.
 Cloudflare Pages build settings:
 
 - Project: `melproject-org` (`https://melproject-org.pages.dev`)
+- Custom domains: `melproject.org` and `www.melproject.org`
 - GitHub repository: `mel-project/melproject.org`
 - Production branch: `mel`
 - Build command: `pnpm run build`
